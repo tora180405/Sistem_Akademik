@@ -181,8 +181,8 @@ public class SistemAkademik{
     } 
 
     // deklarasi variabel untuk fitu input data mahasiswa
-    String namamhs, jk, kelas, agama, alamat, tgl, email;
-    int NIM, no_hp;
+    public String namamhs, jk, kelas, agama, alamat, tgl, email;
+    public int NIM, no_hp;
 
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
