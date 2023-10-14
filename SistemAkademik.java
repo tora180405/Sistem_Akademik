@@ -181,13 +181,48 @@ public class SistemAkademik{
     } 
 
     // deklarasi variabel untuk fitu input data mahasiswa
-    public String namamhs, jk, kelas, agama, alamat, tgl, email;
-    public int NIM, no_hp;
+    public static String namamhs, jk, kelas, agama, alamat, tgl, email;
+    public static int NIM, no_hp;
 
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
         while(true){
-            
+        System.out.println("\n");
+        System.out.println("\n");
+
+        System.out.println("===================masukkan data diri===================");
+        System.out.print("masukkan nama             :");
+        namamhs = inputScanner.nextLine();
+        
+        System.out.print("masukkan NIM              :");
+        NIM = inputScanner.nextInt();
+
+        inputScanner.nextLine();
+
+        System.out.print("masukkan Jenis Kelamin    :");
+        jk = inputScanner.nextLine();
+        
+        System.out.print("masukkan kelas            :");
+        kelas = inputScanner.nextLine();
+
+        System.out.print("masukkan agama            :");
+        agama = inputScanner.nextLine();
+        
+        System.out.print("masukkan tanggal lahir    :");
+        tgl = inputScanner.nextLine();
+
+        System.out.print("masukkan email            :");
+        email = inputScanner.nextLine();
+        
+        System.out.print("masukkan nomor handpone   :");
+        no_hp = inputScanner.nextInt();
+
+        inputScanner.nextLine();
+        
+        System.out.print("masukkan alamat           :");
+        alamat = inputScanner.nextLine();
+        
+        System.out.println("=======================================================");
         // System.out.println("INPUT DATA MAHASISWA");
         // System.out.println("1.");
         // System.out.println("2.");
