@@ -180,19 +180,24 @@ public class SistemAkademik{
         }
     } 
 
+    // deklarasi variabel untuk fitu input data mahasiswa
+    String namamhs, jk, kelas, agama, alamat, tgl, email;
+    int NIM, no_hp;
+
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
         while(true){
-        System.out.println("INPUT DATA MAHASISWA");
-        System.out.println("1.");
-        System.out.println("2.");
-        int choice = inputScanner.nextInt();
-            switch (choice) {
-                case 0:
-                    return;
-                default:
-                    System.out.println("Pilihan tidak valid.");
-            }
+            
+        // System.out.println("INPUT DATA MAHASISWA");
+        // System.out.println("1.");
+        // System.out.println("2.");
+        // int choice = inputScanner.nextInt();
+        //     switch (choice) {
+        //         case 0:
+        //             return;
+        //         default:
+        //             System.out.println("Pilihan tidak valid.");
+        //     }
         }
     }
     private static void updDataMhs() {
