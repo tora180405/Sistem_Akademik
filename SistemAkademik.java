@@ -242,7 +242,7 @@ public class SistemAkademik{
                     berandaAdmin();
                 } else {
                     System.out.println("pilihan tidak palid");
-                    
+                    System.out.println("\n");
                     System.out.println("1. untuk ya");
                     System.out.println("2. untuk tidak");
 
