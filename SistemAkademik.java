@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class SistemAkademik{
     // deklarasi variable global
     // private static int levelAcc;
-    private static Scanner inputScanner = new Scanner(System.in);
+    ;public static Scanner inputScanner = new Scanner(System.in);
     public static void main(String[] args) {
         logIn();
     }
@@ -190,46 +190,47 @@ public class SistemAkademik{
     private static void inDataMhs() {
 
         int choice;
+        System.out.println("========================================");
+        System.out.println("=          INPUT DATA MAHASISWA        =");
+        System.out.println("========================================");
+        System.out.println("Ketik 0 untuk kembali ke menu sebelumnya");
+        System.out.println("Ketik angka lain untuk lanjut");
+        choice = inputScanner.nextInt();
+        if(choice == 0)
+            berandaAdmin();
 
         while(true){
-            do {
+
+
                 System.out.println("\n");
+
 
                 System.out.println("===================masukkan data diri===================");
 
                 inputScanner.nextLine();
-
                 System.out.print("masukkan nama             :");
                 namamhs = inputScanner.nextLine();
-                
                 System.out.print("masukkan NIM              :");
                 NIM = inputScanner.nextInt();
-
                 inputScanner.nextLine();
-
                 System.out.print("masukkan Jenis Kelamin    :");
                 jk = inputScanner.nextLine();
-                
                 System.out.print("masukkan kelas            :");
                 kelas = inputScanner.nextLine();
-
                 System.out.print("masukkan agama            :");
                 agama = inputScanner.nextLine();
-                
                 System.out.print("masukkan tanggal lahir    :");
                 tgl = inputScanner.nextLine();
-
                 System.out.print("masukkan email            :");
                 email = inputScanner.nextLine();
-                
                 System.out.print("masukkan nomor handpone   :");
                 no_hp = inputScanner.nextInt();
-
                 inputScanner.nextLine();
-                
                 System.out.print("masukkan alamat           :");
                 alamat = inputScanner.nextLine();
                 
+                System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
+
                 System.out.println("=======================================================");
                 System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
 
@@ -238,49 +239,21 @@ public class SistemAkademik{
                 System.out.println("1. untuk ya");
                 System.out.println("2. untuk tidak");
 
+                System.out.println("masukkan pilihan : ");
                 choice = inputScanner.nextInt();
 
-                if (choice == 2) {
+
+                if (choice == 1) {
+                    System.out.println("nama " + namamhs);
+                    inDataMhs();
+                } else if(choice == 2){
                     berandaAdmin();
-                } else {
-                    System.out.println("pilihan tidak palid");
-                    System.out.println("n");
-                    System.out.println("1. untuk ya");
-                    System.out.println("2. untuk tidak");
-
-                    choice = inputScanner.nextInt();
+                }else{
+                    System.out.println("pilihan anda tidak valid");
+                    inDataMhs();
                 }
+                break;
 
-                // switch (choice){
-                //     case 2 :
-                //     berandaAdmin();
-                //     break;
-
-                //     default:
-                //     System.out.println("pilihan tidak palid");
-                //     break;
-                // }
-            } while (choice == 1);
-            
-        
-        
-        // if (choice == 1) {
-        //     return;
-        // } else if(choice == 2){
-        //     berandaAdmin();
-        // }else{
-        //     System.out.println("Pilihan tidak valid.");
-        // }
-            // switch (choice) {
-            //     case 1:
-            //         return;
-
-            //         break;
-            //     case 2:
-            //     berandaAdmin();
-            //     default:
-            //         System.out.println("Pilihan tidak valid.");
-            // }
 
         }
     }
