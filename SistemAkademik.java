@@ -121,6 +121,7 @@ public class SistemAkademik{
         System.out.println("0. LogOut\n");
 
         System.out.print("Masukkan pilihan anda: ");
+
             int choice = inputScanner.nextInt();
             switch (choice) {
                 case 1:
@@ -158,6 +159,7 @@ public class SistemAkademik{
         System.out.println("0. LogOut\n");
 
         System.out.print("Masukkan pilihan anda: ");
+
             int choice = inputScanner.nextInt();
             switch (choice) {
                 case 1:
@@ -279,6 +281,7 @@ public class SistemAkademik{
             //     default:
             //         System.out.println("Pilihan tidak valid.");
             // }
+
         }
     }
     private static void updDataMhs() {
@@ -286,7 +289,9 @@ public class SistemAkademik{
         System.out.println("UPDATE DATA MAHASISWA");
         System.out.println("1.");
         System.out.println("2.");
+
         int choice = inputScanner.nextInt();
+
             switch (choice) {
                 case 0:
                     return;
@@ -300,7 +305,9 @@ public class SistemAkademik{
         System.out.println("CEK DATA MAHASISWA");
         System.out.println("1.");
         System.out.println("2.");
+
         int choice = inputScanner.nextInt();
+
             switch (choice) {
                 case 0:
                     return;
@@ -314,7 +321,9 @@ public class SistemAkademik{
         System.out.println("INPUT NILAI MAHASISWA");
         System.out.println("1.");
         System.out.println("2.");
+
         int choice = inputScanner.nextInt();
+
             switch (choice) {
                 case 0:
                     return;
@@ -328,7 +337,9 @@ public class SistemAkademik{
         System.out.println("UPDATE NILAI MAHASISWA");
         System.out.println("1.");
         System.out.println("2.");
+
         int choice = inputScanner.nextInt();
+
             switch (choice) {
                 case 0:
                     return;
@@ -342,7 +353,9 @@ public class SistemAkademik{
         System.out.println("CEK JADWAL KULIAH");
         System.out.println("1.");
         System.out.println("2.");
+
         int choice = inputScanner.nextInt();
+
             switch (choice) {
                 case 0:
                     return;
@@ -356,7 +369,9 @@ public class SistemAkademik{
         System.out.println("UPDATE KRS MAHASISWA");
         System.out.println("1.");
         System.out.println("2.");
+
         int choice = inputScanner.nextInt();
+
             switch (choice) {
                 case 0:
                     return;
@@ -370,7 +385,9 @@ public class SistemAkademik{
         System.out.println("CEK DATA KRS MAHASISWA");
         System.out.println("1.");
         System.out.println("2.");
+
         int choice = inputScanner.nextInt();
+
             switch (choice) {
                 case 0:
                     return;
