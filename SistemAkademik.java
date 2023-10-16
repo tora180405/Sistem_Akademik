@@ -2,56 +2,59 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class SistemAkademik{
+public class SistemAkademik {
     // deklarasi variable global
     // private static int levelAcc;
-    ;public static Scanner inputScanner = new Scanner(System.in);
+    ;
+    public static Scanner inputScanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         logIn();
     }
 
-    public static void logOut(){
+    public static void logOut() {
         System.out.println("Anda telah logout");
         // Redirect user to login page
         logIn();
     }
+
     // private static List<String> menuStack = new ArrayList<>();
-    public static void logIn(){
+    public static void logIn() {
         String username, password;
         int attempts = 0;
 
-    while(attempts < 3){
-        System.out.println("");
-        System.out.println("======================");
-        System.out.println("=     Login User     =");
-        System.out.println("=--------------------=");
-        System.out.print("Masukkan username : ");
-        username = inputScanner.next();
-        System.out.print("Masukkan password : ");
-        password = inputScanner.next();
+        while (attempts < 3) {
+            System.out.println("");
+            System.out.println("======================");
+            System.out.println("=     Login User     =");
+            System.out.println("=--------------------=");
+            System.out.print("Masukkan username : ");
+            username = inputScanner.next();
+            System.out.print("Masukkan password : ");
+            password = inputScanner.next();
 
-        if ("admin".equals(username) && "admin".equals(password)) {
-            System.out.println("Selamat datang " + username);
-            berandaAdmin();
-            
-        }else if("dosen".equals(username) && "dosen".equals(password)){
-            System.out.println("Selamat datang " + username);
-            berandaDosen();
-        }else if("mahasiswa".equals(username) && "mahasiswa".equals(password)){
-            System.out.println("Selamat datang " + username);
-            berandaMahasiswa();
-        }else{
-            System.out.println("username/password salah");
-            attempts++;
+            if ("admin".equals(username) && "admin".equals(password)) {
+                System.out.println("Selamat datang " + username);
+                berandaAdmin();
+
+            } else if ("dosen".equals(username) && "dosen".equals(password)) {
+                System.out.println("Selamat datang " + username);
+                berandaDosen();
+            } else if ("mahasiswa".equals(username) && "mahasiswa".equals(password)) {
+                System.out.println("Selamat datang " + username);
+                berandaMahasiswa();
+            } else {
+                System.out.println("username/password salah");
+                attempts++;
+            }
         }
-    }
         if (attempts == 3) {
             System.out.println("Anda telah melebihi batas upaya login");
             System.exit(0);
         }
     }
 
-    private static void berandaAdmin(){
+    private static void berandaAdmin() {
         while (true) {
             System.out.println("");
             System.out.println("============================");
@@ -107,20 +110,20 @@ public class SistemAkademik{
         }
     }
 
-    private static void berandaDosen(){
+    private static void berandaDosen() {
         while (true) {
-        System.out.println("");
-        System.out.println("============================");
-        System.out.println("=      Sistem Akademik     =");
-        System.out.println("=       BERANDA DOSEN      =");
-        System.out.println("----------------------------");
-        System.out.println("1. Cek Data Mahasiswa");
-        System.out.println("2. Input Nilai Mahasiswa");
-        System.out.println("3. Update Nilai Mahasiswa");
-        System.out.println("4. Contact");
-        System.out.println("0. LogOut\n");
+            System.out.println("");
+            System.out.println("============================");
+            System.out.println("=      Sistem Akademik     =");
+            System.out.println("=       BERANDA DOSEN      =");
+            System.out.println("----------------------------");
+            System.out.println("1. Cek Data Mahasiswa");
+            System.out.println("2. Input Nilai Mahasiswa");
+            System.out.println("3. Update Nilai Mahasiswa");
+            System.out.println("4. Contact");
+            System.out.println("0. LogOut\n");
 
-        System.out.print("Masukkan pilihan anda: ");
+            System.out.print("Masukkan pilihan anda: ");
 
             int choice = inputScanner.nextInt();
             switch (choice) {
@@ -144,21 +147,21 @@ public class SistemAkademik{
         }
     }
 
-    private static void berandaMahasiswa(){
+    private static void berandaMahasiswa() {
 
         while (true) {
-        System.out.println("");
-        System.out.println("============================");
-        System.out.println("=      Sistem Akademik     =");
-        System.out.println("=     BERANDA MAHASISWA    =");
-        System.out.println("----------------------------");    
-        System.out.println("1. Cek Data Mahasiswa");
-        System.out.println("2. Cek Jadwal Kuliah");
-        System.out.println("3. Cek Data KRS Mahasiswa");
-        System.out.println("4. Contact");
-        System.out.println("0. LogOut\n");
+            System.out.println("");
+            System.out.println("============================");
+            System.out.println("=      Sistem Akademik     =");
+            System.out.println("=     BERANDA MAHASISWA    =");
+            System.out.println("----------------------------");
+            System.out.println("1. Cek Data Mahasiswa");
+            System.out.println("2. Cek Jadwal Kuliah");
+            System.out.println("3. Cek Data KRS Mahasiswa");
+            System.out.println("4. Contact");
+            System.out.println("0. LogOut\n");
 
-        System.out.print("Masukkan pilihan anda: ");
+            System.out.print("Masukkan pilihan anda: ");
 
             int choice = inputScanner.nextInt();
             switch (choice) {
@@ -180,9 +183,9 @@ public class SistemAkademik{
                     System.out.println("Pilihan tidak valid.");
             }
         }
-    } 
+    }
 
-    // deklarasi variabel untuk fitu input data mahasiswa
+    // deklarasi variabel untuk fitur input data mahasiswa
     public static String namamhs, jk, kelas, agama, alamat, tgl, email;
     public static int NIM, no_hp;
 
@@ -196,74 +199,71 @@ public class SistemAkademik{
         System.out.println("Ketik 0 untuk kembali ke menu sebelumnya");
         System.out.println("Ketik angka lain untuk lanjut");
         choice = inputScanner.nextInt();
-        if(choice == 0)
+        if (choice == 0)
             berandaAdmin();
 
-        while(true){
+        while (true) {
 
+            System.out.println("\n");
 
-                System.out.println("\n");
+            System.out.println("===================masukkan data diri===================");
 
+            inputScanner.nextLine();
+            System.out.print("masukkan nama             :");
+            namamhs = inputScanner.nextLine();
+            System.out.print("masukkan NIM              :");
+            NIM = inputScanner.nextInt();
+            inputScanner.nextLine();
+            System.out.print("masukkan Jenis Kelamin    :");
+            jk = inputScanner.nextLine();
+            System.out.print("masukkan kelas            :");
+            kelas = inputScanner.nextLine();
+            System.out.print("masukkan agama            :");
+            agama = inputScanner.nextLine();
+            System.out.print("masukkan tanggal lahir    :");
+            tgl = inputScanner.nextLine();
+            System.out.print("masukkan email            :");
+            email = inputScanner.nextLine();
+            System.out.print("masukkan nomor handpone   :");
+            no_hp = inputScanner.nextInt();
+            inputScanner.nextLine();
+            System.out.print("masukkan alamat           :");
+            alamat = inputScanner.nextLine();
 
-                System.out.println("===================masukkan data diri===================");
+            System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
 
-                inputScanner.nextLine();
-                System.out.print("masukkan nama             :");
-                namamhs = inputScanner.nextLine();
-                System.out.print("masukkan NIM              :");
-                NIM = inputScanner.nextInt();
-                inputScanner.nextLine();
-                System.out.print("masukkan Jenis Kelamin    :");
-                jk = inputScanner.nextLine();
-                System.out.print("masukkan kelas            :");
-                kelas = inputScanner.nextLine();
-                System.out.print("masukkan agama            :");
-                agama = inputScanner.nextLine();
-                System.out.print("masukkan tanggal lahir    :");
-                tgl = inputScanner.nextLine();
-                System.out.print("masukkan email            :");
-                email = inputScanner.nextLine();
-                System.out.print("masukkan nomor handpone   :");
-                no_hp = inputScanner.nextInt();
-                inputScanner.nextLine();
-                System.out.print("masukkan alamat           :");
-                alamat = inputScanner.nextLine();
-                
-                System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
+            System.out.println("=======================================================");
+            System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
 
-                System.out.println("=======================================================");
-                System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
+            System.out.println("\n");
 
-                System.out.println("\n");
+            System.out.println("1. untuk ya");
+            System.out.println("2. untuk tidak");
 
-                System.out.println("1. untuk ya");
-                System.out.println("2. untuk tidak");
+            System.out.println("masukkan pilihan : ");
+            choice = inputScanner.nextInt();
 
-                System.out.println("masukkan pilihan : ");
-                choice = inputScanner.nextInt();
-
-
-                if (choice == 1) {
-                    System.out.println("nama " + namamhs);
-                    inDataMhs();
-                } else if(choice == 2){
-                    berandaAdmin();
-                }else{
-                    System.out.println("pilihan anda tidak valid");
-                    inDataMhs();
-                }
-                break;
-
+            if (choice == 1) {
+                System.out.println("nama " + namamhs);
+                inDataMhs();
+            } else if (choice == 2) {
+                berandaAdmin();
+            } else {
+                System.out.println("pilihan anda tidak valid");
+                inDataMhs();
+            }
+            break;
 
         }
     }
+
     private static void updDataMhs() {
-        while(true){
-        System.out.println("UPDATE DATA MAHASISWA");
-        System.out.println("1.");
-        System.out.println("2.");
+        while (true) {
+            System.out.println("UPDATE DATA MAHASISWA");
+            System.out.println("1.");
+            System.out.println("2.");
 
-        int choice = inputScanner.nextInt();
+            int choice = inputScanner.nextInt();
 
             switch (choice) {
                 case 0:
@@ -273,13 +273,14 @@ public class SistemAkademik{
             }
         }
     }
+
     private static void cekDataMhs() {
-        while(true){
-        System.out.println("CEK DATA MAHASISWA");
-        System.out.println("1.");
-        System.out.println("2.");
+        while (true) {
+            System.out.println("CEK DATA MAHASISWA");
+            System.out.println("1.");
+            System.out.println("2.");
 
-        int choice = inputScanner.nextInt();
+            int choice = inputScanner.nextInt();
 
             switch (choice) {
                 case 0:
@@ -289,13 +290,14 @@ public class SistemAkademik{
             }
         }
     }
+
     private static void inNilaiMhs() {
-        while(true){
-        System.out.println("INPUT NILAI MAHASISWA");
-        System.out.println("1.");
-        System.out.println("2.");
+        while (true) {
+            System.out.println("INPUT NILAI MAHASISWA");
+            System.out.println("1.");
+            System.out.println("2.");
 
-        int choice = inputScanner.nextInt();
+            int choice = inputScanner.nextInt();
 
             switch (choice) {
                 case 0:
@@ -305,13 +307,14 @@ public class SistemAkademik{
             }
         }
     }
+
     private static void updNilaiMhs() {
-        while(true){
-        System.out.println("UPDATE NILAI MAHASISWA");
-        System.out.println("1.");
-        System.out.println("2.");
+        while (true) {
+            System.out.println("UPDATE NILAI MAHASISWA");
+            System.out.println("1.");
+            System.out.println("2.");
 
-        int choice = inputScanner.nextInt();
+            int choice = inputScanner.nextInt();
 
             switch (choice) {
                 case 0:
@@ -321,13 +324,14 @@ public class SistemAkademik{
             }
         }
     }
+
     private static void cekJadwalKuliah() {
-        while(true){
-        System.out.println("CEK JADWAL KULIAH");
-        System.out.println("1.");
-        System.out.println("2.");
+        while (true) {
+            System.out.println("CEK JADWAL KULIAH");
+            System.out.println("1.");
+            System.out.println("2.");
 
-        int choice = inputScanner.nextInt();
+            int choice = inputScanner.nextInt();
 
             switch (choice) {
                 case 0:
@@ -337,13 +341,14 @@ public class SistemAkademik{
             }
         }
     }
+
     private static void updKrsMhs() {
-        while(true){
-        System.out.println("UPDATE KRS MAHASISWA");
-        System.out.println("1.");
-        System.out.println("2.");
+        while (true) {
+            System.out.println("UPDATE KRS MAHASISWA");
+            System.out.println("1.");
+            System.out.println("2.");
 
-        int choice = inputScanner.nextInt();
+            int choice = inputScanner.nextInt();
 
             switch (choice) {
                 case 0:
@@ -353,13 +358,14 @@ public class SistemAkademik{
             }
         }
     }
-    private static void cekDataKrsMhs() {
-        while(true){
-        System.out.println("CEK DATA KRS MAHASISWA");
-        System.out.println("1.");
-        System.out.println("2.");
 
-        int choice = inputScanner.nextInt();
+    private static void cekDataKrsMhs() {
+        while (true) {
+            System.out.println("CEK DATA KRS MAHASISWA");
+            System.out.println("1.");
+            System.out.println("2.");
+
+            int choice = inputScanner.nextInt();
 
             switch (choice) {
                 case 0:
@@ -375,31 +381,31 @@ public class SistemAkademik{
     public static int nim;
 
     public static void contact() {
-        while(true){
-        System.out.println("CONTACT");
-        System.out.print("masukkan nama : ");
-        nama = inputScanner.next();
-        System.out.print("masukkan nim : ");
-        nim = inputScanner.nextInt();
-        System.out.print("masukkan pesan : ");
-        pesan = inputScanner.next();
+        while (true) {
+            System.out.println("CONTACT");
+            System.out.print("masukkan nama : ");
+            nama = inputScanner.next();
+            System.out.print("masukkan nim : ");
+            nim = inputScanner.nextInt();
+            System.out.print("masukkan pesan : ");
+            pesan = inputScanner.next();
 
-        if (nama != "" && nim != 0 && pesan!="") {
-            System.out.println("Pesan anda sedang diproses");
-            return;
-        }
-        else{
-            System.out.println("pastikan data yang anda masukkan sudah benar");
-        }
-        //  int choice = inputScanner.nextInt();
-        //     switch (choice) {
-        //         case 0:
-        //             return;
-        //         default:
-        //             System.out.println("Pilihan tidak valid.");
-        //     }
+            if (nama != "" && nim != 0 && pesan != "") {
+                System.out.println("Pesan anda sedang diproses");
+                return;
+            } else {
+                System.out.println("pastikan data yang anda masukkan sudah benar");
+            }
+            // int choice = inputScanner.nextInt();
+            // switch (choice) {
+            // case 0:
+            // return;
+            // default:
+            // System.out.println("Pilihan tidak valid.");
+            // }
         }
     }
+
     public static void contactAdmin() {
         System.out.println("CONTACT");
         System.out.println("nama : " + nama);
@@ -407,5 +413,5 @@ public class SistemAkademik{
         System.out.println("pesan : " + pesan);
 
     }
-    
+
 }
