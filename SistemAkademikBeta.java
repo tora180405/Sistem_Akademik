@@ -10,6 +10,10 @@ public class SistemAkademikBeta {
   public static String namamhs, jk, kelas, agama, alamat, tgl, email;
   public static int NIM, no_hp;
 
+  // deklarasi variable global untuk fitur contact
+  public static String nama, pesan;
+  public static int nim;
+
   public static void main(String[] args) {
 
     String username, password;
@@ -85,6 +89,7 @@ public class SistemAkademikBeta {
                 namamhs = inputScanner.nextLine();
                 System.out.print("masukkan NIM              :");
                 NIM = inputScanner.nextInt();
+
                 inputScanner.nextLine();
                 System.out.print("masukkan Jenis Kelamin    :");
                 jk = inputScanner.nextLine();
@@ -131,6 +136,17 @@ public class SistemAkademikBeta {
               break;
             case 3:
               // cekDataMhs();
+              System.out.println("================= DATA MAHASISWA ===============");
+              System.out.println("NAMA          : " + namamhs);
+              System.out.println("NIM           : " + NIM);
+              System.out.println("JENIS KELAMIN : " + jk);
+              System.out.println("KELAS         : " + kelas);
+              System.out.println("AGAMA         : " + agama);
+              System.out.println("TGL LAHIR     : " + tgl);
+              System.out.println("EMAIL         : " + email);
+              System.out.println("NO TELP       : " + no_hp);
+              System.out.println("ALAMAT        : " + alamat);
+
               break;
             case 4:
               // inNilaiMhs();
@@ -149,7 +165,24 @@ public class SistemAkademikBeta {
               break;
             case 9:
               // contactAdmin();
-              break;
+              System.out.println("CONTACT");
+              System.out.println("nama : " + nama);
+              System.out.println("nim : " + nim);
+              System.out.println("pesan : " + pesan);
+
+              System.out.println("apakah ingin melakukan operasi selanjutnya?");
+              int acc = inputScanner.nextInt();
+
+              if (acc == 1) {
+                break;
+              } else {
+                // logOut();
+                System.out.println("Anda telah logout");
+                isLoggedOut = true; // Mengatur isLoggedOut menjadi true
+                break; // Keluar dari switch case
+              }
+
+              // break;s
             case 0:
               // logOut();
               System.out.println("Anda telah logout");
@@ -197,11 +230,30 @@ public class SistemAkademikBeta {
               break;
             case 4:
               // contact();
+              System.out.println("CONTACT");
+              inputScanner.nextLine();
+              System.out.print("masukkan nama : ");
+              nama = inputScanner.nextLine();
+
+              System.out.print("masukkan nim : ");
+              nim = inputScanner.nextInt();
+
+              inputScanner.nextLine();
+              System.out.print("masukkan pesan : ");
+              pesan = inputScanner.nextLine();
+
+              System.out.println("Pesan anda sedang diproses");
               break;
             case 0:
               // logOut();
+              System.out.println("Anda telah logout");
+              isLoggedOut = true; // Mengatur isLoggedOut menjadi true
+              break; // Keluar dari switch case
             default:
               System.out.println("Pilihan tidak valid.");
+          }
+          if (isLoggedOut) {
+            break; // Keluar dari loop while
           }
         }
       } else if ("mahasiswa".equals(username) && "mahasiswa".equals(password)) {
@@ -227,6 +279,16 @@ public class SistemAkademikBeta {
           switch (choice) {
             case 1:
               // cekDataMhs();
+              System.out.println("================= DATA MAHASISWA ===============");
+              System.out.println("NAMA          : " + namamhs);
+              System.out.println("NIM           : " + nim);
+              System.out.println("JENIS KELAMIN : " + jk);
+              System.out.println("KELAS         : " + kelas);
+              System.out.println("AGAMA         : " + agama);
+              System.out.println("TGL LAHIR     : " + tgl);
+              System.out.println("EMAIL         : " + email);
+              System.out.println("NO TELP       : " + no_hp);
+              System.out.println("ALAMAT        : " + alamat);
               break;
             case 2:
               // cekJadwalKuliah();
@@ -236,11 +298,33 @@ public class SistemAkademikBeta {
               break;
             case 4:
               // contact();
+              System.out.println("CONTACT");
+              inputScanner.nextLine();
+              System.out.print("masukkan nama : ");
+              nama = inputScanner.nextLine();
+
+              System.out.print("masukkan nim : ");
+              nim = inputScanner.nextInt();
+
+              inputScanner.nextLine();
+              System.out.print("masukkan pesan : ");
+              pesan = inputScanner.nextLine();
+
+              System.out.println("Pesan anda sedang diproses");
               break;
+            // return;s
+
+            // break;
             case 0:
               // logOut();
+              System.out.println("Anda telah logout");
+              isLoggedOut = true; // Mengatur isLoggedOut menjadi true
+              break; // Keluar dari switch case
             default:
               System.out.println("Pilihan tidak valid.");
+          }
+          if (isLoggedOut) {
+            break; // Keluar dari loop while
           }
         }
       } else {
