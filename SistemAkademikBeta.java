@@ -173,6 +173,9 @@ public class SistemAkademikBeta {
               System.out.println("apakah ingin melakukan operasi selanjutnya?");
               int acc = inputScanner.nextInt();
 
+              System.out.println("- ketikkan 1 untuk lanjut");
+              System.out.println("- ketikkan angka lainnya untuk logout");
+
               if (acc == 1) {
                 break;
               } else {
