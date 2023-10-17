@@ -200,7 +200,7 @@ public class SistemAkademik {
         System.out.println("Ketik angka lain untuk lanjut");
         choice = inputScanner.nextInt();
         if (choice == 0)
-            berandaAdmin();
+            return;
 
         while (true) {
 
@@ -275,20 +275,18 @@ public class SistemAkademik {
     }
 
     private static void cekDataMhs() {
-        while (true) {
-            System.out.println("CEK DATA MAHASISWA");
-            System.out.println("1.");
-            System.out.println("2.");
 
-            int choice = inputScanner.nextInt();
+        System.out.println("================= DATA MAHASISWA ===============");
+        System.out.println("NAMA          : " + namamhs);
+        System.out.println("NIM           : " + NIM);
+        System.out.println("JENIS KELAMIN : " + jk);
+        System.out.println("KELAS         : " + kelas);
+        System.out.println("AGAMA         : " + agama);
+        System.out.println("TGL LAHIR     : " + tgl);
+        System.out.println("EMAIL         : " + email);
+        System.out.println("NO TELP       : " + no_hp);
+        System.out.println("ALAMAT        : " + alamat);
 
-            switch (choice) {
-                case 0:
-                    return;
-                default:
-                    System.out.println("Pilihan tidak valid.");
-            }
-        }
     }
 
     private static void inNilaiMhs() {
@@ -381,29 +379,21 @@ public class SistemAkademik {
     public static int nim;
 
     public static void contact() {
-        while (true) {
-            System.out.println("CONTACT");
-            System.out.print("masukkan nama : ");
-            nama = inputScanner.next();
-            System.out.print("masukkan nim : ");
-            nim = inputScanner.nextInt();
-            System.out.print("masukkan pesan : ");
-            pesan = inputScanner.next();
 
-            if (nama != "" && nim != 0 && pesan != "") {
-                System.out.println("Pesan anda sedang diproses");
-                return;
-            } else {
-                System.out.println("pastikan data yang anda masukkan sudah benar");
-            }
-            // int choice = inputScanner.nextInt();
-            // switch (choice) {
-            // case 0:
-            // return;
-            // default:
-            // System.out.println("Pilihan tidak valid.");
-            // }
-        }
+        System.out.println("CONTACT");
+        inputScanner.nextLine();
+        System.out.print("masukkan nama : ");
+        nama = inputScanner.nextLine();
+
+        System.out.print("masukkan nim : ");
+        nim = inputScanner.nextInt();
+
+        inputScanner.nextLine();
+        System.out.print("masukkan pesan : ");
+        pesan = inputScanner.nextLine();
+
+        System.out.println("Pesan anda sedang diproses");
+
     }
 
     public static void contactAdmin() {
@@ -412,6 +402,17 @@ public class SistemAkademik {
         System.out.println("nim : " + nim);
         System.out.println("pesan : " + pesan);
 
+        System.out.println("apakah ingin melakukan operasi selanjutnya?");
+        int acc = inputScanner.nextInt();
+
+        System.out.println("ketikkan 1 untuk lanjut");
+        System.out.println("ketikkan angka lainnya untuk logout");
+
+        if (acc == 1) {
+            return;
+        } else {
+            logOut();
+        }
     }
 
 }
