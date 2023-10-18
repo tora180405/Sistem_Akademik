@@ -82,7 +82,7 @@ public class SistemAkademikBeta {
 
                 System.out.println("\n");
 
-                System.out.println("===================masukkan data diri===================");
+                System.out.println("=================== DATA DIRI ===================");
 
                 inputScanner.nextLine();
                 System.out.print("masukkan nama             :");
@@ -233,7 +233,7 @@ public class SistemAkademikBeta {
               break;
             case 4:
               // contact();
-              System.out.println("CONTACT");
+              System.out.println("========== CONTACT ===========");
               inputScanner.nextLine();
               System.out.print("masukkan nama : ");
               nama = inputScanner.nextLine();
@@ -301,7 +301,7 @@ public class SistemAkademikBeta {
               break;
             case 4:
               // contact();
-              System.out.println("CONTACT");
+              System.out.println("======== CONTACT =======");
               inputScanner.nextLine();
               System.out.print("masukkan nama : ");
               nama = inputScanner.nextLine();

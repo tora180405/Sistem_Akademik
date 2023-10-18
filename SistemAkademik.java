@@ -206,7 +206,7 @@ public class SistemAkademik {
 
             System.out.println("\n");
 
-            System.out.println("===================masukkan data diri===================");
+            System.out.println("===================DATA MAHASISWA===================");
 
             inputScanner.nextLine();
             System.out.print("masukkan nama             :");
