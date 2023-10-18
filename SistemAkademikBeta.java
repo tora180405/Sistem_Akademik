@@ -255,7 +255,7 @@ public class SistemAkademikBeta {
               System.out.print("masukkan pesan : ");
               pesan = inputScanner.nextLine();
 
-              System.out.println("Pesan anda sedang diproses");
+              System.out.println("====== Pesan anda sedang diproses =====");
               break;
             case 0:
               // logOut();
@@ -305,7 +305,7 @@ public class SistemAkademikBeta {
               break;
             case 2:
               // cekJadwalKuliah();
-              System.out.println("CEK JADWAL KULIAH");
+              System.out.println("========================== CEK JADWAL KULIAH ==========================");
               System.out.println(
                   "-----------------------------------------------------------------------------------------------------------------");
               System.out.println(
@@ -343,26 +343,35 @@ public class SistemAkademikBeta {
               break;
             case 3:
               // cekDataKrsMhs();
-              System.out.println("CEK DATA KRS MAHASISWA");
+              System.out.println("========================== CEK DATA KRS MAHASISWA ==========================");
               System.out.println("-------------------------------------------------------------");
-              System.out.println("|" + "NO" + "|" + "MATA KULIAH                           " + "|" + "SEMESTER " + "|"
-                  + "SKS" + "|" + "JAM" + "|");
-              System.out.println("|" + "1." + "|" + "Pancasila                             " + "|" + "1        " + "|"
-                  + "2  " + "|" + "2  " + "|");
-              System.out.println("|" + "2." + "|" + "Konsep Teknologi Informasi            " + "|" + "1        " + "|"
-                  + "2  " + "|" + "4  " + "|");
-              System.out.println("|" + "3." + "|" + "Critical Thinking dan Problem Solving " + "|" + "1        " + "|"
-                  + "2  " + "|" + "4  " + "|");
-              System.out.println("|" + "4." + "|" + "Matematika Dasar                      " + "|" + "1        " + "|"
-                  + "3  " + "|" + "6  " + "|");
-              System.out.println("|" + "5." + "|" + "Bahasa Inggris 1                      " + "|" + "1        " + "|"
-                  + "2  " + "|" + "4  " + "|");
-              System.out.println("|" + "6." + "|" + "Dasar Pemograman                      " + "|" + "1        " + "|"
-                  + "2  " + "|" + "4  " + "|");
-              System.out.println("|" + "7." + "|" + "Praktikum Dasar Pemograman            " + "|" + "1        " + "|"
-                  + "3  " + "|" + "6  " + "|");
-              System.out.println("|" + "8." + "|" + "Keselamatan dan Kesehatan Kerja       " + "|" + "1        " + "|"
-                  + "2  " + "|" + "4  " + "|");
+              System.out
+                  .println("|" + "NO" + "|" + "MATA KULIAH                           " + "|" + "SEMESTER " + "|" + "SKS"
+                      + "|" + "JAM" + "|");
+              System.out
+                  .println("|" + "1." + "|" + "Pancasila                             " + "|" + "1        " + "|" + "2  "
+                      + "|" + "2  " + "|");
+              System.out
+                  .println("|" + "2." + "|" + "Konsep Teknologi Informasi            " + "|" + "1        " + "|" + "2  "
+                      + "|" + "4  " + "|");
+              System.out
+                  .println("|" + "3." + "|" + "Critical Thinking dan Problem Solving " + "|" + "1        " + "|" + "2  "
+                      + "|" + "4  " + "|");
+              System.out
+                  .println("|" + "4." + "|" + "Matematika Dasar                      " + "|" + "1        " + "|" + "3  "
+                      + "|" + "6  " + "|");
+              System.out
+                  .println("|" + "5." + "|" + "Bahasa Inggris 1                      " + "|" + "1        " + "|" + "2  "
+                      + "|" + "4  " + "|");
+              System.out
+                  .println("|" + "6." + "|" + "Dasar Pemograman                      " + "|" + "1        " + "|" + "2  "
+                      + "|" + "4  " + "|");
+              System.out
+                  .println("|" + "7." + "|" + "Praktikum Dasar Pemograman            " + "|" + "1        " + "|" + "3  "
+                      + "|" + "6  " + "|");
+              System.out
+                  .println("|" + "8." + "|" + "Keselamatan dan Kesehatan Kerja       " + "|" + "1        " + "|" + "2  "
+                      + "|" + "4  " + "|");
               System.out.println("-------------------------------------------------------------");
               break;
             case 4:
