@@ -224,6 +224,16 @@ public class SistemAkademikBeta {
           switch (choice) {
             case 1:
               // cekDataMhs();
+              System.out.println("================= DATA MAHASISWA ===============");
+              System.out.println("NAMA          : " + namamhs);
+              System.out.println("NIM           : " + NIM);
+              System.out.println("JENIS KELAMIN : " + jk);
+              System.out.println("KELAS         : " + kelas);
+              System.out.println("AGAMA         : " + agama);
+              System.out.println("TGL LAHIR     : " + tgl);
+              System.out.println("EMAIL         : " + email);
+              System.out.println("NO TELP       : " + no_hp);
+              System.out.println("ALAMAT        : " + alamat);
               break;
             case 2:
               // inNilaiMhs();
