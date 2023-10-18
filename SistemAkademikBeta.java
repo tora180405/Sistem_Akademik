@@ -372,6 +372,7 @@ public class SistemAkademikBeta {
               System.out
                   .println("|" + "8." + "|" + "Keselamatan dan Kesehatan Kerja       " + "|" + "1        " + "|" + "2  "
                       + "|" + "4  " + "|");
+
               System.out.println("-------------------------------------------------------------");
               break;
             case 4:
