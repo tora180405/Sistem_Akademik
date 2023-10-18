@@ -357,21 +357,19 @@ public class SistemAkademik {
     }
 
     private static void cekDataKrsMhs() {
-        while (true) {
             System.out.println("CEK DATA KRS MAHASISWA");
-            System.out.println("1.");
-            System.out.println("2.");
-
-            int choice = inputScanner.nextInt();
-
-            switch (choice) {
-                case 0:
-                    return;
-                default:
-                    System.out.println("Pilihan tidak valid.");
-            }
+            System.out.println("-------------------------------------------------------------");
+            System.out.println("|" + "NO" + "|" + "MATA KULIAH                           " + "|" + "SEMESTER " + "|" + "SKS" + "|" + "JAM" + "|");
+            System.out.println("|" + "1." + "|" + "Pancasila                             " + "|" + "1        " + "|" + "2  " + "|" + "2  " + "|");
+            System.out.println("|" + "2." + "|" + "Konsep Teknologi Informasi            " + "|" + "1        " + "|" + "2  " + "|" + "4  " + "|");
+            System.out.println("|" + "3." + "|" + "Critical Thinking dan Problem Solving " + "|" + "1        " + "|" + "2  " + "|" + "4  " + "|");
+            System.out.println("|" + "4." + "|" + "Matematika Dasar                      " + "|" + "1        " + "|" + "3  " + "|" + "6  " + "|");
+            System.out.println("|" + "5." + "|" + "Bahasa Inggris 1                      " + "|" + "1        " + "|" + "2  " + "|" + "4  " + "|");
+            System.out.println("|" + "6." + "|" + "Dasar Pemograman                      " + "|" + "1        " + "|" + "2  " + "|" + "4  " + "|");
+            System.out.println("|" + "7." + "|" + "Praktikum Dasar Pemograman            " + "|" + "1        " + "|" + "3  " + "|" + "6  " + "|");
+            System.out.println("|" + "8." + "|" + "Keselamatan dan Kesehatan Kerja       " + "|" + "1        " + "|" + "2  " + "|" + "4  " + "|");
+            System.out.println("-------------------------------------------------------------");
         }
-    }
 
     // deklarasi variable global untuk fitur contact
     public static String nama, pesan;
