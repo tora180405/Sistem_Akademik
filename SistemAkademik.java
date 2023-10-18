@@ -324,20 +324,19 @@ public class SistemAkademik {
     }
 
     private static void cekJadwalKuliah() {
-        while (true) {
             System.out.println("CEK JADWAL KULIAH");
-            System.out.println("1.");
-            System.out.println("2.");
-
-            int choice = inputScanner.nextInt();
-
-            switch (choice) {
-                case 0:
-                    return;
-                default:
-                    System.out.println("Pilihan tidak valid.");
-            }
-        }
+            System.out.println("-----------------------------------------------------------------------------------------------------------------");
+            System.out.println("|" + "NO" + "|" + "HARI   " + "|" + "JAM           " + "|" + "MATA KULIAH                           " + "|" + "DOSEN                                         " + "|");
+            System.out.println("|" + "1 " + "|" + "Senin  " + "|" + "10:35 - 14:25 " + "|" + "Konsep Teknologi Informasi            " + "|" + "Yuri Ariyanto, S.Kom., M.Kom.                 " + "|");
+            System.out.println("|" + "2 " + "|" + "Selasa " + "|" + "09:30 - 13:15 " + "|" + "Critical Thinking dan Problem Solving " + "|" + "Dwi Puspitasari, S.Kom., M.Kom.               " + "|");
+            System.out.println("|" + "3 " + "|" + "Rabu   " + "|" + "07:00 - 10:35 " + "|" + "Keselamatan dan Kesehatan Kerja       " + "|" + "Ariadi Retno Tri Hayati Ririd, S.Kom., M.Kom. " + "|");
+            System.out.println("|" + "4 " + "|" + "Rabu   " + "|" + "11:25 - 13:35 " + "|" + "Pancasila                             " + "|" + "Widaningsih, S.H., M.H.                       " + "|");
+            System.out.println("|" + "5 " + "|" + "Rabu   " + "|" + "13:35 - 16:00 " + "|" + "Bahasa Inggris 1                      " + "|" + "Satrio Binusa Suryadi, S.S., M.Pd.            " + "|");
+            System.out.println("|" + "6 " + "|" + "Kamis  " + "|" + "07:00 - 09:15 " + "|" + "Matematika Dasar                      " + "|" + "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D.   " + "|");
+            System.out.println("|" + "7 " + "|" + "Kamis  " + "|" + "11:00 - 17:10 " + "|" + "Praktikum Dasar Pemrograman           " + "|" + "Noprianto, S.Kom., M.Eng.                     " + "|");
+            System.out.println("|" + "8 " + "|" + "Jumat  " + "|" + "07:00 - 10:00 " + "|" + "Dasar Pemrograman                     " + "|" + "Noprianto, S.Kom., M.Eng.                     " + "|");
+            System.out.println("|" + "9 " + "|" + "Jumat  " + "|" + "07:00 - 10:00 " + "|" + "Matematika Dasar                      " + "|" + "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D.   " + "|");
+            System.out.println("-----------------------------------------------------------------------------------------------------------------");
     }
 
     private static void updKrsMhs() {
@@ -358,21 +357,19 @@ public class SistemAkademik {
     }
 
     private static void cekDataKrsMhs() {
-        while (true) {
             System.out.println("CEK DATA KRS MAHASISWA");
-            System.out.println("1.");
-            System.out.println("2.");
-
-            int choice = inputScanner.nextInt();
-
-            switch (choice) {
-                case 0:
-                    return;
-                default:
-                    System.out.println("Pilihan tidak valid.");
-            }
+            System.out.println("-------------------------------------------------------------");
+            System.out.println("|" + "NO" + "|" + "MATA KULIAH                           " + "|" + "SEMESTER " + "|" + "SKS" + "|" + "JAM" + "|");
+            System.out.println("|" + "1." + "|" + "Pancasila                             " + "|" + "1        " + "|" + "2  " + "|" + "2  " + "|");
+            System.out.println("|" + "2." + "|" + "Konsep Teknologi Informasi            " + "|" + "1        " + "|" + "2  " + "|" + "4  " + "|");
+            System.out.println("|" + "3." + "|" + "Critical Thinking dan Problem Solving " + "|" + "1        " + "|" + "2  " + "|" + "4  " + "|");
+            System.out.println("|" + "4." + "|" + "Matematika Dasar                      " + "|" + "1        " + "|" + "3  " + "|" + "6  " + "|");
+            System.out.println("|" + "5." + "|" + "Bahasa Inggris 1                      " + "|" + "1        " + "|" + "2  " + "|" + "4  " + "|");
+            System.out.println("|" + "6." + "|" + "Dasar Pemograman                      " + "|" + "1        " + "|" + "2  " + "|" + "4  " + "|");
+            System.out.println("|" + "7." + "|" + "Praktikum Dasar Pemograman            " + "|" + "1        " + "|" + "3  " + "|" + "6  " + "|");
+            System.out.println("|" + "8." + "|" + "Keselamatan dan Kesehatan Kerja       " + "|" + "1        " + "|" + "2  " + "|" + "4  " + "|");
+            System.out.println("-------------------------------------------------------------");
         }
-    }
 
     // deklarasi variable global untuk fitur contact
     public static String nama, pesan;
