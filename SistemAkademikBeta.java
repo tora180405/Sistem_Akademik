@@ -255,7 +255,7 @@ public class SistemAkademikBeta {
               System.out.print("masukkan pesan : ");
               pesan = inputScanner.nextLine();
 
-              System.out.println("Pesan anda sedang diproses");
+              System.out.println("====== Pesan anda sedang diproses =====");
               break;
             case 0:
               // logOut();
