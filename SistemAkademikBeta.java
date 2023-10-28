@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -11,8 +12,18 @@ public class SistemAkademikBeta {
   public static int NIM, no_hp;
 
   // deklarasi variable global untuk fitur contact
-  public static String nama, pesan;
-  public static int nim;
+  // public static int x;
+  // public static String nama[] = new String[x], kls[] = new String[x], pesan[] =
+  // new String[x], hasil;
+  // public static int nim[] = new int[x], key;
+  public static int key;
+  public static String hasil;
+  public static boolean search = true;
+
+  public static ArrayList<String> nama = new ArrayList<>();
+  public static ArrayList<Integer> nim = new ArrayList<>();
+  public static ArrayList<String> kls = new ArrayList<>();
+  public static ArrayList<String> pesan = new ArrayList<>();
 
   public static void main(String[] args) {
 
@@ -201,15 +212,39 @@ public class SistemAkademikBeta {
             case 9:
               // contactAdmin();
               System.out.println("CONTACT");
-              System.out.println("nama : " + nama);
-              System.out.println("nim : " + nim);
-              System.out.println("pesan : " + pesan);
+              for (int i = 0; i < nim.size(); i++) {
+                System.out.println("Nama: " + nama.get(i));
+                System.out.println("NIM: " + nim.get(i)); // Mengakses NIM dari ArrayList
+                System.out.println("Kelas: " + kls.get(i));
+                System.out.println("Pesan: " + pesan.get(i));
+                System.out.println("=======================");
+              }
+              System.out.println("Apakah ingin mencari data?");
+              System.out.println("yes / no");
+              String jawab = inputScanner.nextLine();
+              if (jawab.equalsIgnoreCase("yes")) {
+                System.out.print("Msukkan key yang ingin dicari : ");
+                key = inputScanner.nextInt();
 
+                for (int i = 0; i < nim.size(); i++) {
+                  if (key == nim.get(i)) {
+                    System.out.println("Nama: " + nama.get(i));
+                    System.out.println("NIM: " + nim.get(i)); // Mengakses NIM dari ArrayList
+                    System.out.println("Kelas: " + kls.get(i));
+                    System.out.println("Pesan: " + pesan.get(i));
+                    System.out.println("=======================");
+                    break;
+
+                  } else {
+                    System.out.println("Key tidak ditemukan dalam array");
+                  }
+                }
+                break;
+              }
               System.out.println("apakah ingin melakukan operasi selanjutnya?");
-              int acc = inputScanner.nextInt();
-
               System.out.println("- ketikkan 1 untuk lanjut");
               System.out.println("- ketikkan angka lainnya untuk logout");
+              int acc = inputScanner.nextInt();
 
               if (acc == 1) {
                 break;
@@ -219,7 +254,6 @@ public class SistemAkademikBeta {
                 isLoggedOut = true; // Mengatur isLoggedOut menjadi true
                 break; // Keluar dari switch case
               }
-
               // break;s
             case 0:
               // logOut();
@@ -242,6 +276,7 @@ public class SistemAkademikBeta {
 
         // berandaDosen();
         while (true) {
+
           System.out.println("");
           System.out.println("============================");
           System.out.println("=      Sistem Akademik     =");
@@ -278,19 +313,35 @@ public class SistemAkademikBeta {
               break;
             case 4:
               // contact();
-              System.out.println("========== CONTACT ===========");
-              inputScanner.nextLine();
-              System.out.print("masukkan nama : ");
-              nama = inputScanner.nextLine();
+              boolean repeat = true;
+              while (repeat) {
+                System.out.println("========== CONTACT ===========");
+                inputScanner.nextLine();
+                System.out.print("Masukkan nama: ");
+                String namaMhs = inputScanner.nextLine();
+                nama.add(namaMhs);
 
-              System.out.print("masukkan nim : ");
-              nim = inputScanner.nextInt();
+                System.out.print("Masukkan nim: ");
+                int nimMhs = inputScanner.nextInt();
+                nim.add(nimMhs);
 
-              inputScanner.nextLine();
-              System.out.print("masukkan pesan : ");
-              pesan = inputScanner.nextLine();
+                inputScanner.nextLine();
+                System.out.print("Masukkan kelas: ");
+                String kelasMhs = inputScanner.nextLine();
+                kls.add(kelasMhs);
 
+                System.out.print("Masukkan pesan: ");
+                String pesanMhs = inputScanner.nextLine();
+                pesan.add(pesanMhs);
+
+                System.out.print("Ingin input lagi? (yes/no): ");
+                String jawaban = inputScanner.nextLine();
+                if (!jawaban.equalsIgnoreCase("yes")) {
+                  break;
+                }
+              }
               System.out.println("====== Pesan anda sedang diproses =====");
+              repeat = false;
               break;
             case 0:
               // logOut();
@@ -412,19 +463,19 @@ public class SistemAkademikBeta {
               break;
             case 4:
               // contact();
-              System.out.println("======== CONTACT =======");
-              inputScanner.nextLine();
-              System.out.print("masukkan nama : ");
-              nama = inputScanner.nextLine();
+              // System.out.println("======== CONTACT =======");
+              // inputScanner.nextLine();
+              // System.out.print("masukkan nama : ");
+              // nama = inputScanner.nextLine();
 
-              System.out.print("masukkan nim : ");
-              nim = inputScanner.nextInt();
+              // System.out.print("masukkan nim : ");
+              // nim = inputScanner.nextInt();
 
-              inputScanner.nextLine();
-              System.out.print("masukkan pesan : ");
-              pesan = inputScanner.nextLine();
+              // inputScanner.nextLine();
+              // System.out.print("masukkan pesan : ");
+              // pesan = inputScanner.nextLine();
 
-              System.out.println("Pesan anda sedang diproses");
+              // System.out.println("Pesan anda sedang diproses");
               break;
             // return;s
 
