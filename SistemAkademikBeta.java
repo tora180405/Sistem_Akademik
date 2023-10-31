@@ -10,15 +10,11 @@ public class SistemAkademikBeta {
   // deklarasi variabel untuk fitur input data mahasiswa
   public static String namamhs, jk, kelas, agama, alamat, tgl, email, NIM, no_hp;
 
-  // deklarasi variable global untuk fitur contact
-  // public static int x;
-  // public static String nama[] = new String[x], kls[] = new String[x], pesan[] =
-  // new String[x], hasil;
-  // public static int nim[] = new int[x], key;
+  // Deklarasi Variable untuk fitur search dari semua fitur
   public static int key;
-  public static String hasil;
   public static boolean search = true;
 
+  // Deklarasi Variable untuk fitur contact
   public static ArrayList<String> nama = new ArrayList<>();
   public static ArrayList<Integer> nim = new ArrayList<>();
   public static ArrayList<String> kls = new ArrayList<>();
@@ -34,7 +30,7 @@ public class SistemAkademikBeta {
 
       System.out.println("");
       System.out.println("======================");
-      System.out.println("=     Login User     =");
+      System.out.println("|     Login User     |");
       System.out.println("=--------------------=");
       System.out.print("Masukkan username : ");
       username = inputScanner.next();
@@ -52,16 +48,17 @@ public class SistemAkademikBeta {
           System.out.println("=      Sistem Akademik     =");
           System.out.println("=       BERANDA ADMIN      =");
           System.out.println("----------------------------");
-          System.out.println("1. Input Data Mahasiswa");
-          System.out.println("2. Update Data Mahasiswa");
-          System.out.println("3. Cek Data Mahasiswa");
-          System.out.println("4. Input Nilai Mahasiswa");
-          System.out.println("5. Update Nilai Mahasiswa");
-          System.out.println("6. Cek Jadwal Perkuliahan");
-          System.out.println("7. Update KRS Mahasiswa");
-          System.out.println("8. Cek Data KRS Mahasiswa");
-          System.out.println("9. Contact");
-          System.out.println("0. LogOut\n");
+          System.out.println("| 1. Input Data Mahasiswa   |");
+          System.out.println("| 2. Update Data Mahasiswa  |");
+          System.out.println("| 3. Cek Data Mahasiswa     |");
+          System.out.println("| 4. Input Nilai Mahasiswa  |");
+          System.out.println("| 5. Update Nilai Mahasiswa |");
+          System.out.println("| 6. Cek Jadwal Perkuliahan |");
+          System.out.println("| 7. Update KRS Mahasiswa   |");
+          System.out.println("| 8. Cek Data KRS Mahasiswa |");
+          System.out.println("| 9. Contact                |");
+          System.out.println("| 0. LogOut                 |");
+          System.out.println("============================");
 
           System.out.print("Masukkan pilihan anda: ");
           int choice = inputScanner.nextInt();
@@ -79,11 +76,12 @@ public class SistemAkademikBeta {
                   System.out.println("Pilihan anda tidak valid");
                 }
 
-                System.out.println("========================================");
-                System.out.println("=          INPUT DATA MAHASISWA        =");
-                System.out.println("========================================");
-                System.out.println("Ketik 0 untuk kembali ke menu sebelumnya");
-                System.out.println("Ketik angka lain untuk lanjut");
+                System.out.println("============================================");
+                System.out.println("=             INPUT DATA MAHASISWA         =");
+                System.out.println("============================================");
+                System.out.println("| Ketik 0 untuk kembali ke menu sebelumnya |");
+                System.out.println("| Ketik angka lain untuk lanjut            |");
+                System.out.println("============================================");
                 choice = inputScanner.nextInt();
                 if (choice == 0) {
                   break;
@@ -95,24 +93,25 @@ public class SistemAkademikBeta {
                 System.out.println("=================== DATA DIRI ===================");
 
                 inputScanner.nextLine();
-                System.out.print("masukkan nama             :");
+                System.out.print("Masukkan Nama             :");
                 namamhs = inputScanner.nextLine();
-                System.out.print("masukkan NIM              :");
+                System.out.print("Masukkan NIM              :");
                 NIM = inputScanner.nextLine();
-                System.out.print("masukkan Jenis Kelamin    :");
+                System.out.print("Masukkan Jenis Kelamin    :");
                 jk = inputScanner.nextLine();
-                System.out.print("masukkan kelas            :");
+                System.out.print("Masukkan Kelas            :");
                 kelas = inputScanner.nextLine();
-                System.out.print("masukkan agama            :");
+                System.out.print("Masukkan Agama            :");
                 agama = inputScanner.nextLine();
-                System.out.print("masukkan tanggal lahir    :");
+                System.out.print("Masukkan Tanggal lahir    :");
                 tgl = inputScanner.nextLine();
-                System.out.print("masukkan email            :");
+                System.out.print("Masukkan Email            :");
                 email = inputScanner.nextLine();
-                System.out.print("masukkan nomor handpone   :");
+                System.out.print("Masukkan Nomor handpone   :");
                 no_hp = inputScanner.nextLine();
-                System.out.print("masukkan alamat           :");
+                System.out.print("Masukkan Alamat           :");
                 alamat = inputScanner.nextLine();
+                System.out.println("");
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
                 System.out.println("=======================================================");
@@ -144,15 +143,16 @@ public class SistemAkademikBeta {
             case 3:
               // cekDataMhs();
               System.out.println("================= DATA MAHASISWA ===============");
-              System.out.println("NAMA          : " + namamhs);
-              System.out.println("NIM           : " + NIM);
-              System.out.println("JENIS KELAMIN : " + jk);
-              System.out.println("KELAS         : " + kelas);
-              System.out.println("AGAMA         : " + agama);
-              System.out.println("TGL LAHIR     : " + tgl);
-              System.out.println("EMAIL         : " + email);
-              System.out.println("NO TELP       : " + no_hp);
-              System.out.println("ALAMAT        : " + alamat);
+              System.out.println("| NAMA          : " + namamhs);
+              System.out.println("| NIM           : " + NIM);
+              System.out.println("| JENIS KELAMIN : " + jk);
+              System.out.println("| KELAS         : " + kelas);
+              System.out.println("| AGAMA         : " + agama);
+              System.out.println("| TGL LAHIR     : " + tgl);
+              System.out.println("| EMAIL         : " + email);
+              System.out.println("| NO TELP       : " + no_hp);
+              System.out.println("| ALAMAT        : " + alamat);
+              System.out.println("==================================================");
 
               break;
             case 4:
@@ -207,16 +207,17 @@ public class SistemAkademikBeta {
               break;
             case 9:
               // contactAdmin();
-              System.out.println("CONTACT");
+              System.out.println("============= CONTACT =============");
               for (int i = 0; i < nim.size(); i++) {
-                System.out.println("Nama: " + nama.get(i));
-                System.out.println("NIM: " + nim.get(i)); // Mengakses NIM dari ArrayList
-                System.out.println("Kelas: " + kls.get(i));
-                System.out.println("Pesan: " + pesan.get(i));
-                System.out.println("=======================");
+                System.out.println("| Nama: " + nama.get(i));
+                System.out.println("| NIM: " + nim.get(i)); // Mengakses NIM dari ArrayList
+                System.out.println("| Kelas: " + kls.get(i));
+                System.out.println("| Pesan: " + pesan.get(i));
+                System.out.println("=================================");
               }
               System.out.println("Apakah ingin mencari data?");
               System.out.println("yes / no");
+              System.out.println("___________________________");
               inputScanner.nextLine();
 
               String jawab = inputScanner.nextLine();
@@ -229,14 +230,14 @@ public class SistemAkademikBeta {
 
                 for (int i = 0; i < nim.size(); i++) {
                   if (key == nim.get(i)) {
+                    System.out.println("=======================");
                     System.out.println("Nama: " + nama.get(i));
                     System.out.println("NIM: " + nim.get(i)); // Mengakses NIM dari ArrayList
                     System.out.println("Kelas: " + kls.get(i));
                     System.out.println("Pesan: " + pesan.get(i));
                     System.out.println("=======================");
+                    // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
                     finded = true;
-                    break;
-
                   }
                 }
                 if (!finded) {
@@ -287,11 +288,12 @@ public class SistemAkademikBeta {
           System.out.println("=      Sistem Akademik     =");
           System.out.println("=       BERANDA DOSEN      =");
           System.out.println("----------------------------");
-          System.out.println("1. Cek Data Mahasiswa");
-          System.out.println("2. Input Nilai Mahasiswa");
-          System.out.println("3. Update Nilai Mahasiswa");
-          System.out.println("4. Contact");
-          System.out.println("0. LogOut\n");
+          System.out.println("| 1. Cek Data Mahasiswa    |");
+          System.out.println("| 2. Input Nilai Mahasiswa |");
+          System.out.println("| 3. Update Nilai Mahasiswa|");
+          System.out.println("| 4. Contact               |");
+          System.out.println("| 0. LogOut                |");
+          System.out.println("============================");
 
           System.out.print("Masukkan pilihan anda: ");
 
@@ -300,15 +302,16 @@ public class SistemAkademikBeta {
             case 1:
               // cekDataMhs();
               System.out.println("================= DATA MAHASISWA ===============");
-              System.out.println("NAMA          : " + namamhs);
-              System.out.println("NIM           : " + NIM);
-              System.out.println("JENIS KELAMIN : " + jk);
-              System.out.println("KELAS         : " + kelas);
-              System.out.println("AGAMA         : " + agama);
-              System.out.println("TGL LAHIR     : " + tgl);
-              System.out.println("EMAIL         : " + email);
-              System.out.println("NO TELP       : " + no_hp);
-              System.out.println("ALAMAT        : " + alamat);
+              System.out.println("| NAMA          : " + namamhs);
+              System.out.println("| NIM           : " + NIM);
+              System.out.println("| JENIS KELAMIN : " + jk);
+              System.out.println("| KELAS         : " + kelas);
+              System.out.println("| AGAMA         : " + agama);
+              System.out.println("| TGL LAHIR     : " + tgl);
+              System.out.println("| EMAIL         : " + email);
+              System.out.println("| NO TELP       : " + no_hp);
+              System.out.println("| ALAMAT        : " + alamat);
+              System.out.println("==================================================");
               break;
             case 2:
               // inNilaiMhs();
@@ -371,11 +374,12 @@ public class SistemAkademikBeta {
           System.out.println("=      Sistem Akademik     =");
           System.out.println("=     BERANDA MAHASISWA    =");
           System.out.println("----------------------------");
-          System.out.println("1. Cek Data Mahasiswa");
-          System.out.println("2. Cek Jadwal Kuliah");
-          System.out.println("3. Cek Data KRS Mahasiswa");
-          System.out.println("4. Contact");
-          System.out.println("0. LogOut\n");
+          System.out.println("| 1. Cek Data Mahasiswa    |");
+          System.out.println("| 2. Cek Jadwal Kuliah     |");
+          System.out.println("| 3. Cek Data KRS Mahasiswa|");
+          System.out.println("| 4. Contact               |");
+          System.out.println("| 0. LogOut                |");
+          System.out.println("============================");
 
           System.out.print("Masukkan pilihan anda: ");
 
@@ -384,15 +388,16 @@ public class SistemAkademikBeta {
             case 1:
               // cekDataMhs();
               System.out.println("================= DATA MAHASISWA ===============");
-              System.out.println("NAMA          : " + namamhs);
-              System.out.println("NIM           : " + nim);
-              System.out.println("JENIS KELAMIN : " + jk);
-              System.out.println("KELAS         : " + kelas);
-              System.out.println("AGAMA         : " + agama);
-              System.out.println("TGL LAHIR     : " + tgl);
-              System.out.println("EMAIL         : " + email);
-              System.out.println("NO TELP       : " + no_hp);
-              System.out.println("ALAMAT        : " + alamat);
+              System.out.println("| NAMA          : " + namamhs);
+              System.out.println("| NIM           : " + NIM);
+              System.out.println("| JENIS KELAMIN : " + jk);
+              System.out.println("| KELAS         : " + kelas);
+              System.out.println("| AGAMA         : " + agama);
+              System.out.println("| TGL LAHIR     : " + tgl);
+              System.out.println("| EMAIL         : " + email);
+              System.out.println("| NO TELP       : " + no_hp);
+              System.out.println("| ALAMAT        : " + alamat);
+              System.out.println("==================================================");
               break;
             case 2:
               // cekJadwalKuliah();
