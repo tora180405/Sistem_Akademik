@@ -8,8 +8,7 @@ public class SistemAkademikBeta {
   public static Scanner inputScanner = new Scanner(System.in);
 
   // deklarasi variabel untuk fitur input data mahasiswa
-  public static String namamhs, jk, kelas, agama, alamat, tgl, email;
-  public static int NIM, no_hp;
+  public static String namamhs, jk, kelas, agama, alamat, tgl, email, NIM, no_hp;
 
   // deklarasi variable global untuk fitur contact
   // public static int x;
@@ -99,9 +98,7 @@ public class SistemAkademikBeta {
                 System.out.print("masukkan nama             :");
                 namamhs = inputScanner.nextLine();
                 System.out.print("masukkan NIM              :");
-                NIM = inputScanner.nextInt();
-
-                inputScanner.nextLine();
+                NIM = inputScanner.nextLine();
                 System.out.print("masukkan Jenis Kelamin    :");
                 jk = inputScanner.nextLine();
                 System.out.print("masukkan kelas            :");
@@ -113,8 +110,7 @@ public class SistemAkademikBeta {
                 System.out.print("masukkan email            :");
                 email = inputScanner.nextLine();
                 System.out.print("masukkan nomor handpone   :");
-                no_hp = inputScanner.nextInt();
-                inputScanner.nextLine();
+                no_hp = inputScanner.nextLine();
                 System.out.print("masukkan alamat           :");
                 alamat = inputScanner.nextLine();
 
@@ -221,10 +217,15 @@ public class SistemAkademikBeta {
               }
               System.out.println("Apakah ingin mencari data?");
               System.out.println("yes / no");
+              inputScanner.nextLine();
+
               String jawab = inputScanner.nextLine();
+
               if (jawab.equalsIgnoreCase("yes")) {
-                System.out.print("Msukkan key yang ingin dicari : ");
+                boolean finded = false;
+                System.out.print("Masukkan key yang ingin dicari : ");
                 key = inputScanner.nextInt();
+                inputScanner.nextLine();
 
                 for (int i = 0; i < nim.size(); i++) {
                   if (key == nim.get(i)) {
@@ -233,27 +234,31 @@ public class SistemAkademikBeta {
                     System.out.println("Kelas: " + kls.get(i));
                     System.out.println("Pesan: " + pesan.get(i));
                     System.out.println("=======================");
+                    finded = true;
                     break;
 
+                  }
+                }
+                if (!finded) {
+                  System.out.println("Key dalam array tidak ditemukan");
+                } else if (finded) {
+                  System.out.println("apakah ingin melakukan operasi selanjutnya?");
+                  System.out.println("- ketikkan 1 untuk lanjut");
+                  System.out.println("- ketikkan angka lainnya untuk logout");
+                  int acc = inputScanner.nextInt();
+
+                  if (acc == 1) {
+                    break;
                   } else {
-                    System.out.println("Key tidak ditemukan dalam array");
+                    // logOut();
+                    System.out.println("Anda telah logout");
+                    isLoggedOut = true; // Mengatur isLoggedOut menjadi true
+                    break; // Keluar dari switch case
                   }
                 }
                 break;
               }
-              System.out.println("apakah ingin melakukan operasi selanjutnya?");
-              System.out.println("- ketikkan 1 untuk lanjut");
-              System.out.println("- ketikkan angka lainnya untuk logout");
-              int acc = inputScanner.nextInt();
 
-              if (acc == 1) {
-                break;
-              } else {
-                // logOut();
-                System.out.println("Anda telah logout");
-                isLoggedOut = true; // Mengatur isLoggedOut menjadi true
-                break; // Keluar dari switch case
-              }
               // break;s
             case 0:
               // logOut();
