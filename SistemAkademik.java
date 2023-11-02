@@ -20,27 +20,33 @@ public class SistemAkademik {
 
     // private static List<String> menuStack = new ArrayList<>();
     public static void logIn() {
-        String username, password;
+        String[][] dataLog = {
+                { "admin", "admin" },
+                { "dosen", "dosen" },
+                { "mahasiswa", "mahasiswa" }
+        };
+        String username = "", password = "";
         int attempts = 0;
 
         while (attempts < 3) {
             System.out.println("");
             System.out.println("======================");
-            System.out.println("=     Login User     =");
+            System.out.println("|     Login User     |");
             System.out.println("=--------------------=");
+
             System.out.print("Masukkan username : ");
             username = inputScanner.next();
             System.out.print("Masukkan password : ");
             password = inputScanner.next();
 
-            if ("admin".equals(username) && "admin".equals(password)) {
+            if (dataLog[0][0].equals(username) && dataLog[0][1].equals(password)) {
                 System.out.println("Selamat datang " + username);
                 berandaAdmin();
 
-            } else if ("dosen".equals(username) && "dosen".equals(password)) {
+            } else if (dataLog[1][0].equals(username) && dataLog[1][1].equals(password)) {
                 System.out.println("Selamat datang " + username);
                 berandaDosen();
-            } else if ("mahasiswa".equals(username) && "mahasiswa".equals(password)) {
+            } else if (dataLog[2][0].equals(username) && dataLog[2][1].equals(password)) {
                 System.out.println("Selamat datang " + username);
                 berandaMahasiswa();
             } else {
