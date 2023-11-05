@@ -194,9 +194,12 @@ public class SistemAkademik {
     // deklarasi variabel untuk fitur input data mahasiswa
     public static String namamhs, jk, kelas, agama, alamat, tgl, email;
     public static int NIM, no_hp;
-
+    // public static mahasiswa = new String[namaMahasiswa][8];
+    public static String [][] mahasiswa;
+    
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
+        
 
         int choice;
         System.out.println("========================================");
@@ -210,56 +213,62 @@ public class SistemAkademik {
 
         while (true) {
 
-            System.out.println("\n");
+            
+            // System.out.println("Masukkan jumlah Mahasiswa");
+            // int namaMahasiswa = inputScanner.nextInt();
+            
+            mahasiswa = new String[1][8];
 
-            System.out.println("===================DATA MAHASISWA===================");
+            for(int i = 0; i <= 1; i++){
+                System.out.println("\n");
 
-            inputScanner.nextLine();
-            System.out.print("masukkan nama             :");
-            namamhs = inputScanner.nextLine();
-            System.out.print("masukkan NIM              :");
-            NIM = inputScanner.nextInt();
-            inputScanner.nextLine();
-            System.out.print("masukkan Jenis Kelamin    :");
-            jk = inputScanner.nextLine();
-            System.out.print("masukkan kelas            :");
-            kelas = inputScanner.nextLine();
-            System.out.print("masukkan agama            :");
-            agama = inputScanner.nextLine();
-            System.out.print("masukkan tanggal lahir    :");
-            tgl = inputScanner.nextLine();
-            System.out.print("masukkan email            :");
-            email = inputScanner.nextLine();
-            System.out.print("masukkan nomor handpone   :");
-            no_hp = inputScanner.nextInt();
-            inputScanner.nextLine();
-            System.out.print("masukkan alamat           :");
-            alamat = inputScanner.nextLine();
+                System.out.println("===================DATA MAHASISWA===================");
 
-            System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
+                inputScanner.nextLine();
+                System.out.print("masukkan nama             :");
+                mahasiswa[1][0] =inputScanner.nextLine(); 
+                System.out.print("masukkan NIM              :");
+                mahasiswa[1][1] =inputScanner.nextLine(); 
+                System.out.print("masukkan Jenis Kelamin    :");
+                mahasiswa[1][2] =inputScanner.nextLine(); 
+                System.out.print("masukkan kelas            :");
+                mahasiswa[1][3] =inputScanner.nextLine(); 
+                System.out.print("masukkan agama            :");
+                mahasiswa[1][4] =inputScanner.nextLine(); 
+                System.out.print("masukkan tanggal lahir    :");
+                mahasiswa[1][5] =inputScanner.nextLine(); 
+                System.out.print("masukkan email            :");
+                mahasiswa[1][6] =inputScanner.nextLine(); 
+                System.out.print("masukkan nomor handpone   :");
+                mahasiswa[1][7] =inputScanner.nextLine(); 
+                System.out.print("masukkan alamat           :");
+                mahasiswa[1][8] =inputScanner.nextLine(); 
 
-            System.out.println("=======================================================");
-            System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
+                System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
 
-            System.out.println("\n");
+                // System.out.println("=======================================================");
+                // System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
 
-            System.out.println("1. untuk ya");
-            System.out.println("2. untuk tidak");
+                // System.out.println("\n");
 
-            System.out.println("masukkan pilihan : ");
-            choice = inputScanner.nextInt();
+                // System.out.println("1. untuk ya");
+                // System.out.println("2. untuk tidak");
 
-            if (choice == 1) {
-                System.out.println("nama " + namamhs);
-                inDataMhs();
-            } else if (choice == 2) {
-                berandaAdmin();
-            } else {
-                System.out.println("pilihan anda tidak valid");
-                inDataMhs();
+                // System.out.println("masukkan pilihan : ");
+                // choice = inputScanner.nextInt();
+
+                // if (choice == 1) {
+                //     System.out.println("nama " + namamhs);
+                //     inDataMhs();
+                // } else if (choice == 2) {
+                //     berandaAdmin();
+                // } else {
+                //     System.out.println("pilihan anda tidak valid");
+                //     inDataMhs();
+                // }
+                break;
+
             }
-            break;
-
         }
     }
 
