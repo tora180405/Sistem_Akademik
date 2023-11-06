@@ -217,32 +217,32 @@ public class SistemAkademik {
             System.out.println("Masukkan jumlah Mahasiswa");
             int namaMahasiswa = inputScanner.nextInt();
             
-            mahasiswa = new String[namaMahasiswa][8];
+            mahasiswa = new String[namaMahasiswa][9];
 
-            for(int i = 0; i <= namaMahasiswa; i++){
+            for(int i = 0; i < namaMahasiswa; i++){
                 System.out.println("\n");
 
                 System.out.println("===================DATA MAHASISWA===================");
 
                 inputScanner.nextLine();
                 System.out.print("masukkan nama             :");
-                mahasiswa[namaMahasiswa][0] =inputScanner.nextLine(); 
+                mahasiswa[i][0] =inputScanner.nextLine(); 
                 System.out.print("masukkan NIM              :");
-                mahasiswa[namaMahasiswa][1] =inputScanner.nextLine(); 
+                mahasiswa[i][1] =inputScanner.nextLine(); 
                 System.out.print("masukkan Jenis Kelamin    :");
-                mahasiswa[namaMahasiswa][2] =inputScanner.nextLine(); 
+                mahasiswa[i][2] =inputScanner.nextLine(); 
                 System.out.print("masukkan kelas            :");
-                mahasiswa[namaMahasiswa][3] =inputScanner.nextLine(); 
+                mahasiswa[i][3] =inputScanner.nextLine(); 
                 System.out.print("masukkan agama            :");
-                mahasiswa[namaMahasiswa][4] =inputScanner.nextLine(); 
+                mahasiswa[i][4] =inputScanner.nextLine(); 
                 System.out.print("masukkan tanggal lahir    :");
-                mahasiswa[namaMahasiswa][5] =inputScanner.nextLine(); 
+                mahasiswa[i][5] =inputScanner.nextLine(); 
                 System.out.print("masukkan email            :");
-                mahasiswa[namaMahasiswa][6] =inputScanner.nextLine(); 
+                mahasiswa[i][6] =inputScanner.nextLine(); 
                 System.out.print("masukkan nomor handpone   :");
-                mahasiswa[namaMahasiswa][7] =inputScanner.nextLine(); 
+                mahasiswa[i][7] =inputScanner.nextLine(); 
                 System.out.print("masukkan alamat           :");
-                mahasiswa[namaMahasiswa][8] =inputScanner.nextLine(); 
+                mahasiswa[i][8] =inputScanner.nextLine(); 
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
 
@@ -258,7 +258,6 @@ public class SistemAkademik {
                 // choice = inputScanner.nextInt();
 
                 // if (choice == 1) {
-                //     System.out.println("nama " + namamhs);
                 //     inDataMhs();
                 // } else if (choice == 2) {
                 //     berandaAdmin();
@@ -266,9 +265,12 @@ public class SistemAkademik {
                 //     System.out.println("pilihan anda tidak valid");
                 //     inDataMhs();
                 // }
-                break;
-
+                if (i == namaMahasiswa) {
+                    break;
+                    
+                }
             }
+            break;
         }
     }
 
