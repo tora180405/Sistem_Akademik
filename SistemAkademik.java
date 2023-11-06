@@ -293,16 +293,19 @@ public class SistemAkademik {
 
     private static void cekDataMhs() {
 
-        System.out.println("================= DATA MAHASISWA ===============");
-        System.out.println("NAMA          : " + namamhs);
-        System.out.println("NIM           : " + NIM);
-        System.out.println("JENIS KELAMIN : " + jk);
-        System.out.println("KELAS         : " + kelas);
-        System.out.println("AGAMA         : " + agama);
-        System.out.println("TGL LAHIR     : " + tgl);
-        System.out.println("EMAIL         : " + email);
-        System.out.println("NO TELP       : " + no_hp);
-        System.out.println("ALAMAT        : " + alamat);
+        for (String[] a : mahasiswa) {
+            System.out.println("================= DATA MAHASISWA ===============");
+            System.out.println("NAMA          : " + a[0]);
+            System.out.println("NIM           : " + a[1]);
+            System.out.println("JENIS KELAMIN : " + a[2]);
+            System.out.println("KELAS         : " + a[3]);
+            System.out.println("AGAMA         : " + a[4]);
+            System.out.println("TGL LAHIR     : " + a[5]);
+            System.out.println("EMAIL         : " + a[6]);
+            System.out.println("NO TELP       : " + a[7]);
+            System.out.println("ALAMAT        : " + a[8]);
+        }
+
 
     }
 
