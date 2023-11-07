@@ -191,15 +191,11 @@ public class SistemAkademik {
         }
     }
 
-    // deklarasi variabel untuk fitur input data mahasiswa
-    public static String namamhs, jk, kelas, agama, alamat, tgl, email;
-    public static int NIM, no_hp;
-    // public static mahasiswa = new String[namaMahasiswa][8];
-    public static String [][] mahasiswa;
-    
+    // deklarasi array untuk fitur input data mahasiswa
+    public static String[][] mahasiswa;
+
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
-        
 
         int choice;
         System.out.println("========================================");
@@ -212,63 +208,63 @@ public class SistemAkademik {
             return;
 
         while (true) {
+            System.out.print("Masukkan jumlah Mahasiswa : ");
+            int jmlMhs = inputScanner.nextInt();
+            int i = 0;
+            mahasiswa = new String[4000][9];
 
-            
-            System.out.println("Masukkan jumlah Mahasiswa");
-            int namaMahasiswa = inputScanner.nextInt();
-            
-            mahasiswa = new String[namaMahasiswa][9];
-
-            for(int i = 0; i < namaMahasiswa; i++){
+            while (i < mahasiswa.length) {
                 System.out.println("\n");
+                i++;
 
                 System.out.println("===================DATA MAHASISWA===================");
 
                 inputScanner.nextLine();
                 System.out.print("masukkan nama             :");
-                mahasiswa[i][0] =inputScanner.nextLine(); 
+                mahasiswa[i][0] = inputScanner.nextLine();
                 System.out.print("masukkan NIM              :");
-                mahasiswa[i][1] =inputScanner.nextLine(); 
+                mahasiswa[i][1] = inputScanner.nextLine();
                 System.out.print("masukkan Jenis Kelamin    :");
-                mahasiswa[i][2] =inputScanner.nextLine(); 
+                mahasiswa[i][2] = inputScanner.nextLine();
                 System.out.print("masukkan kelas            :");
-                mahasiswa[i][3] =inputScanner.nextLine(); 
+                mahasiswa[i][3] = inputScanner.nextLine();
                 System.out.print("masukkan agama            :");
-                mahasiswa[i][4] =inputScanner.nextLine(); 
+                mahasiswa[i][4] = inputScanner.nextLine();
                 System.out.print("masukkan tanggal lahir    :");
-                mahasiswa[i][5] =inputScanner.nextLine(); 
+                mahasiswa[i][5] = inputScanner.nextLine();
                 System.out.print("masukkan email            :");
-                mahasiswa[i][6] =inputScanner.nextLine(); 
+                mahasiswa[i][6] = inputScanner.nextLine();
                 System.out.print("masukkan nomor handpone   :");
-                mahasiswa[i][7] =inputScanner.nextLine(); 
+                mahasiswa[i][7] = inputScanner.nextLine();
                 System.out.print("masukkan alamat           :");
-                mahasiswa[i][8] =inputScanner.nextLine(); 
+                mahasiswa[i][8] = inputScanner.nextLine();
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
 
-                // System.out.println("=======================================================");
-                // System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
+                if (i == jmlMhs) {
+                    System.out.println("=======================================================");
+                    System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
 
-                // System.out.println("\n");
+                    System.out.println("\n");
 
-                // System.out.println("1. untuk ya");
-                // System.out.println("2. untuk tidak");
+                    System.out.println("1. untuk ya");
+                    System.out.println("2. untuk tidak");
 
-                // System.out.println("masukkan pilihan : ");
-                // choice = inputScanner.nextInt();
+                    System.out.println("masukkan pilihan : ");
+                    choice = inputScanner.nextInt();
 
-                // if (choice == 1) {
-                //     inDataMhs();
-                // } else if (choice == 2) {
-                //     berandaAdmin();
-                // } else {
-                //     System.out.println("pilihan anda tidak valid");
-                //     inDataMhs();
-                // }
-                if (i == namaMahasiswa) {
+                    if (choice == 1) {
+                        inDataMhs();
+                    } else if (choice == 2) {
+                        berandaAdmin();
+                    } else {
+                        System.out.println("pilihan anda tidak valid");
+                        inDataMhs();
+                    }
                     break;
-                    
+
                 }
+
             }
             break;
         }
@@ -293,20 +289,20 @@ public class SistemAkademik {
 
     private static void cekDataMhs() {
 
-        for (String[] a : mahasiswa) {
-            System.out.println("================= DATA MAHASISWA ===============");
-            System.out.println("NAMA          : " + a[0]);
-            System.out.println("NIM           : " + a[1]);
-            System.out.println("JENIS KELAMIN : " + a[2]);
-            System.out.println("KELAS         : " + a[3]);
-            System.out.println("AGAMA         : " + a[4]);
-            System.out.println("TGL LAHIR     : " + a[5]);
-            System.out.println("EMAIL         : " + a[6]);
-            System.out.println("NO TELP       : " + a[7]);
-            System.out.println("ALAMAT        : " + a[8]);
+        for (int i = 0; i < mahasiswa.length; i++) {
+            if (mahasiswa[i][0] != null) {
+                System.out.println("================= DATA MAHASISWA ===============");
+                System.out.println("NAMA          : " + mahasiswa[i][0]);
+                System.out.println("NIM           : " + mahasiswa[i][1]);
+                System.out.println("JENIS KELAMIN : " + mahasiswa[i][2]);
+                System.out.println("KELAS         : " + mahasiswa[i][3]);
+                System.out.println("AGAMA         : " + mahasiswa[i][4]);
+                System.out.println("TGL LAHIR     : " + mahasiswa[i][5]);
+                System.out.println("EMAIL         : " + mahasiswa[i][6]);
+                System.out.println("NO TELP       : " + mahasiswa[i][7]);
+                System.out.println("ALAMAT        : " + mahasiswa[i][8]);
+            }
         }
-
-
     }
 
     private static void inNilaiMhs() {
