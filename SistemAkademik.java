@@ -193,6 +193,7 @@ public class SistemAkademik {
 
     // deklarasi array untuk fitur input data mahasiswa
     public static String[][] mahasiswa;
+    public static String[][] newMahasiswa;
 
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
@@ -211,9 +212,9 @@ public class SistemAkademik {
             System.out.print("Masukkan jumlah Mahasiswa : ");
             int jmlMhs = inputScanner.nextInt();
             int i = 0;
-            mahasiswa = new String[4000][9];
+            newMahasiswa = new String[jmlMhs + 1][9];
 
-            while (i < mahasiswa.length) {
+            while (i < newMahasiswa.length) {
                 System.out.println("\n");
                 i++;
 
@@ -221,25 +222,27 @@ public class SistemAkademik {
 
                 inputScanner.nextLine();
                 System.out.print("masukkan nama             :");
-                mahasiswa[i][0] = inputScanner.nextLine();
+                newMahasiswa[i][0] = inputScanner.nextLine();
                 System.out.print("masukkan NIM              :");
-                mahasiswa[i][1] = inputScanner.nextLine();
+                newMahasiswa[i][1] = inputScanner.nextLine();
                 System.out.print("masukkan Jenis Kelamin    :");
-                mahasiswa[i][2] = inputScanner.nextLine();
+                newMahasiswa[i][2] = inputScanner.nextLine();
                 System.out.print("masukkan kelas            :");
-                mahasiswa[i][3] = inputScanner.nextLine();
+                newMahasiswa[i][3] = inputScanner.nextLine();
                 System.out.print("masukkan agama            :");
-                mahasiswa[i][4] = inputScanner.nextLine();
+                newMahasiswa[i][4] = inputScanner.nextLine();
                 System.out.print("masukkan tanggal lahir    :");
-                mahasiswa[i][5] = inputScanner.nextLine();
+                newMahasiswa[i][5] = inputScanner.nextLine();
                 System.out.print("masukkan email            :");
-                mahasiswa[i][6] = inputScanner.nextLine();
+                newMahasiswa[i][6] = inputScanner.nextLine();
                 System.out.print("masukkan nomor handpone   :");
-                mahasiswa[i][7] = inputScanner.nextLine();
+                newMahasiswa[i][7] = inputScanner.nextLine();
                 System.out.print("masukkan alamat           :");
-                mahasiswa[i][8] = inputScanner.nextLine();
+                newMahasiswa[i][8] = inputScanner.nextLine();
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
+
+                addRow(mahasiswa, null); //iki gk ero aku
 
                 if (i == jmlMhs) {
                     System.out.println("=======================================================");
@@ -268,6 +271,24 @@ public class SistemAkademik {
             }
             break;
         }
+    }
+
+    public static String[][] addRow(String[][] mahasiswa, String[] newRow) {
+        int numRows = mahasiswa.length;
+        int numColumns = mahasiswa[0].length;
+
+        // Menambah satu baris
+        String[][] newMahasiswa = new String[numRows + 1][numColumns];
+
+        // Menyalin data lama ke array yang baru
+        for (int i = 0; i < numRows; i++) {
+            System.arraycopy(mahasiswa[i], 0, newMahasiswa[i], 0, numColumns);
+        }
+
+        // Menambahkan baris baru
+        System.arraycopy(newRow, 0, newMahasiswa[numRows], 0, numColumns);
+
+        return newMahasiswa;
     }
 
     private static void updDataMhs() {
