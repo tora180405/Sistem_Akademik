@@ -6,6 +6,9 @@ public class SistemAkademik {
     // deklarasi variable global
     // private static int levelAcc;
     ;
+    // Deklarasi Variable untuk fitur search dari semua fitur
+    public static String key;
+    public static boolean search = true;
     public static Scanner inputScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -301,6 +304,50 @@ public class SistemAkademik {
                 System.out.println("EMAIL         : " + mahasiswa[i][6]);
                 System.out.println("NO TELP       : " + mahasiswa[i][7]);
                 System.out.println("ALAMAT        : " + mahasiswa[i][8]);
+            }
+        }
+        System.out.println("Apakah ingin mencari data?");
+        System.out.println("yes / no");
+        System.out.println("___________________________");
+        inputScanner.nextLine();
+
+        String jawab = inputScanner.nextLine();
+
+        if (jawab.equalsIgnoreCase("yes")) {
+            boolean finded = false;
+            System.out.print("Masukkan key yang ingin dicari : ");
+            key = inputScanner.nextLine();
+
+            for (int i = 0; i < mahasiswa.length; i++) {
+                if (key.equals(mahasiswa[i][1])) {
+                    System.out.println("=======================");
+                    System.out.println("NAMA          : " + mahasiswa[i][0]);
+                    System.out.println("NIM           : " + mahasiswa[i][1]);
+                    System.out.println("JENIS KELAMIN : " + mahasiswa[i][2]);
+                    System.out.println("KELAS         : " + mahasiswa[i][3]);
+                    System.out.println("AGAMA         : " + mahasiswa[i][4]);
+                    System.out.println("TGL LAHIR     : " + mahasiswa[i][5]);
+                    System.out.println("EMAIL         : " + mahasiswa[i][6]);
+                    System.out.println("NO TELP       : " + mahasiswa[i][7]);
+                    System.out.println("ALAMAT        : " + mahasiswa[i][8]);
+                    System.out.println("=======================");
+                    // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
+                    finded = true;
+                }
+            }
+            if (!finded) {
+                System.out.println("Key dalam array tidak ditemukan");
+            } else if (finded) {
+                System.out.println("apakah ingin melakukan operasi selanjutnya?");
+                System.out.println("- ketikkan 1 untuk lanjut");
+                System.out.println("- ketikkan angka lainnya untuk logout");
+                int acc = inputScanner.nextInt();
+
+                if (acc == 1) {
+                    return;
+                } else {
+                    logOut();
+                }
             }
         }
     }
