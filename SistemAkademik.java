@@ -196,7 +196,6 @@ public class SistemAkademik {
 
     // deklarasi array untuk fitur input data mahasiswa
     public static String[][] mahasiswa;
-    public static int counter;
 
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
@@ -264,28 +263,10 @@ public class SistemAkademik {
                     inDataMhs();
                 }
                 break;
+
             }
             break;
         }
-        
-    }
-
-    public static String[][] addRow(String[][] mahasiswa, String[] newRow) {
-        int numRows = mahasiswa.length;
-        int numColumns = mahasiswa[0].length;
-
-        // Menambah satu baris
-        String[][] newMahasiswa = new String[numRows + 1][numColumns];
-
-        // Menyalin data lama ke array yang baru
-        for (int i = 0; i < numRows; i++) {
-            System.arraycopy(mahasiswa[i], 0, newMahasiswa[i], 0, numColumns);
-        }
-
-        // Menambahkan baris baru
-        System.arraycopy(newRow, 0, newMahasiswa[numRows], 0, numColumns);
-
-        return newMahasiswa;
     }
 
     private static void updDataMhs() {
@@ -442,8 +423,9 @@ public class SistemAkademik {
         }
     }
 
-    private static void inNilaiMhs() {
+    public static String[][] nilai;
 
+    private static void inNilaiMhs() {
         int choice;
         System.out.println("========================================");
         System.out.println("=         INPUT NILAI MAHASISWA        =");
@@ -451,18 +433,48 @@ public class SistemAkademik {
         System.out.println("Ketik 0 untuk kembali ke menu sebelumnya");
         System.out.println("Ketik angka lain untuk lanjut");
         choice = inputScanner.nextInt();
-
         if (choice == 0)
             return;
+        boolean inpData = true;
 
-        while (true) {
-            for (String[] a : mahasiswa) {
-                System.out.println("nama Mahasiswa : " + mahasiswa[0][0]);
+        while (inpData) {
+            nilai = new String[4000][4];
 
-                break;
+            for (int i = 0; i < nilai.length; i++) {
+                if (mahasiswa[i][0] != null) {
+                    System.out.println("================= DATA MAHASISWA ===============");
+                    inputScanner.nextLine();
+                    System.out.println("NAMA          : ");
+                    System.out.println("Nilai Tugas   : ");
+                    nilai[i][1] = inputScanner.nextLine();
+
+                    System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
+
+                    System.out.println("=======================================================");
+                    System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
+
+                    System.out.println("\n");
+
+                    System.out.println("1. untuk ya");
+                    System.out.println("2. untuk tidak");
+
+                    System.out.println("masukkan pilihan : ");
+                    choice = inputScanner.nextInt();
+
+                    if (choice == 1) {
+                        inDataMhs();
+                    } else if (choice == 2) {
+                        // berandaAdmin();
+                        inpData = false;
+                    } else {
+                        System.out.println("pilihan anda tidak valid");
+                        inDataMhs();
+                    }
             }
         }
+    
     }
+}
 
     private static void updNilaiMhs() {
         while (true) {
@@ -481,28 +493,42 @@ public class SistemAkademik {
         }
     }
 
-    public static String [][] jadwal = {
-        {"Senin", "10:35 - 14:25", "RTI231002", "Konsep Teknologi Informasi", "Yuri Ariyanto, S.Kom., M.Kom."},
-        {"Rabu", "07:00 - 10:35", "RTI231008", "Keselamatan dan Kesehatan Kerja", "Ariadi Retno Tri Hayati Ririd, S.Kom., M.Kom."}
-    };
-
     private static void cekJadwalKuliah() {
-        inputScanner.nextLine();
-        System.out.println("masukkan kelas");
-        String kelas = inputScanner.nextLine();
-
-        if (kelas.equalsIgnoreCase("1f") || kelas.equalsIgnoreCase("1-f")) {
-            System.out.println("Kelas   : 1-F");
-            System.out.println("========================== CEK JADWAL KULIAH ==========================");
-            System.out.println("\n");
-            System.out.format("+------------------------------------------------------------------------------------+%n");
-            System.out.format("|Hari    |    Jam    |     Kode MK    |       Mata kuliah       |       Dosen        |%n");
-            for(int i = 0; i < jadwal.length; i++){
-                System.out.format(jadwal[i][0] + "      " + jadwal[i][1] + "      " + jadwal[i][2] + jadwal[i][3] + jadwal[i][4] + "\n");
-            }
-            System.out.format("+------------------------------------------------------------------------------------+%n");
-        }
-        
+        System.out.println("========================== CEK JADWAL KULIAH ==========================");
+        System.out.println(
+                "-----------------------------------------------------------------------------------------------------------------");
+        System.out.println(
+                "|" + "NO" + "|" + "HARI   " + "|" + "JAM           " + "|" + "MATA KULIAH                           "
+                        + "|" + "DOSEN                                         " + "|");
+        System.out.println(
+                "|" + "1 " + "|" + "Senin  " + "|" + "10:35 - 14:25 " + "|" + "Konsep Teknologi Informasi            "
+                        + "|" + "Yuri Ariyanto, S.Kom., M.Kom.                 " + "|");
+        System.out.println(
+                "|" + "2 " + "|" + "Selasa " + "|" + "09:30 - 13:15 " + "|" + "Critical Thinking dan Problem Solving "
+                        + "|" + "Dwi Puspitasari, S.Kom., M.Kom.               " + "|");
+        System.out.println(
+                "|" + "3 " + "|" + "Rabu   " + "|" + "07:00 - 10:35 " + "|" + "Keselamatan dan Kesehatan Kerja       "
+                        + "|" + "Ariadi Retno Tri Hayati Ririd, S.Kom., M.Kom. " + "|");
+        System.out.println(
+                "|" + "4 " + "|" + "Rabu   " + "|" + "11:25 - 13:35 " + "|" + "Pancasila                             "
+                        + "|" + "Widaningsih, S.H., M.H.                       " + "|");
+        System.out.println(
+                "|" + "5 " + "|" + "Rabu   " + "|" + "13:35 - 16:00 " + "|" + "Bahasa Inggris 1                      "
+                        + "|" + "Satrio Binusa Suryadi, S.S., M.Pd.            " + "|");
+        System.out.println(
+                "|" + "6 " + "|" + "Kamis  " + "|" + "07:00 - 09:15 " + "|" + "Matematika Dasar                      "
+                        + "|" + "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D.   " + "|");
+        System.out.println(
+                "|" + "7 " + "|" + "Kamis  " + "|" + "11:00 - 17:10 " + "|" + "Praktikum Dasar Pemrograman           "
+                        + "|" + "Noprianto, S.Kom., M.Eng.                     " + "|");
+        System.out.println(
+                "|" + "8 " + "|" + "Jumat  " + "|" + "07:00 - 10:00 " + "|" + "Dasar Pemrograman                     "
+                        + "|" + "Noprianto, S.Kom., M.Eng.                     " + "|");
+        System.out.println(
+                "|" + "9 " + "|" + "Jumat  " + "|" + "07:00 - 10:00 " + "|" + "Matematika Dasar                      "
+                        + "|" + "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D.   " + "|");
+        System.out.println(
+                "-----------------------------------------------------------------------------------------------------------------");
     }
 
     private static void updKrsMhs() {
