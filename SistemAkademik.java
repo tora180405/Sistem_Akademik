@@ -273,6 +273,25 @@ public class SistemAkademik {
     }
 
     private static void updDataMhs() {
+        // untuk menghitung data mahasiswa yang ada nilainya(tidak null)
+        int count = 0;
+        for (String[] data : mahasiswa) {
+            if (data[0] != null) {
+                count++;
+            }
+        }
+        // SORTING BY NAME
+        int n = count;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (mahasiswa[j][0].compareTo(mahasiswa[j + 1][0]) > 0) {
+                    // swap mahasiswa[j+1] and mahasiswa[j]
+                    String[] temp = mahasiswa[j];
+                    mahasiswa[j] = mahasiswa[j + 1];
+                    mahasiswa[j + 1] = temp;
+                }
+            }
+        }
         for (int i = 0; i < mahasiswa.length; i++) {
             if (mahasiswa[i][0] != null) {
                 System.out.println("================= UPDATE DATA MAHASISWA ===============");
