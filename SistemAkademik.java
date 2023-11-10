@@ -210,12 +210,11 @@ public class SistemAkademik {
         choice = inputScanner.nextInt();
         if (choice == 0)
             return;
+        boolean inpData = true;
 
-        while (true) {
-            System.out.print("Masukkan jumlah Mahasiswa : ");
-            int jmlMhs = inputScanner.nextInt();
+        while (inpData) {
             int i = 0;
-            newMahasiswa = new String[jmlMhs + 1][9];
+            newMahasiswa = new String[22222][9];
 
             while (i < newMahasiswa.length) {
                 System.out.println("\n");
@@ -244,31 +243,27 @@ public class SistemAkademik {
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
 
-                addRow(mahasiswa, null); //iki gk ero aku
+                System.out.println("=======================================================");
+                System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
 
-                if (i == jmlMhs) {
-                    System.out.println("=======================================================");
-                    System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
+                System.out.println("\n");
 
-                    System.out.println("\n");
+                System.out.println("1. untuk ya");
+                System.out.println("2. untuk tidak");
 
-                    System.out.println("1. untuk ya");
-                    System.out.println("2. untuk tidak");
+                System.out.println("masukkan pilihan : ");
+                choice = inputScanner.nextInt();
 
-                    System.out.println("masukkan pilihan : ");
-                    choice = inputScanner.nextInt();
-
-                    if (choice == 1) {
-                        inDataMhs();
-                    } else if (choice == 2) {
-                        berandaAdmin();
-                    } else {
-                        System.out.println("pilihan anda tidak valid");
-                        inDataMhs();
-                    }
-                    break;
-
+                if (choice == 1) {
+                    inDataMhs();
+                } else if (choice == 2) {
+                    // berandaAdmin();
+                    inpData = false;
+                } else {
+                    System.out.println("pilihan anda tidak valid");
+                    inDataMhs();
                 }
+                break;
 
             }
             break;
