@@ -6,6 +6,9 @@ public class SistemAkademik {
     // deklarasi variable global
     // private static int levelAcc;
     ;
+    // Deklarasi Variable untuk fitur search dari semua fitur
+    public static String key;
+    public static boolean search = true;
     public static Scanner inputScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -219,7 +222,6 @@ public class SistemAkademik {
                 i++;
 
                 System.out.println("===================DATA MAHASISWA===================");
-
                 inputScanner.nextLine();
                 System.out.print("masukkan nama             :");
                 newMahasiswa[i][0] = inputScanner.nextLine();
@@ -292,18 +294,92 @@ public class SistemAkademik {
     }
 
     private static void updDataMhs() {
-        while (true) {
-            System.out.println("UPDATE DATA MAHASISWA");
-            System.out.println("1.");
-            System.out.println("2.");
+        for (int i = 0; i < mahasiswa.length; i++) {
+            if (mahasiswa[i][0] != null) {
+                System.out.println("================= UPDATE DATA MAHASISWA ===============");
+                System.out.println("NAMA          : " + mahasiswa[i][0]);
+                System.out.println("NIM           : " + mahasiswa[i][1]);
+                System.out.println("JENIS KELAMIN : " + mahasiswa[i][2]);
+                System.out.println("KELAS         : " + mahasiswa[i][3]);
+                System.out.println("AGAMA         : " + mahasiswa[i][4]);
+                System.out.println("TGL LAHIR     : " + mahasiswa[i][5]);
+                System.out.println("EMAIL         : " + mahasiswa[i][6]);
+                System.out.println("NO TELP       : " + mahasiswa[i][7]);
+                System.out.println("ALAMAT        : " + mahasiswa[i][8]);
+            }
+        }
 
-            int choice = inputScanner.nextInt();
+        System.out.println("Cari data yang akan di update berdasarkan NIM");
+        System.out.println("Apakah ingin mencari data?");
+        System.out.println("yes / no");
+        System.out.println("___________________________");
+        inputScanner.nextLine();
 
-            switch (choice) {
-                case 0:
+        String jawab = inputScanner.nextLine();
+
+        if (jawab.equalsIgnoreCase("yes")) {
+            boolean finded = false;
+            System.out.print("Masukkan key yang ingin dicari : ");
+            key = inputScanner.nextLine();
+
+            for (int i = 0; i < mahasiswa.length; i++) {
+                if (key.equals(mahasiswa[i][1])) {
+                    System.out.println("=======================");
+                    System.out.println("NAMA          : " + mahasiswa[i][0]);
+                    System.out.println("NIM           : " + mahasiswa[i][1]);
+                    System.out.println("JENIS KELAMIN : " + mahasiswa[i][2]);
+                    System.out.println("KELAS         : " + mahasiswa[i][3]);
+                    System.out.println("AGAMA         : " + mahasiswa[i][4]);
+                    System.out.println("TGL LAHIR     : " + mahasiswa[i][5]);
+                    System.out.println("EMAIL         : " + mahasiswa[i][6]);
+                    System.out.println("NO TELP       : " + mahasiswa[i][7]);
+                    System.out.println("ALAMAT        : " + mahasiswa[i][8]);
+                    System.out.println("=======================");
+                    System.out.println();
+
+                    // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
+                    finded = true;
+                }
+                if (finded) {
+                    System.out.println("===================DATA MAHASISWA===================");
+                    inputScanner.nextLine();
+                    System.out.print("masukkan nama             :");
+                    mahasiswa[i][0] = inputScanner.nextLine();
+                    System.out.print("masukkan NIM              :");
+                    mahasiswa[i][1] = inputScanner.nextLine();
+                    System.out.print("masukkan Jenis Kelamin    :");
+                    mahasiswa[i][2] = inputScanner.nextLine();
+                    System.out.print("masukkan kelas            :");
+                    mahasiswa[i][3] = inputScanner.nextLine();
+                    System.out.print("masukkan agama            :");
+                    mahasiswa[i][4] = inputScanner.nextLine();
+                    System.out.print("masukkan tanggal lahir    :");
+                    mahasiswa[i][5] = inputScanner.nextLine();
+                    System.out.print("masukkan email            :");
+                    mahasiswa[i][6] = inputScanner.nextLine();
+                    System.out.print("masukkan nomor handpone   :");
+                    mahasiswa[i][7] = inputScanner.nextLine();
+                    System.out.print("masukkan alamat           :");
+                    mahasiswa[i][8] = inputScanner.nextLine();
+
+                    System.out.println("DATA BERHASIL DI UPDATE\n");
+                    break;
+                }
+
+            }
+            if (!finded) {
+                System.out.println("Key dalam array tidak ditemukan");
+            } else if (finded) {
+                System.out.println("apakah ingin melakukan operasi selanjutnya?");
+                System.out.println("- ketikkan 1 untuk lanjut");
+                System.out.println("- ketikkan angka lainnya untuk logout");
+                int acc = inputScanner.nextInt();
+
+                if (acc == 1) {
                     return;
-                default:
-                    System.out.println("Pilihan tidak valid.");
+                } else {
+                    logOut();
+                }
             }
         }
     }
@@ -322,6 +398,51 @@ public class SistemAkademik {
                 System.out.println("EMAIL         : " + mahasiswa[i][6]);
                 System.out.println("NO TELP       : " + mahasiswa[i][7]);
                 System.out.println("ALAMAT        : " + mahasiswa[i][8]);
+            }
+
+        }
+        System.out.println("Apakah ingin mencari data?");
+        System.out.println("yes / no");
+        System.out.println("___________________________");
+        inputScanner.nextLine();
+
+        String jawab = inputScanner.nextLine();
+
+        if (jawab.equalsIgnoreCase("yes")) {
+            boolean finded = false;
+            System.out.print("Masukkan key yang ingin dicari : ");
+            key = inputScanner.nextLine();
+
+            for (int i = 0; i < mahasiswa.length; i++) {
+                if (key.equals(mahasiswa[i][1])) {
+                    System.out.println("=======================");
+                    System.out.println("NAMA          : " + mahasiswa[i][0]);
+                    System.out.println("NIM           : " + mahasiswa[i][1]);
+                    System.out.println("JENIS KELAMIN : " + mahasiswa[i][2]);
+                    System.out.println("KELAS         : " + mahasiswa[i][3]);
+                    System.out.println("AGAMA         : " + mahasiswa[i][4]);
+                    System.out.println("TGL LAHIR     : " + mahasiswa[i][5]);
+                    System.out.println("EMAIL         : " + mahasiswa[i][6]);
+                    System.out.println("NO TELP       : " + mahasiswa[i][7]);
+                    System.out.println("ALAMAT        : " + mahasiswa[i][8]);
+                    System.out.println("=======================");
+                    // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
+                    finded = true;
+                }
+            }
+            if (!finded) {
+                System.out.println("Key dalam array tidak ditemukan");
+            } else if (finded) {
+                System.out.println("apakah ingin melakukan operasi selanjutnya?");
+                System.out.println("- ketikkan 1 untuk lanjut");
+                System.out.println("- ketikkan angka lainnya untuk logout");
+                int acc = inputScanner.nextInt();
+
+                if (acc == 1) {
+                    return;
+                } else {
+                    logOut();
+                }
             }
         }
     }
