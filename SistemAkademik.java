@@ -196,6 +196,7 @@ public class SistemAkademik {
 
     // deklarasi array untuk fitur input data mahasiswa
     public static String[][] mahasiswa;
+    public static int counter;
 
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
@@ -212,12 +213,11 @@ public class SistemAkademik {
         boolean inpData = true;
 
         while (inpData) {
-            int i = 0;
+            int i = counter;
             mahasiswa = new String[4000][9];
 
             while (i < mahasiswa.length) {
                 System.out.println("\n");
-                i++;
 
                 System.out.println("===================DATA MAHASISWA===================");
                 inputScanner.nextLine();
@@ -241,6 +241,7 @@ public class SistemAkademik {
                 mahasiswa[i][8] = inputScanner.nextLine();
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
+                i++;
 
                 System.out.println("=======================================================");
                 System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
@@ -254,17 +255,19 @@ public class SistemAkademik {
                 choice = inputScanner.nextInt();
 
                 if (choice == 1) {
-                    inDataMhs();
+                    counter = i;
+
                 } else if (choice == 2) {
                     // berandaAdmin();
                     inpData = false;
+                    break;
                 } else {
                     System.out.println("pilihan anda tidak valid");
                     inDataMhs();
                 }
-                break;
 
             }
+            counter = i;
             break;
         }
     }
@@ -361,6 +364,26 @@ public class SistemAkademik {
     }
 
     private static void cekDataMhs() {
+
+        // untuk menghitung data mahasiswa yang ada nilainya(tidak null)
+        int count = 0;
+        for (String[] data : mahasiswa) {
+            if (data[0] != null) {
+                count++;
+            }
+        }
+        // SORTING BY NAME
+        int n = count;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (mahasiswa[j][0].compareTo(mahasiswa[j + 1][0]) > 0) {
+                    // swap mahasiswa[j+1] and mahasiswa[j]
+                    String[] temp = mahasiswa[j];
+                    mahasiswa[j] = mahasiswa[j + 1];
+                    mahasiswa[j + 1] = temp;
+                }
+            }
+        }
 
         for (int i = 0; i < mahasiswa.length; i++) {
             if (mahasiswa[i][0] != null) {
