@@ -214,7 +214,7 @@ public class SistemAkademik {
 
         while (inpData) {
             int i = 0;
-            newMahasiswa = new String[22222][9];
+            newMahasiswa = new String[4000][9];
 
             while (i < newMahasiswa.length) {
                 System.out.println("\n");
