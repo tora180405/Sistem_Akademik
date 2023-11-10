@@ -465,7 +465,7 @@ public class SistemAkademik {
         }
     }
 
-    public static String[][] nilai;
+    public static int[][] nilai;
 
     private static void inNilaiMhs() {
         int choice;
@@ -480,15 +480,27 @@ public class SistemAkademik {
         boolean inpData = true;
 
         while (inpData) {
-            nilai = new String[4000][4];
+            nilai = new int[4000][4];
 
             for (int i = 0; i < nilai.length; i++) {
                 if (mahasiswa[i][0] != null) {
-                    System.out.println("================= DATA MAHASISWA ===============");
+                    System.out.println("================= NILAI MAHASISWA ===============");
                     inputScanner.nextLine();
-                    System.out.println("NAMA          : ");
-                    System.out.println("Nilai Tugas   : ");
-                    nilai[i][1] = inputScanner.nextLine();
+                    System.out.println("NAMA          : " + mahasiswa[i++][0]);
+                    System.out.print("Nilai Tugas   : ");
+                    nilai[i][1] = inputScanner.nextInt();
+                    System.out.print("Nilai UTS     : ");
+                    nilai[i][2] = inputScanner.nextInt();
+                    System.out.print("Nilai UAS     : ");
+                    nilai[i][3] = inputScanner.nextInt();
+
+                    int rata2;
+
+                    rata2 = (nilai[i][1] + nilai[i][2] + nilai[i][3])/3;
+
+                    System.out.print("Nilai      : " + rata2);
+                    
+                    System.out.println("\n");
 
                     System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
 
