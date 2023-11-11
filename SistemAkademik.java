@@ -300,10 +300,10 @@ public class SistemAkademik {
                 System.out.println("JENIS KELAMIN : " + mahasiswa[i][2]);
                 System.out.println("KELAS         : " + mahasiswa[i][3]);
                 System.out.println("AGAMA         : " + mahasiswa[i][4]);
-                System.out.println("TGL LAHIR     : " + mahasiswa[i][5]);
-                System.out.println("EMAIL         : " + mahasiswa[i][6]);
-                System.out.println("NO TELP       : " + mahasiswa[i][7]);
-                System.out.println("ALAMAT        : " + mahasiswa[i][8]);
+                // System.out.println("TGL LAHIR : " + mahasiswa[i][5]);
+                // System.out.println("EMAIL : " + mahasiswa[i][6]);
+                // System.out.println("NO TELP : " + mahasiswa[i][7]);
+                // System.out.println("ALAMAT : " + mahasiswa[i][8]);
             }
         }
 
@@ -404,22 +404,23 @@ public class SistemAkademik {
             }
         }
 
+        System.out.println("================= DATA MAHASISWA ===============");
+        System.out.println();
+        System.out.println("| Nama\t | NIM\t | Jenis Kelamin | Kelas\t | Agama\t |");
+        System.out.println("______________________________________________________");
         for (int i = 0; i < mahasiswa.length; i++) {
             if (mahasiswa[i][0] != null) {
-                System.out.println("================= DATA MAHASISWA ===============");
-                System.out.println("NAMA          : " + mahasiswa[i][0]);
-                System.out.println("NIM           : " + mahasiswa[i][1]);
-                System.out.println("JENIS KELAMIN : " + mahasiswa[i][2]);
-                System.out.println("KELAS         : " + mahasiswa[i][3]);
-                System.out.println("AGAMA         : " + mahasiswa[i][4]);
-                System.out.println("TGL LAHIR     : " + mahasiswa[i][5]);
-                System.out.println("EMAIL         : " + mahasiswa[i][6]);
-                System.out.println("NO TELP       : " + mahasiswa[i][7]);
-                System.out.println("ALAMAT        : " + mahasiswa[i][8]);
+                System.out.println(
+                        "| " + mahasiswa[i][0] + " | " + mahasiswa[i][1] + "\t | " + mahasiswa[i][2] + "\t\t | "
+                                + mahasiswa[i][3] + "\t\t | " + mahasiswa[i][4] + "\t |");
+                // System.out.println("TGL LAHIR : " + mahasiswa[i][5]);
+                // System.out.println("EMAIL : " + mahasiswa[i][6]);
+                // System.out.println("NO TELP : " + mahasiswa[i][7]);
+                // System.out.println("ALAMAT : " + mahasiswa[i][8]);
             }
 
         }
-        System.out.println("Apakah ingin mencari data?");
+        System.out.println("\n Apakah ingin mencari data?");
         System.out.println("yes / no");
         System.out.println("___________________________");
         inputScanner.nextLine();
@@ -496,10 +497,10 @@ public class SistemAkademik {
 
                     int rata2;
 
-                    rata2 = (nilai[i][1] + nilai[i][2] + nilai[i][3])/3;
+                    rata2 = (nilai[i][1] + nilai[i][2] + nilai[i][3]) / 3;
 
                     System.out.print("Nilai      : " + rata2);
-                    
+
                     System.out.println("\n");
 
                     System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
@@ -524,11 +525,11 @@ public class SistemAkademik {
                         System.out.println("pilihan anda tidak valid");
                         inDataMhs();
                     }
+                }
             }
+
         }
-    
     }
-}
 
     private static void updNilaiMhs() {
         while (true) {
