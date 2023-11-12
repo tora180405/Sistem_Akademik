@@ -75,10 +75,11 @@ public class SistemAkademik {
             System.out.println("3. Cek Data Mahasiswa");
             System.out.println("4. Input Nilai Mahasiswa");
             System.out.println("5. Update Nilai Mahasiswa");
-            System.out.println("6. Cek Jadwal Perkuliahan");
-            System.out.println("7. Update KRS Mahasiswa");
-            System.out.println("8. Cek Data KRS Mahasiswa");
-            System.out.println("9. Contact");
+            System.out.println("6. Cek Nilai Mahasiswa");
+            System.out.println("7. Cek Jadwal Perkuliahan");
+            System.out.println("8. Update KRS Mahasiswa");
+            System.out.println("9. Cek Data KRS Mahasiswa");
+            System.out.println("10. Contact");
             System.out.println("0. LogOut\n");
 
             System.out.print("Masukkan pilihan anda: ");
@@ -100,15 +101,18 @@ public class SistemAkademik {
                     updNilaiMhs();
                     break;
                 case 6:
-                    cekJadwalKuliah();
+                    cekNilaiMhs();
                     break;
                 case 7:
-                    updKrsMhs();
+                    cekJadwalKuliah();
                     break;
                 case 8:
-                    cekDataKrsMhs();
+                    updKrsMhs();
                     break;
                 case 9:
+                    cekDataKrsMhs();
+                    break;
+                case 10:
                     contactAdmin();
                     break;
                 case 0:
@@ -468,7 +472,7 @@ public class SistemAkademik {
         }
     }
 
-    public static int[][] nilai;
+    public static String[][] nilai;
 
     private static void inNilaiMhs() {
         int choice;
@@ -483,25 +487,31 @@ public class SistemAkademik {
         boolean inpData = true;
 
         while (inpData) {
-            nilai = new int[4000][4];
+            nilai = new String[4000][5];
 
-            for (int i = 0; i < nilai.length; i++) {
+            for (int i = 0; i < mahasiswa.length; i++) {
+                System.out.println("================= NILAI MAHASISWA ===============");
+                inputScanner.nextLine();
                 if (mahasiswa[i][0] != null) {
-                    System.out.println("================= NILAI MAHASISWA ===============");
-                    inputScanner.nextLine();
-                    System.out.println("NAMA          : " + mahasiswa[i++][0]);
-                    System.out.print("Nilai Tugas   : ");
-                    nilai[i][1] = inputScanner.nextInt();
-                    System.out.print("Nilai UTS     : ");
-                    nilai[i][2] = inputScanner.nextInt();
-                    System.out.print("Nilai UAS     : ");
-                    nilai[i][3] = inputScanner.nextInt();
+                    for(int j = 0; j < nilai.length; j++){
 
-                    int rata2;
+                        nilai[j][0] = mahasiswa[i++][0];
+                        System.out.println("NAMA          : " + nilai[j][0]);
+                        System.out.print("Nilai Tugas   : ");
+                        nilai[j][1] = inputScanner.nextLine();
+                        System.out.print("Nilai UTS     : "); 
+                        nilai[j][2] = inputScanner.nextLine();
+                        System.out.print("Nilai UAS     : ");
+                        nilai[j][3] = inputScanner.nextLine();
 
-                    rata2 = (nilai[i][1] + nilai[i][2] + nilai[i][3]) / 3;
+                        int jumlah = (Integer.parseInt(nilai[j][1]) + Integer.parseInt(nilai[j][2]) + Integer.parseInt(nilai[j][3])) /3;
+                        
+                        nilai[j][4] = String.valueOf(jumlah);
 
-                    System.out.print("Nilai      : " + rata2);
+                        System.out.print("Nilai Rata-rata  : " + nilai[j][4]);
+
+                        inputScanner.nextLine();
+                    }
 
                     System.out.println("\n");
 
@@ -548,6 +558,10 @@ public class SistemAkademik {
                     System.out.println("Pilihan tidak valid.");
             }
         }
+    }
+
+    private static void cekNilaiMhs(){
+        
     }
 
     private static void cekJadwalKuliah() {
