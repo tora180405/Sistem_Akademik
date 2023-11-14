@@ -915,7 +915,6 @@ public class SistemAkademik {
                     MinDaspro = value; // Minimum ditemukan
                 }
             }
-
         }
 
             System.out.println("nilai tertinggi daspro   : " + MaxDaspro);
@@ -1013,28 +1012,36 @@ public class SistemAkademik {
         }
     }
 
+    public static String krsMhs1[][];
+
     private static void cekDataKrsMhs() {
+
+        String[][] krsMhs1 = {
+            {"RTI231001", "Pancasila", "1", "2", "2"},
+            {"RTI231002", "Konsep Teknologi Informasi", "1", "2", "4"},
+            {"RTI231003", "Critical Thinking dan Problem Solving", "1", "2", "4"},
+            {"RTI231004", "Matematika Dasar", "1", "3", "6"},
+            {"RTI231005", "Bahasa Inggris 1", "1", "2", "4"},
+            {"RTI231006", "Dasar Pemograman", "1", "2", "4"},
+            {"RTI231007", "Praktikum Dasar Pemograman", "1", "3", "6"},
+            {"RTI231008", "Keselamatan dan Kesehatan Kerja", "1", "2", "4"}
+        };
+
         System.out.println("========================== CEK DATA KRS MAHASISWA ==========================");
-        System.out.println("-------------------------------------------------------------");
-        System.out.println("|" + "NO" + "|" + "MATA KULIAH                           " + "|" + "SEMESTER " + "|" + "SKS"
-                + "|" + "JAM" + "|");
-        System.out.println("|" + "1." + "|" + "Pancasila                             " + "|" + "1        " + "|" + "2  "
-                + "|" + "2  " + "|");
-        System.out.println("|" + "2." + "|" + "Konsep Teknologi Informasi            " + "|" + "1        " + "|" + "2  "
-                + "|" + "4  " + "|");
-        System.out.println("|" + "3." + "|" + "Critical Thinking dan Problem Solving " + "|" + "1        " + "|" + "2  "
-                + "|" + "4  " + "|");
-        System.out.println("|" + "4." + "|" + "Matematika Dasar                      " + "|" + "1        " + "|" + "3  "
-                + "|" + "6  " + "|");
-        System.out.println("|" + "5." + "|" + "Bahasa Inggris 1                      " + "|" + "1        " + "|" + "2  "
-                + "|" + "4  " + "|");
-        System.out.println("|" + "6." + "|" + "Dasar Pemograman                      " + "|" + "1        " + "|" + "2  "
-                + "|" + "4  " + "|");
-        System.out.println("|" + "7." + "|" + "Praktikum Dasar Pemograman            " + "|" + "1        " + "|" + "3  "
-                + "|" + "6  " + "|");
-        System.out.println("|" + "8." + "|" + "Keselamatan dan Kesehatan Kerja       " + "|" + "1        " + "|" + "2  "
-                + "|" + "4  " + "|");
-        System.out.println("-------------------------------------------------------------");
+        System.out.print("Masukkan Semester : ");
+        int semester = inputScanner.nextInt();
+        
+        if (semester == 1) {
+            System.out.println("========================== KRS SEMESTER 1 ==========================");
+            System.out.println();
+            System.out.printf("+--------------------------------------------------------------------------------------------------------+\n");
+            System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "KODE MK", "MATA KULIAH", "SEMESTER", "SKS", "JAM");
+            System.out.printf("+--------------------------------------------------------------------------------------------------------+\n");
+            for(int i = 0; i < krsMhs1.length; i++){
+                System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", krsMhs1[i][0], krsMhs1[i][1], krsMhs1[i][2], krsMhs1[i][3], krsMhs1[i][4]);
+            }
+            System.out.printf("+--------------------------------------------------------------------------------------------------------+\n");
+        }
     }
 
     // deklarasi variable global untuk fitur contact
