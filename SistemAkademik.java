@@ -837,24 +837,24 @@ public class SistemAkademik {
             }
         }
 
-            double MaxDaspro = Double.parseDouble(nilai[0][5]);
-            double MinDaspro = Double.parseDouble(nilai[0][5]);
-            // double maxNum = Daspro;
+            // double MaxDaspro = Double.parseDouble(nilai[0][5]);
+            // double MinDaspro = Double.parseDouble(nilai[0][5]);
+            // // double maxNum = Daspro;
             
-            for (int i = 0; i < nilai.length; i++) {
-                for (int j = 0; j < nilai[j].length; j++) {
-                    double value = Double.parseDouble(nilai[i][5]);
-                    if (value > MaxDaspro) {
-                        MaxDaspro = value; // Maksimum ditemukan
-                    }
-                    if (value < MinDaspro) {
-                        MinDaspro = value; // Minimum ditemukan
-                    }
-                }
-            }
+            // for (int i = 0; i < nilai.length; i++) {
+            //     for (int j = 0; j < nilai[j].length; j++) {
+            //         double value = Double.parseDouble(nilai[i][5]);
+            //         if (value > MaxDaspro) {
+            //             MaxDaspro = value; // Maksimum ditemukan
+            //         }
+            //         if (value < MinDaspro) {
+            //             MinDaspro = value; // Minimum ditemukan
+            //         }
+            //     }
+            // }
 
-            System.out.println("nilai tertinggi daspro   : " + MaxDaspro);
-            System.out.println("nilai minimum daspro    : " + MinDaspro);
+            // System.out.println("nilai tertinggi daspro   : " + MaxDaspro);
+            // System.out.println("nilai minimum daspro    : " + MinDaspro);
 
         System.out.println("================= NILAI MAHASISWA ==============");
         System.out.println();
