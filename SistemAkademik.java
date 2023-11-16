@@ -994,6 +994,54 @@ public class SistemAkademik {
         }
 
     }
+    
+    public class Cek_Krs {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+    
+            // Membuat objek KRS
+            KRS krsMahasiswa = new KRS();
+    
+            // Input data mahasiswa
+            System.out.print("Masukkan nama mahasiswa: ");
+            String namaMahasiswa = scanner.nextLine();
+            System.out.print("Masukkan nim mahasiswa: ");
+            String nimMahasiswa = scanner.nextLine();
+    
+             // Membuat objek mahasiswa
+             Mahasiswa mahasiswa = new Mahasiswa(namaMahasiswa, nimMahasiswa);
+    
+            // Input data KRS mahasiswa
+            System.out.print("Masukkan jumlah mata pelajaran: ");
+            int jumlahMatkul = scanner.nextInt();
+    
+            for (int i = 0; i < jumlahMatkul; i++) {
+                System.out.print("Mata Pelajaran ke-" + (i + 1) + ": ");
+                String namaMatkul = scanner.next();
+    
+                System.out.print("Jumlah SKS: ");
+                int sksMatkul = scanner.nextInt();
+    
+                System.out.print("Jumlah Jam: ");
+                int jamMatkul = scanner.nextInt();
+    
+                System.out.print("Semester: ");
+                int semesterMatkul = scanner.nextInt();
+    
+                // Membuat objek MataPelajaran dan menambahkannya ke KRS
+                MataPelajaran mataPelajaran = new MataPelajaran(namaMatkul, sksMatkul);
+                krsMahasiswa.tambahMataPelajaran(mataPelajaran);
+            }
+            // Tanda tangan dosen
+            System.out.println("Tanda Tangan Dosen: _________________________");
+    
+           // Menampilkan KRS mahasiswa
+            krsMahasiswa.tampilkanKRS();
+            }
+            
+            }
+        
+    
 
     private static void updKrsMhs() {
         while (true) {
