@@ -94,7 +94,7 @@ public class SistemAkademik {
                     break;
                 case 4:
                     // inNilaiMhs();
-                    cekNilaiMhs();
+                    // cekNilaiMhs();
                     break;
                 case 5:
                     // updNilaiMhs();
@@ -155,10 +155,10 @@ public class SistemAkademik {
                     inNilaiMhs();
                     break;
                 case 3:
-                    updNilaiMhs();
+                    // updNilaiMhs();
                     break;
                 case 4:
-                    cekNilaiMhs();
+                    // cekNilaiMhs();
                     break;
                 case 5:
                     contact();
@@ -201,7 +201,7 @@ public class SistemAkademik {
                     cekDataKrsMhs();
                     break;
                 case 4:
-                    cekNilaiMhs();
+                    // cekNilaiMhs();
                     break;
                 case 5:
                     // cetakKtm();
@@ -491,7 +491,14 @@ public class SistemAkademik {
         }
     }
 
-    public static String[][] nilai;
+    public static String[][] Daspro;
+    public static String[][] DasproPrak;
+    public static String[][] Matdas;
+    public static String[][] Pancasila;
+    public static String[][] KTI;
+    public static String[][] CTPS;
+    public static String[][] BING;
+    public static String[][] K3;
 
     private static void inNilaiMhs() {
         int choice;
@@ -506,456 +513,698 @@ public class SistemAkademik {
         boolean inpData = true;
 
         while (inpData) {
-            nilai = new String[4000][34];
+            Daspro = new String[4000][6];
+            DasproPrak = new String[4000][6];
+            Matdas = new String[4000][6];
+            Pancasila = new String[4000][6];
+            KTI = new String[4000][6];
+            CTPS = new String[4000][6];
+            BING = new String[4000][6];
+            K3 = new String[4000][6];
 
-            // int i = 0;
-
-            // while (i < mahasiswa.length) {
-
-            // }
 
             for (int i = 0; i < mahasiswa.length; i++) {
-                System.out.println("================= NILAI MAHASISWA ===============");
+                System.out.println("================= INPUT NILAI MAHASISWA ===============");
                 inputScanner.nextLine();
-                if (mahasiswa[i][0] != null) {
-                    for (int j = 0; j < nilai.length; j++) {
-                        // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                        nilai[j][0] = mahasiswa[i][0];
-                        System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
-                        // --------------------------------------------------------------------------
+                System.out.println("Pilihan Mata Kuliah ");
+                System.out.println("1. Dasar Pemograman");
+                System.out.println("2. Dasar Pemograman Praktikum");
+                System.out.println("3. Matematika Dasar");
+                System.out.println("4. Pancasila");
+                System.out.println("5. Konsep Teknologi Informasi");
+                System.out.println("6. Critical Thinking dan Problem Solving");
+                System.out.println("7. Bahasa Inggris");
+                System.out.println("8. Keselamatan dan Kesehatan Kerja");
+                System.out.print("Pilih Mata Kuliah yang ingin diinputkan nilai : ");
+                int Matkul = inputScanner.nextInt();
+                inputScanner.nextLine();
+                switch (Matkul) {
+                    case 1:
+                        if (mahasiswa[i][0] != null) {
+                            for(int j = 0; j < Daspro.length; j++){
+                                Daspro[j][0] = mahasiswa[i][0];
+                                System.out.println("NAMA MAHASISWA      : " + Daspro[j][0]);
 
-                        // int NIM = Integer.parseInt(mahasiswa[i++][1]);
+                                Daspro[j][1] = mahasiswa[i++][1];
+                                System.out.println("NIM MAHASISWA       : " + Daspro[j][1]);
 
-                        // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                        // nilai[j][1] = String.valueOf(NIM);
-                        nilai[j][1] = mahasiswa[i++][1];
-                        System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
-                        // --------------------------------------------------------------------------
+                                System.out.println("-----------------------DASPRO----------------------");
+                                System.out.print("Nilai Tugas : ");
+                                Daspro[j][2] = inputScanner.nextLine();
+                                System.out.print("Nilai UTS   : ");
+                                Daspro[j][3] = inputScanner.nextLine();
+                                System.out.print("Nilai UAS   : ");
+                                Daspro[j][4] = inputScanner.nextLine();
 
-                        // input nilai setiap matkul uwaw banyak kali
-                        System.out.println("-----------------------DASPRO----------------------");
-                        System.out.print("Nilai Tugas Daspro  : ");
-                        nilai[j][2] = inputScanner.nextLine();
-                        System.out.print("Nilai UTS Daspro    : ");
-                        nilai[j][3] = inputScanner.nextLine();
-                        System.out.print("Nilai UAS Daspro    : ");
-                        nilai[j][4] = inputScanner.nextLine();
-                        System.out.println("---------------------------------------------------");
-                        System.out.println("\n");
-                        System.out.println("------------------DASPRO PRAKTIKUM-----------------");
-                        System.out.print("Nilai Tugas Daspro Praktikum : ");
-                        nilai[j][6] = inputScanner.nextLine();
-                        System.out.print("Nilai UTS Daspro Praktikum   : ");
-                        nilai[j][7] = inputScanner.nextLine();
-                        System.out.print("Nilai UAS Daspro Praktikum   : ");
-                        nilai[j][8] = inputScanner.nextLine();
-                        System.out.println("---------------------------------------------------");
-                        System.out.println("\n");
-                        System.out.println("-----------------------MATDAS----------------------");
-                        System.out.print("Nilai Tugas Matdas: ");
-                        nilai[j][10] = inputScanner.nextLine();
-                        System.out.print("Nilai UTS Matdas  : ");
-                        nilai[j][11] = inputScanner.nextLine();
-                        System.out.print("Nilai UAS Matdas  : ");
-                        nilai[j][12] = inputScanner.nextLine();
-                        System.out.println("---------------------------------------------------");
-                        System.out.println("\n");
-                        System.out.println("----------------------PANCASILA--------------------");
-                        System.out.print("Nilai Tugas PANCASILA : ");
-                        nilai[j][14] = inputScanner.nextLine();
-                        System.out.print("Nilai UTS PANCASILA   : ");
-                        nilai[j][15] = inputScanner.nextLine();
-                        System.out.print("Nilai UAS PANCASILA   : ");
-                        nilai[j][16] = inputScanner.nextLine();
-                        System.out.println("---------------------------------------------------");
-                        System.out.println("\n");
-                        System.out.println("-------------------------KTI-----------------------");
-                        System.out.print("Nilai Tugas KTI : ");
-                        nilai[j][18] = inputScanner.nextLine();
-                        System.out.print("Nilai UTS KTI   : ");
-                        nilai[j][19] = inputScanner.nextLine();
-                        System.out.print("Nilai UAS KTI   : ");
-                        nilai[j][20] = inputScanner.nextLine();
-                        System.out.println("---------------------------------------------------");
-                        System.out.println("\n");
-                        System.out.println("-------------------------CTPS----------------------");
-                        System.out.print("Nilai Tugas CTPS : ");
-                        nilai[j][22] = inputScanner.nextLine();
-                        System.out.print("Nilai UTS CTPS   : ");
-                        nilai[j][23] = inputScanner.nextLine();
-                        System.out.print("Nilai UAS CTPS   : ");
-                        nilai[j][24] = inputScanner.nextLine();
-                        System.out.println("---------------------------------------------------");
-                        System.out.println("\n");
-                        System.out.println("----------------------B.INGGRIS--------------------");
-                        System.out.print("Nilai Tugas B.INGGRIS : ");
-                        nilai[j][26] = inputScanner.nextLine();
-                        System.out.print("Nilai UTS B.INGGRIS   : ");
-                        nilai[j][27] = inputScanner.nextLine();
-                        System.out.print("Nilai UAS B.INGGRIS   : ");
-                        nilai[j][28] = inputScanner.nextLine();
-                        System.out.println("---------------------------------------------------");
-                        System.out.println("\n");
-                        System.out.println("-------------------------K-3-----------------------");
-                        System.out.print("Nilai Tugas K3 : ");
-                        nilai[j][30] = inputScanner.nextLine();
-                        System.out.print("Nilai UTS K3   : ");
-                        nilai[j][31] = inputScanner.nextLine();
-                        System.out.print("Nilai UAS K3   : ");
-                        nilai[j][32] = inputScanner.nextLine();
-                        System.out.println("---------------------------------------------------");
-                        System.out.println("\n");
-                        // --------------------------------------------------------------------------
+                                double jumlahDaspro = (Double.parseDouble(Daspro[j][2]) + Double.parseDouble(Daspro[j][3])+ Double.parseDouble(Daspro[j][4])) / 3;
+                            
+                                Daspro[j][5] = String.valueOf(jumlahDaspro);
+                                System.out.println("nilai rata rata" + Daspro[j][5]);
 
-                        // variabel untuk menghitung rata rata setiap matkul :) uwaw
-                        double jumlahDaspro = (Double.parseDouble(nilai[j][2]) + Double.parseDouble(nilai[j][3])
-                                + Double.parseDouble(nilai[j][4])) / 3;
-                        double jumlahDasproPraktik = (Double.parseDouble(nilai[j][6]) + Double.parseDouble(nilai[j][7])
-                                + Double.parseDouble(nilai[j][8])) / 3;
-                        double jumlahMatdas = (Double.parseDouble(nilai[j][10]) + Double.parseDouble(nilai[j][11])
-                                + Double.parseDouble(nilai[j][12])) / 3;
-                        double jumlahPancasila = (Double.parseDouble(nilai[j][14]) + Double.parseDouble(nilai[j][15])
-                                + Double.parseDouble(nilai[j][16])) / 3;
-                        double jumlahKTI = (Double.parseDouble(nilai[j][18]) + Double.parseDouble(nilai[j][19])
-                                + Double.parseDouble(nilai[j][20])) / 3;
-                        double jumlahCTPS = (Double.parseDouble(nilai[j][22]) + Double.parseDouble(nilai[j][23])
-                                + Double.parseDouble(nilai[j][24])) / 3;
-                        double jumlahBing = (Double.parseDouble(nilai[j][26]) + Double.parseDouble(nilai[j][27])
-                                + Double.parseDouble(nilai[j][28])) / 3;
-                        double jumlahK3 = (Double.parseDouble(nilai[j][30]) + Double.parseDouble(nilai[j][31])
-                                + Double.parseDouble(nilai[j][32])) / 3;
-                        // ----------------------------------------------------------
-
-                        // mengisi array dengan variabel yang berisi rata rata matkul
-                        nilai[j][5] = String.valueOf(jumlahDaspro);
-                        nilai[j][9] = String.valueOf(jumlahDasproPraktik);
-                        nilai[j][13] = String.valueOf(jumlahMatdas);
-                        nilai[j][17] = String.valueOf(jumlahPancasila);
-                        nilai[j][21] = String.valueOf(jumlahKTI);
-                        nilai[j][25] = String.valueOf(jumlahCTPS);
-                        nilai[j][29] = String.valueOf(jumlahBing);
-                        nilai[j][33] = String.valueOf(jumlahK3);
-                        // ----------------------------------------------------------
-
-                        // //print nilai rata rata
-                        // System.out.println("-----------------NILAI RATA RATA-------------------");
-                        // System.out.println("Nilai Rata-rata Daspro : " + nilai[j][5]);
-                        // System.out.println("Nilai Rata-rata Daspro Praktikum : " + nilai[j][9]);
-                        // System.out.println("Nilai Rata-rata MATDAS : " + nilai[j][13]);
-                        // System.out.println("Nilai Rata-rata PANCASILA : " + nilai[j][17]);
-                        // System.out.println("Nilai Rata-rata KTI : " + nilai[j][21]);
-                        // System.out.println("Nilai Rata-rata CTPS : " + nilai[j][25]);
-                        // System.out.println("Nilai Rata-rata B.INGGRIS : " + nilai[j][29]);
-                        // System.out.println("Nilai Rata-rata K3 : " + nilai[j][33]);
-                        // System.out.println("---------------------------------------------------");
-                        // System.out.println("\n");
-                        // //----------------------------------------------------------
-
-                        if (mahasiswa[i][0] == null) {
-                            berandaAdmin();
+                                if (mahasiswa[i][0] == null) {
+                                    berandaDosen();
+                                }
+                            }
                         }
+                        break;
+                    case 2:
+                        if (mahasiswa[i][0] != null) {
+                            for(int j = 0; j < DasproPrak.length; j++){
+                                DasproPrak[j][0] = mahasiswa[i][0];
+                                System.out.println("NAMA MAHASISWA      : " + DasproPrak[j][0]);
+
+                                DasproPrak[j][1] = mahasiswa[i++][1];
+                                System.out.println("NIM MAHASISWA       : " + DasproPrak[j][1]);
+
+                                System.out.println("-----------------------DASPROPrak----------------------");
+                                System.out.print("Nilai Tugas : ");
+                                DasproPrak[j][2] = inputScanner.nextLine();
+                                System.out.print("Nilai UTS   : ");
+                                DasproPrak[j][3] = inputScanner.nextLine();
+                                System.out.print("Nilai UAS   : ");
+                                DasproPrak[j][4] = inputScanner.nextLine();
+
+                                double jumlahDasproPrak = (Double.parseDouble(DasproPrak[j][2]) + Double.parseDouble(DasproPrak[j][3])+ Double.parseDouble(DasproPrak[j][4])) / 3;
+                            
+                                DasproPrak[j][5] = String.valueOf(jumlahDasproPrak);
+                                System.out.println("nilai rata rata" + DasproPrak[j][5]);
+
+                                if (mahasiswa[i][0] == null) {
+                                    berandaDosen();
+                                }
+                            }
+                        }
+                        break;
+                    case 3:
+                        if (mahasiswa[i][0] != null) {
+                            for(int j = 0; j < Matdas.length; j++){
+                                Matdas[j][0] = mahasiswa[i][0];
+                                System.out.println("NAMA MAHASISWA      : " + Matdas[j][0]);
+
+                                Matdas[j][1] = mahasiswa[i++][1];
+                                System.out.println("NIM MAHASISWA       : " + Matdas[j][1]);
+
+                                System.out.println("-----------------------Matdas----------------------");
+                                System.out.print("Nilai Tugas : ");
+                                Matdas[j][2] = inputScanner.nextLine();
+                                System.out.print("Nilai UTS   : ");
+                                Matdas[j][3] = inputScanner.nextLine();
+                                System.out.print("Nilai UAS   : ");
+                                Matdas[j][4] = inputScanner.nextLine();
+
+                                double jumlahMatdas = (Double.parseDouble(Matdas[j][2]) + Double.parseDouble(Matdas[j][3])+ Double.parseDouble(Matdas[j][4])) / 3;
+                            
+                                Matdas[j][5] = String.valueOf(jumlahMatdas);
+                                System.out.println("nilai rata rata" + Matdas[j][5]);
+
+                                if (mahasiswa[i][0] == null) {
+                                    berandaDosen();
+                                }
+                            }
+                        }
+                        break;
+                    case 4:
+                        if (mahasiswa[i][0] != null) {
+                            for(int j = 0; j < Pancasila.length; j++){
+                                Pancasila[j][0] = mahasiswa[i][0];
+                                System.out.println("NAMA MAHASISWA      : " + Pancasila[j][0]);
+
+                                Pancasila[j][1] = mahasiswa[i++][1];
+                                System.out.println("NIM MAHASISWA       : " + Pancasila[j][1]);
+
+                                System.out.println("-----------------------Pancasila----------------------");
+                                System.out.print("Nilai Tugas : ");
+                                Pancasila[j][2] = inputScanner.nextLine();
+                                System.out.print("Nilai UTS   : ");
+                                Pancasila[j][3] = inputScanner.nextLine();
+                                System.out.print("Nilai UAS   : ");
+                                Pancasila[j][4] = inputScanner.nextLine();
+
+                                double jumlahPancasila = (Double.parseDouble(Pancasila[j][2]) + Double.parseDouble(Pancasila[j][3])+ Double.parseDouble(Pancasila[j][4])) / 3;
+                            
+                                Pancasila[j][5] = String.valueOf(jumlahPancasila);
+                                System.out.println("nilai rata rata" + Pancasila[j][5]);
+
+                                if (mahasiswa[i][0] == null) {
+                                    berandaDosen();
+                                }
+                            }
+                        }
+                        break;
+                    case 5:
+                        if (mahasiswa[i][0] != null) {
+                            for(int j = 0; j < KTI.length; j++){
+                                KTI[j][0] = mahasiswa[i][0];
+                                System.out.println("NAMA MAHASISWA      : " + KTI[j][0]);
+
+                                KTI[j][1] = mahasiswa[i++][1];
+                                System.out.println("NIM MAHASISWA       : " + KTI[j][1]);
+
+                                System.out.println("-----------------------KTI----------------------");
+                                System.out.print("Nilai Tugas : ");
+                                KTI[j][2] = inputScanner.nextLine();
+                                System.out.print("Nilai UTS   : ");
+                                KTI[j][3] = inputScanner.nextLine();
+                                System.out.print("Nilai UAS   : ");
+                                KTI[j][4] = inputScanner.nextLine();
+
+                                double jumlahKTI = (Double.parseDouble(KTI[j][2]) + Double.parseDouble(KTI[j][3])+ Double.parseDouble(KTI[j][4])) / 3;
+                            
+                                KTI[j][5] = String.valueOf(jumlahKTI);
+                                System.out.println("nilai rata rata" + KTI[j][5]);
+
+                                if (mahasiswa[i][0] == null) {
+                                    berandaDosen();
+                                }
+                            }
+                        }
+                        break;
+                    case 6:
+                        if (mahasiswa[i][0] != null) {
+                            for(int j = 0; j < CTPS.length; j++){
+                                CTPS[j][0] = mahasiswa[i][0];
+                                System.out.println("NAMA MAHASISWA      : " + CTPS[j][0]);
+
+                                CTPS[j][1] = mahasiswa[i++][1];
+                                System.out.println("NIM MAHASISWA       : " + CTPS[j][1]);
+
+                                System.out.println("-----------------------CTPS----------------------");
+                                System.out.print("Nilai Tugas : ");
+                                CTPS[j][2] = inputScanner.nextLine();
+                                System.out.print("Nilai UTS   : ");
+                                CTPS[j][3] = inputScanner.nextLine();
+                                System.out.print("Nilai UAS   : ");
+                                CTPS[j][4] = inputScanner.nextLine();
+
+                                double jumlahCTPS = (Double.parseDouble(CTPS[j][2]) + Double.parseDouble(CTPS[j][3])+ Double.parseDouble(CTPS[j][4])) / 3;
+                            
+                                CTPS[j][5] = String.valueOf(jumlahCTPS);
+                                System.out.println("nilai rata rata" + CTPS[j][5]);
+
+                                if (mahasiswa[i][0] == null) {
+                                    berandaDosen();
+                                }
+                            }
+                        }
+                        break;
+                    case 7:
+                        if (mahasiswa[i][0] != null) {
+                            for(int j = 0; j < BING.length; j++){
+                                BING[j][0] = mahasiswa[i][0];
+                                System.out.println("NAMA MAHASISWA      : " + BING[j][0]);
+
+                                BING[j][1] = mahasiswa[i++][1];
+                                System.out.println("NIM MAHASISWA       : " + BING[j][1]);
+
+                                System.out.println("-----------------------BING----------------------");
+                                System.out.print("Nilai Tugas : ");
+                                BING[j][2] = inputScanner.nextLine();
+                                System.out.print("Nilai UTS   : ");
+                                BING[j][3] = inputScanner.nextLine();
+                                System.out.print("Nilai UAS   : ");
+                                BING[j][4] = inputScanner.nextLine();
+
+                                double jumlahBING = (Double.parseDouble(BING[j][2]) + Double.parseDouble(BING[j][3])+ Double.parseDouble(BING[j][4])) / 3;
+                            
+                                BING[j][5] = String.valueOf(jumlahBING);
+                                System.out.println("nilai rata rata" + BING[j][5]);
+
+                                if (mahasiswa[i][0] == null) {
+                                    berandaDosen();
+                                }
+                            }
+                        }
+                        break;
+                    case 8:
+                        if (mahasiswa[i][0] != null) {
+                            for(int j = 0; j < K3.length; j++){
+                                K3[j][0] = mahasiswa[i][0];
+                                System.out.println("NAMA MAHASISWA      : " + K3[j][0]);
+
+                                K3[j][1] = mahasiswa[i++][1];
+                                System.out.println("NIM MAHASISWA       : " + K3[j][1]);
+
+                                System.out.println("-----------------------K3----------------------");
+                                System.out.print("Nilai Tugas : ");
+                                K3[j][2] = inputScanner.nextLine();
+                                System.out.print("Nilai UTS   : ");
+                                K3[j][3] = inputScanner.nextLine();
+                                System.out.print("Nilai UAS   : ");
+                                K3[j][4] = inputScanner.nextLine();
+
+                                double jumlahK3 = (Double.parseDouble(K3[j][2]) + Double.parseDouble(K3[j][3])+ Double.parseDouble(K3[j][4])) / 3;
+                            
+                                K3[j][5] = String.valueOf(jumlahK3);
+                                System.out.println("nilai rata rata" + K3[j][5]);
+
+                                if (mahasiswa[i][0] == null) {
+                                    berandaDosen();
+                                }
+                            }
+                        }
+                        break;
+                    default:
+                        System.out.println("Matkul tidak tersedia");
+                        return;
+                }
+                
+                // if (mahasiswa[i][0] != null) {
+                //     for (int j = 0; j < nilai.length; j++) {
+                //         // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+                //         nilai[j][0] = mahasiswa[i][0];
+                //         System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+                //         // --------------------------------------------------------------------------
+
+                //         // int NIM = Integer.parseInt(mahasiswa[i++][1]);
+
+                //         // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+                //         // nilai[j][1] = String.valueOf(NIM);
+                //         nilai[j][1] = mahasiswa[i++][1];
+                //         System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+                //         // --------------------------------------------------------------------------
+
+                //         // input nilai setiap matkul uwaw banyak kali
+                //         System.out.println("-----------------------DASPRO----------------------");
+                //         System.out.print("Nilai Tugas Daspro  : ");
+                //         nilai[j][2] = inputScanner.nextLine();
+                //         System.out.print("Nilai UTS Daspro    : ");
+                //         nilai[j][3] = inputScanner.nextLine();
+                //         System.out.print("Nilai UAS Daspro    : ");
+                //         nilai[j][4] = inputScanner.nextLine();
+                //         System.out.println("---------------------------------------------------");
+                //         System.out.println("\n");
+                //         System.out.println("------------------DASPRO PRAKTIKUM-----------------");
+                //         System.out.print("Nilai Tugas Daspro Praktikum : ");
+                //         nilai[j][6] = inputScanner.nextLine();
+                //         System.out.print("Nilai UTS Daspro Praktikum   : ");
+                //         nilai[j][7] = inputScanner.nextLine();
+                //         System.out.print("Nilai UAS Daspro Praktikum   : ");
+                //         nilai[j][8] = inputScanner.nextLine();
+                //         System.out.println("---------------------------------------------------");
+                //         System.out.println("\n");
+                //         System.out.println("-----------------------MATDAS----------------------");
+                //         System.out.print("Nilai Tugas Matdas: ");
+                //         nilai[j][10] = inputScanner.nextLine();
+                //         System.out.print("Nilai UTS Matdas  : ");
+                //         nilai[j][11] = inputScanner.nextLine();
+                //         System.out.print("Nilai UAS Matdas  : ");
+                //         nilai[j][12] = inputScanner.nextLine();
+                //         System.out.println("---------------------------------------------------");
+                //         System.out.println("\n");
+                //         System.out.println("----------------------PANCASILA--------------------");
+                //         System.out.print("Nilai Tugas PANCASILA : ");
+                //         nilai[j][14] = inputScanner.nextLine();
+                //         System.out.print("Nilai UTS PANCASILA   : ");
+                //         nilai[j][15] = inputScanner.nextLine();
+                //         System.out.print("Nilai UAS PANCASILA   : ");
+                //         nilai[j][16] = inputScanner.nextLine();
+                //         System.out.println("---------------------------------------------------");
+                //         System.out.println("\n");
+                //         System.out.println("-------------------------KTI-----------------------");
+                //         System.out.print("Nilai Tugas KTI : ");
+                //         nilai[j][18] = inputScanner.nextLine();
+                //         System.out.print("Nilai UTS KTI   : ");
+                //         nilai[j][19] = inputScanner.nextLine();
+                //         System.out.print("Nilai UAS KTI   : ");
+                //         nilai[j][20] = inputScanner.nextLine();
+                //         System.out.println("---------------------------------------------------");
+                //         System.out.println("\n");
+                //         System.out.println("-------------------------CTPS----------------------");
+                //         System.out.print("Nilai Tugas CTPS : ");
+                //         nilai[j][22] = inputScanner.nextLine();
+                //         System.out.print("Nilai UTS CTPS   : ");
+                //         nilai[j][23] = inputScanner.nextLine();
+                //         System.out.print("Nilai UAS CTPS   : ");
+                //         nilai[j][24] = inputScanner.nextLine();
+                //         System.out.println("---------------------------------------------------");
+                //         System.out.println("\n");
+                //         System.out.println("----------------------B.INGGRIS--------------------");
+                //         System.out.print("Nilai Tugas B.INGGRIS : ");
+                //         nilai[j][26] = inputScanner.nextLine();
+                //         System.out.print("Nilai UTS B.INGGRIS   : ");
+                //         nilai[j][27] = inputScanner.nextLine();
+                //         System.out.print("Nilai UAS B.INGGRIS   : ");
+                //         nilai[j][28] = inputScanner.nextLine();
+                //         System.out.println("---------------------------------------------------");
+                //         System.out.println("\n");
+                //         System.out.println("-------------------------K-3-----------------------");
+                //         System.out.print("Nilai Tugas K3 : ");
+                //         nilai[j][30] = inputScanner.nextLine();
+                //         System.out.print("Nilai UTS K3   : ");
+                //         nilai[j][31] = inputScanner.nextLine();
+                //         System.out.print("Nilai UAS K3   : ");
+                //         nilai[j][32] = inputScanner.nextLine();
+                //         System.out.println("---------------------------------------------------");
+                //         System.out.println("\n");
+                //         // --------------------------------------------------------------------------
+
+                //         // variabel untuk menghitung rata rata setiap matkul :) uwaw
+                //         double jumlahDaspro = (Double.parseDouble(nilai[j][2]) + Double.parseDouble(nilai[j][3])
+                //                 + Double.parseDouble(nilai[j][4])) / 3;
+                //         double jumlahDasproPraktik = (Double.parseDouble(nilai[j][6]) + Double.parseDouble(nilai[j][7])
+                //                 + Double.parseDouble(nilai[j][8])) / 3;
+                //         double jumlahMatdas = (Double.parseDouble(nilai[j][10]) + Double.parseDouble(nilai[j][11])
+                //                 + Double.parseDouble(nilai[j][12])) / 3;
+                //         double jumlahPancasila = (Double.parseDouble(nilai[j][14]) + Double.parseDouble(nilai[j][15])
+                //                 + Double.parseDouble(nilai[j][16])) / 3;
+                //         double jumlahKTI = (Double.parseDouble(nilai[j][18]) + Double.parseDouble(nilai[j][19])
+                //                 + Double.parseDouble(nilai[j][20])) / 3;
+                //         double jumlahCTPS = (Double.parseDouble(nilai[j][22]) + Double.parseDouble(nilai[j][23])
+                //                 + Double.parseDouble(nilai[j][24])) / 3;
+                //         double jumlahBing = (Double.parseDouble(nilai[j][26]) + Double.parseDouble(nilai[j][27])
+                //                 + Double.parseDouble(nilai[j][28])) / 3;
+                //         double jumlahK3 = (Double.parseDouble(nilai[j][30]) + Double.parseDouble(nilai[j][31])
+                //                 + Double.parseDouble(nilai[j][32])) / 3;
+                //         // ----------------------------------------------------------
+
+                //         // mengisi array dengan variabel yang berisi rata rata matkul
+                //         nilai[j][5] = String.valueOf(jumlahDaspro);
+                //         nilai[j][9] = String.valueOf(jumlahDasproPraktik);
+                //         nilai[j][13] = String.valueOf(jumlahMatdas);
+                //         nilai[j][17] = String.valueOf(jumlahPancasila);
+                //         nilai[j][21] = String.valueOf(jumlahKTI);
+                //         nilai[j][25] = String.valueOf(jumlahCTPS);
+                //         nilai[j][29] = String.valueOf(jumlahBing);
+                //         nilai[j][33] = String.valueOf(jumlahK3);
+                //         // ----------------------------------------------------------
+
+                //         // //print nilai rata rata
+                //         // System.out.println("-----------------NILAI RATA RATA-------------------");
+                //         // System.out.println("Nilai Rata-rata Daspro : " + nilai[j][5]);
+                //         // System.out.println("Nilai Rata-rata Daspro Praktikum : " + nilai[j][9]);
+                //         // System.out.println("Nilai Rata-rata MATDAS : " + nilai[j][13]);
+                //         // System.out.println("Nilai Rata-rata PANCASILA : " + nilai[j][17]);
+                //         // System.out.println("Nilai Rata-rata KTI : " + nilai[j][21]);
+                //         // System.out.println("Nilai Rata-rata CTPS : " + nilai[j][25]);
+                //         // System.out.println("Nilai Rata-rata B.INGGRIS : " + nilai[j][29]);
+                //         // System.out.println("Nilai Rata-rata K3 : " + nilai[j][33]);
+                //         // System.out.println("---------------------------------------------------");
+                //         // System.out.println("\n");
+                //         // //----------------------------------------------------------
+
+                        // if (mahasiswa[i][0] == null) {
+                        //     berandaAdmin();
+                        // }
                     }
                 }
             }
-        }
-    }
 
-    private static void updNilaiMhs() {
-        // untuk menghitung data mahasiswa yang ada nilainya(tidak null)
-        int count = 0;
-        for (String[] datanilai : nilai) {
-            if (datanilai[0] != null) {
-                count++;
-            }
-        }
-        // SORTING BY NAME
-        int n = count;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (nilai[j][0].compareTo(nilai[j + 1][0]) > 0) {
-                    // swap mahasiswa[j+1] and mahasiswa[j]
-                    String[] temp = nilai[j];
-                    nilai[j] = nilai[j + 1];
-                    nilai[j + 1] = temp;
-                }
-            }
-        }
+    // private static void updNilaiMhs() {
+    //     // untuk menghitung data mahasiswa yang ada nilainya(tidak null)
+    //     int count = 0;
+    //     for (String[] datanilai : nilai) {
+    //         if (datanilai[0] != null) {
+    //             count++;
+    //         }
+    //     }
+    //     // SORTING BY NAME
+    //     int n = count;
+    //     for (int i = 0; i < n - 1; i++) {
+    //         for (int j = 0; j < n - i - 1; j++) {
+    //             if (nilai[j][0].compareTo(nilai[j + 1][0]) > 0) {
+    //                 // swap mahasiswa[j+1] and mahasiswa[j]
+    //                 String[] temp = nilai[j];
+    //                 nilai[j] = nilai[j + 1];
+    //                 nilai[j + 1] = temp;
+    //             }
+    //         }
+    //     }
 
-        System.out.println("================= UPDATE NILAI MAHASISWA ===============");
-        System.out.println();
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "MATKUL", "nilai Tugas",
-                "nilai UTS", "Nilai UAS", "Rata-rata");
-        System.out.printf(
-                "+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][0] != null) {
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO",
-                        nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1], "DASPROPRAKTIKUM",
-                        nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][20],
-                        nilai[i][11], nilai[i][12], nilai[i][13]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14],
-                        nilai[i][20], nilai[i][16], nilai[i][17]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18],
-                        nilai[i][19], nilai[i][20], nilai[i][21]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22],
-                        nilai[i][23], nilai[i][24], nilai[i][25]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS", nilai[i][26],
-                        nilai[i][27], nilai[i][28], nilai[i][29]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30],
-                        nilai[i][31], nilai[i][32], nilai[i][33]);
-            }
-        }
+    //     System.out.println("================= UPDATE NILAI MAHASISWA ===============");
+    //     System.out.println();
+    //     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "MATKUL", "nilai Tugas",
+    //             "nilai UTS", "Nilai UAS", "Rata-rata");
+    //     System.out.printf(
+    //             "+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+    //     for (int i = 0; i < nilai.length; i++) {
+    //         if (nilai[i][0] != null) {
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO",
+    //                     nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1], "DASPROPRAKTIKUM",
+    //                     nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][20],
+    //                     nilai[i][11], nilai[i][12], nilai[i][13]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14],
+    //                     nilai[i][20], nilai[i][16], nilai[i][17]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18],
+    //                     nilai[i][19], nilai[i][20], nilai[i][21]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22],
+    //                     nilai[i][23], nilai[i][24], nilai[i][25]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS", nilai[i][26],
+    //                     nilai[i][27], nilai[i][28], nilai[i][29]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30],
+    //                     nilai[i][31], nilai[i][32], nilai[i][33]);
+    //         }
+    //     }
 
-        System.out.println("Cari data yang akan di update berdasarkan NIM");
-        System.out.println("Apakah ingin mencari data?");
-        System.out.println("yes / no");
-        System.out.println("___________________________");
-        inputScanner.nextLine();
+    //     System.out.println("Cari data yang akan di update berdasarkan NIM");
+    //     System.out.println("Apakah ingin mencari data?");
+    //     System.out.println("yes / no");
+    //     System.out.println("___________________________");
+    //     inputScanner.nextLine();
 
-        String jawab = inputScanner.nextLine();
+    //     String jawab = inputScanner.nextLine();
 
-        if (jawab.equalsIgnoreCase("yes")) {
-            boolean finded = false;
-            System.out.print("Masukkan key yang ingin dicari : ");
-            key = inputScanner.nextLine();
+    //     if (jawab.equalsIgnoreCase("yes")) {
+    //         boolean finded = false;
+    //         System.out.print("Masukkan key yang ingin dicari : ");
+    //         key = inputScanner.nextLine();
 
-            for (int i = 0; i < nilai.length; i++) {
-                if (key.equals(nilai[i][1])) {
-                    System.out.println(
-                            "=======================================================================================================================");
-                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO",
-                            nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
-                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1],
-                            "DASPROPRAKTIKUM", nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
-                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS",
-                            nilai[i][20], nilai[i][11], nilai[i][12], nilai[i][13]);
-                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA",
-                            nilai[i][14], nilai[i][20], nilai[i][16], nilai[i][17]);
-                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18],
-                            nilai[i][19], nilai[i][20], nilai[i][21]);
-                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22],
-                            nilai[i][23], nilai[i][24], nilai[i][25]);
-                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS",
-                            nilai[i][26], nilai[i][27], nilai[i][28], nilai[i][29]);
-                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30],
-                            nilai[i][31], nilai[i][32], nilai[i][33]);
-                    System.out.println(
-                            "=======================================================================================================================");
+    //         for (int i = 0; i < nilai.length; i++) {
+    //             if (key.equals(nilai[i][1])) {
+    //                 System.out.println(
+    //                         "=======================================================================================================================");
+    //                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO",
+    //                         nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
+    //                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1],
+    //                         "DASPROPRAKTIKUM", nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
+    //                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS",
+    //                         nilai[i][20], nilai[i][11], nilai[i][12], nilai[i][13]);
+    //                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA",
+    //                         nilai[i][14], nilai[i][20], nilai[i][16], nilai[i][17]);
+    //                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18],
+    //                         nilai[i][19], nilai[i][20], nilai[i][21]);
+    //                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22],
+    //                         nilai[i][23], nilai[i][24], nilai[i][25]);
+    //                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS",
+    //                         nilai[i][26], nilai[i][27], nilai[i][28], nilai[i][29]);
+    //                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30],
+    //                         nilai[i][31], nilai[i][32], nilai[i][33]);
+    //                 System.out.println(
+    //                         "=======================================================================================================================");
 
-                    // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
-                    finded = true;
-                }
-                if (finded) {
-                    System.out.println("-----------------------DASPRO----------------------");
-                    System.out.print("Nilai Tugas Daspro: ");
-                    nilai[i][2] = inputScanner.nextLine();
-                    System.out.print("Nilai UTS Daspro  : ");
-                    nilai[i][3] = inputScanner.nextLine();
-                    System.out.print("Nilai UAS Daspro  : ");
-                    nilai[i][4] = inputScanner.nextLine();
-                    System.out.println("---------------------------------------------------");
-                    System.out.println("\n");
-                    System.out.println("------------------DASPRO PRAKTIKUM-----------------");
-                    System.out.print("Nilai Tugas Daspro Praktikum : ");
-                    nilai[i][6] = inputScanner.nextLine();
-                    System.out.print("Nilai UTS Daspro Praktikum   : ");
-                    nilai[i][7] = inputScanner.nextLine();
-                    System.out.print("Nilai UAS Daspro Praktikum   : ");
-                    nilai[i][8] = inputScanner.nextLine();
-                    System.out.println("---------------------------------------------------");
-                    System.out.println("\n");
-                    System.out.println("-----------------------MATDAS----------------------");
-                    System.out.print("Nilai Tugas Matdas: ");
-                    nilai[i][10] = inputScanner.nextLine();
-                    System.out.print("Nilai UTS Matdas  : ");
-                    nilai[i][11] = inputScanner.nextLine();
-                    System.out.print("Nilai UAS Matdas  : ");
-                    nilai[i][12] = inputScanner.nextLine();
-                    System.out.println("---------------------------------------------------");
-                    System.out.println("\n");
-                    System.out.println("----------------------PANCASILA--------------------");
-                    System.out.print("Nilai Tugas PANCASILA : ");
-                    nilai[i][14] = inputScanner.nextLine();
-                    System.out.print("Nilai UTS PANCASILA   : ");
-                    nilai[i][15] = inputScanner.nextLine();
-                    System.out.print("Nilai UAS PANCASILA   : ");
-                    nilai[i][16] = inputScanner.nextLine();
-                    System.out.println("---------------------------------------------------");
-                    System.out.println("\n");
-                    System.out.println("-------------------------KTI-----------------------");
-                    System.out.print("Nilai Tugas KTI : ");
-                    nilai[i][18] = inputScanner.nextLine();
-                    System.out.print("Nilai UTS KTI   : ");
-                    nilai[i][19] = inputScanner.nextLine();
-                    System.out.print("Nilai UAS KTI   : ");
-                    nilai[i][20] = inputScanner.nextLine();
-                    System.out.println("---------------------------------------------------");
-                    System.out.println("\n");
-                    System.out.println("-------------------------CTPS----------------------");
-                    System.out.print("Nilai Tugas CTPS : ");
-                    nilai[i][22] = inputScanner.nextLine();
-                    System.out.print("Nilai UTS CTPS   : ");
-                    nilai[i][23] = inputScanner.nextLine();
-                    System.out.print("Nilai UAS CTPS   : ");
-                    nilai[i][24] = inputScanner.nextLine();
-                    System.out.println("---------------------------------------------------");
-                    System.out.println("\n");
-                    System.out.println("----------------------B.INGGRIS--------------------");
-                    System.out.print("Nilai Tugas B.INGGRIS : ");
-                    nilai[i][26] = inputScanner.nextLine();
-                    System.out.print("Nilai UTS B.INGGRIS   : ");
-                    nilai[i][27] = inputScanner.nextLine();
-                    System.out.print("Nilai UAS B.INGGRIS   : ");
-                    nilai[i][28] = inputScanner.nextLine();
-                    System.out.println("---------------------------------------------------");
-                    System.out.println("\n");
-                    System.out.println("-------------------------K-3-----------------------");
-                    System.out.print("Nilai Tugas K3 : ");
-                    nilai[i][30] = inputScanner.nextLine();
-                    System.out.print("Nilai UTS K3   : ");
-                    nilai[i][31] = inputScanner.nextLine();
-                    System.out.print("Nilai UAS K3   : ");
-                    nilai[i][32] = inputScanner.nextLine();
-                    System.out.println("---------------------------------------------------");
-                    System.out.println("DATA BERHASIL DI UPDATE\n");
+    //                 // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
+    //                 finded = true;
+    //             }
+    //             if (finded) {
+    //                 System.out.println("-----------------------DASPRO----------------------");
+    //                 System.out.print("Nilai Tugas Daspro: ");
+    //                 nilai[i][2] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UTS Daspro  : ");
+    //                 nilai[i][3] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UAS Daspro  : ");
+    //                 nilai[i][4] = inputScanner.nextLine();
+    //                 System.out.println("---------------------------------------------------");
+    //                 System.out.println("\n");
+    //                 System.out.println("------------------DASPRO PRAKTIKUM-----------------");
+    //                 System.out.print("Nilai Tugas Daspro Praktikum : ");
+    //                 nilai[i][6] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UTS Daspro Praktikum   : ");
+    //                 nilai[i][7] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UAS Daspro Praktikum   : ");
+    //                 nilai[i][8] = inputScanner.nextLine();
+    //                 System.out.println("---------------------------------------------------");
+    //                 System.out.println("\n");
+    //                 System.out.println("-----------------------MATDAS----------------------");
+    //                 System.out.print("Nilai Tugas Matdas: ");
+    //                 nilai[i][10] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UTS Matdas  : ");
+    //                 nilai[i][11] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UAS Matdas  : ");
+    //                 nilai[i][12] = inputScanner.nextLine();
+    //                 System.out.println("---------------------------------------------------");
+    //                 System.out.println("\n");
+    //                 System.out.println("----------------------PANCASILA--------------------");
+    //                 System.out.print("Nilai Tugas PANCASILA : ");
+    //                 nilai[i][14] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UTS PANCASILA   : ");
+    //                 nilai[i][15] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UAS PANCASILA   : ");
+    //                 nilai[i][16] = inputScanner.nextLine();
+    //                 System.out.println("---------------------------------------------------");
+    //                 System.out.println("\n");
+    //                 System.out.println("-------------------------KTI-----------------------");
+    //                 System.out.print("Nilai Tugas KTI : ");
+    //                 nilai[i][18] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UTS KTI   : ");
+    //                 nilai[i][19] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UAS KTI   : ");
+    //                 nilai[i][20] = inputScanner.nextLine();
+    //                 System.out.println("---------------------------------------------------");
+    //                 System.out.println("\n");
+    //                 System.out.println("-------------------------CTPS----------------------");
+    //                 System.out.print("Nilai Tugas CTPS : ");
+    //                 nilai[i][22] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UTS CTPS   : ");
+    //                 nilai[i][23] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UAS CTPS   : ");
+    //                 nilai[i][24] = inputScanner.nextLine();
+    //                 System.out.println("---------------------------------------------------");
+    //                 System.out.println("\n");
+    //                 System.out.println("----------------------B.INGGRIS--------------------");
+    //                 System.out.print("Nilai Tugas B.INGGRIS : ");
+    //                 nilai[i][26] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UTS B.INGGRIS   : ");
+    //                 nilai[i][27] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UAS B.INGGRIS   : ");
+    //                 nilai[i][28] = inputScanner.nextLine();
+    //                 System.out.println("---------------------------------------------------");
+    //                 System.out.println("\n");
+    //                 System.out.println("-------------------------K-3-----------------------");
+    //                 System.out.print("Nilai Tugas K3 : ");
+    //                 nilai[i][30] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UTS K3   : ");
+    //                 nilai[i][31] = inputScanner.nextLine();
+    //                 System.out.print("Nilai UAS K3   : ");
+    //                 nilai[i][32] = inputScanner.nextLine();
+    //                 System.out.println("---------------------------------------------------");
+    //                 System.out.println("DATA BERHASIL DI UPDATE\n");
 
-                    // variabel untuk menghitung rata rata setiap matkul :) uwaw
-                    double jumlahDaspro = (Double.parseDouble(nilai[i][2]) + Double.parseDouble(nilai[i][3])
-                            + Double.parseDouble(nilai[i][4])) / 3;
-                    double jumlahDasproPraktik = (Double.parseDouble(nilai[i][6]) + Double.parseDouble(nilai[i][7])
-                            + Double.parseDouble(nilai[i][8])) / 3;
-                    double jumlahMatdas = (Double.parseDouble(nilai[i][10]) + Double.parseDouble(nilai[i][11])
-                            + Double.parseDouble(nilai[i][12])) / 3;
-                    double jumlahPancasila = (Double.parseDouble(nilai[i][14]) + Double.parseDouble(nilai[i][15])
-                            + Double.parseDouble(nilai[i][16])) / 3;
-                    double jumlahKTI = (Double.parseDouble(nilai[i][18]) + Double.parseDouble(nilai[i][19])
-                            + Double.parseDouble(nilai[i][20])) / 3;
-                    double jumlahCTPS = (Double.parseDouble(nilai[i][22]) + Double.parseDouble(nilai[i][23])
-                            + Double.parseDouble(nilai[i][24])) / 3;
-                    double jumlahBing = (Double.parseDouble(nilai[i][26]) + Double.parseDouble(nilai[i][27])
-                            + Double.parseDouble(nilai[i][28])) / 3;
-                    double jumlahK3 = (Double.parseDouble(nilai[i][30]) + Double.parseDouble(nilai[i][31])
-                            + Double.parseDouble(nilai[i][32])) / 3;
-                    // ----------------------------------------------------------
+    //                 // variabel untuk menghitung rata rata setiap matkul :) uwaw
+    //                 double jumlahDaspro = (Double.parseDouble(nilai[i][2]) + Double.parseDouble(nilai[i][3])
+    //                         + Double.parseDouble(nilai[i][4])) / 3;
+    //                 double jumlahDasproPraktik = (Double.parseDouble(nilai[i][6]) + Double.parseDouble(nilai[i][7])
+    //                         + Double.parseDouble(nilai[i][8])) / 3;
+    //                 double jumlahMatdas = (Double.parseDouble(nilai[i][10]) + Double.parseDouble(nilai[i][11])
+    //                         + Double.parseDouble(nilai[i][12])) / 3;
+    //                 double jumlahPancasila = (Double.parseDouble(nilai[i][14]) + Double.parseDouble(nilai[i][15])
+    //                         + Double.parseDouble(nilai[i][16])) / 3;
+    //                 double jumlahKTI = (Double.parseDouble(nilai[i][18]) + Double.parseDouble(nilai[i][19])
+    //                         + Double.parseDouble(nilai[i][20])) / 3;
+    //                 double jumlahCTPS = (Double.parseDouble(nilai[i][22]) + Double.parseDouble(nilai[i][23])
+    //                         + Double.parseDouble(nilai[i][24])) / 3;
+    //                 double jumlahBing = (Double.parseDouble(nilai[i][26]) + Double.parseDouble(nilai[i][27])
+    //                         + Double.parseDouble(nilai[i][28])) / 3;
+    //                 double jumlahK3 = (Double.parseDouble(nilai[i][30]) + Double.parseDouble(nilai[i][31])
+    //                         + Double.parseDouble(nilai[i][32])) / 3;
+    //                 // ----------------------------------------------------------
 
-                    // mengisi array dengan variabel yang berisi rata rata matkul
-                    nilai[i][5] = String.valueOf(jumlahDaspro);
-                    nilai[i][9] = String.valueOf(jumlahDasproPraktik);
-                    nilai[i][13] = String.valueOf(jumlahMatdas);
-                    nilai[i][17] = String.valueOf(jumlahPancasila);
-                    nilai[i][21] = String.valueOf(jumlahKTI);
-                    nilai[i][25] = String.valueOf(jumlahCTPS);
-                    nilai[i][29] = String.valueOf(jumlahBing);
-                    nilai[i][33] = String.valueOf(jumlahK3);
-                    // ----------------------------------------------------------
-                    break;
-                }
+    //                 // mengisi array dengan variabel yang berisi rata rata matkul
+    //                 nilai[i][5] = String.valueOf(jumlahDaspro);
+    //                 nilai[i][9] = String.valueOf(jumlahDasproPraktik);
+    //                 nilai[i][13] = String.valueOf(jumlahMatdas);
+    //                 nilai[i][17] = String.valueOf(jumlahPancasila);
+    //                 nilai[i][21] = String.valueOf(jumlahKTI);
+    //                 nilai[i][25] = String.valueOf(jumlahCTPS);
+    //                 nilai[i][29] = String.valueOf(jumlahBing);
+    //                 nilai[i][33] = String.valueOf(jumlahK3);
+    //                 // ----------------------------------------------------------
+    //                 break;
+    //             }
 
-            }
-            if (!finded) {
-                System.out.println("Key dalam array tidak ditemukan");
-            } else if (finded) {
-                System.out.println("apakah ingin melakukan operasi selanjutnya?");
-                System.out.println("- ketikkan 1 untuk lanjut");
-                System.out.println("- ketikkan angka lainnya untuk logout");
-                int acc = inputScanner.nextInt();
+    //         }
+    //         if (!finded) {
+    //             System.out.println("Key dalam array tidak ditemukan");
+    //         } else if (finded) {
+    //             System.out.println("apakah ingin melakukan operasi selanjutnya?");
+    //             System.out.println("- ketikkan 1 untuk lanjut");
+    //             System.out.println("- ketikkan angka lainnya untuk logout");
+    //             int acc = inputScanner.nextInt();
 
-                if (acc == 1) {
-                    return;
-                } else {
-                    logOut();
-                }
-            }
-        }
-    }
+    //             if (acc == 1) {
+    //                 return;
+    //             } else {
+    //                 logOut();
+    //             }
+    //         }
+    //     }
+    // }
 
-    private static void cekNilaiMhs() {
-        // untuk menghitung data mahasiswa yang ada nilainya(tidak null)
-        int count = 0;
-        for (String[] datanilai : nilai) {
-            if (datanilai[0] != null) {
-                count++;
-            }
-        }
-        // SORTING BY NIM
-        int n = count;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (nilai[j][1].compareTo(nilai[j + 1][1]) > 0) {
-                    // swap nilai[j+1] and nilai[j]
-                    String[] temp = nilai[j];
-                    nilai[j] = nilai[j + 1];
-                    nilai[j + 1] = temp;
-                }
-            }
-        }
+    // private static void cekNilaiMhs() {
+    //     // untuk menghitung data mahasiswa yang ada nilainya(tidak null)
+    //     int count = 0;
+    //     for (String[] datanilai : nilai) {
+    //         if (datanilai[0] != null) {
+    //             count++;
+    //         }
+    //     }
+    //     // SORTING BY NIM
+    //     int n = count;
+    //     for (int i = 0; i < n - 1; i++) {
+    //         for (int j = 0; j < n - i - 1; j++) {
+    //             if (nilai[j][1].compareTo(nilai[j + 1][1]) > 0) {
+    //                 // swap nilai[j+1] and nilai[j]
+    //                 String[] temp = nilai[j];
+    //                 nilai[j] = nilai[j + 1];
+    //                 nilai[j + 1] = temp;
+    //             }
+    //         }
+    //     }
 
-        System.out.println("================= NILAI MAHASISWA ==============");
-        System.out.println();
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "MATKUL", "nilai Tugas",
-                "nilai UTS", "Nilai UAS", "Rata-rata");
-        System.out.printf(
-                "+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][0] != null) {
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO",
-                        nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1], "DASPROPRAKTIKUM",
-                        nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][20],
-                        nilai[i][11], nilai[i][12], nilai[i][13]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14],
-                        nilai[i][20], nilai[i][16], nilai[i][17]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18],
-                        nilai[i][19], nilai[i][20], nilai[i][21]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22],
-                        nilai[i][23], nilai[i][24], nilai[i][25]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS", nilai[i][26],
-                        nilai[i][27], nilai[i][28], nilai[i][29]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30],
-                        nilai[i][31], nilai[i][32], nilai[i][33]);
-            }
-        }
+    //     System.out.println("================= NILAI MAHASISWA ==============");
+    //     System.out.println();
+    //     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "MATKUL", "nilai Tugas",
+    //             "nilai UTS", "Nilai UAS", "Rata-rata");
+    //     System.out.printf(
+    //             "+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+    //     for (int i = 0; i < nilai.length; i++) {
+    //         if (nilai[i][0] != null) {
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO",
+    //                     nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1], "DASPROPRAKTIKUM",
+    //                     nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][20],
+    //                     nilai[i][11], nilai[i][12], nilai[i][13]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14],
+    //                     nilai[i][20], nilai[i][16], nilai[i][17]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18],
+    //                     nilai[i][19], nilai[i][20], nilai[i][21]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22],
+    //                     nilai[i][23], nilai[i][24], nilai[i][25]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS", nilai[i][26],
+    //                     nilai[i][27], nilai[i][28], nilai[i][29]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30],
+    //                     nilai[i][31], nilai[i][32], nilai[i][33]);
+    //         }
+    //     }
 
-        double MaxDaspro = Double.parseDouble(nilai[0][5]);
-        double MinDaspro = Double.parseDouble(nilai[0][5]);
+    //     double MaxDaspro = Double.parseDouble(nilai[0][5]);
+    //     double MinDaspro = Double.parseDouble(nilai[0][5]);
 
-        // double maxNum = Daspro;
+    //     // double maxNum = Daspro;
 
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][5] != null && !nilai[i][5].trim().isEmpty()) {
-                double value = Double.parseDouble(nilai[i][5]);
-                if (value > MaxDaspro) {
-                    MaxDaspro = value; // Maksimum ditemukan
-                }
-                if (value < MinDaspro) {
-                    MinDaspro = value; // Minimum ditemukan
-                }
-            }
-        }
+    //     for (int i = 0; i < nilai.length; i++) {
+    //         if (nilai[i][5] != null && !nilai[i][5].trim().isEmpty()) {
+    //             double value = Double.parseDouble(nilai[i][5]);
+    //             if (value > MaxDaspro) {
+    //                 MaxDaspro = value; // Maksimum ditemukan
+    //             }
+    //             if (value < MinDaspro) {
+    //                 MinDaspro = value; // Minimum ditemukan
+    //             }
+    //         }
+    //     }
 
-            System.out.println("nilai tertinggi daspro   : " + MaxDaspro);
-            System.out.println("nilai minimum daspro    : " + MinDaspro);
+    //         System.out.println("nilai tertinggi daspro   : " + MaxDaspro);
+    //         System.out.println("nilai minimum daspro    : " + MinDaspro);
 
-        System.out.println("================= NILAI MAHASISWA ==============");
-        System.out.println();
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "MATKUL", "nilai Tugas", "nilai UTS","Nilai UAS", "Rata-rata");
-        System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][0] != null) {
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO", nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1], "DASPROPRAKTIKUM", nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][20], nilai[i][11], nilai[i][12], nilai[i][13]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14], nilai[i][20], nilai[i][16], nilai[i][17]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18], nilai[i][19], nilai[i][20], nilai[i][21]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22], nilai[i][23], nilai[i][24], nilai[i][25]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS", nilai[i][26], nilai[i][27], nilai[i][28], nilai[i][29]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30], nilai[i][31], nilai[i][32], nilai[i][33]);
-            }
-        }
-    }
+    //     System.out.println("================= NILAI MAHASISWA ==============");
+    //     System.out.println();
+    //     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "MATKUL", "nilai Tugas", "nilai UTS","Nilai UAS", "Rata-rata");
+    //     System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+    //     for (int i = 0; i < nilai.length; i++) {
+    //         if (nilai[i][0] != null) {
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO", nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1], "DASPROPRAKTIKUM", nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][20], nilai[i][11], nilai[i][12], nilai[i][13]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14], nilai[i][20], nilai[i][16], nilai[i][17]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18], nilai[i][19], nilai[i][20], nilai[i][21]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22], nilai[i][23], nilai[i][24], nilai[i][25]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS", nilai[i][26], nilai[i][27], nilai[i][28], nilai[i][29]);
+    //             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30], nilai[i][31], nilai[i][32], nilai[i][33]);
+    //         }
+    //     }
+    // }
 
     public static String jadwalMatkul1f[][];
 
