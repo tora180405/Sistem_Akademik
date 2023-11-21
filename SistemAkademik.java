@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class SistemAkademik {
     // deklarasi variable global
     // private static int levelAcc;
-        // deklarasi array untuk fitur input data mahasiswa
+    // deklarasi array untuk fitur input data mahasiswa
     public static String[][] mahasiswa;
     public static int counter;
 
+    // Deklarasi variable untuk fitur contact
+    public static String[][] contact = new String[1000][3];
 
     // Deklarasi Variable untuk fitur search dari semua fitur
     public static String key;
@@ -16,16 +18,11 @@ public class SistemAkademik {
     // deklarasi variable krs mahasiswa semester 1
     public static String krsMhs1[][];
 
-    // deklarasi variable global untuk fitur contact
-    public static String nama, pesan;
-    public static int nim;
-
-    // deklarasi variable nilai 
-    
+    // deklarasi variable nilai
     public static String[][] nilai;
 
     // deklarasi variable untuk jadwal matkul
-        public static String jadwalMatkul1f[][];
+    public static String jadwalMatkul1f[][];
 
     public static void main(String[] args) {
         logIn();
@@ -37,6 +34,9 @@ public class SistemAkademik {
         logIn();
     }
 
+    public static String username = "";
+    public static String password = "";
+
     // private static List<String> menuStack = new ArrayList<>();
     public static void logIn() {
         String[][] dataLog = {
@@ -44,7 +44,6 @@ public class SistemAkademik {
                 { "dosen", "dosen" },
                 { "mahasiswa", "mahasiswa" }
         };
-        String username = "", password = "";
         int attempts = 0;
 
         while (attempts < 3) {
@@ -61,7 +60,6 @@ public class SistemAkademik {
             if (dataLog[0][0].equals(username) && dataLog[0][1].equals(password)) {
                 System.out.println("Selamat datang " + username);
                 berandaAdmin();
-
             } else if (dataLog[1][0].equals(username) && dataLog[1][1].equals(password)) {
                 System.out.println("Selamat datang " + username);
                 berandaDosen();
@@ -235,7 +233,6 @@ public class SistemAkademik {
         }
     }
 
-
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
 
@@ -251,9 +248,8 @@ public class SistemAkademik {
         boolean inpData = true;
 
         while (inpData) {
-            System.out.println(counter);
             int i = counter;
-            mahasiswa = new String[4000][9];
+            mahasiswa = new String[4000][10];
 
             while (i < mahasiswa.length) {
                 System.out.println("\n");
@@ -280,6 +276,7 @@ public class SistemAkademik {
                 mahasiswa[i][8] = inputScanner.nextLine();
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
+                System.out.println(" yang melakukan perubahan adalah : " + username);
                 i++;
 
                 System.out.println("=======================================================");
@@ -295,7 +292,7 @@ public class SistemAkademik {
 
                 if (choice == 1) {
                     counter = i;
-                    System.out.println("counter " +counter);
+                    System.out.println("counter " + counter);
                 } else if (choice == 2) {
                     // berandaAdmin();
                     inpData = false;
@@ -506,7 +503,6 @@ public class SistemAkademik {
             }
         }
     }
-
 
     private static void inNilaiMhs() {
         int choice;
@@ -951,23 +947,33 @@ public class SistemAkademik {
             }
         }
 
-            System.out.println("nilai tertinggi daspro   : " + MaxDaspro);
-            System.out.println("nilai minimum daspro    : " + MinDaspro);
+        System.out.println("nilai tertinggi daspro   : " + MaxDaspro);
+        System.out.println("nilai minimum daspro    : " + MinDaspro);
 
         System.out.println("================= NILAI MAHASISWA ==============");
         System.out.println();
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "MATKUL", "nilai Tugas", "nilai UTS","Nilai UAS", "Rata-rata");
-        System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "MATKUL", "nilai Tugas",
+                "nilai UTS", "Nilai UAS", "Rata-rata");
+        System.out.printf(
+                "+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
         for (int i = 0; i < nilai.length; i++) {
             if (nilai[i][0] != null) {
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO", nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1], "DASPROPRAKTIKUM", nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][20], nilai[i][11], nilai[i][12], nilai[i][13]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14], nilai[i][20], nilai[i][16], nilai[i][17]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18], nilai[i][19], nilai[i][20], nilai[i][21]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22], nilai[i][23], nilai[i][24], nilai[i][25]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS", nilai[i][26], nilai[i][27], nilai[i][28], nilai[i][29]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30], nilai[i][31], nilai[i][32], nilai[i][33]);
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO",
+                        nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1], "DASPROPRAKTIKUM",
+                        nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][20],
+                        nilai[i][11], nilai[i][12], nilai[i][13]);
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14],
+                        nilai[i][20], nilai[i][16], nilai[i][17]);
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18],
+                        nilai[i][19], nilai[i][20], nilai[i][21]);
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22],
+                        nilai[i][23], nilai[i][24], nilai[i][25]);
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS", nilai[i][26],
+                        nilai[i][27], nilai[i][28], nilai[i][29]);
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30],
+                        nilai[i][31], nilai[i][32], nilai[i][33]);
             }
         }
     }
@@ -980,47 +986,55 @@ public class SistemAkademik {
         String kelas = inputScanner.nextLine();
 
         String[][] jadwalMatkul1f = {
-            {"Senin", "10:35-14:25", "Konsep Teknologi Informasi", "Yuri Ariyanto, S.Kom., M.Kom."},
-            {"Selasa", "09:30-13:15", "Critical Thinking dan Problem Solving", "Dwi Puspitasari, S.Kom., M.Kom."},
-            {"Rabu", "07:00-10:35", "Keselamatan dan Kesehatan Kerja", "Ariadi Retno Tri Hayati Ririd, S.Kom., M.Kom."},
-            {"Rabu", "11:25-13:35", "Pancasila", "Widaningsih, S.H., M.H."},
-            {"Rabu", "13:35-16:00", "Bahasa Inggris 1", "Satrio Binusa Suryadi, S.S., M.Pd."},
-            {"Kamis", "07:00-09:15", "Matematika Dasar", "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D."},
-            {"Kamis", "11:00-17:10", "Praktikum Dasar Pemrograman", "Noprianto, S.Kom., M.Eng."},
-            {"Jumat", "07:00-10:00", "Praktikum Dasar Pemrograman", "Noprianto, S.Kom., M.Eng."},
-            {"Jumat", "07:00-10:00", "Matematika Dasar", "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D."}
+                { "Senin", "10:35-14:25", "Konsep Teknologi Informasi", "Yuri Ariyanto, S.Kom., M.Kom." },
+                { "Selasa", "09:30-13:15", "Critical Thinking dan Problem Solving", "Dwi Puspitasari, S.Kom., M.Kom." },
+                { "Rabu", "07:00-10:35", "Keselamatan dan Kesehatan Kerja",
+                        "Ariadi Retno Tri Hayati Ririd, S.Kom., M.Kom." },
+                { "Rabu", "11:25-13:35", "Pancasila", "Widaningsih, S.H., M.H." },
+                { "Rabu", "13:35-16:00", "Bahasa Inggris 1", "Satrio Binusa Suryadi, S.S., M.Pd." },
+                { "Kamis", "07:00-09:15", "Matematika Dasar", "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D." },
+                { "Kamis", "11:00-17:10", "Praktikum Dasar Pemrograman", "Noprianto, S.Kom., M.Eng." },
+                { "Jumat", "07:00-10:00", "Praktikum Dasar Pemrograman", "Noprianto, S.Kom., M.Eng." },
+                { "Jumat", "07:00-10:00", "Matematika Dasar", "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D." }
         };
 
         String[][] jadwalMatkul1c = {
-            {"Senin", "07:00-09:30", "Matematika Dasar", "****************************"},
-            {"Senin", "11:20-13:40", "Pancasila", "************************"},
-            {"Senin", "13:40-17:10", "Critical Thinking dan Problem Solving", "************************************"},
-            {"Selasa", "11:20-15:20", "Dasar Pemrograman", "********************"},
-            {"Rabu", "07:50-13:40", "Praktikum Dasar Pemrograman", "*************************"},
-            {"Rabu", "07:00-09:15", "Bahasa Inggris 1", "*********************************"},
-            {"Kamis", "12:50-16:20", "Konsep Teknologi Informasi", "**************************"},
-            {"Jumat", "07:00-09:30", "Matematika Dasar", "**************************"},
-            {"Jumat", "07:00-10:00", "Keselamatan dan Kesehatan Kerja", "********************************"}
+                { "Senin", "07:00-09:30", "Matematika Dasar", "****************************" },
+                { "Senin", "11:20-13:40", "Pancasila", "************************" },
+                { "Senin", "13:40-17:10", "Critical Thinking dan Problem Solving",
+                        "************************************" },
+                { "Selasa", "11:20-15:20", "Dasar Pemrograman", "********************" },
+                { "Rabu", "07:50-13:40", "Praktikum Dasar Pemrograman", "*************************" },
+                { "Rabu", "07:00-09:15", "Bahasa Inggris 1", "*********************************" },
+                { "Kamis", "12:50-16:20", "Konsep Teknologi Informasi", "**************************" },
+                { "Jumat", "07:00-09:30", "Matematika Dasar", "**************************" },
+                { "Jumat", "07:00-10:00", "Keselamatan dan Kesehatan Kerja", "********************************" }
         };
 
         if (kelas.equalsIgnoreCase("1f") || kelas.equalsIgnoreCase("1-f")) {
             System.out.println("========================== JADWAL KULIAH 1-F ==========================");
             System.out.println();
             System.out.printf("| %-20s | %-20s | %-50s | %-50s |\n", "HARI", "JAM", "MATA KULIAH", "DOSEN");
-            System.out.printf("+-------------------------------------------------------------------------------------------------------------------------------------------------------+\n");
-            for(int i = 0; i < jadwalMatkul1f.length; i++){
-                // System.out.println(jadwalMatkul1f[i][0] + jadwalMatkul1f[i][1]+ jadwalMatkul1f[i][1]+ jadwalMatkul1f[i][3]);
-                System.out.printf("| %-20s | %-20s | %-50s | %-50s |\n", jadwalMatkul1f[i][0], jadwalMatkul1f[i][1], jadwalMatkul1f[i][2], jadwalMatkul1f[i][3]);
+            System.out.printf(
+                    "+-------------------------------------------------------------------------------------------------------------------------------------------------------+\n");
+            for (int i = 0; i < jadwalMatkul1f.length; i++) {
+                // System.out.println(jadwalMatkul1f[i][0] + jadwalMatkul1f[i][1]+
+                // jadwalMatkul1f[i][1]+ jadwalMatkul1f[i][3]);
+                System.out.printf("| %-20s | %-20s | %-50s | %-50s |\n", jadwalMatkul1f[i][0], jadwalMatkul1f[i][1],
+                        jadwalMatkul1f[i][2], jadwalMatkul1f[i][3]);
 
             }
-        }else if(kelas.equalsIgnoreCase("1c") || kelas.equalsIgnoreCase("1-c")){
+        } else if (kelas.equalsIgnoreCase("1c") || kelas.equalsIgnoreCase("1-c")) {
             System.out.println("========================== JADWAL KULIAH 1-C ==========================");
             System.out.println();
             System.out.printf("| %-20s | %-20s | %-50s | %-50s |\n", "HARI", "JAM", "MATA KULIAH", "DOSEN");
-            System.out.printf("+-------------------------------------------------------------------------------------------------------------------------------------------------------+\n");
-            for(int i = 0; i < jadwalMatkul1c.length; i++){
-                // System.out.println(jadwalMatkul1c[i][0] + jadwalMatkul1c[i][1]+ jadwalMatkul1c[i][1]+ jadwalMatkul1c[i][3]);
-                System.out.printf("| %-20s | %-20s | %-50s | %-50s |\n", jadwalMatkul1c[i][0], jadwalMatkul1c[i][1], jadwalMatkul1c[i][2], jadwalMatkul1c[i][3]);
+            System.out.printf(
+                    "+-------------------------------------------------------------------------------------------------------------------------------------------------------+\n");
+            for (int i = 0; i < jadwalMatkul1c.length; i++) {
+                // System.out.println(jadwalMatkul1c[i][0] + jadwalMatkul1c[i][1]+
+                // jadwalMatkul1c[i][1]+ jadwalMatkul1c[i][3]);
+                System.out.printf("| %-20s | %-20s | %-50s | %-50s |\n", jadwalMatkul1c[i][0], jadwalMatkul1c[i][1],
+                        jadwalMatkul1c[i][2], jadwalMatkul1c[i][3]);
 
             }
         }
@@ -1047,56 +1061,72 @@ public class SistemAkademik {
     private static void cekDataKrsMhs() {
 
         String[][] krsMhs1 = {
-            {"RTI231001", "Pancasila", "1", "2", "2"},
-            {"RTI231002", "Konsep Teknologi Informasi", "1", "2", "4"},
-            {"RTI231003", "Critical Thinking dan Problem Solving", "1", "2", "4"},
-            {"RTI231004", "Matematika Dasar", "1", "3", "6"},
-            {"RTI231005", "Bahasa Inggris 1", "1", "2", "4"},
-            {"RTI231006", "Dasar Pemograman", "1", "2", "4"},
-            {"RTI231007", "Praktikum Dasar Pemograman", "1", "3", "6"},
-            {"RTI231008", "Keselamatan dan Kesehatan Kerja", "1", "2", "4"}
+                { "RTI231001", "Pancasila", "1", "2", "2" },
+                { "RTI231002", "Konsep Teknologi Informasi", "1", "2", "4" },
+                { "RTI231003", "Critical Thinking dan Problem Solving", "1", "2", "4" },
+                { "RTI231004", "Matematika Dasar", "1", "3", "6" },
+                { "RTI231005", "Bahasa Inggris 1", "1", "2", "4" },
+                { "RTI231006", "Dasar Pemograman", "1", "2", "4" },
+                { "RTI231007", "Praktikum Dasar Pemograman", "1", "3", "6" },
+                { "RTI231008", "Keselamatan dan Kesehatan Kerja", "1", "2", "4" }
         };
 
         System.out.println("========================== CEK DATA KRS MAHASISWA ==========================");
         System.out.print("Masukkan Semester : ");
         int semester = inputScanner.nextInt();
-        
+
         if (semester == 1) {
             System.out.println("========================== KRS SEMESTER 1 ==========================");
             System.out.println();
-            System.out.printf("+--------------------------------------------------------------------------------------------------------+\n");
-            System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "KODE MK", "MATA KULIAH", "SEMESTER", "SKS", "JAM");
-            System.out.printf("+--------------------------------------------------------------------------------------------------------+\n");
-            for(int i = 0; i < krsMhs1.length; i++){
-                System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", krsMhs1[i][0], krsMhs1[i][1], krsMhs1[i][2], krsMhs1[i][3], krsMhs1[i][4]);
+            System.out.printf(
+                    "+--------------------------------------------------------------------------------------------------------+\n");
+            System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "KODE MK", "MATA KULIAH", "SEMESTER",
+                    "SKS", "JAM");
+            System.out.printf(
+                    "+--------------------------------------------------------------------------------------------------------+\n");
+            for (int i = 0; i < krsMhs1.length; i++) {
+                System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", krsMhs1[i][0], krsMhs1[i][1],
+                        krsMhs1[i][2], krsMhs1[i][3], krsMhs1[i][4]);
             }
-            System.out.printf("+--------------------------------------------------------------------------------------------------------+\n");
+            System.out.printf(
+                    "+--------------------------------------------------------------------------------------------------------+\n");
         }
     }
 
     public static void contact() {
 
-        System.out.println("CONTACT");
-        inputScanner.nextLine();
-        System.out.print("masukkan nama : ");
-        nama = inputScanner.nextLine();
+        System.out.println("============ CONTACT ============");
+        while (true) {
+            int i = 0;
+            while (i < contact.length) {
+                inputScanner.nextLine();
+                System.out.print("masukkan nama : ");
+                contact[i][0] = inputScanner.nextLine();
+                System.out.print("masukkan nim : ");
+                contact[i][1] = inputScanner.nextLine();
+                System.out.print("masukkan pesan : ");
+                contact[i][2] = inputScanner.nextLine();
 
-        System.out.print("masukkan nim : ");
-        nim = inputScanner.nextInt();
-
-        inputScanner.nextLine();
-        System.out.print("masukkan pesan : ");
-        pesan = inputScanner.nextLine();
-
-        System.out.println("Pesan anda sedang diproses");
+                System.out.println("Pesan anda sedang diproses");
+                break;
+            }
+            break;
+        }
 
     }
 
     public static void contactAdmin() {
-        System.out.println("CONTACT");
-        System.out.println("nama : " + nama);
-        System.out.println("nim : " + nim);
-        System.out.println("pesan : " + pesan);
+        System.out.println("================= CONTACT ===============");
+        System.out.println();
+        System.out.printf("| %-20s | %-15s | %-50s |\n", "Nama", "NIM", "Pesan");
+        System.out.printf(
+                "-----------------------------------------------------------------------------------------------\n");
+        for (int i = 0; i < contact.length; i++) {
+            if (contact[i][0] != null) {
+                System.out.printf("| %-20s | %-15s | %-50s |\n",
+                        contact[i][0], contact[i][1], contact[i][2]);
+            }
+        }
 
         System.out.println("apakah ingin melakukan operasi selanjutnya?");
         int acc = inputScanner.nextInt();
