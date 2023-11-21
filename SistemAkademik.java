@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class SistemAkademik {
     // deklarasi variable global
     // private static int levelAcc;
-        // deklarasi array untuk fitur input data mahasiswa
+    // deklarasi array untuk fitur input data mahasiswa
     public static String[][] mahasiswa;
     public static int counter;
 
+    // Deklarasi variable untuk fitur contact
+    public static String[][] contact = new String[1000][3];
 
     // Deklarasi Variable untuk fitur search dari semua fitur
     public static String key;
@@ -16,16 +18,11 @@ public class SistemAkademik {
     // deklarasi variable krs mahasiswa semester 1
     public static String krsMhs1[][];
 
-    // deklarasi variable global untuk fitur contact
-    public static String nama, pesan;
-    public static int nim;
-
-    // deklarasi variable nilai 
-    
+    // deklarasi variable nilai
     public static String[][] nilai;
 
     // deklarasi variable untuk jadwal matkul
-        public static String jadwalMatkul1f[][];
+    public static String jadwalMatkul1f[][];
 
     public static void main(String[] args) {
         logIn();
@@ -37,20 +34,16 @@ public class SistemAkademik {
         logIn();
     }
 
+    public static String username = "";
+    public static String password = "";
+
     // private static List<String> menuStack = new ArrayList<>();
     public static void logIn() {
         String[][] dataLog = {
-                { "admin1", "admin1", "1" },
-                { "admin2", "admin2", "1" },
-                { "admin3", "admin3", "1" },
-                { "dosen1", "dosen1", "2" },
-                { "dosen2", "dosen2", "2" },
-                { "dosen3", "dosen3", "2" },
-                { "mahasiswa1", "mahasiswa1", "3" },
-                { "mahasiswa2", "mahasiswa2", "3" },
-                { "mahasiswa3", "mahasiswa3", "3" }
+                { "admin", "admin" },
+                { "dosen", "dosen" },
+                { "mahasiswa", "mahasiswa" }
         };
-        String username = "", password = "";
         int attempts = 0;
 
         while (attempts < 3) {
@@ -67,7 +60,6 @@ public class SistemAkademik {
             if (dataLog[0][0].equals(username) && dataLog[0][1].equals(password)) {
                 System.out.println("Selamat datang " + username);
                 berandaAdmin();
-
             } else if (dataLog[1][0].equals(username) && dataLog[1][1].equals(password)) {
                 System.out.println("Selamat datang " + username);
                 berandaDosen();
@@ -241,7 +233,6 @@ public class SistemAkademik {
         }
     }
 
-
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
 
@@ -257,9 +248,8 @@ public class SistemAkademik {
         boolean inpData = true;
 
         while (inpData) {
-            System.out.println(counter);
             int i = counter;
-            mahasiswa = new String[4000][9];
+            mahasiswa = new String[4000][10];
 
             while (i < mahasiswa.length) {
                 System.out.println("\n");
@@ -286,6 +276,7 @@ public class SistemAkademik {
                 mahasiswa[i][8] = inputScanner.nextLine();
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
+                System.out.println(" yang melakukan perubahan adalah : " + username);
                 i++;
 
                 System.out.println("=======================================================");
@@ -301,7 +292,7 @@ public class SistemAkademik {
 
                 if (choice == 1) {
                     counter = i;
-                    System.out.println("counter " +counter);
+                    System.out.println("counter " + counter);
                 } else if (choice == 2) {
                     // berandaAdmin();
                     inpData = false;
@@ -512,7 +503,6 @@ public class SistemAkademik {
             }
         }
     }
-
 
     private static void inNilaiMhs() {
         int choice;
@@ -1105,27 +1095,38 @@ public class SistemAkademik {
 
     public static void contact() {
 
-        System.out.println("CONTACT");
-        inputScanner.nextLine();
-        System.out.print("masukkan nama : ");
-        nama = inputScanner.nextLine();
+        System.out.println("============ CONTACT ============");
+        while (true) {
+            int i = 0;
+            while (i < contact.length) {
+                inputScanner.nextLine();
+                System.out.print("masukkan nama : ");
+                contact[i][0] = inputScanner.nextLine();
+                System.out.print("masukkan nim : ");
+                contact[i][1] = inputScanner.nextLine();
+                System.out.print("masukkan pesan : ");
+                contact[i][2] = inputScanner.nextLine();
 
-        System.out.print("masukkan nim : ");
-        nim = inputScanner.nextInt();
-
-        inputScanner.nextLine();
-        System.out.print("masukkan pesan : ");
-        pesan = inputScanner.nextLine();
-
-        System.out.println("Pesan anda sedang diproses");
+                System.out.println("Pesan anda sedang diproses");
+                break;
+            }
+            break;
+        }
 
     }
 
     public static void contactAdmin() {
-        System.out.println("CONTACT");
-        System.out.println("nama : " + nama);
-        System.out.println("nim : " + nim);
-        System.out.println("pesan : " + pesan);
+        System.out.println("================= CONTACT ===============");
+        System.out.println();
+        System.out.printf("| %-20s | %-15s | %-50s |\n", "Nama", "NIM", "Pesan");
+        System.out.printf(
+                "-----------------------------------------------------------------------------------------------\n");
+        for (int i = 0; i < contact.length; i++) {
+            if (contact[i][0] != null) {
+                System.out.printf("| %-20s | %-15s | %-50s |\n",
+                        contact[i][0], contact[i][1], contact[i][2]);
+            }
+        }
 
         System.out.println("apakah ingin melakukan operasi selanjutnya?");
         int acc = inputScanner.nextInt();
