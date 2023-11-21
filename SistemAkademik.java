@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class SistemAkademik {
@@ -91,13 +89,13 @@ public class SistemAkademik {
             System.out.println("1. Input Data Mahasiswa");
             System.out.println("2. Update Data Mahasiswa");
             System.out.println("3. Cek Data Mahasiswa");
-            System.out.println("4. Input Nilai Mahasiswa");
-            System.out.println("5. Update Nilai Mahasiswa");
-            System.out.println("6. Cek Nilai Mahasiswa");
-            System.out.println("7. Cek Jadwal Perkuliahan");
-            System.out.println("8. Update KRS Mahasiswa");
-            System.out.println("9. Cek Data KRS Mahasiswa");
-            System.out.println("10. Contact");
+            // System.out.println("4. Input Nilai Mahasiswa");
+            // System.out.println("5. Update Nilai Mahasiswa");
+            System.out.println("4. Cek Nilai Mahasiswa");
+            System.out.println("5. Cek Jadwal Perkuliahan");
+            System.out.println("6. Update KRS Mahasiswa");
+            System.out.println("7. Cek Data KRS Mahasiswa");
+            System.out.println("8. Contact");
             System.out.println("0. LogOut\n");
 
             System.out.print("Masukkan pilihan anda: ");
@@ -113,26 +111,35 @@ public class SistemAkademik {
                     cekDataMhs();
                     break;
                 case 4:
-                    inNilaiMhs();
-                    break;
-                case 5:
-                    updNilaiMhs();
-                    break;
-                case 6:
+                    // inNilaiMhs();
                     cekNilaiMhs();
                     break;
-                case 7:
+                case 5:
+                    // updNilaiMhs();
                     cekJadwalKuliah();
+
+                    break;
+                case 6:
+                    // cekNilaiMhs();
+                    updKrsMhs();
+
+                    break;
+                case 7:
+                    // cekJadwalKuliah();
+                    cekDataKrsMhs();
+
                     break;
                 case 8:
-                    updKrsMhs();
-                    break;
-                case 9:
-                    cekDataKrsMhs();
-                    break;
-                case 10:
+                    // updKrsMhs();
                     contactAdmin();
+
                     break;
+                // case 9:
+                // cekDataKrsMhs();
+                // break;
+                // case 10:
+                // contactAdmin();
+                // break;
                 case 0:
                     logOut();
                 default:
@@ -151,7 +158,8 @@ public class SistemAkademik {
             System.out.println("1. Cek Data Mahasiswa");
             System.out.println("2. Input Nilai Mahasiswa");
             System.out.println("3. Update Nilai Mahasiswa");
-            System.out.println("4. Contact");
+            System.out.println("4. Cek Nilai Mahasiswa");
+            System.out.println("5. Contact");
             System.out.println("0. LogOut\n");
 
             System.out.print("Masukkan pilihan anda: ");
@@ -168,6 +176,9 @@ public class SistemAkademik {
                     updNilaiMhs();
                     break;
                 case 4:
+                    cekNilaiMhs();
+                    break;
+                case 5:
                     contact();
                     break;
                 case 0:
@@ -189,7 +200,9 @@ public class SistemAkademik {
             System.out.println("1. Cek Data Mahasiswa");
             System.out.println("2. Cek Jadwal Kuliah");
             System.out.println("3. Cek Data KRS Mahasiswa");
-            System.out.println("4. Contact");
+            System.out.println("4. Cek Nilai Mahasiswa");
+            System.out.println("5. Cetak KTM");
+            System.out.println("6. Contact");
             System.out.println("0. LogOut\n");
 
             System.out.print("Masukkan pilihan anda: ");
@@ -206,6 +219,12 @@ public class SistemAkademik {
                     cekDataKrsMhs();
                     break;
                 case 4:
+                    cekNilaiMhs();
+                    break;
+                case 5:
+                    // cetakKtm();
+                    break;
+                case 6:
                     contact();
                     break;
                 case 0:
