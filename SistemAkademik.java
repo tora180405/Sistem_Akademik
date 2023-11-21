@@ -3,11 +3,29 @@ import java.util.Scanner;
 public class SistemAkademik {
     // deklarasi variable global
     // private static int levelAcc;
-    ;
+        // deklarasi array untuk fitur input data mahasiswa
+    public static String[][] mahasiswa;
+    public static int counter;
+
+
     // Deklarasi Variable untuk fitur search dari semua fitur
     public static String key;
     public static boolean search = true;
     public static Scanner inputScanner = new Scanner(System.in);
+
+    // deklarasi variable krs mahasiswa semester 1
+    public static String krsMhs1[][];
+
+    // deklarasi variable global untuk fitur contact
+    public static String nama, pesan;
+    public static int nim;
+
+    // deklarasi variable nilai 
+    
+    public static String[][] nilai;
+
+    // deklarasi variable untuk jadwal matkul
+        public static String jadwalMatkul1f[][];
 
     public static void main(String[] args) {
         logIn();
@@ -223,9 +241,6 @@ public class SistemAkademik {
         }
     }
 
-    // deklarasi array untuk fitur input data mahasiswa
-    public static String[][] mahasiswa;
-    public static int counter;
 
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
@@ -242,6 +257,7 @@ public class SistemAkademik {
         boolean inpData = true;
 
         while (inpData) {
+            System.out.println(counter);
             int i = counter;
             mahasiswa = new String[4000][9];
 
@@ -285,7 +301,7 @@ public class SistemAkademik {
 
                 if (choice == 1) {
                     counter = i;
-
+                    System.out.println("counter " +counter);
                 } else if (choice == 2) {
                     // berandaAdmin();
                     inpData = false;
@@ -497,7 +513,6 @@ public class SistemAkademik {
         }
     }
 
-    public static String[][] nilai;
 
     private static void inNilaiMhs() {
         int choice;
@@ -973,8 +988,6 @@ public class SistemAkademik {
         }
     }
 
-    public static String jadwalMatkul1f[][];
-
     private static void cekJadwalKuliah() {
 
         inputScanner.nextLine();
@@ -1055,8 +1068,6 @@ public class SistemAkademik {
         }
     }
 
-    public static String krsMhs1[][];
-
     private static void cekDataKrsMhs() {
 
         String[][] krsMhs1 = {
@@ -1091,10 +1102,6 @@ public class SistemAkademik {
                     "+--------------------------------------------------------------------------------------------------------+\n");
         }
     }
-
-    // deklarasi variable global untuk fitur contact
-    public static String nama, pesan;
-    public static int nim;
 
     public static void contact() {
 
