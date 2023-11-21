@@ -1125,13 +1125,58 @@ public class SistemAkademik {
     }
 
     private static void cekNilaiMhs() {
-        String nilai[][] = new String[4000][34];
+        String[][] nilai = Daspro + DasproPrak + Matdas + Pancasila + KTI + CTPS + BING + K3;
 
         for(int i = 0; i < nilai.length; i++){
             for(int j = 0; j < Daspro.length; j++){
                 nilai[i][0] = Daspro[j][0];
                 nilai[i][1] = Daspro[j][1];
-                nilai[i][0] = Daspro[j][0];
+                nilai[i][2] = Daspro[j][2];
+                nilai[i][3] = Daspro[j][3];
+                nilai[i][4] = Daspro[j][4];
+                nilai[i][5] = Daspro[j][5];
+            }
+            for(int j = 0; j < DasproPrak.length; j++){
+                nilai[i][6] = DasproPrak[j][2];
+                nilai[i][7] = DasproPrak[j][3];
+                nilai[i][8] = DasproPrak[j][4];
+                nilai[i][9] = DasproPrak[j][5];
+            }
+            for(int j = 0; j < Matdas.length; j++){
+                nilai[i][10] = Matdas[j][2];
+                nilai[i][11] = Matdas[j][3];
+                nilai[i][12] = Matdas[j][4];
+                nilai[i][13] = Matdas[j][5];
+            }
+            for(int j = 0; j < Pancasila.length; j++){
+                nilai[i][14] = Pancasila[j][2];
+                nilai[i][15] = Pancasila[j][3];
+                nilai[i][16] = Pancasila[j][4];
+                nilai[i][17] = Pancasila[j][5];
+            }
+            for(int j = 0; j < KTI.length; j++){
+                nilai[i][18] = KTI[j][2];
+                nilai[i][19] = KTI[j][3];
+                nilai[i][20] = KTI[j][4];
+                nilai[i][21] = KTI[j][5];
+            }
+            for(int j = 0; j < CTPS.length; j++){
+                nilai[i][22] = CTPS[j][2];
+                nilai[i][23] = CTPS[j][3];
+                nilai[i][24] = CTPS[j][4];
+                nilai[i][25] = CTPS[j][5];
+            }
+            for(int j = 0; j < BING.length; j++){
+                nilai[i][26] = BING[j][2];
+                nilai[i][27] = BING[j][3];
+                nilai[i][28] = BING[j][4];
+                nilai[i][29] = BING[j][5];
+            }
+            for(int j = 0; j < K3.length; j++){
+                nilai[i][30] = K3[j][2];
+                nilai[i][31] = K3[j][3];
+                nilai[i][32] = K3[j][4];
+                nilai[i][33] = K3[j][5];
             }
         }
 
@@ -1167,10 +1212,10 @@ public class SistemAkademik {
                         nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1], "DASPROPRAKTIKUM",
                         nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][20],
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][10],
                         nilai[i][11], nilai[i][12], nilai[i][13]);
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14],
-                        nilai[i][20], nilai[i][16], nilai[i][17]);
+                        nilai[i][15], nilai[i][16], nilai[i][17]);
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18],
                         nilai[i][19], nilai[i][20], nilai[i][21]);
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22],
