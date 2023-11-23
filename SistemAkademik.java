@@ -1092,6 +1092,24 @@ public class SistemAkademik {
                     "+--------------------------------------------------------------------------------------------------------+\n");
         }
     }
+    public static void cetakKtm (){
+        System.out.println("=========== CETAK KARTU MAHASISWA ===========");
+        System.out.println();
+        System.out.print("Masukkan NIM Mahasiswa yang ingin dicari : ");
+            key = inputScanner.nextLine();
+            for (int i = 0; i < mahasiswa.length; i++) {
+                if (key.equals(mahasiswa[i][1])) {
+                    System.out.println("=======================");
+                    System.out.println(mahasiswa[i][0]); //Nama
+                    System.out.println(mahasiswa[i][1]); //Nim
+                    System.out.println(mahasiswa[i][3]); //Kelas
+                    //Jurusan
+                    //Prodi
+                    System.out.println("=======================");
+                   
+                }
+            }
+    }
 
     public static void contact() {
 
