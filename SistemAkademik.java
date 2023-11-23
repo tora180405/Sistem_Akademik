@@ -63,19 +63,27 @@ public class SistemAkademik {
             System.out.print("Masukkan password : ");
             password = inputScanner.next();
 
-            if (dataLog[0][0].equals(username) && dataLog[0][1].equals(password)) {
-                System.out.println("Selamat datang " + username);
-                berandaAdmin();
-            } else if (dataLog[1][0].equals(username) && dataLog[1][1].equals(password)) {
-                System.out.println("Selamat datang " + username);
-                berandaDosen();
-            } else if (dataLog[2][0].equals(username) && dataLog[2][1].equals(password)) {
-                System.out.println("Selamat datang " + username);
-                berandaMahasiswa();
-            } else {
-                System.out.println("username/password salah");
-                attempts++;
+            for (String[] user : dataLog) {
+                String storedUsername = user[0];
+                String storedPassword = user[1];
+                String role = user[2];
+
+                if (storedUsername.equals(username) && storedPassword.equals(password) && role.equals("1")) {
+                    System.out.println("Selamat datang " + username);
+                    berandaAdmin();
+
+                } else if (storedUsername.equals(username) && storedPassword.equals(password) && role.equals("2")) {
+                    System.out.println("Selamat datang " + username);
+                    berandaDosen();
+                } else if (storedUsername.equals(username) && storedPassword.equals(password) && role.equals("3")) {
+                    System.out.println("Selamat datang " + username);
+                    berandaMahasiswa();
+                } else {
+                    continue;
+                }
             }
+            System.out.println("username/password salah");
+            attempts++;
         }
         if (attempts == 3) {
             System.out.println("Anda telah melebihi batas upaya login");
