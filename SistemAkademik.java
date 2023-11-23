@@ -40,10 +40,16 @@ public class SistemAkademik {
     // private static List<String> menuStack = new ArrayList<>();
     public static void logIn() {
         String[][] dataLog = {
-                { "admin", "admin" },
-                { "dosen", "dosen" },
-                { "mahasiswa", "mahasiswa" }
-        };
+            { "admin1", "admin1", "1" },
+            { "admin2", "admin2", "1" },
+            { "admin3", "admin3", "1" },
+            { "dosen1", "dosen1", "2" },
+            { "dosen2", "dosen2", "2" },
+            { "dosen3", "dosen3", "2" },
+            { "mahasiswa1", "mahasiswa1", "3" },
+            { "mahasiswa2", "mahasiswa2", "3" },
+            { "mahasiswa3", "mahasiswa3", "3" }
+    };
         int attempts = 0;
 
         while (attempts < 3) {
