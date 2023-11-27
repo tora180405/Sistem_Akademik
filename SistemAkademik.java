@@ -4,7 +4,7 @@ public class SistemAkademik {
     // deklarasi variable global
     // private static int levelAcc;
     // deklarasi array untuk fitur input data mahasiswa
-    public static String[][] mahasiswa;
+    // public static String[][] mahasiswa;c
     public static int counter;
 
     // Deklarasi variable untuk fitur contact
@@ -233,6 +233,8 @@ public class SistemAkademik {
         }
     }
 
+    public static String[][] mahasiswa = new String[4000][10];
+
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
 
@@ -249,7 +251,7 @@ public class SistemAkademik {
 
         while (inpData) {
             int i = counter;
-            mahasiswa = new String[4000][10];
+            System.out.println(counter);
 
             while (i < mahasiswa.length) {
                 System.out.println("\n");
@@ -277,7 +279,7 @@ public class SistemAkademik {
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
                 System.out.println(" yang melakukan perubahan adalah : " + username);
-                i++;
+                counter++;
 
                 System.out.println("=======================================================");
                 System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
@@ -291,7 +293,7 @@ public class SistemAkademik {
                 choice = inputScanner.nextInt();
 
                 if (choice == 1) {
-                    counter = i;
+                    counter += 1;
                     System.out.println("counter " + counter);
                 } else if (choice == 2) {
                     // berandaAdmin();
@@ -303,7 +305,6 @@ public class SistemAkademik {
                 }
 
             }
-            counter = i;
             break;
         }
     }
