@@ -1056,22 +1056,103 @@ public class SistemAkademik {
     }
 
     private static void updKrsMhs() {
-        while (true) {
-            System.out.println("UPDATE KRS MAHASISWA");
-            System.out.println("1.");
-            System.out.println("2.");
-
-            int choice = inputScanner.nextInt();
-
-            switch (choice) {
-                case 0:
-                    return;
-                default:
-                    System.out.println("Pilihan tidak valid.");
+        
+    int count = 0;
+    for (String[] data : mahasiswa) {
+        if (data[0] != null) {
+            count++;   
+        }
+    }
+    // SORTING BY NAME
+    int n = count;
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; i < n - 1; i++) {
+            if (mahasiswa[j][0].compareTo(mahasiswa[j + 1][0]) > 0) {
+                //swap mahasiswa[j+1] and mahasiswa[j]
+                String[] temp = mahasiswa[j];
+                mahasiswa[j] = mahasiswa[j + 1];
+                mahasiswa[j + 1] = temp;
             }
         }
     }
 
+    System.out.println("===========UPDATE KRS MAHASISWA=========");
+    System.out.println();
+    System.out.printf("| %-20s | %-15s | %-15s | %-10s |\n", "No", "Mata Kuliah", "SKS", "Jam", "Semester");
+    System.out.printf("---------------------------------------------------------------------------------------\n");
+    for (int i = 0; i < mahasiswa.length; i++) {
+        if (mahasiswa[i][0] != null) {
+            System.out.printf("| %-20s | %-15s | %-15s | %-10s |\n",
+                mahasiswa[i][0], mahasiswa[i][1], mahasiswa[i][2], mahasiswa[i][3], mahasiswa[i][4]);
+            // System.out.println("TGL LAHIR : " + mahasiswa[i][5]);
+            // System.out.println("EMAIL : " + mahasiswa[i][6]);
+            // System.out.println("NO TELP : " + mahasiswa[i][7]);
+            // System.out.println("ALAMAT : " + mahasiswa[i][8]);
+            
+        }
+    }
+
+    System.out.println("Cari data yang akan di update berdasarkan NIM");
+    System.out.println("Apakah anda ingin mencaei data?");
+    System.out.println("yes / no");
+    System.out.println("_________________________");
+    inputScanner.nextLine();
+
+    String jawab = inputScanner.nextLine();
+
+    if (jawab.equalsIgnoreCase("yes")) {
+        boolean finded = false;
+        System.out.println("Masukkan key yang ingin dicari : ");
+        key = inputScanner.nextLine();
+
+        for (int i = 0; i < mahasiswa.length; i++) {
+            if (key.equals(mahasiswa[i][1])) {
+                System.out.println("=====================");
+                System.out.println("No                  : " + mahasiswa[i][0]);
+                System.out.println("Mata Kuliah         : " + mahasiswa[i][1]);
+                System.out.println("SKS                 : " + mahasiswa[i][2]);
+                System.out.println("Jam                 : " + mahasiswa[i][3]);
+                System.out.println("Semester            : " + mahasiswa[i][4]);
+                System.out.println("========================");
+                System.out.println();
+
+                // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
+                finded = true;
+            }
+            if (finded) {
+                System.out.println("=====================KRS MAHASISWA=================");
+                inputScanner.nextLine();
+                System.out.println("Masukkan No                 :");
+                mahasiswa[i][0] = inputScanner.nextLine();
+                System.out.println("Masukkan Mata Kuliah        :");
+                mahasiswa[i][1] = inputScanner.nextLine();
+                System.out.println("Masukkan SKS                  :");
+                mahasiswa[i][2] = inputScanner.nextLine();
+                System.out.println("Masukkan Jam                  :");
+                mahasiswa[i][3] = inputScanner.nextLine();
+                System.out.println("Masukkan Semester             :");
+                mahasiswa[i][4] = inputScanner.nextLine();
+
+                System.out.println("DATA BERHASIL DI UPDATE\n");
+                break;
+            }
+        }
+        if (!finded) {
+            System.out.println("Key dalam array tidak ditemukan");
+        } else if (finded) {
+            System.out.println("Apakah anda ingin melakukan ke selanjutnya?");
+            System.out.println("- Ketikkan 1 untuk lanjut");
+            System.out.println("- Ketikkan angka lainya untuk logout"); 
+            int acc = inputScanner.nextInt();
+            
+            if (acc == 1) {
+                return;
+            } else {
+                logOut();
+            }
+        }
+    }
+}
     private static void cekDataKrsMhs() {
 
         String[][] krsMhs1 = {
