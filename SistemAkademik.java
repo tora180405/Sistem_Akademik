@@ -4,7 +4,8 @@ public class SistemAkademik {
     // deklarasi variable global
     // private static int levelAcc;
     // deklarasi array untuk fitur input data mahasiswa
-    // public static String[][] mahasiswa;c
+    public static String[][] mahasiswa = new String[4000][12];
+
     public static int counter;
 
     // Deklarasi variable untuk fitur contact
@@ -233,8 +234,6 @@ public class SistemAkademik {
         }
     }
 
-    public static String[][] mahasiswa = new String[4000][10];
-
     // FITUR INPUT DATA MAHASISWA
     private static void inDataMhs() {
 
@@ -262,20 +261,24 @@ public class SistemAkademik {
                 mahasiswa[i][0] = inputScanner.nextLine();
                 System.out.print("masukkan NIM              :");
                 mahasiswa[i][1] = inputScanner.nextLine();
-                System.out.print("masukkan Jenis Kelamin    :");
+                System.out.print("masukkan Jurusan          :");
                 mahasiswa[i][2] = inputScanner.nextLine();
-                System.out.print("masukkan kelas            :");
+                System.out.print("masukkan Program Studi    :");
                 mahasiswa[i][3] = inputScanner.nextLine();
-                System.out.print("masukkan agama            :");
+                System.out.print("masukkan Kelas            :");
                 mahasiswa[i][4] = inputScanner.nextLine();
-                System.out.print("masukkan tanggal lahir    :");
+                System.out.print("masukkan Jenis Kelamin    :");
                 mahasiswa[i][5] = inputScanner.nextLine();
-                System.out.print("masukkan email            :");
+                System.out.print("masukkan agama            :");
                 mahasiswa[i][6] = inputScanner.nextLine();
-                System.out.print("masukkan nomor handpone   :");
+                System.out.print("masukkan tanggal lahir    :");
                 mahasiswa[i][7] = inputScanner.nextLine();
-                System.out.print("masukkan alamat           :");
+                System.out.print("masukkan email            :");
                 mahasiswa[i][8] = inputScanner.nextLine();
+                System.out.print("masukkan nomor handpone   :");
+                mahasiswa[i][9] = inputScanner.nextLine();
+                System.out.print("masukkan alamat           :");
+                mahasiswa[i][10] = inputScanner.nextLine();
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
                 System.out.println(" yang melakukan perubahan adalah : " + username);
@@ -332,17 +335,13 @@ public class SistemAkademik {
 
         System.out.println("================= UPDATE DATA MAHASISWA ===============");
         System.out.println();
-        System.out.printf("| %-20s | %-15s | %-15s | %-10s | %-10s |\n", "Nama", "NIM", "Jenis Kelamin", "Kelas",
-                "Agama");
+        System.out.printf("| %-20s | %-15s | %-20s | %-10s | %-10s |\n", "Nama", "NIM", "Jurusan", "Program Studi",
+                "Kelas");
         System.out.printf("---------------------------------------------------------------------------------------\n");
         for (int i = 0; i < mahasiswa.length; i++) {
             if (mahasiswa[i][0] != null) {
                 System.out.printf("| %-20s | %-15s | %-15s | %-10s | %-10s |\n",
                         mahasiswa[i][0], mahasiswa[i][1], mahasiswa[i][2], mahasiswa[i][3], mahasiswa[i][4]);
-                // System.out.println("TGL LAHIR : " + mahasiswa[i][5]);
-                // System.out.println("EMAIL : " + mahasiswa[i][6]);
-                // System.out.println("NO TELP : " + mahasiswa[i][7]);
-                // System.out.println("ALAMAT : " + mahasiswa[i][8]);
             }
         }
 
@@ -364,13 +363,15 @@ public class SistemAkademik {
                     System.out.println("=======================");
                     System.out.println("NAMA          : " + mahasiswa[i][0]);
                     System.out.println("NIM           : " + mahasiswa[i][1]);
-                    System.out.println("JENIS KELAMIN : " + mahasiswa[i][2]);
-                    System.out.println("KELAS         : " + mahasiswa[i][3]);
-                    System.out.println("AGAMA         : " + mahasiswa[i][4]);
-                    System.out.println("TGL LAHIR     : " + mahasiswa[i][5]);
-                    System.out.println("EMAIL         : " + mahasiswa[i][6]);
-                    System.out.println("NO TELP       : " + mahasiswa[i][7]);
-                    System.out.println("ALAMAT        : " + mahasiswa[i][8]);
+                    System.out.println("JURUSAN       : " + mahasiswa[i][2]);
+                    System.out.println("PROGRAM STUDI : " + mahasiswa[i][3]);
+                    System.out.println("KELAS         : " + mahasiswa[i][4]);
+                    System.out.println("JENIS KELAMIN : " + mahasiswa[i][5]);
+                    System.out.println("AGAMA         : " + mahasiswa[i][6]);
+                    System.out.println("TGL LAHIR     : " + mahasiswa[i][7]);
+                    System.out.println("EMAIL         : " + mahasiswa[i][8]);
+                    System.out.println("NO TELP       : " + mahasiswa[i][9]);
+                    System.out.println("ALAMAT        : " + mahasiswa[i][10]);
                     System.out.println("=======================");
                     System.out.println();
 
@@ -384,20 +385,24 @@ public class SistemAkademik {
                     mahasiswa[i][0] = inputScanner.nextLine();
                     System.out.print("masukkan NIM              :");
                     mahasiswa[i][1] = inputScanner.nextLine();
-                    System.out.print("masukkan Jenis Kelamin    :");
+                    System.out.print("masukkan Jurusan          :");
                     mahasiswa[i][2] = inputScanner.nextLine();
-                    System.out.print("masukkan kelas            :");
+                    System.out.print("masukkan Program Studi    :");
                     mahasiswa[i][3] = inputScanner.nextLine();
-                    System.out.print("masukkan agama            :");
+                    System.out.print("masukkan Kelas            :");
                     mahasiswa[i][4] = inputScanner.nextLine();
-                    System.out.print("masukkan tanggal lahir    :");
+                    System.out.print("masukkan Jenis Kelamin    :");
                     mahasiswa[i][5] = inputScanner.nextLine();
-                    System.out.print("masukkan email            :");
+                    System.out.print("masukkan agama            :");
                     mahasiswa[i][6] = inputScanner.nextLine();
-                    System.out.print("masukkan nomor handpone   :");
+                    System.out.print("masukkan tanggal lahir    :");
                     mahasiswa[i][7] = inputScanner.nextLine();
-                    System.out.print("masukkan alamat           :");
+                    System.out.print("masukkan email            :");
                     mahasiswa[i][8] = inputScanner.nextLine();
+                    System.out.print("masukkan nomor handpone   :");
+                    mahasiswa[i][9] = inputScanner.nextLine();
+                    System.out.print("masukkan alamat           :");
+                    mahasiswa[i][10] = inputScanner.nextLine();
 
                     System.out.println("DATA BERHASIL DI UPDATE\n");
                     break;
@@ -445,17 +450,13 @@ public class SistemAkademik {
 
         System.out.println("================= DATA MAHASISWA ===============");
         System.out.println();
-        System.out.printf("| %-20s | %-15s | %-15s | %-10s | %-10s |\n", "Nama", "NIM", "Jenis Kelamin", "Kelas",
-                "Agama");
+        System.out.printf("| %-20s | %-15s | %-20s | %-15s | %-10s |\n", "Nama", "NIM", "Jurusan", "Program Studi",
+                "Kelas");
         System.out.printf("---------------------------------------------------------------------------------------\n");
         for (int i = 0; i < mahasiswa.length; i++) {
             if (mahasiswa[i][0] != null) {
-                System.out.printf("| %-20s | %-15s | %-15s | %-10s | %-10s |\n",
+                System.out.printf("| %-20s | %-15s | %-20s | %-15s | %-10s |\n",
                         mahasiswa[i][0], mahasiswa[i][1], mahasiswa[i][2], mahasiswa[i][3], mahasiswa[i][4]);
-                // System.out.println("TGL LAHIR : " + mahasiswa[i][5]);
-                // System.out.println("EMAIL : " + mahasiswa[i][6]);
-                // System.out.println("NO TELP : " + mahasiswa[i][7]);
-                // System.out.println("ALAMAT : " + mahasiswa[i][8]);
             }
 
         }
@@ -476,13 +477,15 @@ public class SistemAkademik {
                     System.out.println("=======================");
                     System.out.println("NAMA          : " + mahasiswa[i][0]);
                     System.out.println("NIM           : " + mahasiswa[i][1]);
-                    System.out.println("JENIS KELAMIN : " + mahasiswa[i][2]);
-                    System.out.println("KELAS         : " + mahasiswa[i][3]);
-                    System.out.println("AGAMA         : " + mahasiswa[i][4]);
-                    System.out.println("TGL LAHIR     : " + mahasiswa[i][5]);
-                    System.out.println("EMAIL         : " + mahasiswa[i][6]);
-                    System.out.println("NO TELP       : " + mahasiswa[i][7]);
-                    System.out.println("ALAMAT        : " + mahasiswa[i][8]);
+                    System.out.println("JURUSAN       : " + mahasiswa[i][2]);
+                    System.out.println("PROGRAM STUDI : " + mahasiswa[i][3]);
+                    System.out.println("KELAS         : " + mahasiswa[i][4]);
+                    System.out.println("JENIS KELAMIN : " + mahasiswa[i][5]);
+                    System.out.println("AGAMA         : " + mahasiswa[i][6]);
+                    System.out.println("TGL LAHIR     : " + mahasiswa[i][7]);
+                    System.out.println("EMAIL         : " + mahasiswa[i][8]);
+                    System.out.println("NO TELP       : " + mahasiswa[i][9]);
+                    System.out.println("ALAMAT        : " + mahasiswa[i][10]);
                     System.out.println("=======================");
                     // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
                     finded = true;
