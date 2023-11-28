@@ -41,10 +41,16 @@ public class SistemAkademik {
     // private static List<String> menuStack = new ArrayList<>();
     public static void logIn() {
         String[][] dataLog = {
-                { "admin", "admin" },
-                { "dosen", "dosen" },
-                { "mahasiswa", "mahasiswa" }
-        };
+            { "admin1", "admin1", "1" },
+            { "admin2", "admin2", "1" },
+            { "admin3", "admin3", "1" },
+            { "dosen1", "dosen1", "2" },
+            { "dosen2", "dosen2", "2" },
+            { "dosen3", "dosen3", "2" },
+            { "mahasiswa1", "mahasiswa1", "3" },
+            { "mahasiswa2", "mahasiswa2", "3" },
+            { "mahasiswa3", "mahasiswa3", "3" }
+    };
         int attempts = 0;
 
         while (attempts < 3) {
@@ -58,19 +64,27 @@ public class SistemAkademik {
             System.out.print("Masukkan password : ");
             password = inputScanner.next();
 
-            if (dataLog[0][0].equals(username) && dataLog[0][1].equals(password)) {
-                System.out.println("Selamat datang " + username);
-                berandaAdmin();
-            } else if (dataLog[1][0].equals(username) && dataLog[1][1].equals(password)) {
-                System.out.println("Selamat datang " + username);
-                berandaDosen();
-            } else if (dataLog[2][0].equals(username) && dataLog[2][1].equals(password)) {
-                System.out.println("Selamat datang " + username);
-                berandaMahasiswa();
-            } else {
-                System.out.println("username/password salah");
-                attempts++;
+            for (String[] user : dataLog) {
+                String storedUsername = user[0];
+                String storedPassword = user[1];
+                String role = user[2];
+
+                if (storedUsername.equals(username) && storedPassword.equals(password) && role.equals("1")) {
+                    System.out.println("Selamat datang " + username);
+                    berandaAdmin();
+
+                } else if (storedUsername.equals(username) && storedPassword.equals(password) && role.equals("2")) {
+                    System.out.println("Selamat datang " + username);
+                    berandaDosen();
+                } else if (storedUsername.equals(username) && storedPassword.equals(password) && role.equals("3")) {
+                    System.out.println("Selamat datang " + username);
+                    berandaMahasiswa();
+                } else {
+                    continue;
+                }
             }
+            System.out.println("username/password salah");
+            attempts++;
         }
         if (attempts == 3) {
             System.out.println("Anda telah melebihi batas upaya login");
