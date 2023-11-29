@@ -41,16 +41,16 @@ public class SistemAkademik {
     // private static List<String> menuStack = new ArrayList<>();
     public static void logIn() {
         String[][] dataLog = {
-            { "admin1", "admin1", "1" },
-            { "admin2", "admin2", "1" },
-            { "admin3", "admin3", "1" },
-            { "dosen1", "dosen1", "2" },
-            { "dosen2", "dosen2", "2" },
-            { "dosen3", "dosen3", "2" },
-            { "mahasiswa1", "mahasiswa1", "3" },
-            { "mahasiswa2", "mahasiswa2", "3" },
-            { "mahasiswa3", "mahasiswa3", "3" }
-    };
+                { "admin1", "admin1", "1" },
+                { "admin2", "admin2", "1" },
+                { "admin3", "admin3", "1" },
+                { "dosen1", "dosen1", "2" },
+                { "dosen2", "dosen2", "2" },
+                { "dosen3", "dosen3", "2" },
+                { "mahasiswa1", "mahasiswa1", "3" },
+                { "mahasiswa2", "mahasiswa2", "3" },
+                { "mahasiswa3", "mahasiswa3", "3" }
+        };
         int attempts = 0;
 
         while (attempts < 3) {
@@ -295,7 +295,8 @@ public class SistemAkademik {
                 mahasiswa[i][10] = inputScanner.nextLine();
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
-                System.out.println(" yang melakukan perubahan adalah : " + username);
+                System.out.println(" yang melakukan penambahan adalah : " + username);
+                mahasiswa[i][11] = username;
                 counter++;
 
                 System.out.println("=======================================================");
@@ -388,6 +389,7 @@ public class SistemAkademik {
                     System.out.println("ALAMAT        : " + mahasiswa[i][10]);
                     System.out.println("=======================");
                     System.out.println();
+                    System.out.println("Modified data by : " + mahasiswa[i][11]);
 
                     // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
                     finded = true;
@@ -419,6 +421,8 @@ public class SistemAkademik {
                     mahasiswa[i][10] = inputScanner.nextLine();
 
                     System.out.println("DATA BERHASIL DI UPDATE\n");
+                    System.out.println(" yang melakukan perubahan adalah : " + username);
+                    mahasiswa[i][11] = username;
                     break;
                 }
 
@@ -501,6 +505,8 @@ public class SistemAkademik {
                     System.out.println("NO TELP       : " + mahasiswa[i][9]);
                     System.out.println("ALAMAT        : " + mahasiswa[i][10]);
                     System.out.println("=======================");
+                    System.out.println();
+                    System.out.println("Modified data by : " + mahasiswa[i][11]);
                     // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
                     finded = true;
                 }
