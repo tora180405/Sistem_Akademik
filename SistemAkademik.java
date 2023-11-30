@@ -22,7 +22,7 @@ public class SistemAkademik {
     public static String krsMhs1[][];
 
     // deklarasi variable nilai
-    public static String[][] nilai;
+    public static String[][] nilai = new String[1000][34];
 
     // deklarasi variable untuk jadwal matkul
     public static String jadwalMatkul1f[][];
@@ -1051,7 +1051,7 @@ public class SistemAkademik {
                         // //----------------------------------------------------------
 
                         if (mahasiswa[i][0] == null) {
-                            berandaAdmin();
+                            berandaDosen();
                         }
                     }
                 }
