@@ -237,7 +237,7 @@ public class SistemAkademik {
                     // cekNilaiMhs();
                     break;
                 case 5:
-                    // cetakKtm();
+                    cetakKtm();
                     break;
                 case 6:
                     contact();
@@ -1772,6 +1772,37 @@ public class SistemAkademik {
             System.out.printf(
                     "+--------------------------------------------------------------------------------------------------------+\n");
         }
+    }
+    public static void cetakKtm (){
+
+        String choice;
+        System.out.println("=========== CETAK KARTU MAHASISWA ===========");
+        System.out.println();
+        inputScanner.nextLine();
+        System.out.print("Masukkan NIM Mahasiswa yang ingin dicari : ");
+            key = inputScanner.nextLine();
+            for (int i = 0; i < mahasiswa.length; i++) {
+                if (key.equals(mahasiswa[i][1])) {
+                    System.out.println("=======================");
+                    System.out.println(mahasiswa[i][0]); //Nama
+                    System.out.println(mahasiswa[i][1]); //Nim
+                    System.out.println(mahasiswa[i][4]); //Kelas
+                    System.out.println(mahasiswa[i][2]); //Jurusan
+                    System.out.println(mahasiswa[i][3]); //Prodi
+                    System.out.println("=======================");
+                }
+                System.out.println();
+                System.out.println("Apakah anda ingin mencetak Kartu Tanda Mahasiswa ini? (Ya/Tidak)");
+                System.out.print("masukkan pilihan : ");
+                choice = inputScanner.next();
+                    if (choice.equalsIgnoreCase("Ya")){
+                       System.out.println("Silahkan mencetak KTM di Ruang Admin.");
+                       break;
+                    }
+                    else if (choice.equalsIgnoreCase("Tidak")){
+                        break;
+                    }
+            }
     }
 
     public static void contact() {
