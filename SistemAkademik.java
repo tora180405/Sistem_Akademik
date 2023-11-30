@@ -1059,8 +1059,6 @@ public class SistemAkademik {
         }
     }
 
-    // public static String[][] nilai;
-
     private static void updNilaiMhs() {
 
 
@@ -1381,62 +1379,62 @@ public class SistemAkademik {
         }
     }
 
-    public static String[][] mergeArray(String[][] Daspro, String[][] DasproPrak, String[][] Matdas, String[][] Pancasila, String[][] KTI, String[][] CTPS, String[][] BING, String[][] K3){
-        int baris = Daspro.length + DasproPrak.length + Matdas.length + Pancasila.length + KTI.length + CTPS.length + BING.length + K3.length;
-        int kolom = Daspro[0].length;
+    // public static String[][] mergeArray(String[][] Daspro, String[][] DasproPrak, String[][] Matdas, String[][] Pancasila, String[][] KTI, String[][] CTPS, String[][] BING, String[][] K3){
+    //     int baris = Daspro.length + DasproPrak.length + Matdas.length + Pancasila.length + KTI.length + CTPS.length + BING.length + K3.length;
+    //     int kolom = Daspro[0].length;
 
-        String[][] nilai = new String[baris][kolom];
+    //     String[][] nilai = new String[baris][kolom];
         
-        for (int i = 0; i < Daspro.length; i++) {
-            for (int j = 0; j < Daspro[i].length; j++) {
-                nilai[i][j] = Daspro[i][j];
-            }
-        }
+    //     for (int i = 0; i < Daspro.length; i++) {
+    //         for (int j = 0; j < Daspro[i].length; j++) {
+    //             nilai[i][j] = Daspro[i][j];
+    //         }
+    //     }
 
-        for (int i = 0; i < DasproPrak.length; i++) {
-            for (int j = 0; j < DasproPrak[i].length; j++) {
-                nilai[i + Daspro.length][j] = DasproPrak[i][j];
-            }
-        }
+    //     for (int i = 0; i < DasproPrak.length; i++) {
+    //         for (int j = 0; j < DasproPrak[i].length; j++) {
+    //             nilai[i + Daspro.length][j] = DasproPrak[i][j];
+    //         }
+    //     }
 
-        for (int i = 0; i < Matdas.length; i++) {
-            for (int j = 0; j < Matdas[i].length; j++) {
-                nilai[i + Daspro.length + DasproPrak.length][j] = Matdas[i][j];
-            }
-        }
+    //     for (int i = 0; i < Matdas.length; i++) {
+    //         for (int j = 0; j < Matdas[i].length; j++) {
+    //             nilai[i + Daspro.length + DasproPrak.length][j] = Matdas[i][j];
+    //         }
+    //     }
 
-        for (int i = 0; i < Pancasila.length; i++) {
-            for (int j = 0; j < Pancasila[i].length; j++) {
-                nilai[i + Daspro.length + DasproPrak.length + Matdas.length][j] = Pancasila[i][j];
-            }
-        }
+    //     for (int i = 0; i < Pancasila.length; i++) {
+    //         for (int j = 0; j < Pancasila[i].length; j++) {
+    //             nilai[i + Daspro.length + DasproPrak.length + Matdas.length][j] = Pancasila[i][j];
+    //         }
+    //     }
 
-        for (int i = 0; i < KTI.length; i++) {
-            for (int j = 0; j < KTI[i].length; j++) {
-                nilai[i + Daspro.length + DasproPrak.length + Matdas.length + Pancasila.length ][j] = KTI[i][j];
-            }
-        }
+    //     for (int i = 0; i < KTI.length; i++) {
+    //         for (int j = 0; j < KTI[i].length; j++) {
+    //             nilai[i + Daspro.length + DasproPrak.length + Matdas.length + Pancasila.length ][j] = KTI[i][j];
+    //         }
+    //     }
 
-        for (int i = 0; i < CTPS.length; i++) {
-            for (int j = 0; j < CTPS[i].length; j++) {
-                nilai[i + Daspro.length + DasproPrak.length + Matdas.length + Pancasila.length + KTI.length][j] = CTPS[i][j];
-            }
-        }
+    //     for (int i = 0; i < CTPS.length; i++) {
+    //         for (int j = 0; j < CTPS[i].length; j++) {
+    //             nilai[i + Daspro.length + DasproPrak.length + Matdas.length + Pancasila.length + KTI.length][j] = CTPS[i][j];
+    //         }
+    //     }
 
-        for (int i = 0; i < BING.length; i++) {
-            for (int j = 0; j < BING[i].length; j++) {
-                nilai[i + Daspro.length + DasproPrak.length + Matdas.length + Pancasila.length + KTI.length + CTPS.length][j] = BING[i][j];
-            }
-        }
+    //     for (int i = 0; i < BING.length; i++) {
+    //         for (int j = 0; j < BING[i].length; j++) {
+    //             nilai[i + Daspro.length + DasproPrak.length + Matdas.length + Pancasila.length + KTI.length + CTPS.length][j] = BING[i][j];
+    //         }
+    //     }
 
-        for (int i = 0; i < K3.length; i++) {
-            for (int j = 0; j < K3[i].length; j++) {
-                nilai[i + Daspro.length + DasproPrak.length + Matdas.length + Pancasila.length + KTI.length + CTPS.length + BING.length][j] = K3[i][j];
-            }
-        }
+    //     for (int i = 0; i < K3.length; i++) {
+    //         for (int j = 0; j < K3[i].length; j++) {
+    //             nilai[i + Daspro.length + DasproPrak.length + Matdas.length + Pancasila.length + KTI.length + CTPS.length + BING.length][j] = K3[i][j];
+    //         }
+    //     }
 
-        return nilai;
-    }
+    //     return nilai;
+    // }
 
     private static void cekNilaiMhs() {
         // for(int i = 0; i < nilai.length; i++){
