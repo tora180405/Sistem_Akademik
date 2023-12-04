@@ -1109,7 +1109,7 @@ public class SistemAkademik {
                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS",
                             nilai[i][20], nilai[i][11], nilai[i][12], nilai[i][13]);
                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA",
-                            nilai[i][14], nilai[i][20], nilai[i][16], nilai[i][17]);
+                            nilai[i][14], nilai[i][15], nilai[i][16], nilai[i][17]);
                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18],
                             nilai[i][19], nilai[i][20], nilai[i][21]);
                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22],
@@ -1142,18 +1142,8 @@ public class SistemAkademik {
 
                         switch(Matkul){
                             case 1:
-                                // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                nilai[i][0] = mahasiswa[i][0];
                                 System.out.println("NAMA MAHASISWA      : " + nilai[i][0]);
-                                // --------------------------------------------------------------------------
-
-                                // int NIM = Integer.parseInt(mahasiswa[i++][1]);
-
-                                // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                // nilai[i][1] = String.valueOf(NIM);
-                                nilai[i][1] = mahasiswa[i++][1];
                                 System.out.println("NIM MAHASISWA       : " + nilai[i][1]);
-                                // --------------------------------------------------------------------------
 
                                 System.out.println("-----------------------DASPRO----------------------");
                                 System.out.print("Nilai Tugas Daspro  : ");
@@ -1168,18 +1158,9 @@ public class SistemAkademik {
                                 nilai[i][5] = String.valueOf(jumlahDaspro);
                                 break;
                             case 2:
-                                // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                nilai[i][0] = mahasiswa[i][0];
                                 System.out.println("NAMA MAHASISWA      : " + nilai[i][0]);
-                                // --------------------------------------------------------------------------
-
-                                // int NIM = Integer.parseInt(mahasiswa[i++][1]);
-
-                                // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                // nilai[i][1] = String.valueOf(NIM);
-                                nilai[i][1] = mahasiswa[i++][1];
                                 System.out.println("NIM MAHASISWA       : " + nilai[i][1]);
-                                // --------------------------------------------------------------------------
+
                                 System.out.println("------------------DASPRO PRAKTIKUM-----------------");
                                 System.out.print("Nilai Tugas Daspro Praktikum : ");
                                 nilai[i][6] = inputScanner.nextLine();
@@ -1193,18 +1174,9 @@ public class SistemAkademik {
                                 nilai[i][9] = String.valueOf(jumlahDasproPraktik);
                                 break;
                             case 3:
-                                // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                nilai[i][0] = mahasiswa[i][0];
                                 System.out.println("NAMA MAHASISWA      : " + nilai[i][0]);
-                                // --------------------------------------------------------------------------
-
-                                // int NIM = Integer.parseInt(mahasiswa[i++][1]);
-
-                                // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                // nilai[i][1] = String.valueOf(NIM);
-                                nilai[i][1] = mahasiswa[i++][1];
                                 System.out.println("NIM MAHASISWA       : " + nilai[i][1]);
-                                // --------------------------------------------------------------------------
+
                                 System.out.println("-----------------------MATDAS----------------------");
                                 System.out.print("Nilai Tugas Matdas: ");
                                 nilai[i][10] = inputScanner.nextLine();
@@ -1218,18 +1190,9 @@ public class SistemAkademik {
                                 nilai[i][13] = String.valueOf(jumlahMatdas);
                                 break;
                             case 4:
-                                // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                nilai[i][0] = mahasiswa[i][0];
                                 System.out.println("NAMA MAHASISWA      : " + nilai[i][0]);
-                                // --------------------------------------------------------------------------
-
-                                // int NIM = Integer.parseInt(mahasiswa[i++][1]);
-
-                                // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                // nilai[i][1] = String.valueOf(NIM);
-                                nilai[i][1] = mahasiswa[i++][1];
                                 System.out.println("NIM MAHASISWA       : " + nilai[i][1]);
-                                // --------------------------------------------------------------------------
+
                                 System.out.println("----------------------PANCASILA--------------------");
                                 System.out.print("Nilai Tugas PANCASILA : ");
                                 nilai[i][14] = inputScanner.nextLine();
@@ -1243,18 +1206,9 @@ public class SistemAkademik {
                                 nilai[i][17] = String.valueOf(jumlahPancasila);
                                 break;
                             case 5:
-                                // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                nilai[i][0] = mahasiswa[i][0];
                                 System.out.println("NAMA MAHASISWA      : " + nilai[i][0]);
-                                // --------------------------------------------------------------------------
-
-                                // int NIM = Integer.parseInt(mahasiswa[i++][1]);
-
-                                // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                // nilai[i][1] = String.valueOf(NIM);
-                                nilai[i][1] = mahasiswa[i++][1];
                                 System.out.println("NIM MAHASISWA       : " + nilai[i][1]);
-                                // --------------------------------------------------------------------------
+
                                 System.out.println("-------------------------KTI-----------------------");
                                 System.out.print("Nilai Tugas KTI : ");
                                 nilai[i][18] = inputScanner.nextLine();
@@ -1268,18 +1222,9 @@ public class SistemAkademik {
                                 nilai[i][21] = String.valueOf(jumlahKTI);
                                 break;
                             case 6:
-                                // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                nilai[i][0] = mahasiswa[i][0];
                                 System.out.println("NAMA MAHASISWA      : " + nilai[i][0]);
-                                // --------------------------------------------------------------------------
-
-                                // int NIM = Integer.parseInt(mahasiswa[i++][1]);
-
-                                // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                // nilai[i][1] = String.valueOf(NIM);
-                                nilai[i][1] = mahasiswa[i++][1];
                                 System.out.println("NIM MAHASISWA       : " + nilai[i][1]);
-                                // --------------------------------------------------------------------------
+
                                 System.out.println("-------------------------CTPS----------------------");
                                 System.out.print("Nilai Tugas CTPS : ");
                                 nilai[i][22] = inputScanner.nextLine();
@@ -1293,18 +1238,9 @@ public class SistemAkademik {
                                 nilai[i][25] = String.valueOf(jumlahCTPS);
                                 break;
                             case 7:
-                                // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                nilai[i][0] = mahasiswa[i][0];
                                 System.out.println("NAMA MAHASISWA      : " + nilai[i][0]);
-                                // --------------------------------------------------------------------------
-
-                                // int NIM = Integer.parseInt(mahasiswa[i++][1]);
-
-                                // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                // nilai[i][1] = String.valueOf(NIM);
-                                nilai[i][1] = mahasiswa[i++][1];
                                 System.out.println("NIM MAHASISWA       : " + nilai[i][1]);
-                                // --------------------------------------------------------------------------
+
                                 System.out.println("----------------------B.INGGRIS--------------------");
                                 System.out.print("Nilai Tugas B.INGGRIS : ");
                                 nilai[i][26] = inputScanner.nextLine();
@@ -1318,18 +1254,9 @@ public class SistemAkademik {
                                 nilai[i][29] = String.valueOf(jumlahBing);
                                 break;
                             case 8:
-                                // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                nilai[i][0] = mahasiswa[i][0];
                                 System.out.println("NAMA MAHASISWA      : " + nilai[i][0]);
-                                // --------------------------------------------------------------------------
-
-                                // int NIM = Integer.parseInt(mahasiswa[i++][1]);
-
-                                // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                // nilai[i][1] = String.valueOf(NIM);
-                                nilai[i][1] = mahasiswa[i++][1];
                                 System.out.println("NIM MAHASISWA       : " + nilai[i][1]);
-                                // --------------------------------------------------------------------------
+
                                 System.out.println("-------------------------K-3-----------------------");
                                 System.out.print("Nilai Tugas K3 : ");
                                 nilai[i][30] = inputScanner.nextLine();
@@ -1373,7 +1300,7 @@ public class SistemAkademik {
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO", nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1],"DASPROPRAKTIKUM",nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][20], nilai[i][11], nilai[i][12], nilai[i][13]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14], nilai[i][20], nilai[i][16], nilai[i][17]);
+                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14], nilai[i][15], nilai[i][16], nilai[i][17]);
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18], nilai[i][19], nilai[i][20], nilai[i][21]);
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22], nilai[i][23], nilai[i][24], nilai[i][25]);
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS", nilai[i][26], nilai[i][27], nilai[i][28], nilai[i][29]);
@@ -1391,16 +1318,16 @@ public class SistemAkademik {
         System.out.println();
         System.out.println("Nama Mahasiswa          : " + mahasiswa[0][0]);
         System.out.println("Nomor Induk Mahasiswa   : " + mahasiswa[0][1]);
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n",  "MATKUL", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n",  "MATKUL", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
         System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPRO", nilai[0][2], nilai[0][3], nilai[0][4], nilai[0][5]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPROPRAKTIKUM",nilai[0][6], nilai[0][7], nilai[0][8], nilai[0][9]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATDAS", nilai[0][20], nilai[0][11], nilai[0][12], nilai[0][13]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "PANCASILA", nilai[0][14], nilai[0][20], nilai[0][16], nilai[0][17]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "KTI", nilai[0][18], nilai[0][19], nilai[0][20], nilai[0][21]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "CTPS", nilai[0][22], nilai[0][23], nilai[0][24], nilai[0][25]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "B.INGGRIS", nilai[0][26], nilai[0][27], nilai[0][28], nilai[0][29]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "K3", nilai[0][30], nilai[0][31], nilai[0][32], nilai[0][33]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPRO", nilai[0][2], nilai[0][3], nilai[0][4], nilai[0][5]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPROPRAKTIKUM",nilai[0][6], nilai[0][7], nilai[0][8], nilai[0][9]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATDAS", nilai[0][20], nilai[0][11], nilai[0][12], nilai[0][13]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "PANCASILA", nilai[0][14], nilai[0][15], nilai[0][16], nilai[0][17]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "KTI", nilai[0][18], nilai[0][19], nilai[0][20], nilai[0][21]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "CTPS", nilai[0][22], nilai[0][23], nilai[0][24], nilai[0][25]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "B.INGGRIS", nilai[0][26], nilai[0][27], nilai[0][28], nilai[0][29]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "K3", nilai[0][30], nilai[0][31], nilai[0][32], nilai[0][33]);
     }
 
     private static void cekJadwalKuliah() {
