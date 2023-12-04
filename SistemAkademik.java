@@ -1319,7 +1319,7 @@ public class SistemAkademik {
         System.out.println("Nama Mahasiswa          : " + mahasiswa[0][0]);
         System.out.println("Nomor Induk Mahasiswa   : " + mahasiswa[0][1]);
         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n",  "MATKUL", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-        System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+        System.out.printf("+------------------------------------------------------------------------------------------------------------------+\n");
         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPRO", nilai[0][2], nilai[0][3], nilai[0][4], nilai[0][5]);
         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPROPRAKTIKUM",nilai[0][6], nilai[0][7], nilai[0][8], nilai[0][9]);
         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATDAS", nilai[0][20], nilai[0][11], nilai[0][12], nilai[0][13]);
