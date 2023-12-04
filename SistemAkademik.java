@@ -41,16 +41,16 @@ public class SistemAkademik {
     // private static List<String> menuStack = new ArrayList<>();
     public static void logIn() {
         String[][] dataLog = {
-            { "admin1", "admin1", "1" },
-            { "admin2", "admin2", "1" },
-            { "admin3", "admin3", "1" },
-            { "dosen1", "dosen1", "2" },
-            { "dosen2", "dosen2", "2" },
-            { "dosen3", "dosen3", "2" },
-            { "mahasiswa1", "mahasiswa1", "3" },
-            { "mahasiswa2", "mahasiswa2", "3" },
-            { "mahasiswa3", "mahasiswa3", "3" }
-    };
+                { "admin1", "admin1", "1" },
+                { "admin2", "admin2", "1" },
+                { "admin3", "admin3", "1" },
+                { "dosen1", "dosen1", "2" },
+                { "dosen2", "dosen2", "2" },
+                { "dosen3", "dosen3", "2" },
+                { "mahasiswa1", "mahasiswa1", "3" },
+                { "mahasiswa2", "mahasiswa2", "3" },
+                { "mahasiswa3", "mahasiswa3", "3" }
+        };
         int attempts = 0;
 
         while (attempts < 3) {
@@ -235,7 +235,7 @@ public class SistemAkademik {
                     cekNilaiMhs();
                     break;
                 case 5:
-                    // cetakKtm();
+                    cetakKtm();
                     break;
                 case 6:
                     contact();
@@ -295,7 +295,8 @@ public class SistemAkademik {
                 mahasiswa[i][10] = inputScanner.nextLine();
 
                 System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
-                System.out.println(" yang melakukan perubahan adalah : " + username);
+                System.out.println(" yang melakukan penambahan adalah : " + username);
+                mahasiswa[i][11] = username;
                 counter++;
 
                 System.out.println("=======================================================");
@@ -388,6 +389,7 @@ public class SistemAkademik {
                     System.out.println("ALAMAT        : " + mahasiswa[i][10]);
                     System.out.println("=======================");
                     System.out.println();
+                    System.out.println("Modified data by : " + mahasiswa[i][11]);
 
                     // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
                     finded = true;
@@ -419,6 +421,8 @@ public class SistemAkademik {
                     mahasiswa[i][10] = inputScanner.nextLine();
 
                     System.out.println("DATA BERHASIL DI UPDATE\n");
+                    System.out.println(" yang melakukan perubahan adalah : " + username);
+                    mahasiswa[i][11] = username;
                     break;
                 }
 
@@ -501,6 +505,8 @@ public class SistemAkademik {
                     System.out.println("NO TELP       : " + mahasiswa[i][9]);
                     System.out.println("ALAMAT        : " + mahasiswa[i][10]);
                     System.out.println("=======================");
+                    System.out.println();
+                    System.out.println("Modified data by : " + mahasiswa[i][11]);
                     // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
                     finded = true;
                 }
@@ -1202,6 +1208,37 @@ public class SistemAkademik {
             System.out.printf(
                     "+--------------------------------------------------------------------------------------------------------+\n");
         }
+    }
+    public static void cetakKtm (){
+
+        String choice;
+        System.out.println("=========== CETAK KARTU MAHASISWA ===========");
+        System.out.println();
+        inputScanner.nextLine();
+        System.out.print("Masukkan NIM Mahasiswa yang ingin dicari : ");
+            key = inputScanner.nextLine();
+            for (int i = 0; i < mahasiswa.length; i++) {
+                if (key.equals(mahasiswa[i][1])) {
+                    System.out.println("=======================");
+                    System.out.println(mahasiswa[i][0]); //Nama
+                    System.out.println(mahasiswa[i][1]); //Nim
+                    System.out.println(mahasiswa[i][4]); //Kelas
+                    System.out.println(mahasiswa[i][2]); //Jurusan
+                    System.out.println(mahasiswa[i][3]); //Prodi
+                    System.out.println("=======================");
+                }
+                System.out.println();
+                System.out.println("Apakah anda ingin mencetak Kartu Tanda Mahasiswa ini? (Ya/Tidak)");
+                System.out.print("masukkan pilihan : ");
+                choice = inputScanner.next();
+                    if (choice.equalsIgnoreCase("Ya")){
+                       System.out.println("Silahkan mencetak KTM di Ruang Admin.");
+                       break;
+                    }
+                    else if (choice.equalsIgnoreCase("Tidak")){
+                        break;
+                    }
+            }
     }
 
     public static void contact() {
