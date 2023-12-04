@@ -57,7 +57,7 @@ public class SistemAkademik {
             System.out.println("");
             System.out.println("======================");
             System.out.println("|     Login User     |");
-            System.out.println("=--------------------=");
+            System.out.println("======================");
 
             System.out.print("Masukkan username : ");
             username = inputScanner.next();
@@ -96,9 +96,9 @@ public class SistemAkademik {
         while (true) {
             System.out.println("");
             System.out.println("============================");
-            System.out.println("=      Sistem Akademik     =");
-            System.out.println("=       BERANDA ADMIN      =");
-            System.out.println("----------------------------");
+            System.out.println("|      Sistem Akademik     |");
+            System.out.println("|       BERANDA ADMIN      |");
+            System.out.println("============================");
             System.out.println("1. Input Data Mahasiswa");
             System.out.println("2. Update Data Mahasiswa");
             System.out.println("3. Cek Data Mahasiswa");
@@ -165,9 +165,9 @@ public class SistemAkademik {
         while (true) {
             System.out.println("");
             System.out.println("============================");
-            System.out.println("=      Sistem Akademik     =");
-            System.out.println("=       BERANDA DOSEN      =");
-            System.out.println("----------------------------");
+            System.out.println("|      Sistem Akademik     |");
+            System.out.println("|       BERANDA DOSEN      |");
+            System.out.println("============================");
             System.out.println("1. Cek Data Mahasiswa");
             System.out.println("2. Input Nilai Mahasiswa");
             System.out.println("3. Update Nilai Mahasiswa");
@@ -207,9 +207,9 @@ public class SistemAkademik {
         while (true) {
             System.out.println("");
             System.out.println("============================");
-            System.out.println("=      Sistem Akademik     =");
-            System.out.println("=     BERANDA MAHASISWA    =");
-            System.out.println("----------------------------");
+            System.out.println("|      Sistem Akademik     |");
+            System.out.println("|     BERANDA MAHASISWA    |");
+            System.out.println("============================");
             System.out.println("1. Cek Data Mahasiswa");
             System.out.println("2. Cek Jadwal Kuliah");
             System.out.println("3. Cek Data KRS Mahasiswa");
@@ -1060,103 +1060,115 @@ public class SistemAkademik {
     }
 
     private static void updKrsMhs() {
+    String[][] updKrsMhs = {
+                { "RTI231001", "Pancasila", "1", "2", "2" },
+                { "RTI231002", "Konsep Teknologi Informasi", "1", "2", "4" },
+                { "RTI231003", "Critical Thinking dan Problem Solving", "1", "2", "4" },
+                { "RTI231004", "Matematika Dasar", "1", "3", "6" },
+                { "RTI231005", "Bahasa Inggris 1", "1", "2", "4" },
+                { "RTI231006", "Dasar Pemograman", "1", "2", "4" },
+                { "RTI231007", "Praktikum Dasar Pemograman", "1", "3", "6" },
+                { "RTI231008", "Keselamatan dan Kesehatan Kerja", "1", "2", "4" }
+        };
         
-    int count = 0;
-    for (String[] data : mahasiswa) {
-        if (data[0] != null) {
-            count++;   
-        }
-    }
-    // SORTING BY NAME
-    int n = count;
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; i < n - 1; i++) {
-            if (mahasiswa[j][0].compareTo(mahasiswa[j + 1][0]) > 0) {
-                //swap mahasiswa[j+1] and mahasiswa[j]
-                String[] temp = mahasiswa[j];
-                mahasiswa[j] = mahasiswa[j + 1];
-                mahasiswa[j + 1] = temp;
-            }
-        }
-    }
-
-    System.out.println("===========UPDATE KRS MAHASISWA=========");
-    System.out.println();
-    System.out.printf("| %-20s | %-15s | %-15s | %-10s |\n", "No", "Mata Kuliah", "SKS", "Jam", "Semester");
-    System.out.printf("---------------------------------------------------------------------------------------\n");
-    for (int i = 0; i < mahasiswa.length; i++) {
-        if (mahasiswa[i][0] != null) {
-            System.out.printf("| %-20s | %-15s | %-15s | %-10s |\n",
-                mahasiswa[i][0], mahasiswa[i][1], mahasiswa[i][2], mahasiswa[i][3], mahasiswa[i][4]);
-            // System.out.println("TGL LAHIR : " + mahasiswa[i][5]);
-            // System.out.println("EMAIL : " + mahasiswa[i][6]);
-            // System.out.println("NO TELP : " + mahasiswa[i][7]);
-            // System.out.println("ALAMAT : " + mahasiswa[i][8]);
-            
-        }
-    }
-
-    System.out.println("Cari data yang akan di update berdasarkan NIM");
-    System.out.println("Apakah anda ingin mencaei data?");
-    System.out.println("yes / no");
-    System.out.println("_________________________");
-    inputScanner.nextLine();
-
-    String jawab = inputScanner.nextLine();
-
-    if (jawab.equalsIgnoreCase("yes")) {
-        boolean finded = false;
-        System.out.println("Masukkan key yang ingin dicari : ");
-        key = inputScanner.nextLine();
-
         for (int i = 0; i < mahasiswa.length; i++) {
-            if (key.equals(mahasiswa[i][1])) {
-                System.out.println("=====================");
-                System.out.println("No                  : " + mahasiswa[i][0]);
-                System.out.println("Mata Kuliah         : " + mahasiswa[i][1]);
-                System.out.println("SKS                 : " + mahasiswa[i][2]);
-                System.out.println("Jam                 : " + mahasiswa[i][3]);
-                System.out.println("Semester            : " + mahasiswa[i][4]);
-                System.out.println("========================");
-                System.out.println();
-
-                // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
-                finded = true;
-            }
-            if (finded) {
-                System.out.println("=====================KRS MAHASISWA=================");
-                inputScanner.nextLine();
-                System.out.println("Masukkan No                 :");
-                mahasiswa[i][0] = inputScanner.nextLine();
-                System.out.println("Masukkan Mata Kuliah        :");
-                mahasiswa[i][1] = inputScanner.nextLine();
-                System.out.println("Masukkan SKS                  :");
-                mahasiswa[i][2] = inputScanner.nextLine();
-                System.out.println("Masukkan Jam                  :");
-                mahasiswa[i][3] = inputScanner.nextLine();
-                System.out.println("Masukkan Semester             :");
-                mahasiswa[i][4] = inputScanner.nextLine();
-
-                System.out.println("DATA BERHASIL DI UPDATE\n");
-                break;
+            if (mahasiswa[i][0] != null) {
+                System.out.printf("| %-20s | %-15s | %-15s | %-10s | %-10s |\n",
+                        mahasiswa[i][0], mahasiswa[i][1], mahasiswa[i][2], mahasiswa[i][3], mahasiswa[i][4]);
             }
         }
-        if (!finded) {
-            System.out.println("Key dalam array tidak ditemukan");
-        } else if (finded) {
-            System.out.println("Apakah anda ingin melakukan ke selanjutnya?");
-            System.out.println("- Ketikkan 1 untuk lanjut");
-            System.out.println("- Ketikkan angka lainya untuk logout"); 
-            int acc = inputScanner.nextInt();
-            
-            if (acc == 1) {
-                return;
-            } else {
-                logOut();
+        int count = 0;
+        for (String[] krs : mahasiswa) {
+            if (krs[0] != null) {
+                count++;
+            }
+        }
+        // SORTING BY NAME
+        int n = count;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (mahasiswa[j][0].compareTo(mahasiswa[j + 1][0]) > 0) {
+                    // swap mahasiswa[j+1] and mahasiswa[j]
+                    String[] temp = mahasiswa[j];
+                    mahasiswa[j] = mahasiswa[j + 1];
+                    mahasiswa[j + 1] = temp;
+                }
+            }
+        }
+        System.out.println("========================== CEK DATA KRS MAHASISWA ==========================");
+        System.out.print("Masukkan Semester : ");
+        
+        System.out.printf("-----------------------------------------------------------------------\n");
+        System.out.printf("| %-5s | %-20s | %-10s | %-10s | %-10s |\n", "No", "MATA KULIAH", "SEMESTER",
+                    "SKS", "JAM");
+        System.out.printf("-----------------------------------------------------------------------\n");
+        
+        for (int i = 0; i < updKrsMhs.length; i++) {
+                System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", updKrsMhs[i][0], updKrsMhs[i][1],
+                        updKrsMhs[i][2], updKrsMhs[i][3], updKrsMhs[i][4]);
+        }
+
+        System.out.println("Cari data yang akan di update berdasarkan NIM");
+        System.out.println("Apakah ingin mencari data?");
+        System.out.println("yes / no");
+        System.out.println("___________________________");
+        inputScanner.nextLine();
+
+        String jawab = inputScanner.nextLine();
+
+        if (jawab.equalsIgnoreCase("yes")) {
+            boolean finded = false;
+            System.out.print("Masukkan key yang ingin dicari : ");
+            key = inputScanner.nextLine();
+
+            for (int i = 0; i < mahasiswa.length; i++) {
+                if (key.equals(mahasiswa[i][1])) {
+                    System.out.println("=======================");
+                    System.out.println("No            : " + mahasiswa[i][0]);
+                    System.out.println("Mata Kuliah   : " + mahasiswa[i][1]);
+                    System.out.println("SKS           : " + mahasiswa[i][2]);
+                    System.out.println("Jam           : " + mahasiswa[i][3]);
+                    System.out.println("Semester      : " + mahasiswa[i][4]);
+                    System.out.println("=======================");
+                    System.out.println();
+
+                    // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
+                    finded = true;
+                }
+                if (finded) {
+                    System.out.println("===================KRS MAHASISWA===================");
+                    inputScanner.nextLine();
+                    System.out.println("Masukkan No                 :");
+                    mahasiswa[i][0] = inputScanner.nextLine();
+                    System.out.println("Masukkan Mata Kuliah        :");
+                    mahasiswa[i][1] = inputScanner.nextLine();
+                    System.out.println("Masukkan SKS                  :");
+                    mahasiswa[i][2] = inputScanner.nextLine();
+                    System.out.println("Masukkan Jam                  :");
+                    mahasiswa[i][3] = inputScanner.nextLine();
+                    System.out.println("Masukkan Semester             :");
+                    mahasiswa[i][4] = inputScanner.nextLine();
+                    System.out.println("DATA BERHASIL DI UPDATE\n");
+                    break;
+                }
+
+            }
+            if (!finded) {
+                System.out.println("Key dalam array tidak ditemukan");
+            } else if (finded) {
+                System.out.println("apakah ingin melakukan operasi selanjutnya?");
+                System.out.println("- ketikkan 1 untuk lanjut");
+                System.out.println("- ketikkan angka lainnya untuk logout");
+                int acc = inputScanner.nextInt();
+
+                if (acc == 1) {
+                    return;
+                } else {
+                    logOut();
+                }
             }
         }
     }
-}
     private static void cekDataKrsMhs() {
 
         String[][] krsMhs1 = {
