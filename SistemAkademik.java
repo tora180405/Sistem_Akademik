@@ -1307,6 +1307,250 @@ public class SistemAkademik {
                 System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30], nilai[i][31], nilai[i][32], nilai[i][33]);
             }
         }
+
+        double MaxDaspro = Double.parseDouble(nilai[0][5]);
+        double MinDaspro = Double.parseDouble(nilai[0][5]);
+        double MaxDasproPrak = Double.parseDouble(nilai[0][9]);
+        double MinDasproPrak = Double.parseDouble(nilai[0][9]);
+        double Maxmatdas = Double.parseDouble(nilai[0][13]);
+        double Minmatdas = Double.parseDouble(nilai[0][13]);
+        double Maxpancasila = Double.parseDouble(nilai[0][17]);
+        double Minpancasila = Double.parseDouble(nilai[0][17]);
+        double MaxKTI = Double.parseDouble(nilai[0][21]);
+        double MinKTI = Double.parseDouble(nilai[0][21]);
+        double MaxCTPS = Double.parseDouble(nilai[0][25]);
+        double MinCTPS = Double.parseDouble(nilai[0][25]);
+        double MaxBING = Double.parseDouble(nilai[0][29]);
+        double MinBING = Double.parseDouble(nilai[0][29]);
+        double MaxK3 = Double.parseDouble(nilai[0][33]);
+        double MinK3 = Double.parseDouble(nilai[0][33]);
+
+
+        // daspro
+        for (int i = 0; i < nilai.length; i++) {
+            if (nilai[i][5] != null && !nilai[i][5].trim().isEmpty()) {
+                double value = Double.parseDouble(nilai[i][5]);
+                if (value > MaxDaspro) {
+                    MaxDaspro = value; // Maksimum ditemukan
+                }
+                if (value < MinDaspro) {
+                    MinDaspro = value; // Minimum ditemukan
+                }
+            }
+        }
+        
+        //daspropraktikum
+        for (int i = 0; i < nilai.length; i++) {
+            if (nilai[i][9] != null && !nilai[i][9].trim().isEmpty()) {
+                double value = Double.parseDouble(nilai[i][9]);
+                if (value > MaxDasproPrak) {
+                    MaxDasproPrak = value; // Maksimum ditemukan
+                }
+                if (value < MinDasproPrak) {
+                    MinDasproPrak = value; // Minimum ditemukan
+                }
+            }
+        }
+
+        //matdas
+        for (int i = 0; i < nilai.length; i++) {
+            if (nilai[i][13] != null && !nilai[i][13].trim().isEmpty()) {
+                double value = Double.parseDouble(nilai[i][13]);
+                if (value > Maxmatdas) {
+                    Maxmatdas = value; // Maksimum ditemukan
+                }
+                if (value < Minmatdas) {
+                    Minmatdas = value; // Minimum ditemukan
+                }
+            }
+        }
+
+        //pancasila
+        for (int i = 0; i < nilai.length; i++) {
+            if (nilai[i][17] != null && !nilai[i][17].trim().isEmpty()) {
+                double value = Double.parseDouble(nilai[i][17]);
+                if (value > Maxpancasila) {
+                    Maxpancasila = value; // Maksimum ditemukan
+                }
+                if (value < Minpancasila) {
+                    Minpancasila = value; // Minimum ditemukan
+                }
+            }
+        }
+
+        //KTI
+        for (int i = 0; i < nilai.length; i++) {
+            if (nilai[i][21] != null && !nilai[i][21].trim().isEmpty()) {
+                double value = Double.parseDouble(nilai[i][21]);
+                if (value > MaxKTI) {
+                    MaxKTI = value; // Maksimum ditemukan
+                }
+                if (value < MinKTI) {
+                    MinKTI = value; // Minimum ditemukan
+                }
+            }
+        }
+
+        //ctps
+        for (int i = 0; i < nilai.length; i++) {
+            if (nilai[i][25] != null && !nilai[i][25].trim().isEmpty()) {
+                double value = Double.parseDouble(nilai[i][25]);
+                if (value > MaxCTPS) {
+                    MaxCTPS = value; // Maksimum ditemukan
+                }
+                if (value < MinCTPS) {
+                    MinCTPS = value; // Minimum ditemukan
+                }
+            }
+        }
+
+        //BING
+        for (int i = 0; i < nilai.length; i++) {
+            if (nilai[i][29] != null && !nilai[i][29].trim().isEmpty()) {
+                double value = Double.parseDouble(nilai[i][29]);
+                if (value > MaxBING) {
+                    MaxBING = value; // Maksimum ditemukan
+                }
+                if (value < MinBING) {
+                    MinBING = value; // Minimum ditemukan
+                }
+            }
+        }
+
+        //MaxK3
+        for (int i = 0; i < nilai.length; i++) {
+            if (nilai[i][33] != null && !nilai[i][33].trim().isEmpty()) {
+                double value = Double.parseDouble(nilai[i][33]);
+                if (value > MaxK3) {
+                    MaxK3 = value; // Maksimum ditemukan
+                }
+                if (value < MinK3) {
+                    MinK3 = value; // Minimum ditemukan
+                }
+            }
+        }
+
+        String nilaiMaxDaspro = String.valueOf(MaxDaspro);
+        String nilaiMinDaspro = String.valueOf(MinDaspro);
+        String nilaiMaxDasproPrak = String.valueOf(MaxDasproPrak);
+        String nilaiMinDasproPrak = String.valueOf(MinDasproPrak);
+        String nilaiMaxmatdas = String.valueOf(Maxmatdas);
+        String nilaiMinmatdas = String.valueOf(Minmatdas);
+        String nilaiMaxpancasila = String.valueOf(Maxpancasila);
+        String nilaiMinpancasila = String.valueOf(Minpancasila);
+        String nilaiMaxKTI = String.valueOf(MaxKTI);
+        String nilaiMinKTI = String.valueOf(MinKTI);
+        String nilaiMaxCTPS = String.valueOf(MaxCTPS);
+        String nilaiMinCTPS = String.valueOf(MinCTPS);
+        String nilaiMaxBING = String.valueOf(MaxBING);
+        String nilaiMinBING = String.valueOf(MinBING);
+        String nilaiMaxK3 = String.valueOf(MaxK3);
+        String nilaiMinK3 = String.valueOf(MinK3);
+
+        System.out.println("-----------NILAI DASAR PEMOGRAMAN----------");
+        if (nilaiMaxDaspro != null) {
+            System.out.println("nilai tertinggi daspro   : " + nilaiMaxDaspro);
+        }else{
+            System.out.println("nilai tertinggi daspro   : 0");
+        }
+        if (nilaiMinDaspro != null) {
+            System.out.println("nilai minimum daspro     : " + nilaiMinDaspro);
+        }else{
+            System.out.println("nilai tertinggi daspro   : 0");
+        }
+        System.out.println("--------------------------------------------");
+        System.out.println("\n");
+        System.out.println("-----------NILAI DASAR PEMOGRAMAN PRAKTIKUM----------");
+        if (nilaiMaxDasproPrak != null) {
+            System.out.println("nilai tertinggi daspro praktikum   : " + nilaiMaxDasproPrak);
+        }else{
+            System.out.println("nilai tertinggi daspro praktikum   : ");
+        }
+        if (nilaiMinDasproPrak != null) {
+            System.out.println("nilai minimum daspro praktikum     : " + nilaiMinDasproPrak);
+        }else{
+            System.out.println("nilai minimum daspro praktikum     : 0");
+        }
+        System.out.println("--------------------------------------------");
+        System.out.println("\n");
+        System.out.println("-----------NILAI MATEMATIKA DASAR----------");
+        if (nilaiMaxmatdas != null) {
+            System.out.println("nilai tertinggi Matdas   : " + nilaiMaxmatdas);
+        }else{
+            System.out.println("nilai tertinggi Matdas   : 0");
+        }
+        if (nilaiMinmatdas != null) {
+            System.out.println("nilai minimum Matdas     : " + nilaiMinmatdas);
+        }else{
+            System.out.println("nilai minimum Matdas     : 0");
+        }
+        System.out.println("--------------------------------------------");
+        System.out.println("\n");
+        System.out.println("-----------NILAI PANCASILA----------");
+        if (nilaiMaxpancasila!= null) {
+            System.out.println("nilai tertinggi pancasila   : " + nilaiMaxpancasila);
+        }else{
+            System.out.println("nilai tertinggi pancasila   : 0");
+        }
+        if (nilaiMinpancasila!= null) {
+            System.out.println("nilai minimum pancasila     : " + nilaiMinpancasila);
+        }else{
+            System.out.println("nilai minimum pancasila     : 0");
+        }
+        System.out.println("--------------------------------------------");
+        System.out.println("\n");
+        System.out.println("-----------NILAI KTI----------");
+        if (nilaiMaxKTI != null) {
+            System.out.println("nilai tertinggi KTI   : " + nilaiMaxKTI);
+        }else{
+            System.out.println("nilai tertinggi KTI   : 0");
+        }
+        if (nilaiMinKTI != null) {
+            System.out.println("nilai minimum KTI     : " + nilaiMinKTI);
+        }else{
+            System.out.println("nilai minimum KTI     : 0");
+        }
+        System.out.println("--------------------------------------------");
+        System.out.println("\n");
+        System.out.println("-----------NILAI CTPS----------");
+        if (nilaiMaxCTPS != null) {
+            System.out.println("nilai tertinggi CTPS   : " + nilaiMaxCTPS);
+        }else{
+            System.out.println("nilai tertinggi CTPS   : 0");
+        }
+        if (nilaiMinCTPS != null) {
+            System.out.println("nilai minimum CTPS     : " + nilaiMinCTPS);
+        }else{
+            System.out.println("nilai minimum CTPS     : 0");
+        }
+        System.out.println("--------------------------------------------");
+        System.out.println("\n");
+        System.out.println("-----------NILAI B Inggris----------");
+        if (nilaiMaxBING != null) {
+            System.out.println("nilai tertinggi BING   : " + nilaiMaxBING);
+        }else{
+            System.out.println("nilai tertinggi BING   : 0");
+        }
+        if (nilaiMinBING != null) {
+            System.out.println("nilai minimum BING     : " + nilaiMinBING);
+        }else{
+            System.out.println("nilai minimum BING     : 0");
+        }
+        System.out.println("--------------------------------------------");
+        System.out.println("\n");
+        System.out.println("-----------NILAI K3----------");
+        if (nilaiMaxK3 != null) {
+            System.out.println("nilai tertinggi K3   : " + MaxK3);
+        }else{
+            System.out.println("nilai tertinggi K3   : 0");
+        }
+        if (nilaiMinK3 != null) {
+            System.out.println("nilai minimum K3     : " + MinK3);
+        }else{
+            System.out.println("nilai minimum K3     : 0");
+        }
+        System.out.println("--------------------------------------------");
+        System.out.println("\n");
     }
 
     private static void cekNilaiMhsDosen(){
