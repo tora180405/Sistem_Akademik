@@ -1572,7 +1572,7 @@ public class SistemAkademik {
         if(username.equalsIgnoreCase("dosen1")){
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
+                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
                             for(int i = 0; i < nilai.length; i++){
                                 if (nilai[i][0] != null) {
                                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
@@ -1602,7 +1602,7 @@ public class SistemAkademik {
         }else if(username.equalsIgnoreCase("dosen2")){
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN PRAKTIKUM");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
+                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
                             for(int i = 0; i < nilai.length; i++){
                                 if (nilai[i][0] != null) {
                                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
@@ -1631,7 +1631,7 @@ public class SistemAkademik {
         }else if(username.equalsIgnoreCase("dosen3")){
             System.out.println("MATA KULIAH MATEMATIKA DASAR");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
+                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
                             for(int i = 0; i < nilai.length; i++){
                                 if (nilai[i][0] != null) {
                                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][10], nilai[i][11], nilai[i][12], nilai[i][13]);
@@ -1660,7 +1660,7 @@ public class SistemAkademik {
         }else if(username.equalsIgnoreCase("dosen4")){
             System.out.println("MATA KULIAH DASAR PANCASILA");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
+                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
                             for(int i = 0; i < nilai.length; i++){
                                 if (nilai[i][0] != null) {
                                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][14], nilai[i][15], nilai[i][16], nilai[i][17]);
@@ -1689,7 +1689,7 @@ public class SistemAkademik {
         }else if(username.equalsIgnoreCase("dosen5")){
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
+                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
                             for(int i = 0; i < nilai.length; i++){
                                 if (nilai[i][0] != null) {
                                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][18], nilai[i][19], nilai[i][20], nilai[i][21]);
@@ -1718,7 +1718,7 @@ public class SistemAkademik {
         }else if(username.equalsIgnoreCase("dosen6")){
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
+                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
                             for(int i = 0; i < nilai.length; i++){
                                 if (nilai[i][0] != null) {
                                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][22], nilai[i][23], nilai[i][24], nilai[i][25]);
@@ -1747,7 +1747,7 @@ public class SistemAkademik {
         }else if(username.equalsIgnoreCase("dosen7")){
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
+                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
                             for(int i = 0; i < nilai.length; i++){
                                 if (nilai[i][0] != null) {
                                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][26], nilai[i][27], nilai[i][28], nilai[i][29]);
@@ -1776,7 +1776,7 @@ public class SistemAkademik {
         }else if(username.equalsIgnoreCase("dosen8")){
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
+                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
                             for(int i = 0; i < nilai.length; i++){
                                 if (nilai[i][0] != null) {
                                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][30], nilai[i][31], nilai[i][32], nilai[i][33]);
