@@ -133,26 +133,19 @@ public class SistemAkademik {
                 case 4:
                     // inNilaiMhs();
                     // cekNilaiMhsAdmin();
+                    cekJadwalKuliah();
                     break;
                 case 5:
                     // updNilaiMhs();
-                    cekJadwalKuliah();
-
+                    updKrsMhs();
                     break;
                 case 6:
                     // cekNilaiMhs();
-                    updKrsMhs();
-
+                    cekDataKrsMhs();
                     break;
                 case 7:
                     // cekJadwalKuliah();
-                    cekDataKrsMhs();
-
-                    break;
-                case 8:
-                    // updKrsMhs();
                     contactAdmin();
-
                     break;
                 // case 9:
                 // cekDataKrsMhs();
@@ -831,226 +824,477 @@ public class SistemAkademik {
             //         }
             //     }
             // }
-            for(int i = 0; i <= mahasiswa.length; i++){
-                if (mahasiswa[i][0] != null) {
-                    System.out.println("================= INPUT NILAI MAHASISWA ===============");
+            if (username.equalsIgnoreCase("dosen1")) {
+                for(int i = 0; i <= mahasiswa.length; i++){
+                    if (mahasiswa[i][0] != null) {
+                        for(int j = 0; j < nilai.length; j++){
+                            nilai[j][0] = mahasiswa[i][0];
                             inputScanner.nextLine();
-                            System.out.println("Pilihan Mata Kuliah ");
-                            System.out.println("1. Dasar Pemograman");
-                            System.out.println("2. Dasar Pemograman Praktikum");
-                            System.out.println("3. Matematika Dasar");
-                            System.out.println("4. Pancasila");
-                            System.out.println("5. Konsep Teknologi Informasi");
-                            System.out.println("6. Critical Thinking dan Problem Solving");
-                            System.out.println("7. Bahasa Inggris");
-                            System.out.println("8. Keselamatan dan Kesehatan Kerja");
-                            System.out.print("Pilih Mata Kuliah yang ingin diinputkan nilai : ");
-                            int Matkul = inputScanner.nextInt();
-                            inputScanner.nextLine();
-                            for (int j = 0; j < nilai.length; j++){
-                                switch(Matkul){
-                                    case 1:
-                                        // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                        nilai[j][0] = mahasiswa[i][0];
-                                        System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
-                                        // --------------------------------------------------------------------------
+                            System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+                            // --------------------------------------------------------------------------
 
-                                        // int NIM = Integer.parseInt(mahasiswa[i++][1]);
+                            // int NIM = Integer.parseInt(mahasiswa[i++][1]);
 
-                                        // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                        // nilai[j][1] = String.valueOf(NIM);
-                                        nilai[j][1] = mahasiswa[i++][1];
-                                        System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
-                                        // --------------------------------------------------------------------------
+                            // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+                            // nilai[j][1] = String.valueOf(NIM);
+                            nilai[j][1] = mahasiswa[i++][1];
+                            System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+                            // --------------------------------------------------------------------------
 
-                                        System.out.println("-----------------------DASPRO----------------------");
-                                        System.out.print("Nilai Tugas Daspro  : ");
-                                        nilai[j][2] = inputScanner.nextLine();
-                                        System.out.print("Nilai UTS Daspro    : ");
-                                        nilai[j][3] = inputScanner.nextLine();
-                                        System.out.print("Nilai UAS Daspro    : ");
-                                        nilai[j][4] = inputScanner.nextLine();
-                                        System.out.println("---------------------------------------------------");
-                                        System.out.println("\n");
-                                        double jumlahDaspro = (Double.parseDouble(nilai[j][2]) + Double.parseDouble(nilai[j][3])+ Double.parseDouble(nilai[j][4])) / 3; nilai[j][5] = String.valueOf(jumlahDaspro);
+                            System.out.println("-----------------------DASPRO----------------------");
+                            System.out.print("Nilai Tugas Daspro  : ");
+                            nilai[j][2] = inputScanner.nextLine();
+                            System.out.print("Nilai UTS Daspro    : ");
+                            nilai[j][3] = inputScanner.nextLine();
+                            System.out.print("Nilai UAS Daspro    : ");
+                            nilai[j][4] = inputScanner.nextLine();
+                            System.out.println("---------------------------------------------------");
+                            System.out.println("\n");
+                            double jumlahDaspro = (Double.parseDouble(nilai[j][2]) + Double.parseDouble(nilai[j][3])+ Double.parseDouble(nilai[j][4])) / 3; nilai[j][5] = String.valueOf(jumlahDaspro);
 
-                                        System.out.println("rata rata :" + nilai[j][5]);
-                                        break;
-                                    case 2:
-                                        // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                        nilai[j][0] = mahasiswa[i][0];
-                                        System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
-                                        // --------------------------------------------------------------------------
-
-                                        // int NIM = Integer.parseInt(mahasiswa[i][1]);
-
-                                        // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                        // nilai[j][1] = String.valueOf(NIM);
-                                        nilai[j][1] = mahasiswa[i++][1];
-                                        System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
-                                        // --------------------------------------------------------------------------
-                                        System.out.println("------------------DASPRO PRAKTIKUM-----------------");
-                                        System.out.print("Nilai Tugas Daspro Praktikum : ");
-                                        nilai[j][6] = inputScanner.nextLine();
-                                        System.out.print("Nilai UTS Daspro Praktikum   : ");
-                                        nilai[j][7] = inputScanner.nextLine();
-                                        System.out.print("Nilai UAS Daspro Praktikum   : ");
-                                        nilai[j][8] = inputScanner.nextLine();
-                                        System.out.println("---------------------------------------------------");
-                                        System.out.println("\n");
-                                        double jumlahDasproPraktik = (Double.parseDouble(nilai[j][6]) + Double.parseDouble(nilai[j][7])+ Double.parseDouble(nilai[j][8])) / 3; nilai[j][9] = String.valueOf(jumlahDasproPraktik);
-                                        break;
-                                    case 3:
-                                        // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                        nilai[j][0] = mahasiswa[i][0];
-                                        System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
-                                        // --------------------------------------------------------------------------
-
-                                        // int NIM = Integer.parseInt(mahasiswa[i][1]);
-
-                                        // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                        // nilai[j][1] = String.valueOf(NIM);
-                                        nilai[j][1] = mahasiswa[i++][1];
-                                        System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
-                                        // --------------------------------------------------------------------------
-                                        System.out.println("-----------------------MATDAS----------------------");
-                                        System.out.print("Nilai Tugas Matdas: ");
-                                        nilai[j][10] = inputScanner.nextLine();
-                                        System.out.print("Nilai UTS Matdas  : ");
-                                        nilai[j][11] = inputScanner.nextLine();
-                                        System.out.print("Nilai UAS Matdas  : ");
-                                        nilai[j][12] = inputScanner.nextLine();
-                                        System.out.println("---------------------------------------------------");
-                                        System.out.println("\n");
-                                        double jumlahMatdas = (Double.parseDouble(nilai[j][10]) + Double.parseDouble(nilai[j][11])+ Double.parseDouble(nilai[j][12])) / 3; nilai[j][13] = String.valueOf(jumlahMatdas);
-                                        break;
-                                    case 4:
-                                        // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                        nilai[j][0] = mahasiswa[i][0];
-                                        System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
-                                        // --------------------------------------------------------------------------
-
-                                        // int NIM = Integer.parseInt(mahasiswa[i][1]);
-
-                                        // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                        // nilai[j][1] = String.valueOf(NIM);
-                                        nilai[j][1] = mahasiswa[i++][1];
-                                        System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
-                                        // --------------------------------------------------------------------------
-                                        System.out.println("----------------------PANCASILA--------------------");
-                                        System.out.print("Nilai Tugas PANCASILA : ");
-                                        nilai[j][14] = inputScanner.nextLine();
-                                        System.out.print("Nilai UTS PANCASILA   : ");
-                                        nilai[j][15] = inputScanner.nextLine();
-                                        System.out.print("Nilai UAS PANCASILA   : ");
-                                        nilai[j][16] = inputScanner.nextLine();
-                                        System.out.println("---------------------------------------------------");
-                                        System.out.println("\n");
-                                        double jumlahPancasila = (Double.parseDouble(nilai[j][14]) + Double.parseDouble(nilai[j][15])+ Double.parseDouble(nilai[j][16])) / 3; nilai[j][17] = String.valueOf(jumlahPancasila);
-                                        break;
-                                    case 5:
-                                        // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                        nilai[j][0] = mahasiswa[i][0];
-                                        System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
-                                        // --------------------------------------------------------------------------
-
-                                        // int NIM = Integer.parseInt(mahasiswa[i][1]);
-
-                                        // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                        // nilai[j][1] = String.valueOf(NIM);
-                                        nilai[j][1] = mahasiswa[i++][1];
-                                        System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
-                                        // --------------------------------------------------------------------------
-                                        System.out.println("-------------------------KTI-----------------------");
-                                        System.out.print("Nilai Tugas KTI : ");
-                                        nilai[j][18] = inputScanner.nextLine();
-                                        System.out.print("Nilai UTS KTI   : ");
-                                        nilai[j][19] = inputScanner.nextLine();
-                                        System.out.print("Nilai UAS KTI   : ");
-                                        nilai[j][20] = inputScanner.nextLine();
-                                        System.out.println("---------------------------------------------------");
-                                        System.out.println("\n");
-                                        double jumlahKTI = (Double.parseDouble(nilai[j][18]) + Double.parseDouble(nilai[j][19])+ Double.parseDouble(nilai[j][20])) / 3; nilai[j][21] = String.valueOf(jumlahKTI);
-                                        break;
-                                    case 6:
-                                        // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                        nilai[j][0] = mahasiswa[i][0];
-                                        System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
-                                        // --------------------------------------------------------------------------
-
-                                        // int NIM = Integer.parseInt(mahasiswa[i][1]);
-
-                                        // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                        // nilai[j][1] = String.valueOf(NIM);
-                                        nilai[j][1] = mahasiswa[i++][1];
-                                        System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
-                                        // --------------------------------------------------------------------------
-                                        System.out.println("-------------------------CTPS----------------------");
-                                        System.out.print("Nilai Tugas CTPS : ");
-                                        nilai[j][22] = inputScanner.nextLine();
-                                        System.out.print("Nilai UTS CTPS   : ");
-                                        nilai[j][23] = inputScanner.nextLine();
-                                        System.out.print("Nilai UAS CTPS   : ");
-                                        nilai[j][24] = inputScanner.nextLine();
-                                        System.out.println("---------------------------------------------------");
-                                        System.out.println("\n");
-                                        double jumlahCTPS = (Double.parseDouble(nilai[j][22]) + Double.parseDouble(nilai[j][23])+ Double.parseDouble(nilai[j][24])) / 3; nilai[j][25] = String.valueOf(jumlahCTPS);
-                                        break;
-                                    case 7:
-                                        // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                        nilai[j][0] = mahasiswa[i][0];
-                                        System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
-                                        // --------------------------------------------------------------------------
-
-                                        // int NIM = Integer.parseInt(mahasiswa[i][1]);
-
-                                        // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                        // nilai[j][1] = String.valueOf(NIM);
-                                        nilai[j][1] = mahasiswa[i++][1];
-                                        System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
-                                        // --------------------------------------------------------------------------
-                                        System.out.println("----------------------B.INGGRIS--------------------");
-                                        System.out.print("Nilai Tugas B.INGGRIS : ");
-                                        nilai[j][26] = inputScanner.nextLine();
-                                        System.out.print("Nilai UTS B.INGGRIS   : ");
-                                        nilai[j][27] = inputScanner.nextLine();
-                                        System.out.print("Nilai UAS B.INGGRIS   : ");
-                                        nilai[j][28] = inputScanner.nextLine();
-                                        System.out.println("---------------------------------------------------");
-                                        System.out.println("\n");
-                                        double jumlahBing = (Double.parseDouble(nilai[j][26]) + Double.parseDouble(nilai[j][27])+ Double.parseDouble(nilai[j][28])) / 3; nilai[j][29] = String.valueOf(jumlahBing);
-                                        break;
-                                    case 8:
-                                        // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
-                                        nilai[j][0] = mahasiswa[i][0];
-                                        System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
-                                        // --------------------------------------------------------------------------
-
-                                        // int NIM = Integer.parseInt(mahasiswa[i][1]);
-
-                                        // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
-                                        // nilai[j][1] = String.valueOf(NIM);
-                                        nilai[j][1] = mahasiswa[i++][1];
-                                        System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
-                                        // --------------------------------------------------------------------------
-                                        System.out.println("-------------------------K-3-----------------------");
-                                        System.out.print("Nilai Tugas K3 : ");
-                                        nilai[j][30] = inputScanner.nextLine();
-                                        System.out.print("Nilai UTS K3   : ");
-                                        nilai[j][31] = inputScanner.nextLine();
-                                        System.out.print("Nilai UAS K3   : ");
-                                        nilai[j][32] = inputScanner.nextLine();
-                                        System.out.println("---------------------------------------------------");
-                                        System.out.println("\n");
-                                        double jumlahK3 = (Double.parseDouble(nilai[j][30]) + Double.parseDouble(nilai[j][31])+ Double.parseDouble(nilai[j][32])) / 3; nilai[j][33] = String.valueOf(jumlahK3);
-                                        break;
-                                    }
-                                if (mahasiswa[i][0] == null) {
-                                    berandaDosen();
-                                }
+                            if (mahasiswa[i][0] == null) {
+                                berandaDosen();
                             }
+                        }
+                    }
+                }
+            }else if (username.equalsIgnoreCase("dosen2")) {
+                for(int i = 0; i <= mahasiswa.length; i++){
+                    if (mahasiswa[i][0] != null) {
+                        for(int j = 0; j < nilai.length; j++){
+                            // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+                            nilai[j][0] = mahasiswa[i][0];
+                            inputScanner.nextLine();
+                            System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+                            // --------------------------------------------------------------------------
+
+                            // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+                            // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+                            // nilai[j][1] = String.valueOf(NIM);
+                            nilai[j][1] = mahasiswa[i++][1];
+                            System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+                            // --------------------------------------------------------------------------
+                            System.out.println("------------------DASPRO PRAKTIKUM-----------------");
+                            System.out.print("Nilai Tugas Daspro Praktikum : ");
+                            nilai[j][6] = inputScanner.nextLine();
+                            System.out.print("Nilai UTS Daspro Praktikum   : ");
+                            nilai[j][7] = inputScanner.nextLine();
+                            System.out.print("Nilai UAS Daspro Praktikum   : ");
+                            nilai[j][8] = inputScanner.nextLine();
+                            System.out.println("---------------------------------------------------");
+                            System.out.println("\n");
+                            double jumlahDasproPraktik = (Double.parseDouble(nilai[j][6]) + Double.parseDouble(nilai[j][7])+ Double.parseDouble(nilai[j][8])) / 3; nilai[j][9] = String.valueOf(jumlahDasproPraktik);
+
+                            if (mahasiswa[i][0] == null) {
+                                berandaDosen();
+                            }
+                        }
+                    }
+                }
+            }else if (username.equalsIgnoreCase("dosen3")) {
+                for(int i = 0; i <= mahasiswa.length; i++){
+                    if (mahasiswa[i][0] != null) {
+                        for(int j = 0; j < nilai.length; j++){
+                            // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+                            nilai[j][0] = mahasiswa[i][0];
+                            inputScanner.nextLine();
+                            System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+                            // --------------------------------------------------------------------------
+
+                            // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+                            // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+                            // nilai[j][1] = String.valueOf(NIM);
+                            nilai[j][1] = mahasiswa[i++][1];
+                            System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+                            // --------------------------------------------------------------------------
+                            System.out.println("-----------------------MATDAS----------------------");
+                            System.out.print("Nilai Tugas Matdas: ");
+                            nilai[j][10] = inputScanner.nextLine();
+                            System.out.print("Nilai UTS Matdas  : ");
+                            nilai[j][11] = inputScanner.nextLine();
+                            System.out.print("Nilai UAS Matdas  : ");
+                            nilai[j][12] = inputScanner.nextLine();
+                            System.out.println("---------------------------------------------------");
+                            System.out.println("\n");
+                            double jumlahMatdas = (Double.parseDouble(nilai[j][10]) + Double.parseDouble(nilai[j][11])+ Double.parseDouble(nilai[j][12])) / 3; nilai[j][13] = String.valueOf(jumlahMatdas);
+
+                            if (mahasiswa[i][0] == null) {
+                                berandaDosen();
+                            }
+                        }
+                    }
+                }
+            }else if (username.equalsIgnoreCase("dosen4")) {
+                for(int i = 0; i <= mahasiswa.length; i++){
+                    if (mahasiswa[i][0] != null) {
+                        for(int j = 0; j < nilai.length; j++){
+                            // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+                            nilai[j][0] = mahasiswa[i][0];
+                            inputScanner.nextLine();
+                            System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+                            // --------------------------------------------------------------------------
+
+                            // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+                            // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+                            // nilai[j][1] = String.valueOf(NIM);
+                            nilai[j][1] = mahasiswa[i++][1];
+                            System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+                            // --------------------------------------------------------------------------
+                            System.out.println("----------------------PANCASILA--------------------");
+                            System.out.print("Nilai Tugas PANCASILA : ");
+                            nilai[j][14] = inputScanner.nextLine();
+                            System.out.print("Nilai UTS PANCASILA   : ");
+                            nilai[j][15] = inputScanner.nextLine();
+                            System.out.print("Nilai UAS PANCASILA   : ");
+                            nilai[j][16] = inputScanner.nextLine();
+                            System.out.println("---------------------------------------------------");
+                            System.out.println("\n");
+                            double jumlahPancasila = (Double.parseDouble(nilai[j][14]) + Double.parseDouble(nilai[j][15])+ Double.parseDouble(nilai[j][16])) / 3; nilai[j][17] = String.valueOf(jumlahPancasila);
+
+                            if (mahasiswa[i][0] == null) {
+                                berandaDosen();
+                            }
+                        }
+                    }
+                }
+            }else if (username.equalsIgnoreCase("dosen5")) {
+                for(int i = 0; i <= mahasiswa.length; i++){
+                    if (mahasiswa[i][0] != null) {
+                        for(int j = 0; j < nilai.length; j++){
+                            // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+                            nilai[j][0] = mahasiswa[i][0];
+                            inputScanner.nextLine();
+                            System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+                            // --------------------------------------------------------------------------
+
+                            // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+                            // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+                            // nilai[j][1] = String.valueOf(NIM);
+                            nilai[j][1] = mahasiswa[i++][1];
+                            System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+                            // --------------------------------------------------------------------------
+                            System.out.println("-------------------------KTI-----------------------");
+                            System.out.print("Nilai Tugas KTI : ");
+                            nilai[j][18] = inputScanner.nextLine();
+                            System.out.print("Nilai UTS KTI   : ");
+                            nilai[j][19] = inputScanner.nextLine();
+                            System.out.print("Nilai UAS KTI   : ");
+                            nilai[j][20] = inputScanner.nextLine();
+                            System.out.println("---------------------------------------------------");
+                            System.out.println("\n");
+                            double jumlahKTI = (Double.parseDouble(nilai[j][18]) + Double.parseDouble(nilai[j][19])+ Double.parseDouble(nilai[j][20])) / 3; nilai[j][21] = String.valueOf(jumlahKTI);
+
+                            if (mahasiswa[i][0] == null) {
+                                berandaDosen();
+                            }
+                        }
+                    }
+                }
+            }else if (username.equalsIgnoreCase("dosen6")) {
+                for(int i = 0; i <= mahasiswa.length; i++){
+                    if (mahasiswa[i][0] != null) {
+                        for(int j = 0; j < nilai.length; j++){
+                            // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+                            nilai[j][0] = mahasiswa[i][0];
+                            inputScanner.nextLine();
+                            System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+                            // --------------------------------------------------------------------------
+
+                            // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+                            // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+                            // nilai[j][1] = String.valueOf(NIM);
+                            nilai[j][1] = mahasiswa[i++][1];
+                            System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+                            // --------------------------------------------------------------------------
+                            System.out.println("-------------------------CTPS----------------------");
+                            System.out.print("Nilai Tugas CTPS : ");
+                            nilai[j][22] = inputScanner.nextLine();
+                            System.out.print("Nilai UTS CTPS   : ");
+                            nilai[j][23] = inputScanner.nextLine();
+                            System.out.print("Nilai UAS CTPS   : ");
+                            nilai[j][24] = inputScanner.nextLine();
+                            System.out.println("---------------------------------------------------");
+                            System.out.println("\n");
+                            double jumlahCTPS = (Double.parseDouble(nilai[j][22]) + Double.parseDouble(nilai[j][23])+ Double.parseDouble(nilai[j][24])) / 3; nilai[j][25] = String.valueOf(jumlahCTPS);
+
+                            if (mahasiswa[i][0] == null) {
+                                berandaDosen();
+                            }
+                        }
+                    }
+                }
+            }else if (username.equalsIgnoreCase("dosen7")) {
+                for(int i = 0; i <= mahasiswa.length; i++){
+                    if (mahasiswa[i][0] != null) {
+                        for(int j = 0; j < nilai.length; j++){
+                            // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+                            nilai[j][0] = mahasiswa[i][0];
+                            inputScanner.nextLine();
+                            System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+                            // --------------------------------------------------------------------------
+
+                            // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+                            // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+                            // nilai[j][1] = String.valueOf(NIM);
+                            nilai[j][1] = mahasiswa[i++][1];
+                            System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+                            // --------------------------------------------------------------------------
+                            System.out.println("----------------------B.INGGRIS--------------------");
+                            System.out.print("Nilai Tugas B.INGGRIS : ");
+                            nilai[j][26] = inputScanner.nextLine();
+                            System.out.print("Nilai UTS B.INGGRIS   : ");
+                            nilai[j][27] = inputScanner.nextLine();
+                            System.out.print("Nilai UAS B.INGGRIS   : ");
+                            nilai[j][28] = inputScanner.nextLine();
+                            System.out.println("---------------------------------------------------");
+                            System.out.println("\n");
+                            double jumlahBing = (Double.parseDouble(nilai[j][26]) + Double.parseDouble(nilai[j][27])+ Double.parseDouble(nilai[j][28])) / 3; nilai[j][29] = String.valueOf(jumlahBing);
+
+                            if (mahasiswa[i][0] == null) {
+                                berandaDosen();
+                            }
+                        }
+                    }
+                }
+            }else if (username.equalsIgnoreCase("dosen8")) {
+                for(int i = 0; i <= mahasiswa.length; i++){
+                    if (mahasiswa[i][0] != null) {
+                        for(int j = 0; j < nilai.length; j++){
+                            // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+                            nilai[j][0] = mahasiswa[i][0];
+                            inputScanner.nextLine();
+                            System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+                            // --------------------------------------------------------------------------
+
+                            // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+                            // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+                            // nilai[j][1] = String.valueOf(NIM);
+                            nilai[j][1] = mahasiswa[i++][1];
+                            System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+                            // --------------------------------------------------------------------------
+                            System.out.println("-------------------------K-3-----------------------");
+                            System.out.print("Nilai Tugas K3 : ");
+                            nilai[j][30] = inputScanner.nextLine();
+                            System.out.print("Nilai UTS K3   : ");
+                            nilai[j][31] = inputScanner.nextLine();
+                            System.out.print("Nilai UAS K3   : ");
+                            nilai[j][32] = inputScanner.nextLine();
+                            System.out.println("---------------------------------------------------");
+                            System.out.println("\n");
+                            double jumlahK3 = (Double.parseDouble(nilai[j][30]) + Double.parseDouble(nilai[j][31])+ Double.parseDouble(nilai[j][32])) / 3; nilai[j][33] = String.valueOf(jumlahK3);
+
+                            if (mahasiswa[i][0] == null) {
+                                berandaDosen();
+                            }
+                        }
+                    }
                 }
             }
+            
+            // for(int i = 0; i <= mahasiswa.length; i++){
+            //     if (mahasiswa[i][0] != null) {
+            //         System.out.println("================= INPUT NILAI MAHASISWA ===============");
+            //                 inputScanner.nextLine();
+            //                 System.out.println("Pilihan Mata Kuliah ");
+            //                 System.out.println("1. Dasar Pemograman");
+            //                 System.out.println("2. Dasar Pemograman Praktikum");
+            //                 System.out.println("3. Matematika Dasar");
+            //                 System.out.println("4. Pancasila");
+            //                 System.out.println("5. Konsep Teknologi Informasi");
+            //                 System.out.println("6. Critical Thinking dan Problem Solving");
+            //                 System.out.println("7. Bahasa Inggris");
+            //                 System.out.println("8. Keselamatan dan Kesehatan Kerja");
+            //                 System.out.print("Pilih Mata Kuliah yang ingin diinputkan nilai : ");
+            //                 int Matkul = inputScanner.nextInt();
+            //                 inputScanner.nextLine();
+            //                 for (int j = 0; j < nilai.length; j++){
+            //                     switch(Matkul){
+            //                         case 1:
+            //                             // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+                                        
+            //                             break;
+            //                         case 2:
+            //                             // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+            //                             nilai[j][0] = mahasiswa[i][0];
+            //                             System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+            //                             // --------------------------------------------------------------------------
+
+            //                             // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+            //                             // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+            //                             // nilai[j][1] = String.valueOf(NIM);
+            //                             nilai[j][1] = mahasiswa[i++][1];
+            //                             System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+            //                             // --------------------------------------------------------------------------
+            //                             System.out.println("------------------DASPRO PRAKTIKUM-----------------");
+            //                             System.out.print("Nilai Tugas Daspro Praktikum : ");
+            //                             nilai[j][6] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UTS Daspro Praktikum   : ");
+            //                             nilai[j][7] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UAS Daspro Praktikum   : ");
+            //                             nilai[j][8] = inputScanner.nextLine();
+            //                             System.out.println("---------------------------------------------------");
+            //                             System.out.println("\n");
+            //                             double jumlahDasproPraktik = (Double.parseDouble(nilai[j][6]) + Double.parseDouble(nilai[j][7])+ Double.parseDouble(nilai[j][8])) / 3; nilai[j][9] = String.valueOf(jumlahDasproPraktik);
+            //                             break;
+            //                         case 3:
+            //                             // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+            //                             nilai[j][0] = mahasiswa[i][0];
+            //                             System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+            //                             // --------------------------------------------------------------------------
+
+            //                             // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+            //                             // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+            //                             // nilai[j][1] = String.valueOf(NIM);
+            //                             nilai[j][1] = mahasiswa[i++][1];
+            //                             System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+            //                             // --------------------------------------------------------------------------
+            //                             System.out.println("-----------------------MATDAS----------------------");
+            //                             System.out.print("Nilai Tugas Matdas: ");
+            //                             nilai[j][10] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UTS Matdas  : ");
+            //                             nilai[j][11] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UAS Matdas  : ");
+            //                             nilai[j][12] = inputScanner.nextLine();
+            //                             System.out.println("---------------------------------------------------");
+            //                             System.out.println("\n");
+            //                             double jumlahMatdas = (Double.parseDouble(nilai[j][10]) + Double.parseDouble(nilai[j][11])+ Double.parseDouble(nilai[j][12])) / 3; nilai[j][13] = String.valueOf(jumlahMatdas);
+            //                             break;
+            //                         case 4:
+            //                             // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+            //                             nilai[j][0] = mahasiswa[i][0];
+            //                             System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+            //                             // --------------------------------------------------------------------------
+
+            //                             // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+            //                             // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+            //                             // nilai[j][1] = String.valueOf(NIM);
+            //                             nilai[j][1] = mahasiswa[i++][1];
+            //                             System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+            //                             // --------------------------------------------------------------------------
+            //                             System.out.println("----------------------PANCASILA--------------------");
+            //                             System.out.print("Nilai Tugas PANCASILA : ");
+            //                             nilai[j][14] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UTS PANCASILA   : ");
+            //                             nilai[j][15] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UAS PANCASILA   : ");
+            //                             nilai[j][16] = inputScanner.nextLine();
+            //                             System.out.println("---------------------------------------------------");
+            //                             System.out.println("\n");
+            //                             double jumlahPancasila = (Double.parseDouble(nilai[j][14]) + Double.parseDouble(nilai[j][15])+ Double.parseDouble(nilai[j][16])) / 3; nilai[j][17] = String.valueOf(jumlahPancasila);
+            //                             break;
+            //                         case 5:
+            //                             // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+            //                             nilai[j][0] = mahasiswa[i][0];
+            //                             System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+            //                             // --------------------------------------------------------------------------
+
+            //                             // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+            //                             // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+            //                             // nilai[j][1] = String.valueOf(NIM);
+            //                             nilai[j][1] = mahasiswa[i++][1];
+            //                             System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+            //                             // --------------------------------------------------------------------------
+            //                             System.out.println("-------------------------KTI-----------------------");
+            //                             System.out.print("Nilai Tugas KTI : ");
+            //                             nilai[j][18] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UTS KTI   : ");
+            //                             nilai[j][19] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UAS KTI   : ");
+            //                             nilai[j][20] = inputScanner.nextLine();
+            //                             System.out.println("---------------------------------------------------");
+            //                             System.out.println("\n");
+            //                             double jumlahKTI = (Double.parseDouble(nilai[j][18]) + Double.parseDouble(nilai[j][19])+ Double.parseDouble(nilai[j][20])) / 3; nilai[j][21] = String.valueOf(jumlahKTI);
+            //                             break;
+            //                         case 6:
+            //                             // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+            //                             nilai[j][0] = mahasiswa[i][0];
+            //                             System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+            //                             // --------------------------------------------------------------------------
+
+            //                             // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+            //                             // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+            //                             // nilai[j][1] = String.valueOf(NIM);
+            //                             nilai[j][1] = mahasiswa[i++][1];
+            //                             System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+            //                             // --------------------------------------------------------------------------
+            //                             System.out.println("-------------------------CTPS----------------------");
+            //                             System.out.print("Nilai Tugas CTPS : ");
+            //                             nilai[j][22] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UTS CTPS   : ");
+            //                             nilai[j][23] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UAS CTPS   : ");
+            //                             nilai[j][24] = inputScanner.nextLine();
+            //                             System.out.println("---------------------------------------------------");
+            //                             System.out.println("\n");
+            //                             double jumlahCTPS = (Double.parseDouble(nilai[j][22]) + Double.parseDouble(nilai[j][23])+ Double.parseDouble(nilai[j][24])) / 3; nilai[j][25] = String.valueOf(jumlahCTPS);
+            //                             break;
+            //                         case 7:
+            //                             // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+            //                             nilai[j][0] = mahasiswa[i][0];
+            //                             System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+            //                             // --------------------------------------------------------------------------
+
+            //                             // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+            //                             // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+            //                             // nilai[j][1] = String.valueOf(NIM);
+            //                             nilai[j][1] = mahasiswa[i++][1];
+            //                             System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+            //                             // --------------------------------------------------------------------------
+            //                             System.out.println("----------------------B.INGGRIS--------------------");
+            //                             System.out.print("Nilai Tugas B.INGGRIS : ");
+            //                             nilai[j][26] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UTS B.INGGRIS   : ");
+            //                             nilai[j][27] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UAS B.INGGRIS   : ");
+            //                             nilai[j][28] = inputScanner.nextLine();
+            //                             System.out.println("---------------------------------------------------");
+            //                             System.out.println("\n");
+            //                             double jumlahBing = (Double.parseDouble(nilai[j][26]) + Double.parseDouble(nilai[j][27])+ Double.parseDouble(nilai[j][28])) / 3; nilai[j][29] = String.valueOf(jumlahBing);
+            //                             break;
+            //                         case 8:
+            //                             // mengisi array nilai pada kolom 0 dengan mahasiswa kolom 0 yang berisi nama
+            //                             nilai[j][0] = mahasiswa[i][0];
+            //                             System.out.println("NAMA MAHASISWA      : " + nilai[j][0]);
+            //                             // --------------------------------------------------------------------------
+
+            //                             // int NIM = Integer.parseInt(mahasiswa[i][1]);
+
+            //                             // mengisi array nilai pada kolom 1 dengan mahasiswa kolom 1 yang berisi NIM
+            //                             // nilai[j][1] = String.valueOf(NIM);
+            //                             nilai[j][1] = mahasiswa[i++][1];
+            //                             System.out.println("NIM MAHASISWA       : " + nilai[j][1]);
+            //                             // --------------------------------------------------------------------------
+            //                             System.out.println("-------------------------K-3-----------------------");
+            //                             System.out.print("Nilai Tugas K3 : ");
+            //                             nilai[j][30] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UTS K3   : ");
+            //                             nilai[j][31] = inputScanner.nextLine();
+            //                             System.out.print("Nilai UAS K3   : ");
+            //                             nilai[j][32] = inputScanner.nextLine();
+            //                             System.out.println("---------------------------------------------------");
+            //                             System.out.println("\n");
+            //                             double jumlahK3 = (Double.parseDouble(nilai[j][30]) + Double.parseDouble(nilai[j][31])+ Double.parseDouble(nilai[j][32])) / 3; nilai[j][33] = String.valueOf(jumlahK3);
+            //                             break;
+            //                         }
+            //                     if (mahasiswa[i][0] == null) {
+            //                         berandaDosen();
+            //                     }
+            //                 }
+            //     }
+            // }
         }
     }
 
@@ -1296,280 +1540,27 @@ public class SistemAkademik {
         }
     }
 
-    private static void cekNilaiMhsAdmin() {
-        System.out.println("================= NILAI MAHASISWA ===============");
-        System.out.println();
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "MATKUL", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-        System.out.printf(
-                "+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][0] != null) {
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], "DASPRO", nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][1],"DASPROPRAKTIKUM",nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "MATDAS", nilai[i][10], nilai[i][11], nilai[i][12], nilai[i][13]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "PANCASILA", nilai[i][14], nilai[i][15], nilai[i][16], nilai[i][17]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "KTI", nilai[i][18], nilai[i][19], nilai[i][20], nilai[i][21]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "CTPS", nilai[i][22], nilai[i][23], nilai[i][24], nilai[i][25]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "B.INGGRIS", nilai[i][26], nilai[i][27], nilai[i][28], nilai[i][29]);
-                System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", " ", "K3", nilai[i][30], nilai[i][31], nilai[i][32], nilai[i][33]);
-            }
-        }
-
-        double MaxDaspro = Double.parseDouble(nilai[0][5]);
-        double MinDaspro = Double.parseDouble(nilai[0][5]);
-        double MaxDasproPrak = Double.parseDouble(nilai[0][9]);
-        double MinDasproPrak = Double.parseDouble(nilai[0][9]);
-        double Maxmatdas = Double.parseDouble(nilai[0][13]);
-        double Minmatdas = Double.parseDouble(nilai[0][13]);
-        double Maxpancasila = Double.parseDouble(nilai[0][17]);
-        double Minpancasila = Double.parseDouble(nilai[0][17]);
-        double MaxKTI = Double.parseDouble(nilai[0][21]);
-        double MinKTI = Double.parseDouble(nilai[0][21]);
-        double MaxCTPS = Double.parseDouble(nilai[0][25]);
-        double MinCTPS = Double.parseDouble(nilai[0][25]);
-        double MaxBING = Double.parseDouble(nilai[0][29]);
-        double MinBING = Double.parseDouble(nilai[0][29]);
-        double MaxK3 = Double.parseDouble(nilai[0][33]);
-        double MinK3 = Double.parseDouble(nilai[0][33]);
-
-
-        // daspro
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][5] != null && !nilai[i][5].trim().isEmpty()) {
-                double value = Double.parseDouble(nilai[i][5]);
-                if (value > MaxDaspro) {
-                    MaxDaspro = value; // Maksimum ditemukan
-                }
-                if (value < MinDaspro) {
-                    MinDaspro = value; // Minimum ditemukan
-                }
-            }
-        }
-        
-        //daspropraktikum
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][9] != null && !nilai[i][9].trim().isEmpty()) {
-                double value = Double.parseDouble(nilai[i][9]);
-                if (value > MaxDasproPrak) {
-                    MaxDasproPrak = value; // Maksimum ditemukan
-                }
-                if (value < MinDasproPrak) {
-                    MinDasproPrak = value; // Minimum ditemukan
-                }
-            }
-        }
-
-        //matdas
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][13] != null && !nilai[i][13].trim().isEmpty()) {
-                double value = Double.parseDouble(nilai[i][13]);
-                if (value > Maxmatdas) {
-                    Maxmatdas = value; // Maksimum ditemukan
-                }
-                if (value < Minmatdas) {
-                    Minmatdas = value; // Minimum ditemukan
-                }
-            }
-        }
-
-        //pancasila
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][17] != null && !nilai[i][17].trim().isEmpty()) {
-                double value = Double.parseDouble(nilai[i][17]);
-                if (value > Maxpancasila) {
-                    Maxpancasila = value; // Maksimum ditemukan
-                }
-                if (value < Minpancasila) {
-                    Minpancasila = value; // Minimum ditemukan
-                }
-            }
-        }
-
-        //KTI
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][21] != null && !nilai[i][21].trim().isEmpty()) {
-                double value = Double.parseDouble(nilai[i][21]);
-                if (value > MaxKTI) {
-                    MaxKTI = value; // Maksimum ditemukan
-                }
-                if (value < MinKTI) {
-                    MinKTI = value; // Minimum ditemukan
-                }
-            }
-        }
-
-        //ctps
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][25] != null && !nilai[i][25].trim().isEmpty()) {
-                double value = Double.parseDouble(nilai[i][25]);
-                if (value > MaxCTPS) {
-                    MaxCTPS = value; // Maksimum ditemukan
-                }
-                if (value < MinCTPS) {
-                    MinCTPS = value; // Minimum ditemukan
-                }
-            }
-        }
-
-        //BING
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][29] != null && !nilai[i][29].trim().isEmpty()) {
-                double value = Double.parseDouble(nilai[i][29]);
-                if (value > MaxBING) {
-                    MaxBING = value; // Maksimum ditemukan
-                }
-                if (value < MinBING) {
-                    MinBING = value; // Minimum ditemukan
-                }
-            }
-        }
-
-        //MaxK3
-        for (int i = 0; i < nilai.length; i++) {
-            if (nilai[i][33] != null && !nilai[i][33].trim().isEmpty()) {
-                double value = Double.parseDouble(nilai[i][33]);
-                if (value > MaxK3) {
-                    MaxK3 = value; // Maksimum ditemukan
-                }
-                if (value < MinK3) {
-                    MinK3 = value; // Minimum ditemukan
-                }
-            }
-        }
-
-        String nilaiMaxDaspro = String.valueOf(MaxDaspro);
-        String nilaiMinDaspro = String.valueOf(MinDaspro);
-        String nilaiMaxDasproPrak = String.valueOf(MaxDasproPrak);
-        String nilaiMinDasproPrak = String.valueOf(MinDasproPrak);
-        String nilaiMaxmatdas = String.valueOf(Maxmatdas);
-        String nilaiMinmatdas = String.valueOf(Minmatdas);
-        String nilaiMaxpancasila = String.valueOf(Maxpancasila);
-        String nilaiMinpancasila = String.valueOf(Minpancasila);
-        String nilaiMaxKTI = String.valueOf(MaxKTI);
-        String nilaiMinKTI = String.valueOf(MinKTI);
-        String nilaiMaxCTPS = String.valueOf(MaxCTPS);
-        String nilaiMinCTPS = String.valueOf(MinCTPS);
-        String nilaiMaxBING = String.valueOf(MaxBING);
-        String nilaiMinBING = String.valueOf(MinBING);
-        String nilaiMaxK3 = String.valueOf(MaxK3);
-        String nilaiMinK3 = String.valueOf(MinK3);
-
-        System.out.println("-----------NILAI DASAR PEMOGRAMAN----------");
-        if (nilaiMaxDaspro != null) {
-            System.out.println("nilai tertinggi daspro   : " + nilaiMaxDaspro);
-        }else{
-            System.out.println("nilai tertinggi daspro   : 0");
-        }
-        if (nilaiMinDaspro != null) {
-            System.out.println("nilai minimum daspro     : " + nilaiMinDaspro);
-        }else{
-            System.out.println("nilai tertinggi daspro   : 0");
-        }
-        System.out.println("--------------------------------------------");
-        System.out.println("\n");
-        System.out.println("-----------NILAI DASAR PEMOGRAMAN PRAKTIKUM----------");
-        if (nilaiMaxDasproPrak != null) {
-            System.out.println("nilai tertinggi daspro praktikum   : " + nilaiMaxDasproPrak);
-        }else{
-            System.out.println("nilai tertinggi daspro praktikum   : ");
-        }
-        if (nilaiMinDasproPrak != null) {
-            System.out.println("nilai minimum daspro praktikum     : " + nilaiMinDasproPrak);
-        }else{
-            System.out.println("nilai minimum daspro praktikum     : 0");
-        }
-        System.out.println("--------------------------------------------");
-        System.out.println("\n");
-        System.out.println("-----------NILAI MATEMATIKA DASAR----------");
-        if (nilaiMaxmatdas != null) {
-            System.out.println("nilai tertinggi Matdas   : " + nilaiMaxmatdas);
-        }else{
-            System.out.println("nilai tertinggi Matdas   : 0");
-        }
-        if (nilaiMinmatdas != null) {
-            System.out.println("nilai minimum Matdas     : " + nilaiMinmatdas);
-        }else{
-            System.out.println("nilai minimum Matdas     : 0");
-        }
-        System.out.println("--------------------------------------------");
-        System.out.println("\n");
-        System.out.println("-----------NILAI PANCASILA----------");
-        if (nilaiMaxpancasila!= null) {
-            System.out.println("nilai tertinggi pancasila   : " + nilaiMaxpancasila);
-        }else{
-            System.out.println("nilai tertinggi pancasila   : 0");
-        }
-        if (nilaiMinpancasila!= null) {
-            System.out.println("nilai minimum pancasila     : " + nilaiMinpancasila);
-        }else{
-            System.out.println("nilai minimum pancasila     : 0");
-        }
-        System.out.println("--------------------------------------------");
-        System.out.println("\n");
-        System.out.println("-----------NILAI KTI----------");
-        if (nilaiMaxKTI != null) {
-            System.out.println("nilai tertinggi KTI   : " + nilaiMaxKTI);
-        }else{
-            System.out.println("nilai tertinggi KTI   : 0");
-        }
-        if (nilaiMinKTI != null) {
-            System.out.println("nilai minimum KTI     : " + nilaiMinKTI);
-        }else{
-            System.out.println("nilai minimum KTI     : 0");
-        }
-        System.out.println("--------------------------------------------");
-        System.out.println("\n");
-        System.out.println("-----------NILAI CTPS----------");
-        if (nilaiMaxCTPS != null) {
-            System.out.println("nilai tertinggi CTPS   : " + nilaiMaxCTPS);
-        }else{
-            System.out.println("nilai tertinggi CTPS   : 0");
-        }
-        if (nilaiMinCTPS != null) {
-            System.out.println("nilai minimum CTPS     : " + nilaiMinCTPS);
-        }else{
-            System.out.println("nilai minimum CTPS     : 0");
-        }
-        System.out.println("--------------------------------------------");
-        System.out.println("\n");
-        System.out.println("-----------NILAI B Inggris----------");
-        if (nilaiMaxBING != null) {
-            System.out.println("nilai tertinggi BING   : " + nilaiMaxBING);
-        }else{
-            System.out.println("nilai tertinggi BING   : 0");
-        }
-        if (nilaiMinBING != null) {
-            System.out.println("nilai minimum BING     : " + nilaiMinBING);
-        }else{
-            System.out.println("nilai minimum BING     : 0");
-        }
-        System.out.println("--------------------------------------------");
-        System.out.println("\n");
-        System.out.println("-----------NILAI K3----------");
-        if (nilaiMaxK3 != null) {
-            System.out.println("nilai tertinggi K3   : " + MaxK3);
-        }else{
-            System.out.println("nilai tertinggi K3   : 0");
-        }
-        if (nilaiMinK3 != null) {
-            System.out.println("nilai minimum K3     : " + MinK3);
-        }else{
-            System.out.println("nilai minimum K3     : 0");
-        }
-        System.out.println("--------------------------------------------");
-        System.out.println("\n");
-    }
-
     private static void cekNilaiMhsDosen(){
-        // untuk menghitung data mahasiswa yang ada nilainya(tidak null)
-        int count = 0;
-        for (String[] data : mahasiswa) {
-            if (data[0] != null) {
-                count++;
-            }
-        }
-
         if(username.equalsIgnoreCase("dosen1")){
+            // untuk menghitung data nilai yang ada nilainya(tidak null)
+            int count = 0;
+            for (String[] data : nilai) {
+                if (data[0] != null) {
+                    count++;
+                }
+            }
+            // SORTING BY NAME
+            int n = count;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (nilai[j][0].compareTo(nilai[j + 1][0]) > 0) {
+                        // swap nilai[j+1] and nilai[j]
+                        String[] temp = nilai[j];
+                        nilai[j] = nilai[j + 1];
+                        nilai[j + 1] = temp;
+                    }
+                }
+            }
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
                             System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
@@ -1600,6 +1591,25 @@ public class SistemAkademik {
                             System.out.println("nilai minimum daspro    : " + MinDaspro);
                     
         }else if(username.equalsIgnoreCase("dosen2")){
+            // untuk menghitung data nilai yang ada nilainya(tidak null)
+            int count = 0;
+            for (String[] data : nilai) {
+                if (data[0] != null) {
+                    count++;
+                }
+            }
+            // SORTING BY NAME
+            int n = count;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (nilai[j][0].compareTo(nilai[j + 1][0]) > 0) {
+                        // swap nilai[j+1] and nilai[j]
+                        String[] temp = nilai[j];
+                        nilai[j] = nilai[j + 1];
+                        nilai[j + 1] = temp;
+                    }
+                }
+            }
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN PRAKTIKUM");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
                             System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
@@ -1629,6 +1639,25 @@ public class SistemAkademik {
                             System.out.println("nilai tertinggi daspro   : " + MaxDasproPrak);
                             System.out.println("nilai minimum daspro    : " + MinDasproPrak);
         }else if(username.equalsIgnoreCase("dosen3")){
+            // untuk menghitung data nilai yang ada nilainya(tidak null)
+            int count = 0;
+            for (String[] data : nilai) {
+                if (data[0] != null) {
+                    count++;
+                }
+            }
+            // SORTING BY NAME
+            int n = count;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (nilai[j][0].compareTo(nilai[j + 1][0]) > 0) {
+                        // swap nilai[j+1] and nilai[j]
+                        String[] temp = nilai[j];
+                        nilai[j] = nilai[j + 1];
+                        nilai[j + 1] = temp;
+                    }
+                }
+            }
             System.out.println("MATA KULIAH MATEMATIKA DASAR");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
                             System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
@@ -1658,6 +1687,25 @@ public class SistemAkademik {
                             System.out.println("nilai tertinggi daspro   : " + MaxMatdas);
                             System.out.println("nilai minimum daspro    : " + MinMatdas);
         }else if(username.equalsIgnoreCase("dosen4")){
+            // untuk menghitung data nilai yang ada nilainya(tidak null)
+            int count = 0;
+            for (String[] data : nilai) {
+                if (data[0] != null) {
+                    count++;
+                }
+            }
+            // SORTING BY NAME
+            int n = count;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (nilai[j][0].compareTo(nilai[j + 1][0]) > 0) {
+                        // swap nilai[j+1] and nilai[j]
+                        String[] temp = nilai[j];
+                        nilai[j] = nilai[j + 1];
+                        nilai[j + 1] = temp;
+                    }
+                }
+            }
             System.out.println("MATA KULIAH DASAR PANCASILA");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
                             System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
@@ -1687,6 +1735,25 @@ public class SistemAkademik {
                             System.out.println("nilai tertinggi Pancasila   : " + MaxPancasila);
                             System.out.println("nilai minimum Pancasila    : " + MinPancasila);
         }else if(username.equalsIgnoreCase("dosen5")){
+            // untuk menghitung data nilai yang ada nilainya(tidak null)
+            int count = 0;
+            for (String[] data : nilai) {
+                if (data[0] != null) {
+                    count++;
+                }
+            }
+            // SORTING BY NAME
+            int n = count;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (nilai[j][0].compareTo(nilai[j + 1][0]) > 0) {
+                        // swap nilai[j+1] and nilai[j]
+                        String[] temp = nilai[j];
+                        nilai[j] = nilai[j + 1];
+                        nilai[j + 1] = temp;
+                    }
+                }
+            }
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
                             System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
@@ -1716,6 +1783,25 @@ public class SistemAkademik {
                             System.out.println("nilai tertinggi KTI   : " + MaxKTI);
                             System.out.println("nilai minimum KTI    : " + MinKTI);
         }else if(username.equalsIgnoreCase("dosen6")){
+            // untuk menghitung data nilai yang ada nilainya(tidak null)
+            int count = 0;
+            for (String[] data : nilai) {
+                if (data[0] != null) {
+                    count++;
+                }
+            }
+            // SORTING BY NAME
+            int n = count;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (nilai[j][0].compareTo(nilai[j + 1][0]) > 0) {
+                        // swap nilai[j+1] and nilai[j]
+                        String[] temp = nilai[j];
+                        nilai[j] = nilai[j + 1];
+                        nilai[j + 1] = temp;
+                    }
+                }
+            }
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
                             System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
@@ -1745,6 +1831,25 @@ public class SistemAkademik {
                             System.out.println("nilai tertinggi CTPS   : " + MaxCTPS);
                             System.out.println("nilai minimum CTPS    : " + MinCTPS);
         }else if(username.equalsIgnoreCase("dosen7")){
+            // untuk menghitung data nilai yang ada nilainya(tidak null)
+            int count = 0;
+            for (String[] data : nilai) {
+                if (data[0] != null) {
+                    count++;
+                }
+            }
+            // SORTING BY NAME
+            int n = count;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (nilai[j][0].compareTo(nilai[j + 1][0]) > 0) {
+                        // swap nilai[j+1] and nilai[j]
+                        String[] temp = nilai[j];
+                        nilai[j] = nilai[j + 1];
+                        nilai[j + 1] = temp;
+                    }
+                }
+            }
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
                             System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
@@ -1774,6 +1879,25 @@ public class SistemAkademik {
                             System.out.println("nilai tertinggi BING   : " + MaxBING);
                             System.out.println("nilai minimum BING    : " + MinBING);
         }else if(username.equalsIgnoreCase("dosen8")){
+            // untuk menghitung data nilai yang ada nilainya(tidak null)
+            int count = 0;
+            for (String[] data : nilai) {
+                if (data[0] != null) {
+                    count++;
+                }
+            }
+            // SORTING BY NAME
+            int n = count;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (nilai[j][0].compareTo(nilai[j + 1][0]) > 0) {
+                        // swap nilai[j+1] and nilai[j]
+                        String[] temp = nilai[j];
+                        nilai[j] = nilai[j + 1];
+                        nilai[j + 1] = temp;
+                    }
+                }
+            }
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
                             System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
                             System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
@@ -1803,88 +1927,7 @@ public class SistemAkademik {
                             System.out.println("nilai tertinggi    K3   : " + MaxK3);
                             System.out.println("nilai minimum  K3    : " + MinK3);
         }
-        // System.out.println("================= INPUT NILAI MAHASISWA ===============");
-        //                 inputScanner.nextLine();
-        //                 System.out.println("Pilihan Mata Kuliah ");
-        //                 System.out.println("1. Dasar Pemograman");
-        //                 System.out.println("2. Dasar Pemograman Praktikum");
-        //                 System.out.println("3. Matematika Dasar");
-        //                 System.out.println("4. Pancasila");
-        //                 System.out.println("`. Konsep Teknologi Informasi");
-        //                 System.out.println("6. Critical Thinking dan Problem Solving");
-        //                 System.out.println("7. Bahasa Inggris");
-        //                 System.out.println("8. Keselamatan dan Kesehatan Kerja");
-        //                 System.out.print("Pilih Mata Kuliah yang ingin diinputkan nilai : ");
-        //                 int Matkul = inputScanner.nextInt();
-        //                 inputScanner.nextLine();
-
-        //                 switch(Matkul){
-        //                     case 1:
-        //                     System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-        //                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-        //                     System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
-        //                     for(int i = 0; i <= nilai.length;){
-        //                         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | \n", nilai[i][0] + "\n" + nilai[i][1], nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
-        //                     }
-        //                     break;
-        //                     case 2:
-        //                     System.out.println("MATA KULIAH DASAR PEMOGRAMAN PRAKTIKUM");
-        //                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-        //                     System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
-        //                     for(int i = 0; i <= nilai.length;){
-        //                         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | \n", nilai[i][0] + "\n" + nilai[i][1], nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
-        //                     }
-        //                     break;
-        //                     case 3:
-        //                     System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-        //                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-        //                     System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
-        //                     for(int i = 0; i <= nilai.length;){
-        //                         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | \n", nilai[i][0] + "\n" + nilai[i][1], nilai[i][10], nilai[i][11], nilai[i][12], nilai[i][13]);
-        //                     }
-        //                         break;
-        //                     case 4:
-        //                     System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-        //                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-        //                     System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
-        //                     for(int i = 0; i <= nilai.length;){
-        //                         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | \n", nilai[i][0] + "\n" + nilai[i][1], nilai[i][14], nilai[i][15], nilai[i][16], nilai[i][17]);
-        //                     }
-        //                         break;
-        //                     case 5:
-        //                     System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-        //                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-        //                     System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
-        //                     for(int i = 0; i <= nilai.length;){
-        //                         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | \n", nilai[i][0] + "\n" + nilai[i][1], nilai[i][18], nilai[i][19], nilai[i][20], nilai[i][21]);
-        //                     }
-        //                         break;
-        //                     case 6:
-        //                     System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-        //                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-        //                     System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
-        //                     for(int i = 0; i <= nilai.length;){
-        //                         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | \n", nilai[i][0] + "\n" + nilai[i][1], nilai[i][22], nilai[i][23], nilai[i][12], nilai[i][13]);
-        //                     }
-        //                         break;
-        //                     case 7:
-        //                     System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-        //                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-        //                     System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
-        //                     for(int i = 0; i <= nilai.length;){
-        //                         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | \n", nilai[i][0] + "\n" + nilai[i][1], nilai[i][10], nilai[i][11], nilai[i][12], nilai[i][13]);
-        //                     }
-        //                     case 8:
-        //                     System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-        //                     System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-        //                     System.out.printf("+--------------------------------------------------------------------------------------------------------------------+\n");
-        //                     for(int i = 0; i <= nilai.length;){
-        //                         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | \n", nilai[i][0] + "\n" + nilai[i][1], nilai[i][10], nilai[i][11], nilai[i][12], nilai[i][13]);
-        //                     }
-        //                         break;
-        //                     }
-                        
-                    }
+    }
     
 
     private static void cekNilaiMhs(){
