@@ -1562,33 +1562,33 @@ public class SistemAkademik {
                 }
             }
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-                            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-                            for(int i = 0; i < nilai.length; i++){
-                                if (nilai[i][0] != null) {
-                                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
-                                }
-                            }
+            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+            for(int i = 0; i < nilai.length; i++){
+                if (nilai[i][0] != null) {
+                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][2], nilai[i][3], nilai[i][4], nilai[i][5]);
+                }
+            }
 
-                            double MaxDaspro = Double.parseDouble(nilai[0][5]);
-                            double MinDaspro = Double.parseDouble(nilai[0][5]);
-                    
-                            // double maxNum = Daspro;
-                    
-                            for (int i = 0; i < nilai.length; i++) {
-                                if (nilai[i][5] != null && !nilai[i][5].trim().isEmpty()) {
-                                    double value = Double.parseDouble(nilai[i][5]);
-                                    if (value > MaxDaspro) {
-                                        MaxDaspro = value; // Maksimum ditemukan
-                                    }
-                                    if (value < MinDaspro) {
-                                        MinDaspro = value; // Minimum ditemukan
-                                    }
-                                }
-                            }
-                    
-                            System.out.println("nilai tertinggi daspro   : " + MaxDaspro);
-                            System.out.println("nilai minimum daspro    : " + MinDaspro);
+            double MaxDaspro = Double.parseDouble(nilai[0][5]);
+            double MinDaspro = Double.parseDouble(nilai[0][5]);
+    
+            // double maxNum = Daspro;
+    
+            for (int i = 0; i < nilai.length; i++) {
+                if (nilai[i][5] != null && !nilai[i][5].trim().isEmpty()) {
+                    double value = Double.parseDouble(nilai[i][5]);
+                    if (value > MaxDaspro) {
+                        MaxDaspro = value; // Maksimum ditemukan
+                    }
+                    if (value < MinDaspro) {
+                        MinDaspro = value; // Minimum ditemukan
+                    }
+                }
+            }
+    
+            System.out.println("nilai tertinggi dasar pemograman   : " + MaxDaspro);
+            System.out.println("nilai minimum dasar pemograman   : " + MinDaspro);
                     
         }else if(username.equalsIgnoreCase("dosen2")){
             // untuk menghitung data nilai yang ada nilainya(tidak null)
@@ -1611,33 +1611,34 @@ public class SistemAkademik {
                 }
             }
             System.out.println("MATA KULIAH DASAR PEMOGRAMAN PRAKTIKUM");
-                            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-                            for(int i = 0; i < nilai.length; i++){
-                                if (nilai[i][0] != null) {
-                                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
-                                }
-                            }
+            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+            for(int i = 0; i < nilai.length; i++){
+                if (nilai[i][0] != null) {
+                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][6], nilai[i][7], nilai[i][8], nilai[i][9]);
+                }
+            }
 
-                            double MaxDasproPrak = Double.parseDouble(nilai[0][9]);
-                            double MinDasproPrak = Double.parseDouble(nilai[0][9]);
-                    
-                            // double maxNum = Daspro;
-                    
-                            for (int i = 0; i < nilai.length; i++) {
-                                if (nilai[i][9] != null && !nilai[i][9].trim().isEmpty()) {
-                                    double value = Double.parseDouble(nilai[i][9]);
-                                    if (value > MaxDasproPrak) {
-                                        MaxDasproPrak = value; // Maksimum ditemukan
-                                    }
-                                    if (value < MinDasproPrak) {
-                                        MinDasproPrak = value; // Minimum ditemukan
-                                    }
-                                }
-                            }
-                    
-                            System.out.println("nilai tertinggi daspro   : " + MaxDasproPrak);
-                            System.out.println("nilai minimum daspro    : " + MinDasproPrak);
+            double MaxDasproPrak = Double.parseDouble(nilai[0][9]);
+            double MinDasproPrak = Double.parseDouble(nilai[0][9]);
+    
+            // double maxNum = Daspro;
+    
+            for (int i = 0; i < nilai.length; i++) {
+                if (nilai[i][9] != null && !nilai[i][9].trim().isEmpty()) {
+                    double value = Double.parseDouble(nilai[i][9]);
+                    if (value > MaxDasproPrak) {
+                        MaxDasproPrak = value; // Maksimum ditemukan
+                    }
+                    if (value < MinDasproPrak) {
+                        MinDasproPrak = value; // Minimum ditemukan
+                    }
+                }
+            }
+    
+            System.out.println("nilai tertinggi Dasar Pemograman Praktikum   : " + MaxDasproPrak);
+            System.out.println("nilai minimum Dasar Pemograman Praktikum     : " + MinDasproPrak);
+
         }else if(username.equalsIgnoreCase("dosen3")){
             // untuk menghitung data nilai yang ada nilainya(tidak null)
             int count = 0;
@@ -1659,33 +1660,34 @@ public class SistemAkademik {
                 }
             }
             System.out.println("MATA KULIAH MATEMATIKA DASAR");
-                            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-                            for(int i = 0; i < nilai.length; i++){
-                                if (nilai[i][0] != null) {
-                                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][10], nilai[i][11], nilai[i][12], nilai[i][13]);
-                                }
-                            }
+            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+            for(int i = 0; i < nilai.length; i++){
+                if (nilai[i][0] != null) {
+                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][10], nilai[i][11], nilai[i][12], nilai[i][13]);
+                }
+            }
 
-                            double MaxMatdas = Double.parseDouble(nilai[0][13]);
-                            double MinMatdas = Double.parseDouble(nilai[0][13]);
-                    
-                            // double maxNum = Daspro;
-                    
-                            for (int i = 0; i < nilai.length; i++) {
-                                if (nilai[i][13] != null && !nilai[i][13].trim().isEmpty()) {
-                                    double value = Double.parseDouble(nilai[i][13]);
-                                    if (value > MaxMatdas) {
-                                        MaxMatdas = value; // Maksimum ditemukan
-                                    }
-                                    if (value < MinMatdas) {
-                                        MinMatdas = value; // Minimum ditemukan
-                                    }
-                                }
-                            }
-                    
-                            System.out.println("nilai tertinggi daspro   : " + MaxMatdas);
-                            System.out.println("nilai minimum daspro    : " + MinMatdas);
+            double MaxMatdas = Double.parseDouble(nilai[0][13]);
+            double MinMatdas = Double.parseDouble(nilai[0][13]);
+    
+            // double maxNum = Daspro;
+    
+            for (int i = 0; i < nilai.length; i++) {
+                if (nilai[i][13] != null && !nilai[i][13].trim().isEmpty()) {
+                    double value = Double.parseDouble(nilai[i][13]);
+                    if (value > MaxMatdas) {
+                        MaxMatdas = value; // Maksimum ditemukan
+                    }
+                    if (value < MinMatdas) {
+                        MinMatdas = value; // Minimum ditemukan
+                    }
+                }
+            }
+    
+            System.out.println("nilai tertinggi Matematika Dasar   : " + MaxMatdas);
+            System.out.println("nilai minimum Matematika Dasar     : " + MinMatdas);
+
         }else if(username.equalsIgnoreCase("dosen4")){
             // untuk menghitung data nilai yang ada nilainya(tidak null)
             int count = 0;
@@ -1707,33 +1709,34 @@ public class SistemAkademik {
                 }
             }
             System.out.println("MATA KULIAH DASAR PANCASILA");
-                            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-                            for(int i = 0; i < nilai.length; i++){
-                                if (nilai[i][0] != null) {
-                                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][14], nilai[i][15], nilai[i][16], nilai[i][17]);
-                                }
-                            }
+            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+            for(int i = 0; i < nilai.length; i++){
+                if (nilai[i][0] != null) {
+                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][14], nilai[i][15], nilai[i][16], nilai[i][17]);
+                }
+            }
 
-                            double MaxPancasila = Double.parseDouble(nilai[0][17]);
-                            double MinPancasila = Double.parseDouble(nilai[0][17]);
-                    
-                            // double maxNum = Pancasila;
-                    
-                            for (int i = 0; i < nilai.length; i++) {
-                                if (nilai[i][17] != null && !nilai[i][17].trim().isEmpty()) {
-                                    double value = Double.parseDouble(nilai[i][17]);
-                                    if (value > MaxPancasila) {
-                                        MaxPancasila = value; // Maksimum ditemukan
-                                    }
-                                    if (value < MinPancasila) {
-                                        MinPancasila = value; // Minimum ditemukan
-                                    }
-                                }
-                            }
-                    
-                            System.out.println("nilai tertinggi Pancasila   : " + MaxPancasila);
-                            System.out.println("nilai minimum Pancasila    : " + MinPancasila);
+            double MaxPancasila = Double.parseDouble(nilai[0][17]);
+            double MinPancasila = Double.parseDouble(nilai[0][17]);
+    
+            // double maxNum = Pancasila;
+    
+            for (int i = 0; i < nilai.length; i++) {
+                if (nilai[i][17] != null && !nilai[i][17].trim().isEmpty()) {
+                    double value = Double.parseDouble(nilai[i][17]);
+                    if (value > MaxPancasila) {
+                        MaxPancasila = value; // Maksimum ditemukan
+                    }
+                    if (value < MinPancasila) {
+                        MinPancasila = value; // Minimum ditemukan
+                    }
+                }
+            }
+    
+            System.out.println("nilai tertinggi Pancasila   : " + MaxPancasila);
+            System.out.println("nilai minimum Pancasila     : " + MinPancasila);
+
         }else if(username.equalsIgnoreCase("dosen5")){
             // untuk menghitung data nilai yang ada nilainya(tidak null)
             int count = 0;
@@ -1754,34 +1757,35 @@ public class SistemAkademik {
                     }
                 }
             }
-            System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-                            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-                            for(int i = 0; i < nilai.length; i++){
-                                if (nilai[i][0] != null) {
-                                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][18], nilai[i][19], nilai[i][20], nilai[i][21]);
-                                }
-                            }
+            System.out.println("MATA KULIAH KTI");
+            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+            for(int i = 0; i < nilai.length; i++){
+                if (nilai[i][0] != null) {
+                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][18], nilai[i][19], nilai[i][20], nilai[i][21]);
+                }
+            }
 
-                            double MaxKTI = Double.parseDouble(nilai[0][21]);
-                            double MinKTI = Double.parseDouble(nilai[0][21]);
-                    
-                            // double maxNum = KTI;
-                    
-                            for (int i = 0; i < nilai.length; i++) {
-                                if (nilai[i][21] != null && !nilai[i][21].trim().isEmpty()) {
-                                    double value = Double.parseDouble(nilai[i][21]);
-                                    if (value > MaxKTI) {
-                                        MaxKTI = value; // Maksimum ditemukan
-                                    }
-                                    if (value < MinKTI) {
-                                        MinKTI = value; // Minimum ditemukan
-                                    }
-                                }
-                            }
-                    
-                            System.out.println("nilai tertinggi KTI   : " + MaxKTI);
-                            System.out.println("nilai minimum KTI    : " + MinKTI);
+            double MaxKTI = Double.parseDouble(nilai[0][21]);
+            double MinKTI = Double.parseDouble(nilai[0][21]);
+    
+            // double maxNum = KTI;
+    
+            for (int i = 0; i < nilai.length; i++) {
+                if (nilai[i][21] != null && !nilai[i][21].trim().isEmpty()) {
+                    double value = Double.parseDouble(nilai[i][21]);
+                    if (value > MaxKTI) {
+                        MaxKTI = value; // Maksimum ditemukan
+                    }
+                    if (value < MinKTI) {
+                        MinKTI = value; // Minimum ditemukan
+                    }
+                }
+            }
+    
+            System.out.println("nilai tertinggi KTI   : " + MaxKTI);
+            System.out.println("nilai minimum KTI    : " + MinKTI);
+
         }else if(username.equalsIgnoreCase("dosen6")){
             // untuk menghitung data nilai yang ada nilainya(tidak null)
             int count = 0;
@@ -1802,34 +1806,35 @@ public class SistemAkademik {
                     }
                 }
             }
-            System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-                            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-                            for(int i = 0; i < nilai.length; i++){
-                                if (nilai[i][0] != null) {
-                                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][22], nilai[i][23], nilai[i][24], nilai[i][25]);
-                                }
-                            }
+            System.out.println("MATA KULIAH CTPS");
+            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+            for(int i = 0; i < nilai.length; i++){
+                if (nilai[i][0] != null) {
+                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][22], nilai[i][23], nilai[i][24], nilai[i][25]);
+                }
+            }
 
-                            double MaxCTPS = Double.parseDouble(nilai[0][25]);
-                            double MinCTPS = Double.parseDouble(nilai[0][25]);
-                    
-                            // double maxNum = CTPS;
-                    
-                            for (int i = 0; i < nilai.length; i++) {
-                                if (nilai[i][25] != null && !nilai[i][25].trim().isEmpty()) {
-                                    double value = Double.parseDouble(nilai[i][25]);
-                                    if (value > MaxCTPS) {
-                                        MaxCTPS = value; // Maksimum ditemukan
-                                    }
-                                    if (value < MinCTPS) {
-                                        MinCTPS = value; // Minimum ditemukan
-                                    }
-                                }
-                            }
-                    
-                            System.out.println("nilai tertinggi CTPS   : " + MaxCTPS);
-                            System.out.println("nilai minimum CTPS    : " + MinCTPS);
+            double MaxCTPS = Double.parseDouble(nilai[0][25]);
+            double MinCTPS = Double.parseDouble(nilai[0][25]);
+    
+            // double maxNum = CTPS;
+    
+            for (int i = 0; i < nilai.length; i++) {
+                if (nilai[i][25] != null && !nilai[i][25].trim().isEmpty()) {
+                    double value = Double.parseDouble(nilai[i][25]);
+                    if (value > MaxCTPS) {
+                        MaxCTPS = value; // Maksimum ditemukan
+                    }
+                    if (value < MinCTPS) {
+                        MinCTPS = value; // Minimum ditemukan
+                    }
+                }
+            }
+    
+            System.out.println("nilai tertinggi CTPS   : " + MaxCTPS);
+            System.out.println("nilai minimum CTPS    : " + MinCTPS);
+
         }else if(username.equalsIgnoreCase("dosen7")){
             // untuk menghitung data nilai yang ada nilainya(tidak null)
             int count = 0;
@@ -1850,34 +1855,35 @@ public class SistemAkademik {
                     }
                 }
             }
-            System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-                            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-                            for(int i = 0; i < nilai.length; i++){
-                                if (nilai[i][0] != null) {
-                                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][26], nilai[i][27], nilai[i][28], nilai[i][29]);
-                                }
-                            }
+            System.out.println("MATA KULIAH B Inggris");
+            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+            for(int i = 0; i < nilai.length; i++){
+                if (nilai[i][0] != null) {
+                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][26], nilai[i][27], nilai[i][28], nilai[i][29]);
+                }
+            }
 
-                            double MaxBING = Double.parseDouble(nilai[0][29]);
-                            double MinBING = Double.parseDouble(nilai[0][29]);
-                    
-                            // double maxNum = BING;
-                    
-                            for (int i = 0; i < nilai.length; i++) {
-                                if (nilai[i][29] != null && !nilai[i][29].trim().isEmpty()) {
-                                    double value = Double.parseDouble(nilai[i][29]);
-                                    if (value > MaxBING) {
-                                        MaxBING = value; // Maksimum ditemukan
-                                    }
-                                    if (value < MinBING) {
-                                        MinBING = value; // Minimum ditemukan
-                                    }
-                                }
-                            }
-                    
-                            System.out.println("nilai tertinggi BING   : " + MaxBING);
-                            System.out.println("nilai minimum BING    : " + MinBING);
+            double MaxBING = Double.parseDouble(nilai[0][29]);
+            double MinBING = Double.parseDouble(nilai[0][29]);
+    
+            // double maxNum = BING;
+    
+            for (int i = 0; i < nilai.length; i++) {
+                if (nilai[i][29] != null && !nilai[i][29].trim().isEmpty()) {
+                    double value = Double.parseDouble(nilai[i][29]);
+                    if (value > MaxBING) {
+                        MaxBING = value; // Maksimum ditemukan
+                    }
+                    if (value < MinBING) {
+                        MinBING = value; // Minimum ditemukan
+                    }
+                }
+            }
+    
+            System.out.println("nilai tertinggi B Inggris : " + MaxBING);
+            System.out.println("nilai minimum B Inggris   : " + MinBING);
+
         }else if(username.equalsIgnoreCase("dosen8")){
             // untuk menghitung data nilai yang ada nilainya(tidak null)
             int count = 0;
@@ -1898,34 +1904,35 @@ public class SistemAkademik {
                     }
                 }
             }
-            System.out.println("MATA KULIAH DASAR PEMOGRAMAN");
-                            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
-                            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
-                            for(int i = 0; i < nilai.length; i++){
-                                if (nilai[i][0] != null) {
-                                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][30], nilai[i][31], nilai[i][32], nilai[i][33]);
-                                }
-                            }
+            System.out.println("MATA KULIAH K3");
+            System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", "Mahasiswa", "NIM", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+            System.out.printf("+-----------------------------------------------------------------------------------------------------------------------------------------+\n");
+            for(int i = 0; i < nilai.length; i++){
+                if (nilai[i][0] != null) {
+                    System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s | %-20s |\n", nilai[i][0], nilai[i][1], nilai[i][30], nilai[i][31], nilai[i][32], nilai[i][33]);
+                }
+            }
 
-                            double MaxK3 = Double.parseDouble(nilai[0][33]);
-                            double MinK3 = Double.parseDouble(nilai[0][33]);
-                    
-                            // double maxNum = K3;
-                    
-                            for (int i = 0; i < nilai.length; i++) {
-                                if (nilai[i][33] != null && !nilai[i][33].trim().isEmpty()) {
-                                    double value = Double.parseDouble(nilai[i][33]);
-                                    if (value > MaxK3) {
-                                        MaxK3 = value; // Maksimum ditemukan
-                                    }
-                                    if (value < MinK3) {
-                                        MinK3 = value; // Minimum ditemukan
-                                    }
-                                }
-                            }
-                    
-                            System.out.println("nilai tertinggi    K3   : " + MaxK3);
-                            System.out.println("nilai minimum  K3    : " + MinK3);
+            double MaxK3 = Double.parseDouble(nilai[0][33]);
+            double MinK3 = Double.parseDouble(nilai[0][33]);
+    
+            // double maxNum = K3;
+    
+            for (int i = 0; i < nilai.length; i++) {
+                if (nilai[i][33] != null && !nilai[i][33].trim().isEmpty()) {
+                    double value = Double.parseDouble(nilai[i][33]);
+                    if (value > MaxK3) {
+                        MaxK3 = value; // Maksimum ditemukan
+                    }
+                    if (value < MinK3) {
+                        MinK3 = value; // Minimum ditemukan
+                    }
+                }
+            }
+    
+            System.out.println("nilai tertinggi K3 : " + MaxK3);
+            System.out.println("nilai minimum  K3  : " + MinK3);
+            
         }
     }
     
