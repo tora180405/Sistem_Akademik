@@ -2007,7 +2007,8 @@ public class SistemAkademik {
         System.out.println("Cari data yang akan di update berdasarkan Kode MK");
         System.out.println("Apakah ingin mencari data?");
         System.out.println("yes / no");
-        System.out.println("_________");
+        System.out.println("___________________________");
+
         inputScanner.nextLine();
 
         String jawab = inputScanner.nextLine();
@@ -2051,7 +2052,6 @@ public class SistemAkademik {
                     krsMhs1[i][5] = username;
                     break;
                 }
-
             }
             if (!finded) {
                 System.out.println("Key dalam array tidak ditemukan");
