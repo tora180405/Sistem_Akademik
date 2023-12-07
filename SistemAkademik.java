@@ -2063,12 +2063,24 @@ public class SistemAkademik {
                 { "Senin", "13:40-17:10", "Critical Thinking dan Problem Solving",
                         "************" },
                 { "Selasa", "11:20-15:20", "Dasar Pemrograman", "********" },
-                { "Rabu", "07:50-13:40", "Praktikum Dasar Pemrograman", "*********" },
-                { "Rabu", "07:00-09:15", "Bahasa Inggris 1", "***********" },
+                { "Rabu", "10:30-16:20", "Praktikum Dasar Pemrograman", "*********" },
+                { "Rabu", "07:00-10:30", "Bahasa Inggris 1", "***********" },
                 { "Kamis", "12:50-16:20", "Konsep Teknologi Informasi", "**********" },
                 { "Jumat", "07:00-09:30", "Matematika Dasar", "**********" },
                 { "Jumat", "07:00-10:00", "Keselamatan dan Kesehatan Kerja", "************" }
         };
+
+        String [][] jadwalMatkul1h = {
+            { "Senin", "10:30-14:30", "Critical Thinking dan Problem Solving", "****************"},
+            { "Senin", "14:30-17:10", "Matematika Dasar", "********" },
+            { "Selasa", "07:00-09:30", "Matematika Dasar", "********" },
+            { "Selasa", "10:30-14:30", "Dasar Pemrograman", "********" },
+            { "Rabu", "07:00-12:10", "Praktikum Dasar Pemrograman", "*********" },
+            { "Rabu", "12:50-16:20", "Bahasa Inggris 1", "***********" },
+            { "Kamis", "10:30-14:30", "Konsep Teknologi Informasi", "**********" },
+            { "Kamis", "15:30-17:10", "Pancasila", "********" },
+            { "Jumat", "10:30-14:30", "Keselamatan dan Kesehatan Kerja", "************" }
+        }
 
         if (kelas.equalsIgnoreCase("1f") || kelas.equalsIgnoreCase("1-f")) {
             System.out.println("========================== JADWAL KULIAH 1-F ==========================");
