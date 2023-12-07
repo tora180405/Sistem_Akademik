@@ -2011,6 +2011,104 @@ public class SistemAkademik {
     }
 
     private static void cekNilaiMhs() {
+
+        if(nilai[0][2] == null){
+            nilai[0][2] = "0";
+        }
+        if (nilai[0][3] == null) {
+            nilai[0][3] = "0";
+        }
+        if (nilai[0][4] == null) {
+            nilai[0][4] = "0";
+        }
+        if (nilai[0][5] == null) {
+            nilai[0][5] = "0";
+        }
+        if (nilai[0][6] == null) {
+            nilai[0][6] = "0";
+        }
+        if (nilai[0][7] == null) {
+            nilai[0][7] = "0";
+        }
+        if (nilai[0][8] == null) {
+            nilai[0][8] = "0";
+        }
+        if (nilai[0][9] == null) {
+            nilai[0][9] = "0";
+        }
+        if (nilai[0][10] == null) {
+            nilai[0][10] = "0";
+        }
+        if (nilai[0][11] == null) {
+            nilai[0][11] = "0";
+        }
+        if (nilai[0][12] == null) {
+            nilai[0][12] = "0";
+        }
+        if (nilai[0][13] == null) {
+            nilai[0][13] = "0";
+        }
+        if (nilai[0][14] == null) {
+            nilai[0][14] = "0";
+        }
+        if (nilai[0][15] == null) {
+            nilai[0][15] = "0";
+        }
+        if (nilai[0][16] == null) {
+            nilai[0][16] = "0";
+        }
+        if (nilai[0][17] == null) {
+            nilai[0][17] = "0";
+        }
+        if (nilai[0][18] == null) {
+            nilai[0][18] = "0";
+        }
+        if (nilai[0][19] == null) {
+            nilai[0][19] = "0";
+        }
+        if (nilai[0][20] == null) {
+            nilai[0][20] = "0";
+        }
+        if (nilai[0][21] == null) {
+            nilai[0][21] = "0";
+        }
+        if (nilai[0][22] == null) {
+            nilai[0][22] = "0";
+        }
+        if (nilai[0][23] == null) {
+            nilai[0][23] = "0";
+        }
+        if (nilai[0][24] == null) {
+            nilai[0][24] = "0";
+        }
+        if (nilai[0][25] == null) {
+            nilai[0][25] = "0";
+        }
+        if (nilai[0][26] == null) {
+            nilai[0][26] = "0";
+        }
+        if (nilai[0][27] == null) {
+            nilai[0][27] = "0";
+        }
+        if (nilai[0][28] == null) {
+            nilai[0][28] = "0";
+        }
+        if (nilai[0][29] == null) {
+            nilai[0][29] = "0";
+        }
+        if (nilai[0][30] == null) {
+            nilai[0][30] = "0";
+        }
+        if (nilai[0][31] == null) {
+            nilai[0][31] = "0";
+        }
+        if (nilai[0][32] == null) {
+            nilai[0][32] = "0";
+        }
+        if (nilai[0][33] == null) {
+            nilai[0][33] = "0";
+        }
+
         System.out.println("================= NILAI MAHASISWA ===============");
         System.out.println();
         System.out.println("Nama Mahasiswa          : " + mahasiswa[0][0]);
@@ -2025,8 +2123,7 @@ public class SistemAkademik {
                 nilai[0][8], nilai[0][9]);
         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATDAS", nilai[0][20], nilai[0][11],
                 nilai[0][12], nilai[0][13]);
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "PANCASILA", nilai[0][14], nilai[0][15],
-                nilai[0][16], nilai[0][17]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "PANCASILA", nilai[0][14], nilai[0][15], nilai[0][16], nilai[0][17]);
         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "KTI", nilai[0][18], nilai[0][19],
                 nilai[0][20], nilai[0][21]);
         System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "CTPS", nilai[0][22], nilai[0][23],
