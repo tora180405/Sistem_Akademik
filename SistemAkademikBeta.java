@@ -1,112 +1,518 @@
-update data mahasiswa
-int count = 0;
-        for (String[] data : mahasiswa) {
-            if (data[0] != null) {
-                count++;
-            }
-        }
-        // SORTING BY NAME
-        int n = count;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (mahasiswa[j][0].compareTo(mahasiswa[j + 1][0]) > 0) {
-                    // swap mahasiswa[j+1] and mahasiswa[j]
-                    String[] temp = mahasiswa[j];
-                    mahasiswa[j] = mahasiswa[j + 1];
-                    mahasiswa[j + 1] = temp;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+/**
+ * SistemAkademikBeta
+ */
+public class SistemAkademikBeta {
+  public static Scanner inputScanner = new Scanner(System.in);
+
+  // deklarasi variabel untuk fitur input data mahasiswa
+  public static String namamhs, jk, kelas, agama, alamat, tgl, email, NIM, no_hp;
+
+  // Deklarasi Variable untuk fitur search dari semua fitur
+  public static int key;
+  public static boolean search = true;
+
+  // Deklarasi Variable untuk fitur contact
+  public static ArrayList<String> nama = new ArrayList<>();
+  public static ArrayList<Integer> nim = new ArrayList<>();
+  public static ArrayList<String> kls = new ArrayList<>();
+  public static ArrayList<String> pesan = new ArrayList<>();
+
+  public static void main(String[] args) {
+
+    String username, password;
+    int attempts = 0;
+
+    while (attempts < 3) {
+      boolean isLoggedOut = false;
+
+      System.out.println("");
+      System.out.println("======================");
+      System.out.println("|     Login User     |");
+      System.out.println("=--------------------=");
+      System.out.print("Masukkan username : ");
+      username = inputScanner.next();
+      System.out.print("Masukkan password : ");
+      password = inputScanner.next();
+
+      if ("admin".equals(username) && "admin".equals(password)) {
+        System.out.println("Selamat datang " + username);
+        System.out.println("\n");
+
+        // berandaAdmin();
+        while (true) {
+          System.out.println("");
+          System.out.println("============================");
+          System.out.println("=      Sistem Akademik     =");
+          System.out.println("=       BERANDA ADMIN      =");
+          System.out.println("----------------------------");
+          System.out.println("| 1. Input Data Mahasiswa   |");
+          System.out.println("| 2. Update Data Mahasiswa  |");
+          System.out.println("| 3. Cek Data Mahasiswa     |");
+          System.out.println("| 4. Input Nilai Mahasiswa  |");
+          System.out.println("| 5. Update Nilai Mahasiswa |");
+          System.out.println("| 6. Cek Jadwal Perkuliahan |");
+          System.out.println("| 7. Update KRS Mahasiswa   |");
+          System.out.println("| 8. Cek Data KRS Mahasiswa |");
+          System.out.println("| 9. Contact                |");
+          System.out.println("| 0. LogOut                 |");
+          System.out.println("============================");
+
+          System.out.print("Masukkan pilihan anda: ");
+          int choice = inputScanner.nextInt();
+          switch (choice) {
+            case 1:
+              // inDataMhs();
+              // int choice;
+
+              do {
+                // seleksi lagi, jika pilihan selain 1 dan 2 akan diarahkan kembali ke input
+                // data mahasiswa tetapi dengan catatan pilihan tidak valid
+                // memang hampir sama dengan kita menginputkan nilai 1, tetapi yang membedakan
+                // adalah statement yang diberikan jika nilai yang diinputkan selain 1 dan 2
+                if (choice != 1 && choice != 2) {
+                  System.out.println("Pilihan anda tidak valid");
                 }
-            }
-        }
 
-        System.out.println("================= UPDATE DATA MAHASISWA ===============");
-        System.out.println();
-        System.out.printf("| %-20s | %-15s | %-20s | %-10s | %-10s |\n", "Nama", "NIM", "Jurusan", "Program Studi",
-                "Kelas");
-        System.out.printf("---------------------------------------------------------------------------------------\n");
-        for (int i = 0; i < mahasiswa.length; i++) {
-            if (mahasiswa[i][0] != null) {
-                System.out.printf("| %-20s | %-15s | %-15s | %-10s | %-10s |\n",
-                        mahasiswa[i][0], mahasiswa[i][1], mahasiswa[i][2], mahasiswa[i][3], mahasiswa[i][4]);
-            }
-        }
+                System.out.println("============================================");
+                System.out.println("=             INPUT DATA MAHASISWA         =");
+                System.out.println("============================================");
+                System.out.println("| Ketik 0 untuk kembali ke menu sebelumnya |");
+                System.out.println("| Ketik angka lain untuk lanjut            |");
+                System.out.println("============================================");
+                choice = inputScanner.nextInt();
+                if (choice == 0) {
+                  break;
+                  // return;
+                }
 
-        System.out.println("Cari data yang akan di update berdasarkan NIM");
-        System.out.println("Apakah ingin mencari data?");
-        System.out.println("yes / no");
-        System.out.println("___________________________");
-        inputScanner.nextLine();
+                System.out.println("\n");
 
-        String jawab = inputScanner.nextLine();
+                System.out.println("=================== DATA DIRI ===================");
 
-        if (jawab.equalsIgnoreCase("yes")) {
-            boolean finded = false;
-            System.out.print("Masukkan key yang ingin dicari : ");
-            key = inputScanner.nextLine();
+                inputScanner.nextLine();
+                System.out.print("Masukkan Nama             :");
+                namamhs = inputScanner.nextLine();
+                System.out.print("Masukkan NIM              :");
+                NIM = inputScanner.nextLine();
+                System.out.print("Masukkan Jenis Kelamin    :");
+                jk = inputScanner.nextLine();
+                System.out.print("Masukkan Kelas            :");
+                kelas = inputScanner.nextLine();
+                System.out.print("Masukkan Agama            :");
+                agama = inputScanner.nextLine();
+                System.out.print("Masukkan Tanggal lahir    :");
+                tgl = inputScanner.nextLine();
+                System.out.print("Masukkan Email            :");
+                email = inputScanner.nextLine();
+                System.out.print("Masukkan Nomor handpone   :");
+                no_hp = inputScanner.nextLine();
+                System.out.print("Masukkan Alamat           :");
+                alamat = inputScanner.nextLine();
+                System.out.println("");
 
-            for (int i = 0; i < mahasiswa.length; i++) {
-                if (key.equals(mahasiswa[i][1])) {
+                System.out.println("DATA BERHASIL DI TAMBAHKAN\n");
+                System.out.println("=======================================================");
+                System.out.print("APAKAH ANDA INGIN MENAMBAHKAN DATA MAHASISWA LAGI ?");
+
+                System.out.println("\n");
+
+                System.out.println("1. untuk ya");
+                System.out.println("2. untuk tidak");
+
+                System.out.println("masukkan pilihan : ");
+                choice = inputScanner.nextInt();
+
+              }
+
+              // berandaAdmin();
+              // akan melakukan perulangan jika yang dipilih adalah 1, atau selain angka 1 dan
+              // 2 yang kemudian nantinya akan diseleksi lagi pada saat kembali ke do
+              // selain angka 1 dan 2 ini nanti akan diseleksi lagi
+              while (choice == 1 || (choice != 1 && choice != 2));
+
+              // jadi ketika kita menginputkan angka 2 akan kembali ke menu beranda admin.
+              // karna bernilai false.
+
+              break;
+            case 2:
+              // updDataMhs();
+              break;
+            case 3:
+              // cekDataMhs();
+              System.out.println("================= DATA MAHASISWA ===============");
+              System.out.println("| NAMA          : " + namamhs);
+              System.out.println("| NIM           : " + NIM);
+              System.out.println("| JENIS KELAMIN : " + jk);
+              System.out.println("| KELAS         : " + kelas);
+              System.out.println("| AGAMA         : " + agama);
+              System.out.println("| TGL LAHIR     : " + tgl);
+              System.out.println("| EMAIL         : " + email);
+              System.out.println("| NO TELP       : " + no_hp);
+              System.out.println("| ALAMAT        : " + alamat);
+              System.out.println("==================================================");
+
+              break;
+            case 4:
+              // inNilaiMhs();
+              break;
+            case 5:
+              // updNilaiMhs();
+              break;
+            case 6:
+              // cekJadwalKuliah();
+              System.out.println("========================== CEK JADWAL KULIAH ==========================");
+              System.out.println(
+                  "-----------------------------------------------------------------------------------------------------------------");
+              System.out.println(
+                  "|" + "NO" + "|" + "HARI   " + "|" + "JAM           " + "|" + "MATA KULIAH                           "
+                      + "|" + "DOSEN                                         " + "|");
+              System.out.println(
+                  "|" + "1 " + "|" + "Senin  " + "|" + "10:35 - 14:25 " + "|" + "Konsep Teknologi Informasi            "
+                      + "|" + "Yuri Ariyanto, S.Kom., M.Kom.                 " + "|");
+              System.out.println(
+                  "|" + "2 " + "|" + "Selasa " + "|" + "09:30 - 13:15 " + "|" + "Critical Thinking dan Problem Solving "
+                      + "|" + "Dwi Puspitasari, S.Kom., M.Kom.               " + "|");
+              System.out.println(
+                  "|" + "3 " + "|" + "Rabu   " + "|" + "07:00 - 10:35 " + "|" + "Keselamatan dan Kesehatan Kerja       "
+                      + "|" + "Ariadi Retno Tri Hayati Ririd, S.Kom., M.Kom. " + "|");
+              System.out.println(
+                  "|" + "4 " + "|" + "Rabu   " + "|" + "11:25 - 13:35 " + "|" + "Pancasila                             "
+                      + "|" + "Widaningsih, S.H., M.H.                       " + "|");
+              System.out.println(
+                  "|" + "5 " + "|" + "Rabu   " + "|" + "13:35 - 16:00 " + "|" + "Bahasa Inggris 1                      "
+                      + "|" + "Satrio Binusa Suryadi, S.S., M.Pd.            " + "|");
+              System.out.println(
+                  "|" + "6 " + "|" + "Kamis  " + "|" + "07:00 - 09:15 " + "|" + "Matematika Dasar                      "
+                      + "|" + "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D.   " + "|");
+              System.out.println(
+                  "|" + "7 " + "|" + "Kamis  " + "|" + "11:00 - 17:10 " + "|" + "Praktikum Dasar Pemrograman           "
+                      + "|" + "Noprianto, S.Kom., M.Eng.                     " + "|");
+              System.out.println(
+                  "|" + "8 " + "|" + "Jumat  " + "|" + "07:00 - 10:00 " + "|" + "Dasar Pemrograman                     "
+                      + "|" + "Noprianto, S.Kom., M.Eng.                     " + "|");
+              System.out.println(
+                  "|" + "9 " + "|" + "Jumat  " + "|" + "07:00 - 10:00 " + "|" + "Matematika Dasar                      "
+                      + "|" + "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D.   " + "|");
+              System.out.println(
+                  "-----------------------------------------------------------------------------------------------------------------");
+              break;
+            case 7:
+              // updKrsMhs();
+              break;
+            case 8:
+              // cekDataKrsMhs();
+              break;
+            case 9:
+              // contactAdmin();
+              System.out.println("============= CONTACT =============");
+              for (int i = 0; i < nim.size(); i++) {
+                System.out.println("| Nama: " + nama.get(i));
+                System.out.println("| NIM: " + nim.get(i)); // Mengakses NIM dari ArrayList
+                System.out.println("| Kelas: " + kls.get(i));
+                System.out.println("| Pesan: " + pesan.get(i));
+                System.out.println("=================================");
+              }
+              System.out.println("Apakah ingin mencari data?");
+              System.out.println("yes / no");
+              System.out.println("___________________________");
+              inputScanner.nextLine();
+
+              String jawab = inputScanner.nextLine();
+
+              if (jawab.equalsIgnoreCase("yes")) {
+                boolean finded = false;
+                System.out.print("Masukkan key yang ingin dicari : ");
+                key = inputScanner.nextInt();
+                inputScanner.nextLine();
+
+                for (int i = 0; i < nim.size(); i++) {
+                  if (key == nim.get(i)) {
                     System.out.println("=======================");
-                    System.out.println("NAMA          : " + mahasiswa[i][0]);
-                    System.out.println("NIM           : " + mahasiswa[i][1]);
-                    System.out.println("JURUSAN       : " + mahasiswa[i][2]);
-                    System.out.println("PROGRAM STUDI : " + mahasiswa[i][3]);
-                    System.out.println("KELAS         : " + mahasiswa[i][4]);
-                    System.out.println("JENIS KELAMIN : " + mahasiswa[i][5]);
-                    System.out.println("AGAMA         : " + mahasiswa[i][6]);
-                    System.out.println("TGL LAHIR     : " + mahasiswa[i][7]);
-                    System.out.println("EMAIL         : " + mahasiswa[i][8]);
-                    System.out.println("NO TELP       : " + mahasiswa[i][9]);
-                    System.out.println("ALAMAT        : " + mahasiswa[i][10]);
+                    System.out.println("Nama: " + nama.get(i));
+                    System.out.println("NIM: " + nim.get(i)); // Mengakses NIM dari ArrayList
+                    System.out.println("Kelas: " + kls.get(i));
+                    System.out.println("Pesan: " + pesan.get(i));
                     System.out.println("=======================");
-                    System.out.println();
-
                     // jika nilai dalam if bernilai benar maka rubah value finded menjadi true
                     finded = true;
+                  }
                 }
-                if (finded) {
-                    System.out.println("===================DATA MAHASISWA===================");
-                    inputScanner.nextLine();
-                    System.out.print("masukkan nama             :");
-                    mahasiswa[i][0] = inputScanner.nextLine();
-                    System.out.print("masukkan NIM              :");
-                    mahasiswa[i][1] = inputScanner.nextLine();
-                    System.out.print("masukkan Jurusan          :");
-                    mahasiswa[i][2] = inputScanner.nextLine();
-                    System.out.print("masukkan Program Studi    :");
-                    mahasiswa[i][3] = inputScanner.nextLine();
-                    System.out.print("masukkan Kelas            :");
-                    mahasiswa[i][4] = inputScanner.nextLine();
-                    System.out.print("masukkan Jenis Kelamin    :");
-                    mahasiswa[i][5] = inputScanner.nextLine();
-                    System.out.print("masukkan agama            :");
-                    mahasiswa[i][6] = inputScanner.nextLine();
-                    System.out.print("masukkan tanggal lahir    :");
-                    mahasiswa[i][7] = inputScanner.nextLine();
-                    System.out.print("masukkan email            :");
-                    mahasiswa[i][8] = inputScanner.nextLine();
-                    System.out.print("masukkan nomor handpone   :");
-                    mahasiswa[i][9] = inputScanner.nextLine();
-                    System.out.print("masukkan alamat           :");
-                    mahasiswa[i][10] = inputScanner.nextLine();
+                if (!finded) {
+                  System.out.println("Key dalam array tidak ditemukan");
+                } else if (finded) {
+                  System.out.println("apakah ingin melakukan operasi selanjutnya?");
+                  System.out.println("- ketikkan 1 untuk lanjut");
+                  System.out.println("- ketikkan angka lainnya untuk logout");
+                  int acc = inputScanner.nextInt();
 
-                    System.out.println("DATA BERHASIL DI UPDATE\n");
+                  if (acc == 1) {
                     break;
+                  } else {
+                    // logOut();
+                    System.out.println("Anda telah logout");
+                    isLoggedOut = true; // Mengatur isLoggedOut menjadi true
+                    break; // Keluar dari switch case
+                  }
                 }
+                break;
+              }
 
-            }
-            if (!finded) {
-                System.out.println("Key dalam array tidak ditemukan");
-            } else if (finded) {
-                System.out.println("apakah ingin melakukan operasi selanjutnya?");
-                System.out.println("- ketikkan 1 untuk lanjut");
-                System.out.println("- ketikkan angka lainnya untuk logout");
-                int acc = inputScanner.nextInt();
+              // break;s
+            case 0:
+              // logOut();
+              System.out.println("Anda telah logout");
+              isLoggedOut = true; // Mengatur isLoggedOut menjadi true
+              break; // Keluar dari switch case
+            default:
+              System.out.println("Pilihan tidak valid.");
+          }
 
-                if (acc == 1) {
-                    return;
-                } else {
-                    logOut();
-                }
-            }
+          // fitur logout
+          if (isLoggedOut) {
+            break; // Keluar dari loop while
+          }
         }
+
+      } else if ("dosen".equals(username) && "dosen".equals(password)) {
+        System.out.println("Selamat datang " + username);
+        System.out.println("\n");
+
+        // berandaDosen();
+        while (true) {
+
+          System.out.println("");
+          System.out.println("============================");
+          System.out.println("=      Sistem Akademik     =");
+          System.out.println("=       BERANDA DOSEN      =");
+          System.out.println("----------------------------");
+          System.out.println("| 1. Cek Data Mahasiswa    |");
+          System.out.println("| 2. Input Nilai Mahasiswa |");
+          System.out.println("| 3. Update Nilai Mahasiswa|");
+          System.out.println("| 4. Contact               |");
+          System.out.println("| 0. LogOut                |");
+          System.out.println("============================");
+
+          System.out.print("Masukkan pilihan anda: ");
+
+          int choice = inputScanner.nextInt();
+          switch (choice) {
+            case 1:
+              // cekDataMhs();
+              System.out.println("================= DATA MAHASISWA ===============");
+              System.out.println("| NAMA          : " + namamhs);
+              System.out.println("| NIM           : " + NIM);
+              System.out.println("| JENIS KELAMIN : " + jk);
+              System.out.println("| KELAS         : " + kelas);
+              System.out.println("| AGAMA         : " + agama);
+              System.out.println("| TGL LAHIR     : " + tgl);
+              System.out.println("| EMAIL         : " + email);
+              System.out.println("| NO TELP       : " + no_hp);
+              System.out.println("| ALAMAT        : " + alamat);
+              System.out.println("==================================================");
+              break;
+            case 2:
+              // inNilaiMhs();
+              break;
+            case 3:
+              // updNilaiMhs();
+              break;
+            case 4:
+              // contact();
+              boolean repeat = true;
+              while (repeat) {
+                System.out.println("========== CONTACT ===========");
+                inputScanner.nextLine();
+                System.out.print("Masukkan nama: ");
+                String namaMhs = inputScanner.nextLine();
+                nama.add(namaMhs);
+
+                System.out.print("Masukkan nim: ");
+                int nimMhs = inputScanner.nextInt();
+                nim.add(nimMhs);
+
+                inputScanner.nextLine();
+                System.out.print("Masukkan kelas: ");
+                String kelasMhs = inputScanner.nextLine();
+                kls.add(kelasMhs);
+
+                System.out.print("Masukkan pesan: ");
+                String pesanMhs = inputScanner.nextLine();
+                pesan.add(pesanMhs);
+
+                System.out.print("Ingin input lagi? (yes/no): ");
+                String jawaban = inputScanner.nextLine();
+                if (!jawaban.equalsIgnoreCase("yes")) {
+                  break;
+                }
+              }
+              System.out.println("====== Pesan anda sedang diproses =====");
+              repeat = false;
+              break;
+            case 0:
+              // logOut();
+              System.out.println("Anda telah logout");
+              isLoggedOut = true; // Mengatur isLoggedOut menjadi true
+              break; // Keluar dari switch case
+            default:
+              System.out.println("Pilihan tidak valid.");
+          }
+          if (isLoggedOut) {
+            break; // Keluar dari loop while
+          }
+        }
+      } else if ("mahasiswa".equals(username) && "mahasiswa".equals(password)) {
+        System.out.println("Selamat datang " + username);
+        System.out.println("\n");
+
+        // berandaMahasiswa();
+        while (true) {
+          System.out.println("");
+          System.out.println("============================");
+          System.out.println("=      Sistem Akademik     =");
+          System.out.println("=     BERANDA MAHASISWA    =");
+          System.out.println("----------------------------");
+          System.out.println("| 1. Cek Data Mahasiswa    |");
+          System.out.println("| 2. Cek Jadwal Kuliah     |");
+          System.out.println("| 3. Cek Data KRS Mahasiswa|");
+          System.out.println("| 4. Contact               |");
+          System.out.println("| 0. LogOut                |");
+          System.out.println("============================");
+
+          System.out.print("Masukkan pilihan anda: ");
+
+          int choice = inputScanner.nextInt();
+          switch (choice) {
+            case 1:
+              // cekDataMhs();
+              System.out.println("================= DATA MAHASISWA ===============");
+              System.out.println("| NAMA          : " + namamhs);
+              System.out.println("| NIM           : " + NIM);
+              System.out.println("| JENIS KELAMIN : " + jk);
+              System.out.println("| KELAS         : " + kelas);
+              System.out.println("| AGAMA         : " + agama);
+              System.out.println("| TGL LAHIR     : " + tgl);
+              System.out.println("| EMAIL         : " + email);
+              System.out.println("| NO TELP       : " + no_hp);
+              System.out.println("| ALAMAT        : " + alamat);
+              System.out.println("==================================================");
+              break;
+            case 2:
+              // cekJadwalKuliah();
+              System.out.println("========================== CEK JADWAL KULIAH ==========================");
+              System.out.println(
+                  "-----------------------------------------------------------------------------------------------------------------");
+              System.out.println(
+                  "|" + "NO" + "|" + "HARI   " + "|" + "JAM           " + "|" + "MATA KULIAH                           "
+                      + "|" + "DOSEN                                         " + "|");
+              System.out.println(
+                  "|" + "1 " + "|" + "Senin  " + "|" + "10:35 - 14:25 " + "|" + "Konsep Teknologi Informasi            "
+                      + "|" + "Yuri Ariyanto, S.Kom., M.Kom.                 " + "|");
+              System.out.println(
+                  "|" + "2 " + "|" + "Selasa " + "|" + "09:30 - 13:15 " + "|" + "Critical Thinking dan Problem Solving "
+                      + "|" + "Dwi Puspitasari, S.Kom., M.Kom.               " + "|");
+              System.out.println(
+                  "|" + "3 " + "|" + "Rabu   " + "|" + "07:00 - 10:35 " + "|" + "Keselamatan dan Kesehatan Kerja       "
+                      + "|" + "Ariadi Retno Tri Hayati Ririd, S.Kom., M.Kom. " + "|");
+              System.out.println(
+                  "|" + "4 " + "|" + "Rabu   " + "|" + "11:25 - 13:35 " + "|" + "Pancasila                             "
+                      + "|" + "Widaningsih, S.H., M.H.                       " + "|");
+              System.out.println(
+                  "|" + "5 " + "|" + "Rabu   " + "|" + "13:35 - 16:00 " + "|" + "Bahasa Inggris 1                      "
+                      + "|" + "Satrio Binusa Suryadi, S.S., M.Pd.            " + "|");
+              System.out.println(
+                  "|" + "6 " + "|" + "Kamis  " + "|" + "07:00 - 09:15 " + "|" + "Matematika Dasar                      "
+                      + "|" + "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D.   " + "|");
+              System.out.println(
+                  "|" + "7 " + "|" + "Kamis  " + "|" + "11:00 - 17:10 " + "|" + "Praktikum Dasar Pemrograman           "
+                      + "|" + "Noprianto, S.Kom., M.Eng.                     " + "|");
+              System.out.println(
+                  "|" + "8 " + "|" + "Jumat  " + "|" + "07:00 - 10:00 " + "|" + "Dasar Pemrograman                     "
+                      + "|" + "Noprianto, S.Kom., M.Eng.                     " + "|");
+              System.out.println(
+                  "|" + "9 " + "|" + "Jumat  " + "|" + "07:00 - 10:00 " + "|" + "Matematika Dasar                      "
+                      + "|" + "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D.   " + "|");
+              System.out.println(
+                  "-----------------------------------------------------------------------------------------------------------------");
+              break;
+            case 3:
+              // cekDataKrsMhs();
+              System.out.println("========================== CEK DATA KRS MAHASISWA ==========================");
+              System.out.println("-------------------------------------------------------------");
+              System.out
+                  .println("|" + "NO" + "|" + "MATA KULIAH                           " + "|" + "SEMESTER " + "|" + "SKS"
+                      + "|" + "JAM" + "|");
+              System.out
+                  .println("|" + "1." + "|" + "Pancasila                             " + "|" + "1        " + "|" + "2  "
+                      + "|" + "2  " + "|");
+              System.out
+                  .println("|" + "2." + "|" + "Konsep Teknologi Informasi            " + "|" + "1        " + "|" + "2  "
+                      + "|" + "4  " + "|");
+              System.out
+                  .println("|" + "3." + "|" + "Critical Thinking dan Problem Solving " + "|" + "1        " + "|" + "2  "
+                      + "|" + "4  " + "|");
+              System.out
+                  .println("|" + "4." + "|" + "Matematika Dasar                      " + "|" + "1        " + "|" + "3  "
+                      + "|" + "6  " + "|");
+              System.out
+                  .println("|" + "5." + "|" + "Bahasa Inggris 1                      " + "|" + "1        " + "|" + "2  "
+                      + "|" + "4  " + "|");
+              System.out
+                  .println("|" + "6." + "|" + "Dasar Pemograman                      " + "|" + "1        " + "|" + "2  "
+                      + "|" + "4  " + "|");
+              System.out
+                  .println("|" + "7." + "|" + "Praktikum Dasar Pemograman            " + "|" + "1        " + "|" + "3  "
+                      + "|" + "6  " + "|");
+              System.out
+                  .println("|" + "8." + "|" + "Keselamatan dan Kesehatan Kerja       " + "|" + "1        " + "|" + "2  "
+                      + "|" + "4  " + "|");
+
+              System.out.println("-------------------------------------------------------------");
+              break;
+            case 4:
+              // contact();
+              // System.out.println("======== CONTACT =======");
+              // inputScanner.nextLine();
+              // System.out.print("masukkan nama : ");
+              // nama = inputScanner.nextLine();
+
+              // System.out.print("masukkan nim : ");
+              // nim = inputScanner.nextInt();
+
+              // inputScanner.nextLine();
+              // System.out.print("masukkan pesan : ");
+              // pesan = inputScanner.nextLine();
+
+              // System.out.println("Pesan anda sedang diproses");
+              break;
+            // return;s
+
+            // break;
+            case 0:
+              // logOut();
+              System.out.println("Anda telah logout");
+              isLoggedOut = true; // Mengatur isLoggedOut menjadi true
+              break; // Keluar dari switch case
+            default:
+              System.out.println("Pilihan tidak valid.");
+          }
+          if (isLoggedOut) {
+            break; // Keluar dari loop while
+          }
+        }
+      } else {
+        System.out.println("username/password salah");
+        System.out.println("\n");
+
+        attempts++;
+      }
     }
+    if (attempts == 3) {
+      System.out.println("Anda telah melebihi batas upaya login");
+      System.exit(0);
+    }
+  }
+
+}
