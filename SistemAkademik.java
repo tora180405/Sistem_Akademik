@@ -2080,6 +2080,18 @@ public class SistemAkademik {
             { "Kamis", "10:30-14:30", "Konsep Teknologi Informasi", "**********" },
             { "Kamis", "15:30-17:10", "Pancasila", "********" },
             { "Jumat", "10:30-14:30", "Keselamatan dan Kesehatan Kerja", "************" }
+        };
+        
+        String [][] jadwalMatkul1d = {
+            { "Senin", "07:50-11:20", "Bahasa Inggris 1", "****************"},
+            { "Senin", "13:40-17:10", "Critical Thinking dan Problem Solving", "****************"},
+            { "Selasa", "07:00-08:40", "Pancasila", "********" },
+            { "Selasa", "09:40-13:40", "Dasar Pemrograman", "********" },
+            { "Selasa", "13:40-17:10", "Keselamatan dan Kesehatan Kerja", "************" },
+            { "Rabu", "11:20-17:10", "Praktikum Dasar Pemrograman", "*********" },
+            { "Kamis", "07:00-09:30", "Matematika Dasar", "********" },
+            { "Kamis", "12:50-16:20", "Konsep Teknologi Informasi", "**********" },
+            { "Jumat", "14:30-17:10", "Matematika Dasar", "********" },
         }
 
         if (kelas.equalsIgnoreCase("1f") || kelas.equalsIgnoreCase("1-f")) {
