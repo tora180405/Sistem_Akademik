@@ -2118,6 +2118,19 @@ public class SistemAkademik {
             { "Jumat", "07:00-09:30", "Matematika Dasar", "********" }
         };
 
+        String[][] jadwalMatkul1e = {
+            { "Senin", "07:50-14:30", "Praktikum Dasar Pemrograman", "*********" },
+            { "Senin", "14:30-17:10", "Matematika Dasar", "********" },
+            { "Selasa", "08:40-12:10", "Bahasa Inggris 1", "****************"},
+            { "Rabu", "09:40-13:40", "Dasar Pemrograman", "********" },
+            { "Rabu", "13:40-17:10", "Konsep Teknologi Informasi", "**********" },
+            { "Kamis", "07:00-10:30", "Critical Thinking dan Problem Solving", "****************"},
+            { "Kamis", "10:30-12:10", "Pancasila", "********" },
+            { "Kamis", "13:40-17:10", "Keselamatan dan Kesehatan Kerja", "************"},
+            { "Jumat", "07:00-09:30", "Matematika Dasar", "********" }
+             
+        };
+
         if (kelas.equalsIgnoreCase("1f") || kelas.equalsIgnoreCase("1-f")) {
             System.out.println("========================== JADWAL KULIAH 1-F ==========================");
             System.out.println();
