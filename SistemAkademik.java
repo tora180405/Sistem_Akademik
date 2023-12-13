@@ -2376,6 +2376,18 @@ public class SistemAkademik {
                 { "Jumat", "07:00-10:00", "Praktikum Dasar Pemrograman", "Noprianto, S.Kom., M.Eng." },
                 { "Jumat", "07:00-10:00", "Matematika Dasar", "Yan Watequlis Syaifudin, S.T., M.MT., Ph.D." }
         };
+        
+        String [][] jadwalMatkul1a = {
+            { "Senin", "07:50-11:20", "Critical Thinking dan Problem Solving", "****************"},
+            { "Senin", "14:30-17:10", "Matematika Dasar", "********" },
+            { "Selasa", "07:00-09:30", "Matematika Dasar", "********" },
+            { "Selasa", "10:30-14:30", "Dasar Pemrograman", "********" },
+            { "Rabu", "07:00-12:10", "Praktikum Dasar Pemrograman", "*********" },
+            { "Kamis", "07:50-09:30", "Pancasila", "********" },
+            { "Kamis", "09:30-12:10", "Bahasa Inggris 1", "***********" },
+            { "Jumat", "07:00-10:30", "Konsep Teknologi Informasi", "**********" },
+            { "Jumat", "11:20-15:20", "Keselamatan dan Kesehatan Kerja", "************" }
+        };
 
         String[][] jadwalMatkul1c = {
                 { "Senin", "07:00-09:30", "Matematika Dasar", "**********" },
@@ -2383,11 +2395,60 @@ public class SistemAkademik {
                 { "Senin", "13:40-17:10", "Critical Thinking dan Problem Solving",
                         "************" },
                 { "Selasa", "11:20-15:20", "Dasar Pemrograman", "********" },
-                { "Rabu", "07:50-13:40", "Praktikum Dasar Pemrograman", "*********" },
-                { "Rabu", "07:00-09:15", "Bahasa Inggris 1", "***********" },
+                { "Rabu", "10:30-16:20", "Praktikum Dasar Pemrograman", "*********" },
+                { "Rabu", "07:00-10:30", "Bahasa Inggris 1", "***********" },
                 { "Kamis", "12:50-16:20", "Konsep Teknologi Informasi", "**********" },
                 { "Jumat", "07:00-09:30", "Matematika Dasar", "**********" },
-                { "Jumat", "07:00-10:00", "Keselamatan dan Kesehatan Kerja", "************" }
+                { "Jumat", "12:50-16:20", "Keselamatan dan Kesehatan Kerja", "************" }
+        };
+
+        String [][] jadwalMatkul1h = {
+            { "Senin", "10:30-14:30", "Critical Thinking dan Problem Solving", "****************"},
+            { "Senin", "14:30-17:10", "Matematika Dasar", "********" },
+            { "Selasa", "07:00-09:30", "Matematika Dasar", "********" },
+            { "Selasa", "10:30-14:30", "Dasar Pemrograman", "********" },
+            { "Rabu", "07:00-12:10", "Praktikum Dasar Pemrograman", "*********" },
+            { "Rabu", "12:50-16:20", "Bahasa Inggris 1", "***********" },
+            { "Kamis", "10:30-14:30", "Konsep Teknologi Informasi", "**********" },
+            { "Kamis", "15:30-17:10", "Pancasila", "********" },
+            { "Jumat", "10:30-14:30", "Keselamatan dan Kesehatan Kerja", "************" }
+        };
+        
+        String [][] jadwalMatkul1d = {
+            { "Senin", "07:50-11:20", "Bahasa Inggris 1", "****************"},
+            { "Senin", "13:40-17:10", "Critical Thinking dan Problem Solving", "****************"},
+            { "Selasa", "07:00-08:40", "Pancasila", "********" },
+            { "Selasa", "09:40-13:40", "Dasar Pemrograman", "********" },
+            { "Selasa", "13:40-17:10", "Keselamatan dan Kesehatan Kerja", "************" },
+            { "Rabu", "11:20-17:10", "Praktikum Dasar Pemrograman", "*********" },
+            { "Kamis", "07:00-09:30", "Matematika Dasar", "********" },
+            { "Kamis", "12:50-16:20", "Konsep Teknologi Informasi", "**********" },
+            { "Jumat", "14:30-17:10", "Matematika Dasar", "********" }
+        };
+
+        String [][] jadwalMatkul1b = {
+            { "Senin", "07:00-09:30", "Matematika Dasar", "********" },
+            { "Senin", "11:20-17:10", "Praktikum Dasar Pemrograman", "*********" },
+            { "Selasa", "08:40-12:10", "Bahasa Inggris 1", "****************"},
+            { "Rabu", "09:40-13:40", "Dasar Pemrograman", "********" },
+            { "Rabu", "13:40-17:10", "Konsep Teknologi Informasi", "**********" },
+            { "Kamis", "07:00-10:30", "Critical Thinking dan Problem Solving", "****************"},
+            { "Kamis", "10:30-12:10", "Pancasila", "********" },
+            { "Kamis", "13:40-17:10", "Keselamatan dan Kesehatan Kerja", "************" },
+            { "Jumat", "07:00-09:30", "Matematika Dasar", "********" }
+        };
+
+        String[][] jadwalMatkul1e = {
+            { "Senin", "07:50-14:30", "Praktikum Dasar Pemrograman", "*********" },
+            { "Senin", "14:30-17:10", "Matematika Dasar", "********" },
+            { "Selasa", "08:40-12:10", "Bahasa Inggris 1", "****************"},
+            { "Rabu", "09:40-13:40", "Dasar Pemrograman", "********" },
+            { "Rabu", "13:40-17:10", "Konsep Teknologi Informasi", "**********" },
+            { "Kamis", "07:00-10:30", "Critical Thinking dan Problem Solving", "****************"},
+            { "Kamis", "10:30-12:10", "Pancasila", "********" },
+            { "Kamis", "13:40-17:10", "Keselamatan dan Kesehatan Kerja", "************"},
+            { "Jumat", "07:00-09:30", "Matematika Dasar", "********" }
+             
         };
 
         if (kelas.equalsIgnoreCase("1f") || kelas.equalsIgnoreCase("1-f")) {
