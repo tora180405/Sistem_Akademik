@@ -2011,30 +2011,350 @@ public class SistemAkademik {
     }
 
     private static void cekNilaiMhs() {
+
+        for(int i = 0; i <= nilai.length; i++){
+
+        }
+        
+
         System.out.println("================= NILAI MAHASISWA ===============");
         System.out.println();
+        if (username.equalsIgnoreCase("mahasiswa1")) {
         System.out.println("Nama Mahasiswa          : " + mahasiswa[0][0]);
         System.out.println("Nomor Induk Mahasiswa   : " + mahasiswa[0][1]);
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATKUL", "nilai Tugas", "nilai UTS",
-                "Nilai UAS", "Rata-rata");
-        System.out.printf(
-                "+------------------------------------------------------------------------------------------------------------------+\n");
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPRO", nilai[0][2], nilai[0][3],
-                nilai[0][4], nilai[0][5]);
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPROPRAKTIKUM", nilai[0][6], nilai[0][7],
-                nilai[0][8], nilai[0][9]);
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATDAS", nilai[0][20], nilai[0][11],
-                nilai[0][12], nilai[0][13]);
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "PANCASILA", nilai[0][14], nilai[0][15],
-                nilai[0][16], nilai[0][17]);
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "KTI", nilai[0][18], nilai[0][19],
-                nilai[0][20], nilai[0][21]);
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "CTPS", nilai[0][22], nilai[0][23],
-                nilai[0][24], nilai[0][25]);
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "B.INGGRIS", nilai[0][26], nilai[0][27],
-                nilai[0][28], nilai[0][29]);
-        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "K3", nilai[0][30], nilai[0][31], nilai[0][32],
-                nilai[0][33]);
+
+        if(nilai[0][2] == null){
+            nilai[0][2] = "0";
+        }
+        if (nilai[0][3] == null) {
+            nilai[0][3] = "0";
+        }
+        if (nilai[0][4] == null) {
+            nilai[0][4] = "0";
+        }
+        if (nilai[0][5] == null) {
+            nilai[0][5] = "0";
+        }
+        if (nilai[0][6] == null) {
+            nilai[0][6] = "0";
+        }
+        if (nilai[0][7] == null) {
+            nilai[0][7] = "0";
+        }
+        if (nilai[0][8] == null) {
+            nilai[0][8] = "0";
+        }
+        if (nilai[0][9] == null) {
+            nilai[0][9] = "0";
+        }
+        if (nilai[0][10] == null) {
+            nilai[0][10] = "0";
+        }
+        if (nilai[0][11] == null) {
+            nilai[0][11] = "0";
+        }
+        if (nilai[0][12] == null) {
+            nilai[0][12] = "0";
+        }
+        if (nilai[0][13] == null) {
+            nilai[0][13] = "0";
+        }
+        if (nilai[0][14] == null) {
+            nilai[0][14] = "0";
+        }
+        if (nilai[0][15] == null) {
+            nilai[0][15] = "0";
+        }
+        if (nilai[0][16] == null) {
+            nilai[0][16] = "0";
+        }
+        if (nilai[0][17] == null) {
+            nilai[0][17] = "0";
+        }
+        if (nilai[0][18] == null) {
+            nilai[0][18] = "0";
+        }
+        if (nilai[0][19] == null) {
+            nilai[0][19] = "0";
+        }
+        if (nilai[0][20] == null) {
+            nilai[0][20] = "0";
+        }
+        if (nilai[0][21] == null) {
+            nilai[0][21] = "0";
+        }
+        if (nilai[0][22] == null) {
+            nilai[0][22] = "0";
+        }
+        if (nilai[0][23] == null) {
+            nilai[0][23] = "0";
+        }
+        if (nilai[0][24] == null) {
+            nilai[0][24] = "0";
+        }
+        if (nilai[0][25] == null) {
+            nilai[0][25] = "0";
+        }
+        if (nilai[0][26] == null) {
+            nilai[0][26] = "0";
+        }
+        if (nilai[0][27] == null) {
+            nilai[0][27] = "0";
+        }
+        if (nilai[0][28] == null) {
+            nilai[0][28] = "0";
+        }
+        if (nilai[0][29] == null) {
+            nilai[0][29] = "0";
+        }
+        if (nilai[0][30] == null) {
+            nilai[0][30] = "0";
+        }
+        if (nilai[0][31] == null) {
+            nilai[0][31] = "0";
+        }
+        if (nilai[0][32] == null) {
+            nilai[0][32] = "0";
+        }
+        if (nilai[0][33] == null) {
+            nilai[0][33] = "0";
+        }
+
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATKUL", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+        System.out.printf("+------------------------------------------------------------------------------------------------------------------+\n");
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPRO", nilai[0][2], nilai[0][3], nilai[0][4], nilai[0][5]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPROPRAKTIKUM", nilai[0][6], nilai[0][7], nilai[0][8], nilai[0][9]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATDAS", nilai[0][20], nilai[0][11], nilai[0][12], nilai[0][13]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "PANCASILA", nilai[0][14], nilai[0][15], nilai[0][16], nilai[0][17]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "KTI", nilai[0][18], nilai[0][19], nilai[0][20], nilai[0][21]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "CTPS", nilai[0][22], nilai[0][23], nilai[0][24], nilai[0][25]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "B.INGGRIS", nilai[0][26], nilai[0][27], nilai[0][28], nilai[0][29]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "K3", nilai[0][30], nilai[0][31], nilai[0][32], nilai[0][33]);
+
+        }else if (username.equalsIgnoreCase("mahasiswa2")) {
+            System.out.println("Nama Mahasiswa          : " + mahasiswa[1][0]);
+            System.out.println("Nomor Induk Mahasiswa   : " + mahasiswa[1][1]);
+
+        if(nilai[1][2] == null){
+            nilai[1][2] = "0";
+        }
+        if (nilai[1][3] == null) {
+            nilai[1][3] = "0";
+        }
+        if (nilai[1][4] == null) {
+            nilai[1][4] = "0";
+        }
+        if (nilai[1][5] == null) {
+            nilai[1][5] = "0";
+        }
+        if (nilai[1][6] == null) {
+            nilai[1][6] = "0";
+        }
+        if (nilai[1][7] == null) {
+            nilai[1][7] = "0";
+        }
+        if (nilai[1][8] == null) {
+            nilai[1][8] = "0";
+        }
+        if (nilai[1][9] == null) {
+            nilai[1][9] = "0";
+        }
+        if (nilai[1][10] == null) {
+            nilai[1][10] = "0";
+        }
+        if (nilai[1][11] == null) {
+            nilai[1][11] = "0";
+        }
+        if (nilai[1][12] == null) {
+            nilai[1][12] = "0";
+        }
+        if (nilai[1][13] == null) {
+            nilai[1][13] = "0";
+        }
+        if (nilai[1][14] == null) {
+            nilai[1][14] = "0";
+        }
+        if (nilai[1][15] == null) {
+            nilai[1][15] = "0";
+        }
+        if (nilai[1][16] == null) {
+            nilai[1][16] = "0";
+        }
+        if (nilai[1][17] == null) {
+            nilai[1][17] = "0";
+        }
+        if (nilai[1][18] == null) {
+            nilai[1][18] = "0";
+        }
+        if (nilai[1][19] == null) {
+            nilai[1][19] = "0";
+        }
+        if (nilai[1][20] == null) {
+            nilai[1][20] = "0";
+        }
+        if (nilai[1][21] == null) {
+            nilai[1][21] = "0";
+        }
+        if (nilai[1][22] == null) {
+            nilai[1][22] = "0";
+        }
+        if (nilai[1][23] == null) {
+            nilai[1][23] = "0";
+        }
+        if (nilai[1][24] == null) {
+            nilai[1][24] = "0";
+        }
+        if (nilai[1][25] == null) {
+            nilai[1][25] = "0";
+        }
+        if (nilai[1][26] == null) {
+            nilai[1][26] = "0";
+        }
+        if (nilai[1][27] == null) {
+            nilai[1][27] = "0";
+        }
+        if (nilai[1][28] == null) {
+            nilai[1][28] = "0";
+        }
+        if (nilai[1][29] == null) {
+            nilai[1][29] = "0";
+        }
+        if (nilai[1][30] == null) {
+            nilai[1][30] = "0";
+        }
+        if (nilai[1][31] == null) {
+            nilai[1][31] = "0";
+        }
+        if (nilai[1][32] == null) {
+            nilai[1][32] = "0";
+        }
+        if (nilai[1][33] == null) {
+            nilai[1][33] = "0";
+        }
+
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATKUL", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+        System.out.printf("+------------------------------------------------------------------------------------------------------------------+\n");
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPRO", nilai[1][2], nilai[1][3], nilai[1][4], nilai[1][5]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPROPRAKTIKUM", nilai[1][6], nilai[1][7], nilai[1][8], nilai[1][9]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATDAS", nilai[1][20], nilai[1][11], nilai[1][12], nilai[1][13]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "PANCASILA", nilai[1][14], nilai[1][15], nilai[1][16], nilai[1][17]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "KTI", nilai[1][18], nilai[1][19], nilai[1][20], nilai[1][21]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "CTPS", nilai[1][22], nilai[1][23], nilai[1][24], nilai[1][25]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "B.INGGRIS", nilai[1][26], nilai[1][27], nilai[1][28], nilai[1][29]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "K3", nilai[1][30], nilai[1][31], nilai[1][32], nilai[1][33]);
+
+        }else if (username.equalsIgnoreCase("mahasiswa3")) {
+            System.out.println("Nama Mahasiswa          : " + mahasiswa[2][1]);
+            System.out.println("Nomor Induk Mahasiswa   : " + mahasiswa[2][0]);
+
+            if(nilai[2][2] == null){
+            nilai[2][2] = "0";
+        }
+        if (nilai[2][3] == null) {
+            nilai[2][3] = "0";
+        }
+        if (nilai[2][4] == null) {
+            nilai[2][4] = "0";
+        }
+        if (nilai[2][5] == null) {
+            nilai[2][5] = "0";
+        }
+        if (nilai[2][6] == null) {
+            nilai[2][6] = "0";
+        }
+        if (nilai[2][7] == null) {
+            nilai[2][7] = "0";
+        }
+        if (nilai[2][8] == null) {
+            nilai[2][8] = "0";
+        }
+        if (nilai[2][9] == null) {
+            nilai[2][9] = "0";
+        }
+        if (nilai[2][10] == null) {
+            nilai[2][10] = "0";
+        }
+        if (nilai[2][11] == null) {
+            nilai[2][11] = "0";
+        }
+        if (nilai[2][12] == null) {
+            nilai[2][12] = "0";
+        }
+        if (nilai[2][13] == null) {
+            nilai[2][13] = "0";
+        }
+        if (nilai[2][14] == null) {
+            nilai[2][14] = "0";
+        }
+        if (nilai[2][15] == null) {
+            nilai[2][15] = "0";
+        }
+        if (nilai[2][16] == null) {
+            nilai[2][16] = "0";
+        }
+        if (nilai[2][17] == null) {
+            nilai[2][17] = "0";
+        }
+        if (nilai[2][18] == null) {
+            nilai[2][18] = "0";
+        }
+        if (nilai[2][19] == null) {
+            nilai[2][19] = "0";
+        }
+        if (nilai[2][20] == null) {
+            nilai[2][20] = "0";
+        }
+        if (nilai[2][21] == null) {
+            nilai[2][21] = "0";
+        }
+        if (nilai[2][22] == null) {
+            nilai[2][22] = "0";
+        }
+        if (nilai[2][23] == null) {
+            nilai[2][23] = "0";
+        }
+        if (nilai[2][24] == null) {
+            nilai[2][24] = "0";
+        }
+        if (nilai[2][25] == null) {
+            nilai[2][25] = "0";
+        }
+        if (nilai[2][26] == null) {
+            nilai[2][26] = "0";
+        }
+        if (nilai[2][27] == null) {
+            nilai[2][27] = "0";
+        }
+        if (nilai[2][28] == null) {
+            nilai[2][28] = "0";
+        }
+        if (nilai[2][29] == null) {
+            nilai[2][29] = "0";
+        }
+        if (nilai[2][30] == null) {
+            nilai[2][30] = "0";
+        }
+        if (nilai[2][31] == null) {
+            nilai[2][31] = "0";
+        }
+        if (nilai[2][32] == null) {
+            nilai[2][32] = "0";
+        }
+        if (nilai[2][33] == null) {
+            nilai[2][33] = "0";
+        }
+
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATKUL", "nilai Tugas", "nilai UTS", "Nilai UAS", "Rata-rata");
+        System.out.printf("+------------------------------------------------------------------------------------------------------------------+\n");
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPRO", nilai[2][2], nilai[2][3], nilai[2][4], nilai[2][5]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "DASPROPRAKTIKUM", nilai[2][6], nilai[2][7], nilai[2][8], nilai[2][9]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "MATDAS", nilai[2][20], nilai[2][11], nilai[2][12], nilai[2][13]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "PANCASILA", nilai[2][14], nilai[2][15], nilai[2][16], nilai[2][17]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "KTI", nilai[2][18], nilai[2][19], nilai[2][20], nilai[2][21]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "CTPS", nilai[2][22], nilai[2][23], nilai[2][24], nilai[2][25]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "B.INGGRIS", nilai[2][26], nilai[2][27], nilai[2][28], nilai[2][29]);
+        System.out.printf("| %-20s | %-20s | %-20s | %-20s | %-20s |\n", "K3", nilai[2][30], nilai[2][31], nilai[2][32], nilai[2][33]);
+        }
     }
 
     private static void cekJadwalKuliah() {
