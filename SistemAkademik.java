@@ -120,11 +120,10 @@ public class SistemAkademik {
             System.out.println("3. Cek Data Mahasiswa");
             // System.out.println("4. Input Nilai Mahasiswa");
             // System.out.println("5. Update Nilai Mahasiswa");
-            System.out.println("4. Cek Nilai Mahasiswa");
-            System.out.println("5. Cek Jadwal Perkuliahan");
-            System.out.println("6. Update KRS Mahasiswa");
-            System.out.println("7. Cek Data KRS Mahasiswa");
-            System.out.println("8. Contact");
+            System.out.println("4. Cek Jadwal Perkuliahan");
+            System.out.println("5. Update KRS Mahasiswa");
+            System.out.println("6. Cek Data KRS Mahasiswa");
+            System.out.println("7. Contact");
             System.out.println("0. LogOut\n");
 
             System.out.print("Masukkan pilihan anda: ");
@@ -275,7 +274,7 @@ public class SistemAkademik {
         while (inpData) {
 
             // System.out.println(counter);
-            int i = 0;
+            int i = counter;
             while (i < mahasiswa.length) {
                 System.out.println("\n");
 
@@ -324,6 +323,7 @@ public class SistemAkademik {
                     i = counter;
                 } else if (choice == 2) {
                     // berandaAdmin();
+                    i = counter;
                     inpData = false;
                     break;
                 } else {
