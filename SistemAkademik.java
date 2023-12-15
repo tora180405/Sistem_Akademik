@@ -9,6 +9,7 @@ public class SistemAkademik {
     public static String[][] mahasiswa = new String[4000][12];
 
     public static int counter;
+    public static int count;
 
     // Deklarasi variable untuk fitur contact
     public static String[][] contact = new String[1000][3];
@@ -139,28 +140,17 @@ public class SistemAkademik {
                     cekDataMhs();
                     break;
                 case 4:
-                    // inNilaiMhs();
-                    // cekNilaiMhsAdmin();
                     cekJadwalKuliah();
                     break;
                 case 5:
-                    // updNilaiMhs();
                     updKrsMhs();
                     break;
                 case 6:
-                    // cekNilaiMhs();
                     cekDataKrsMhs();
                     break;
                 case 7:
-                    // cekJadwalKuliah();
                     contactAdmin();
                     break;
-                // case 9:
-                // cekDataKrsMhs();
-                // break;
-                // case 10:
-                // contactAdmin();
-                // break;
                 case 0:
                     logOut();
                 default:
@@ -2448,7 +2438,6 @@ public class SistemAkademik {
             { "Kamis", "10:30-12:10", "Pancasila", "********" },
             { "Kamis", "13:40-17:10", "Keselamatan dan Kesehatan Kerja", "************"},
             { "Jumat", "07:00-09:30", "Matematika Dasar", "********" }
-             
         };
 
         if (kelas.equalsIgnoreCase("1f") || kelas.equalsIgnoreCase("1-f")) {
@@ -2590,6 +2579,59 @@ public class SistemAkademik {
             }
             System.out.printf(
                     "+--------------------------------------------------------------------------------------------------------+\n");
+
+            System.out.println("\nApakah ingin mencari nama mata kuliah berdasarkan sks?");
+            System.out.println("yes / no");
+            System.out.println("_________");
+            inputScanner.nextLine();
+
+            String jawab = inputScanner.nextLine();
+
+            if (jawab.equalsIgnoreCase("yes")) {
+            System.out.print("Masukkan key yang ingin dicari : ");
+            key = inputScanner.nextLine();
+
+                    if (key.equals("2")) {
+                        System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "KODE MK", "MATA KULIAH", "SEMESTER",
+                    "SKS", "JAM");
+                    System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "RTI231001", "Pancasila", "1",
+                    "2", "2");
+                    System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "RTI231002", "Konsep Teknologi Informasi", "1",
+                    "2", "4");
+                    System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "RTI231003", "Critical Thinking dan Problem Solving", "1",
+                    "2", "4");
+                    System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "RTI231005", "Bahasa Inggris 1", "1",
+                    "2", "4");
+                    System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "RTI231006", "Dasar Pemograman", "1",
+                    "2", "4");
+                    System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "RTI231008", "Keselamatan dan Kesehatan Kerja", "1",
+                    "2", "4");
+                        // System.out.println("1. pancasila");
+                        // System.out.println("2. Konsep Teknologi Informasi");
+                        // System.out.println("3. Critical Thinking dan Problem Solving");
+                        // System.out.println("4. Bahasa Inggris 1");
+                        // System.out.println("5. Dasar Pemograman");
+                        // System.out.println("6. Keselamatan dan Kesehatan Kerja");
+
+                        // System.out.println("========");
+                        // System.out.println(krsMhs1.filter(krsMhs1[0][3] == "2"));
+                        // console.log(jungle.filter(el => el.threat > 5));
+                        berandaAdmin();
+                    }else if (key.equals("3")) {
+                        System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "KODE MK", "MATA KULIAH", "SEMESTER",
+                    "SKS", "JAM");
+                    System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "RTI231007", "Praktikum Dasar Pemograman", "1",
+                    "3", "6");
+                    System.out.printf("| %-20s | %-40s | %-10s | %-10s | %-10s |\n", "RTI231004", "Matematika Dasar", "1",
+                    "3", "6");
+                        // System.out.println("1. Praktikum Dasar Pemograman");
+                        // System.out.println("2. Matematika dasar");
+                        // berandaAdmin();
+                    }else{
+                        System.out.println("mata kuliah tidak ada");
+                        berandaAdmin();
+                    }
+            }
         }
     }
 
@@ -2628,7 +2670,7 @@ public class SistemAkademik {
 
         System.out.println("============ CONTACT ============");
         while (true) {
-            int i = 0;
+            int i = count;
             while (i < contact.length) {
                 inputScanner.nextLine();
                 System.out.print("masukkan nama : ");
@@ -2639,6 +2681,7 @@ public class SistemAkademik {
                 contact[i][2] = inputScanner.nextLine();
 
                 System.out.println("Pesan anda sedang diproses");
+                count++;
                 break;
             }
             break;
@@ -2659,11 +2702,11 @@ public class SistemAkademik {
             }
         }
 
-        System.out.println("apakah ingin melakukan operasi selanjutnya?");
-        int acc = inputScanner.nextInt();
-
+        
         System.out.println("ketikkan 1 untuk lanjut");
         System.out.println("ketikkan angka lainnya untuk logout");
+        System.out.println("apakah ingin melakukan operasi selanjutnya?");
+        int acc = inputScanner.nextInt();
 
         if (acc == 1) {
             return;
