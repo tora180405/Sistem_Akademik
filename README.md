@@ -1,4 +1,4 @@
 # Sistem_Akademik
 
-Projek kelompok membuat program bertema sistem akademik dengan java
+<h3 align="center">Group Project about Academic System. Build with Java Based on CLI</h3>
 
